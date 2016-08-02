@@ -1,0 +1,56 @@
+<div>
+
+    <button class="ads-main-title-bar-button ads-display-table hoverable"
+            ad-drop-down-toggle
+            ad-in-place="false"
+            ad-close-mode="clickOutside"
+            ad-multi-click-enabled="true"
+            ad-new-compile-mode="true"
+            ad-debug="true"
+            ad-dropdown-open="controller.dropdownOpen"
+            ad-close-invoke-function="controller.closeDropDownFunction"
+            ng-disabled="adDisabled"
+            >
+
+        <div class="ads-display-table-row">
+
+            <!-- setting a max width on this for long app / mobile app names -->
+            <div style="padding-right: 12px; padding-left: 6px; white-space: nowrap; max-width: 260px; text-overflow: ellipsis; overflow: hidden;"
+                 class="ads-display-table-cell">
+                {{controller.buttonLabel}}
+            </div>
+
+            <div class="ads-display-table-cell">
+                <img src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions"/>
+            </div>
+        </div>
+
+    </button>
+
+    <!-- ============== Fly out ============== -->
+    <div class="dropdown-menu">
+
+        <div class="ads-menu-item"
+             ng-click="controller.onClickTransactions()"
+             ng-show="controller.mainNavConfig.showTransactionAnalytics">
+            {{ getString("ms_transactions") }}
+        </div>
+        <div class="ads-menu-item"
+             ng-click="controller.onClickLogs()"
+             ng-show="controller.mainNavConfig.showLogAnalytics">
+            {{ getString("ms_logs") }}
+        </div>
+        <div class="ads-menu-item"
+             ng-click="controller.onClickWeb()"
+             ng-show="controller.isUserAnalyticsWebEnabled">
+            {{ getString("ms_browserRequests") | adAppendBeta }}
+        </div>
+        <div class="ads-menu-item"
+             ng-click="controller.onClickMobile()"
+             ng-show="controller.isUserAnalyticsMobileEnabled">
+            {{ getString("ms_mobileRequests") | adAppendBeta }}
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en" dir="ltr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="robots" content="noindex">
+<title>Select database - Adminer</title>
+<link rel="stylesheet" type="text/css" href="../adminer/static/default.css">
+<script type="text/javascript">
+var areYouSure = 'Resend POST data?';
+</script>
+<script type="text/javascript" src="../adminer/static/functions.js"></script>
+<script type="text/javascript" src="static/editing.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="../adminer/static/favicon.ico" id="favicon">
+
+<body class="ltr nojs" onclick="return bodyClick(event, '&#039;, &#039;');" onkeydown="bodyKeydown(event);" onload="bodyLoad('5.5');">
+<script type="text/javascript">
+document.body.className = document.body.className.replace(/(^|\s)nojs(\s|$)/, '$1js$2');
+</script>
+
+<div id="content">
+<p id="breadcrumb"><a href="?server=localhost">MySQL</a> &raquo; localhost
+<span id='loader'></span>
+<h2>Select database</h2>
+<p><a href='?server=localhost&amp;username=root&amp;database='>Create new database</a>
+<a href='?server=localhost&amp;username=root&amp;privileges='>Privileges</a>
+<a href='?server=localhost&amp;username=root&amp;processlist='>Process list</a>
+<a href='?server=localhost&amp;username=root&amp;variables='>Variables</a>
+<a href='?server=localhost&amp;username=root&amp;status='>Status</a>
+<p>MySQL version: <b>5.5.50-0+deb8u1</b> through PHP extension <b>MySQLi</b>
+<p>Logged as: <b>root@localhost</b>
+<form action='' method='post'>
+<table cellspacing='0' class='checkable' onclick='tableClick(event);'>
+<thead><tr><td>&nbsp;<th>Database<td>Collation<td>Tables</thead>
+<tr><td><input type='checkbox' name='db[]' value='information_schema' id='checkbox-1'><th><a href='?server=localhost&amp;username=root&amp;db=information_schema'>information_schema</a><td><a href='?server=localhost&amp;username=root&amp;db=information_schema&amp;database=' title='Alter database'>utf8_general_ci</a><td align='right'><a href='?server=localhost&amp;username=root&amp;db=information_schema&amp;schema=' id='tables-information_schema' title='Database schema'>?</a>
+<tr class="odd"><td><input type='checkbox' name='db[]' value='konakart' id='checkbox-2'><th><a href='?server=localhost&amp;username=root&amp;db=konakart'>konakart</a><td><a href='?server=localhost&amp;username=root&amp;db=konakart&amp;database=' title='Alter database'>utf8_general_ci</a><td align='right'><a href='?server=localhost&amp;username=root&amp;db=konakart&amp;schema=' id='tables-konakart' title='Database schema'>?</a>
+<tr><td><input type='checkbox' name='db[]' value='mysql' id='checkbox-3'><th><a href='?server=localhost&amp;username=root&amp;db=mysql'>mysql</a><td><a href='?server=localhost&amp;username=root&amp;db=mysql&amp;database=' title='Alter database'>utf8_general_ci</a><td align='right'><a href='?server=localhost&amp;username=root&amp;db=mysql&amp;schema=' id='tables-mysql' title='Database schema'>?</a>
+<tr class="odd"><td><input type='checkbox' name='db[]' value='performance_schema' id='checkbox-4'><th><a href='?server=localhost&amp;username=root&amp;db=performance_schema'>performance_schema</a><td><a href='?server=localhost&amp;username=root&amp;db=performance_schema&amp;database=' title='Alter database'>utf8_general_ci</a><td align='right'><a href='?server=localhost&amp;username=root&amp;db=performance_schema&amp;schema=' id='tables-performance_schema' title='Database schema'>?</a>
+</table>
+<script type='text/javascript'>tableCheck();</script>
+<p><input type='submit' name='drop' value='Drop' onclick="eventStop(event); return confirm('Are you sure? (' + formChecked(this, /db/) + ')');">
+<input type='hidden' name='token' value='407577'>
+<a href='?server=localhost&amp;username=root&amp;refresh=1' onclick='eventStop(event);'>Refresh</a>
+</form>
+</div>
+
+<form action=''>
+<div id='lang'><input type="hidden" name="server" value="localhost"><input type="hidden" name="username" value="root">Language: <select name='lang' onchange="var loc = location.search.replace(/[?&amp;]lang=[^&amp;]*/, &#039;&#039;); location.search = loc + (loc ? &#039;&amp;&#039; : &#039;&#039;) + &#039;lang=&#039; + this.value;"><option value="en" selected>English<option value="cs">Čeština<option value="sk">Slovenčina<option value="nl">Nederlands<option value="es">Español<option value="de">Deutsch<option value="fr">Français<option value="it">Italiano<option value="et">Eesti<option value="hu">Magyar<option value="pl">Polski<option value="ca">Català<option value="pt">Português<option value="sl">Slovenski<option value="lt">Lietuvių<option value="tr">Türkçe<option value="ro">Limba Română<option value="ru">Русский язык<option value="zh">简体中文<option value="zh-tw">繁體中文<option value="ja">日本語<option value="ta">த‌மிழ்<option value="ar">العربية</select> <input type='submit' value='Use' class='hidden'>
+</div>
+</form>
+<div id="menu">
+<h1>
+<a href='http://www.adminer.org/' id='h1'>Adminer</a> <span class="version">3.3.3</span>
+
+</h1>
+<form action="" method="post">
+<p class="logout">
+<a href='?server=localhost&amp;username=root&amp;sql='>SQL command</a>
+<a href='?server=localhost&amp;username=root&amp;dump=' id='dump'>Dump</a>
+<input type="submit" name="logout" value="Logout" onclick="eventStop(event);">
+<input type="hidden" name="token" value="407577">
+</p>
+</form>
+<form action="">
+<p>
+<input type="hidden" name="server" value="localhost"><input type="hidden" name="username" value="root"><select name='db' onchange="this.form.submit();"><option value="">(database)<option>information_schema<option>konakart<option>mysql<option>performance_schema</select><input type="submit" value="Use" class='hidden' onclick="eventStop(event);">
+</p></form>
+</div>
+<script type='text/javascript'>ajaxSetHtml('?server=localhost&username=root&script=connect');</script>

@@ -1,0 +1,10 @@
+GET http://192.168.1.246:8090/controller/restui/home/homeViewData HTTP/1.1
+Accept: application/json, text/plain, */*
+Authorization: Basic YnJhZCU0MGN1c3RvbWVyMTozQ29tMzgxMg==
+Referer: http://192.168.1.246:8090/controller/
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: 192.168.1.246:8090
+Cookie: X-CSRF-TOKEN=79857ed042e367bf486b5ae050cb3b146041eddc; JSESSIONID=2abdf7e5ace14c135518d3de6e17
+

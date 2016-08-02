@@ -1,0 +1,36 @@
+POST http://192.168.1.252:8780/konakartadmin/konakartadmin HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.5
+Content-Length: 312
+Content-Type: text/x-gwt-rpc; charset=utf-8
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Referer: http://192.168.1.252:8780/konakartadmin/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+X-GWT-Module-Base: http://192.168.1.252:8780/konakartadmin/
+X-GWT-Permutation: 97CE410F10C6E8C8102ADB274BC59225
+Content-Length: 312
+
+<GWTRequest>
+  <service>com.konakartadmin.client.KKAdminGWTServiceIf</service>
+  <method>getZones</method>
+  <strongId>4F3F7CD5FDDBBD8C8F3E94920F660041</strongId>
+  <encoded>false</encoded>
+  <parameters>
+    <String>store1</String>
+    <com.konakartadmin.client.app.GWT__AdminZoneSearch>
+      <id>-1</id>
+      <nameRule>4</nameRule>
+      <codeRule>4</codeRule>
+      <countryId>-1</countryId>
+      <custom1Rule>4</custom1Rule>
+      <custom2Rule>4</custom2Rule>
+      <custom3Rule>4</custom3Rule>
+      <useDefaultWildCardsWithName>true</useDefaultWildCardsWithName>
+      <orderBy>ORDER_BY_NAME_ASCENDING</orderBy>
+    </com.konakartadmin.client.app.GWT__AdminZoneSearch>
+    <int>0</int>
+    <int>-1</int>
+  </parameters>
+</GWTRequest>

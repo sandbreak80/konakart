@@ -1,0 +1,594 @@
+<div style="max-height:400px; overflow-y:auto" class="adsFlowMapConfigurator">
+
+    <!-- ---------------- LIST VIEW ---------------- -->
+
+    <div ng-show="controller.showFlowMapList">
+
+        <div ng-repeat="userPreferenceListData in controller.userPreferenceListDatas"
+             class="ads-ui-action-item"
+                style="padding-left: 18px; padding-right: 18px; padding-top: 12px; padding-bottom: 12px; cursor:pointer;"
+                ng-click="controller.onSelectFlowMap(userPreferenceListData)"
+                >
+
+            <div style="display: inline-block; width: 32px">
+                <div style="position: relative"> <!-- these positioning tricks ripu the image out of the layout so the selected row doens't look larger than others -->
+                    <img ng-src="{{controller.getFlowMapImage(userPreferenceListData)}}" style="position: absolute; top: -16px;"/>
+                </div>
+            </div>
+
+            <div style="display: inline-block">
+                {{userPreferenceListData.name}}
+            </div>
+
+        </div>
+
+        <div class="ads-border-top" />
+
+        <div class="ads-ui-action-item"
+             style="padding-left: 18px; padding-right: 18px; padding-top: 12px; padding-bottom: 12px; cursor:pointer;"
+             ng-click="controller.onEditSelectedFlowMap()"
+                >
+
+            <div style="display: inline-block; width: 32px">
+            </div>
+
+            <div style="display: inline-block; ">
+                {{controller.getString("ms_editCurrentFlowmap")}}
+            </div>
+
+        </div>
+
+        <div class="ads-border-top" />
+
+        <div class="ads-ui-action-item"
+             style="padding-left: 18px; padding-right: 18px; padding-top: 12px; padding-bottom: 12px; cursor:pointer;"
+             ng-click="controller.onManageFlowMaps()"
+                >
+
+            <div style="display: inline-block; width: 32px">
+            </div>
+
+            <div style="display: inline-block; ">
+                {{controller.getString("ms_manageMyFlowmaps")}}
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- -------------------------------- EDITOR VIEW -------------------------------- -->
+
+    <div ng-if="!controller.showFlowMapList"
+         style="padding: 12px; min-width: 500px;"
+            >
+
+        <div class="adsFlowMapConfiguratorEditorHeaderRow">
+
+            <div class="adsFlowMapEditorPanelHeader adsInlineBlock">
+                <strong>{{controller.getString("ms_configureFlowmap")}}</strong>
+            </div>
+            <div class="adsFlowMapConfigCloseButton closeButton" ng-click="controller.onCancel()">
+            </div>
+
+        </div>
+
+        <div style="height: 12px;" />
+
+        <!-- name and enabled flag -->
+        <div ng-form="controller.flowmapNameForm">
+
+            <div class="adsInlineBlock" style="margin-right: 24px; ">
+                {{controller.getString("ms_name")}}
+            </div>
+
+            <div class="adsInlineBlock" style=" margin-right: 24px;">
+                <input type="text" style="width: 120px"
+                       name="flowmapName"
+                       ng-model="controller.flowMapProperties.name"
+                       class="showError"/>
+            </div>
+
+            <div class="adsInlineBlock ads-vertical-align" ng-if="!controller.selectedUserPreferenceListData.defaultPreference">
+
+                <div class="adsInlineBlock ads-vertical-align" style="margin-left: 24px;">
+                    <ad-checkbox selected="controller.flowMapProperties.shared"
+                                 ng-model="controller.flowMapProperties.shared"
+                                 label="{{controller.getString('ms_shared')}}"> </ad-checkbox>
+                </div>
+            </div>
+
+            <div class="adsInlineBlock ads-vertical-align">
+                <div class="adsInlineBlock ads-vertical-align" style="margin-left: 24px;">
+                    <ad-checkbox selected="controller.flowMapProperties.preference.persistZoomAndPan"
+                                 ng-model="controller.flowMapProperties.preference.persistZoomAndPan"
+                                 label="{{controller.getString('ms_persistZoomAndPan')}}"></ad-checkbox>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="height: 12px;" />
+
+        <div ng-if="!adBasicConfigurator">
+            <!-- -------- TAB ROW -------- -->
+            <div>
+
+                <div class="adsTabLevel2"
+                     ng-class="{selected : !controller.tabBackends}"
+                     ng-click="controller.tabBackends = false">
+                    {{controller.getString("ms_tiers")}}
+                </div>
+
+                <div class="adsTabLevel2"
+                     ng-class="{selected : controller.tabBackends}"
+                     ng-click="controller.tabBackends = true">
+                    {{controller.getString("ms_databasesAndRemoteServices")}}
+                </div>
+
+            </div>
+
+            <!-- -------- TIER CONFIG -------- -->
+            <div ng-if="!controller.tabBackends" class="ads-border-top">
+
+                <div style="padding-top: 8px; padding-bottom: 8px; " />
+
+                <div>{{controller.getString("ms_showTiersMeetingCriteria")}}</div>
+
+                <div class="hbox " style="border-spacing: 0px 4px">
+                    <div ng-if="!controller.isSnapshot && !controller.isBusinessTransactionDashboard">
+
+                        <!-- -------- RESPONSE TIME -------- -->
+                        <div class="boxRow">
+
+                            <div class="hboxItem adsFlowConfigFilterBoxLabel">
+
+                                <ad-checkbox id="tierFilterResponseTimeEnabled"
+                                             selected="controller.tierFilterResponseTimeEnabled"
+                                             sv-model="controller.tierFilterResponseTimeEnabled"
+                                             label="{{::getString('ms_responseTime')}}"
+                                        />
+
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.tierResponseTimeFilterOperator"
+                                           ng-disabled="!controller.tierFilterResponseTimeEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.tierResponseTimeFilterOperator"
+                                           ng-disabled="!controller.tierFilterResponseTimeEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input min-value="0"
+                                                     width="64"
+                                                     enabled="{{controller.tierFilterResponseTimeEnabled}}"
+                                                     value="controller.tierResponseTimeFilterValue"/>
+                                </div>
+                            </div>
+                            <span class="hboxItem ads-vertical-align" style="padding-left: 4px">
+                                {{controller.getString("ms_ms")}}
+                            </span>
+                        </div>
+
+                        <!-- -------- CALLS / MIN  -------- -->
+                        <div class="boxRow">
+
+                            <div class="hboxItem adsFlowConfigFilterBoxLabel">
+
+                                <ad-checkbox id="tierFilterCallsPerMinEnabled"
+                                             selected="controller.tierFilterCallsPerMinEnabled"
+                                             sv-model="controller.tierFilterCallsPerMinEnabled"
+                                             label="{{::getString('ms_callsPerMinute')}}"
+                                        />
+
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.tierCallsMinFilterOperator"
+                                           ng-disabled="!controller.tierFilterCallsPerMinEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.tierCallsMinFilterOperator"
+                                           ng-disabled="!controller.tierFilterCallsPerMinEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input style="width: 40px; max-width:40px;"
+                                                     min-value="0"
+                                                     width="64"
+                                                     enabled="{{controller.tierFilterCallsPerMinEnabled}}"
+                                                     value="controller.tierCallsMinFilterValue"
+                                            />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- -------- Errors / MIN  -------- -->
+                        <div class="boxRow">
+
+                            <div class="hboxItem adsFlowConfigFilterBoxLabel" >
+
+                                <div style="display: inline-block">
+                                    <ad-checkbox id="tierFilterErrorsPerMinEnabled"
+                                                 selected="controller.tierFilterErrorsPerMinEnabled"
+                                                 sv-model="controller.tierFilterErrorsPerMinEnabled"
+                                                 label="{{::getString('ms_errorsPerMinute')}}"
+                                            />
+                                </div>
+
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom"  >
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.tierErrorsMinFilterOperator"
+                                           ng-disabled="!controller.tierFilterErrorsPerMinEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.tierErrorsMinFilterOperator"
+                                           ng-disabled="!controller.tierFilterErrorsPerMinEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input style="width: 40px; max-width:40px;"
+                                                     min-value="0"
+                                                     width="64"
+                                                     enabled="{{controller.tierFilterErrorsPerMinEnabled}}"
+                                                     value="controller.tierErrorsMinFilterValue"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div ng-if="controller.isSnapshot || controller.isBusinessTransactionDashboard">
+
+                        <!-- -------- TIME CONSUMED PER TRANSACTION -------- -->
+                        <div class="boxRow">
+
+                            <div class="hboxItem adsFlowConfigFilterBoxLabel">
+
+                                <ad-checkbox id="tierFilterResponseTimeEnabled"
+                                             selected="controller.tierFilterTimeConsumedEnabled"
+                                             sv-model="controller.tierFilterTimeConsumedEnabled"
+                                             label="{{::getString('ms_timeConsumedPerTransaction')}}"
+                                        />
+
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.tierTimeConsumedFilterOperator"
+                                           ng-disabled="!controller.tierFilterTimeConsumedEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.tierTimeConsumedFilterOperator"
+                                           ng-disabled="!controller.tierFilterTimeConsumedEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input min-value="0"
+                                                     width="64"
+                                                     enabled="{{controller.tierFilterTimeConsumedEnabled}}"
+                                                     value="controller.tierTimeConsumedFilterValue"/>
+                                </div>
+                            </div>
+                            <span class="hboxItem ads-vertical-align" style="padding-left: 4px">
+                                {{::getString("ms_ms")}}
+                            </span>
+                        </div>
+
+                        <!-- -------- CALLS PER TRANSACTION -------- -->
+                        <div class="boxRow">
+
+                            <div class="hboxItem adsFlowConfigFilterBoxLabel">
+
+                                <ad-checkbox id="tierFilterTotalCallsEnabled"
+                                             selected="controller.tierFilterTotalCallsEnabled"
+                                             sv-model="controller.tierFilterTotalCallsEnabled"
+                                             label="{{::getString('ms_numberOfCallsPerTransaction')}}"
+                                        />
+
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.tierTotalCallsFilterOperator"
+                                           ng-disabled="!controller.tierFilterTotalCallsEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.tierTotalCallsFilterOperator"
+                                           ng-disabled="!controller.tierFilterTotalCallsEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input style="width: 40px; max-width:40px;"
+                                           min-value="0"
+                                           width="64"
+                                           enabled="{{controller.tierFilterTotalCallsEnabled}}"
+                                           value="controller.tierTotalCallsFilterValue"
+                                            />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- -------- ERRORS PER TRANSACTION -------- -->
+                        <div class="boxRow">
+
+                            <div class="hboxItem adsFlowConfigFilterBoxLabel" >
+
+                                <div style="display: inline-block">
+                                    <ad-checkbox id="tierFilterTotalErrorsEnabled"
+                                                 selected="controller.tierFilterTotalErrorsEnabled"
+                                                 sv-model="controller.tierFilterTotalErrorsEnabled"
+                                                 label="{{::getString('ms_numberOfErrorsPerTransaction')}}"
+                                            />
+                                </div>
+
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom"  >
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.tierTotalErrorsFilterOperator"
+                                           ng-disabled="!controller.tierFilterTotalErrorsEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.tierTotalErrorsFilterOperator"
+                                           ng-disabled="!controller.tierFilterTotalErrorsEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input style="width: 40px; max-width:40px;"
+                                           min-value="0"
+                                           width="64"
+                                           enabled="{{controller.tierFilterTotalErrorsEnabled}}"
+                                           value="controller.tierTotalErrorsFilterValue"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- -------- Specific Tiers Checkbox -------- -->
+                    <div class="boxRow" >
+
+                        <div class="hboxItem adsSpecificNodesFilterCheckbox">
+
+                            <div style="display: inline-block">
+                                <ad-checkbox id="tierFilterSpecificTiers"
+                                             selected="controller.tierFilterSpecificTiers"
+                                             sv-model="controller.tierFilterSpecificTiers"
+                                             label="{{controller.getString('ms_showOnlySpecifiedTiers')}}"
+                                        />
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- -------- Specific Tiers Multi-selector -------- -->
+                <div style="padding-bottom: 8px"  >
+                    <div class="hboxItem">
+                            <ad-multiselect style="width: 800px; max-height: 248px; overflow: auto"
+                                            ng-if="controller.tierFilterSpecificTiers"
+                                            all-items-options="controller.componentsAllData"
+                                            selected-items="controller.componentsSelectedData"
+                                            selected-text="{{controller.getString('ms_hiddenTiers')}}"
+                                            available-text="{{controller.getString('ms_visibleTiers')}}"
+                                            preserve-data="true"
+                                            hide-type="true"
+                            >
+                            </ad-multiselect>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- -------- BACKENDS -------- -->
+            <div ng-if="controller.tabBackends" class="ads-border-top">
+                <div class="hbox adsFlowmapConfiguratorTable" style="width: 100%;">
+
+                    <div class="boxRow">
+
+                        <div class="hboxItem ads-vertical-align adsBoxRowItemBottom" style="white-space: nowrap; padding-top: 8px;">
+                            <ad-checkbox selected="controller.groupBackends.value"
+                                         ng-model="controller.groupBackends.value"
+                                         style="display: inline-table;"
+                                         class="ads-vertical-align"
+                                         label="{{controller.getString('ms_autoGroupBackendWithAtLeast')}}">
+                            </ad-checkbox>
+                            <ad-number-input width="64" class="ads-vertical-align adsInlineBlock" style="padding-left: 4px;"
+                                             value="controller.numberToGroup" sv-change="controller.updateNumber">
+                            </ad-number-input>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding: 8px 0px">
+                    {{controller.getString("ms_showBackendMeetingCriteria")}}
+                </div>
+
+                <div ng-if="!controller.isSnapshot && !controller.isBusinessTransactionDashboard">
+                    <div class="hbox" style="border-spacing: 0px 4px">
+                        <!-- -------- RESPONSE TIME -------- -->
+                        <div class="boxRow">
+
+                            <div class="hboxItem adsFlowConfigFilterBoxLabel">
+
+                                <ad-checkbox id="backendFilterResponseTimeEnabled"
+                                             selected="controller.backendFilterResponseTimeEnabled"
+                                             sv-model="controller.backendFilterResponseTimeEnabled"
+                                             label="{{controller.getString('ms_responseTime')}}"
+                                        />
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.backendResponseTimeFilterOperator"
+                                           ng-disabled="!controller.backendFilterResponseTimeEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.backendResponseTimeFilterOperator"
+                                           ng-disabled="!controller.backendFilterResponseTimeEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input min-value="0"
+                                                     width="64"
+                                                     enabled="{{controller.backendFilterResponseTimeEnabled}}"
+                                                     value="controller.backendResponseTimeFilterValue"
+                                            />
+                                </div>
+                            </div>
+                            <span class="hboxItem ads-vertical-align" style="padding-left: 4px">
+                                {{controller.getString("ms_ms")}}
+                            </span>
+
+                        </div>
+
+                        <!-- -------- CALLS / MIN  -------- -->
+                        <div class="boxRow" style="padding-bottom: 8px">
+
+                            <div class="hboxItem ads-vertical-align adsFlowConfigFilterBoxLabel">
+
+                                <ad-checkbox id="backendFilterCallsPerMinEnabled"
+                                             selected="controller.backendFilterCallsPerMinEnabled"
+                                             sv-model="controller.backendFilterCallsPerMinEnabled"
+                                             label="{{controller.getString('ms_callsPerMinute')}}"
+                                        />
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom"  >
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.backendCallsMinFilterOperator"
+                                           ng-disabled="!controller.backendFilterCallsPerMinEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.backendCallsMinFilterOperator"
+                                           ng-disabled="!controller.backendFilterCallsPerMinEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input style="width: 40px; max-width:40px;"
+                                           min-value="0"
+                                           width="64"
+                                           enabled="{{controller.backendFilterCallsPerMinEnabled}}"
+                                           value="controller.backendCallsMinFilterValue"
+                                            />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- -------- Errors / MIN  -------- -->
+                        <div class="boxRow" style="padding-bottom: 8px">
+
+                            <div class="hboxItem ads-vertical-align adsFlowConfigFilterBoxLabel">
+
+                                <ad-checkbox id="backendFilterErrorsPerMinEnabled"
+                                             selected="controller.backendFilterErrorsPerMinEnabled"
+                                             sv-model="controller.backendFilterErrorsPerMinEnabled"
+                                             label="{{controller.getString('ms_errorsPerMinute')}}"
+                                        />
+                            </div>
+
+                            <div class="hboxItem adsBoxRowItemBottom">
+                                <div class="btn-group">
+                                    <label class="btn btn-primary" ng-model="controller.backendErrorsMinFilterOperator"
+                                           ng-disabled="!controller.backendFilterErrorsPerMinEnabled"
+                                           btn-radio="'GREATER_THAN'" uncheckable>&gt;</label>
+                                    <label class="btn btn-primary" ng-model="controller.backendErrorsMinFilterOperator"
+                                           ng-disabled="!controller.backendFilterErrorsPerMinEnabled"
+                                           btn-radio="'LESS_THAN'" uncheckable>&lt;</label>
+                                </div>
+                            </div>
+
+                            <div class="hboxItem ads-vertical-align">
+                                <div class="adsFlowFilterValueInputBox">
+                                    <ad-number-input style="width: 40px; max-width:40px;"
+                                           min-value="0"
+                                           width="64"
+                                           enabled="{{controller.backendFilterErrorsPerMinEnabled}}"
+                                           value="controller.backendErrorsMinFilterValue" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- -------- Specific Backends / Grouping UI -------- -->
+
+                <div style="padding-top: 8px; padding-bottom: 8px; width: 100%;" class="ads-display-table" >
+                    <div class="ads-display-table-cell ads-vertical-align">
+                        {{controller.getString("ms_flowmapBackendConfig")}}
+                    </div>
+                    <div ad-search-box ng-model="controller.backendsGridOptions.filterString"
+                         class="pull-right">
+                    </div>
+
+                </div>
+
+                <div style="height: 180px; width: 100%;" >
+                    <ad-grid style="width: 100%;"
+                             grid-options="controller.backendsGridOptions">
+                    </ad-grid>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- -------- BUTTONS AT BOTTOM-------- -->
+        <div style="min-height: 36px; padding-top: 12px;">
+
+            <div class="pull-right">
+
+                <button class="ads-button"
+                        ng-click="controller.onCancel()">{{controller.getString("ms_cancel")}}</button>
+
+                <button class="ads-button"
+                        ng-click="controller.onApplyFilters()"
+                        style="margin-left: 12px">{{controller.getString("ms_apply")}}</button>
+
+                <button class="ads-button"
+                        ng-click="controller.onSave()"
+                        style="margin-left: 12px">{{controller.getString("ms_save")}}</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+

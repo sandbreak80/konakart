@@ -1,0 +1,15 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminPromotionSearchResult">
+    <promSearch>
+      <name></name>
+      <nameRule>4</nameRule>
+      <orderTotalCodeRule>4</orderTotalCodeRule>
+      <orderBy>ORDER_BY_DATE_ADDED_DESCENDING</orderBy>
+      <id>-1</id>
+    </promSearch>
+    <promotions/>
+    <offset>0</offset>
+    <maxGroupSize>4</maxGroupSize>
+    <totalSetSize>0</totalSetSize>
+  </result>
+</GWTResponse>

@@ -1,0 +1,14 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminCurrency">
+    <id>1</id>
+    <title>US $</title>
+    <code>USD</code>
+    <symbolLeft>$</symbolLeft>
+    <symbolRight></symbolRight>
+    <decimalPoint>.</decimalPoint>
+    <thousandsPoint>,</thousandsPoint>
+    <decimalPlaces>2</decimalPlaces>
+    <value>1.0</value>
+    <setAsDefault>false</setAsDefault>
+  </result>
+</GWTResponse>

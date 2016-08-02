@@ -1,0 +1,73 @@
+<div class="adsInlineBlock"> <!-- inline this this is basically like an image added and the end of stuff -->
+
+    <!-- info popup -->
+    <div ng-if="controller.showInfoIcon">
+
+        <!-- drop down target  -->
+        <div class="adsInlineBlock"
+             ad-drop-down-toggle
+             ad-close-mode="clickOutside"
+             ad-in-place="false"
+             ad-new-compile-mode="true"
+             ad-fit-to-screen="true"
+             ad-direction="{{adDirection}}"
+             ad-top-offset="{{adTopOffset}}"
+             ad-close-invoke-function="controller.closePopup"
+                >
+            <a href class="ads-info-icon"
+               ng-if="!adLinkText"
+                    ></a>
+
+            <a href class="adsInlineBlock"
+               ng-if="adLinkText">{{adLinkText}}</a>
+        </div>
+
+        <!-- POPOVER CONTENT -->
+        <div class="ads-fly-out-container ads-info-and-help-container ads-drop-shadow-info-popover"
+             ng-class="{'ads-info-message-width' : controller.showMessage}"
+                >
+
+
+            <!-- top row -->
+            <div>
+                <div class="pull-left ads-info-and-help-container-title"
+                     ng-show="adInfoTitle"
+                     style="padding-bottom: 8px;"
+                        >
+                    {{adInfoTitle}}
+                </div>
+
+                <div class="pull-right" ng-click="controller.closePopup()">
+                    <div class="hboxItem ads-close-button"></div>
+                </div>
+
+                <div class="clearfix" />
+            </div>
+
+
+            <!-- content -->
+            <div ng-if="controller.showMessage" style="white-space: normal; overflow-y:scroll; max-height:400px"
+                 ng-bind-html="adInfoMessage">
+            </div>
+
+            <div ng-if="!controller.showMessage" style="white-space: normal;">
+                 <div ng-include="adInfoPage"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- link  -->
+    <div ng-if="controller.showLink">
+
+        <a ng-href="{{controller.linkUrl}}" target="_blank"
+           ng-show="controller.showLinkText">{{adLinkText}}</a>
+
+        <a class="ads-help-icon adsInlineBlock" ng-href="{{controller.linkUrl}}" target="_blank"
+           ng-show="controller.showLinkIcon"></a>
+
+    </div>
+
+</div>

@@ -1,0 +1,154 @@
+<div class="sty-login-view">
+    <!--[if IE]>
+        <style type="text/css">
+            .adsLoginInput {
+                cursor: default;
+            }
+        </style>
+    <![endif]-->
+    <div class="sty-login-view" id="loginFormContainer">
+        <div class="loginSpacers">
+
+            <table class="loginTable">
+                <tbody>
+                <tr>
+                    <td>
+
+                        <div class="adsLoginTableInner">
+
+                            <table>
+
+                                <tbody>
+                                <tr>
+
+                                    <td>
+
+                                        <div>
+                                            <img id="adLogo" src="images/logo/AppDynamicsLogo_white.svg"/>
+                                        </div>
+
+                                        <div style="height: 36px" /> <!-- spacer -->
+
+                                        <form name="loginForm" ad-auto-fill-fix method="post"
+                                              ng-submit="handleSubmit()">
+
+                                            <!-- Account -->
+                                            <div ng-show="isAccountEnabled">
+                                                <div>
+                                                    <div class="ads-login-label-ie9"
+                                                         ng-if="isIE9orLess">
+                                                        {{getString("ms_account")}}
+                                                    </div>
+                                                    <input ng-disabled="loggingIn"
+                                                           id="accountNameInput"
+                                                           type="text" ng-model="accountName"
+                                                           ng-required="true"
+                                                           ng-change="handleAccountChange()" size="25"
+                                                           class="adsLoginInput"
+                                                           placeholder="{{getString('ms_account')}}"/>
+                                                </div>
+                                            </div>
+
+                                            <!-- Username -->
+                                            <div ng-hide="isSAMLLoginEnabled()">
+                                                <div class="ads-login-label-ie9"
+                                                     ng-if="isIE9orLess">
+                                                    {{getString("ms_usernamePlaceholder")}}
+                                                </div>
+                                                <input ng-disabled="loggingIn"
+                                                       id="userNameInput"
+                                                       type="text" ng-model="userName"
+                                                       ng-required="!isSAMLLoginEnabled()" size="25"
+                                                       class="adsLoginInput"
+                                                       placeholder="{{getString('ms_usernamePlaceholder')}}" />
+                                            </div>
+
+                                            <!-- SAML message -->
+                                            <div ng-show="isSAMLLoginEnabled()">
+                                                <div id="thirdPartyAuthenticationMessage" style="width: 270px; padding-top: 12px; padding-bottom: 12px">
+                                                    {{getString("ms_thirdPartyAuthenticationMessage")}}
+                                                </div>
+                                            </div>
+
+                                            <!-- password -->
+                                            <div ng-hide="isSAMLLoginEnabled()">
+                                                <div class="ads-login-label-ie9"
+                                                     ng-if="isIE9orLess">
+                                                    {{getString('ms_password')}}
+                                                </div>
+                                                <input id="passwordInput"
+                                                       ng-disabled="loggingIn"
+                                                       type="password"
+                                                       ng-model="password"
+                                                       ng-required="!isSAMLLoginEnabled()" size="25"
+                                                       class="adsLoginInput"
+                                                       placeholder="{{getString('ms_password')}}"
+                                                       autocomplete="off"
+                                                        />
+                                            </div>
+
+                                            <!-- Button -->
+                                            <div style="padding-top: 12px;">
+                                                <input id="submitInput"
+                                                       class="ads-button-white-transparent adsButtonRound"
+                                                       type="submit"
+                                                       ng-disabled="loggingIn"
+                                                       size="25" value="Login"
+                                                       style="width:270px; height: 40px; font-size: 14px;"
+                                                        >
+                                            </div>
+
+                                            <div style="width:270px">
+
+                                                <!-- force local login when saml enabled -->
+                                                <div ng-show="isSAMLLoginEnabled()" style="float:left; padding-top: 16px;">
+                                                    <a href ng-click="onForceLocalLogin()" class="adsLink">{{getString("ms_useLocalLogin")}}</a>
+                                                </div>
+
+                                                <!-- forgot password -->
+                                                <div style="float:right; padding-top: 16px;">
+                                                    <a href ng-click="handleForgotPassword()" class="adsLink">{{getString("ms_forgotPassword")}}</a>
+                                                </div>
+
+                                                <!-- remember me -->
+                                                <div ng-hide="isSAMLLoginEnabled()" class="ads-login-remember-me">
+                                                        <ad-checkbox ng-disabled="loggingIn"
+                                                                     label="{{getString('ms_rememberMe')}}"
+                                                                     selected="rememberUserName">
+                                                        </ad-checkbox>
+                                                </div>
+                                            </div>
+
+                                            <!-- error message -->
+                                            <div class='ng-cloak' id="loginMessageTableData" style="padding-top: 24px; ">
+                                                <label class='ng-cloak ads-login-error-message' id="loginErrorLabel">{{loginError}}</label>
+                                                <label class='ng-cloak ads-login-message'>{{loginMessage}}</label>
+                                            </div>
+
+                                        </form>
+
+                                    </td>
+
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </td>
+
+
+                </tr>
+                </tbody>
+            </table>
+
+
+            <div class="buildVersion">
+                <span>{{buildVersion}}</span>
+            </div>
+        </div>
+    </div>
+</div>

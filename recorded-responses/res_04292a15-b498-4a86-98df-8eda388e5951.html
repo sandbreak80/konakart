@@ -1,0 +1,103 @@
+<div class="ads-left-nav2-directive-root-container">
+
+
+    <!-- ============================== NAV_ITEM_SEARCH_ANALYZE  ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;" ng-if="controller.adqlEnabled">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickSearchList()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SEARCH_LIST'}"
+             tooltip="{{controller.minimized ?  getString('ms_analyticsSearchesListLeftNavItem') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+            >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/log_analytics_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/log_analytics_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_analyticsSearchesListLeftNavItem")}}
+            </div>
+
+        </div>
+    </div>
+
+    <!--- spacer and horizontal line -->
+    <div class="ads-left-nav-horizontal-line-seprarator" />
+
+    <!-- ============================== OLD Search and Analyze ============================= -->
+
+    <div class="ads-display-table ads-left-nav-minor-item hoverable"
+         ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SEARCH_ANALYZE'}"
+         style="width: 100%;"
+         ng-click="controller.onClickSearchAndAnalyze()"
+         tooltip="{{controller.minimized ?  getString('ms_analyticsSearchAndAnalyzeLeftNavItem') : null}}"
+         tooltip-placement="right"
+         tooltip-append-to-body="true"
+         ng-if="controller.showOldAnalytics"
+        >
+        <div class="ads-display-table-row"
+            >
+            <div class="ads-display-table-cell ads-left-nav-minor-item-icon-box"
+                 ng-show="controller.minimized"
+                >
+                <img src="images/leftNav/log_analytics_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/log_analytics_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <div class="ads-display-table-cell ads-left-nav-minor-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_analyticsSearchAndAnalyzeLeftNavItem")}} (old)
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== Metrics ============================= -->
+
+    <div class="ads-display-table ads-left-nav-minor-item hoverable"
+         ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_METRICS'}"
+         style="width: 100%;"
+         ng-if="controller.showMetricConfig"
+         ng-click="controller.onClickMetrics()"
+         tooltip="{{controller.minimized ?  getString('ms_analyticsMetricsNavItemLabel') : null}}"
+         tooltip-placement="right"
+         tooltip-append-to-body="true"
+            >
+        <div class="ads-display-table-row"
+                >
+            <div class="ads-display-table-cell ads-left-nav-minor-item-icon-box"
+                 ng-show="controller.minimized"
+                    >
+                <img src="images/leftNav/metric_browser_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/metric_browser_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <div class="ads-display-table-cell ads-left-nav-minor-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_analyticsMetricsNavItemLabel")}}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================== Alerts, Configuration ============================= -->
+
+
+    <!-- ------------------------------ Alert & Respond ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/AlertRespondEntry.html'"></div>
+
+    <!-- ------------------------------ Metric Browser ------------------------------ -->
+    <!--<div ng-include="'app/view/leftMenuBar/leftNavEntry/MetricBrowserEntry.html'"></div>-->
+
+    <!-- ------------------------------ Config ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/ConfigEntry.html'"></div>
+
+</div>

@@ -1,0 +1,78 @@
+"use strict";
+define(["require", "exports", "../query/where/conditions/ADQLComplexCondition", "../query/where/operators/ADQLBooleanOperator", "../../../../components/filterBar/filters/Adql/AdqlFilterSet"], function (require, exports, ADQLComplexCondition, ADQLBooleanOperator, AdqlFilterSet) {
+    var ADQLClientFilterUtil = (function () {
+        function ADQLClientFilterUtil() {
+        }
+        ADQLClientFilterUtil.isValidFieldsForFilterSet = function (analyticsFields) {
+            var fullPaths = _.pluck(analyticsFields, "fullPath");
+            var uniq = _.uniq(fullPaths);
+            var containsBothTierAndNode = _.contains(uniq, "segments.tier") && _.contains(uniq, "segments.node");
+            var containsTimestamp = _.contains(uniq, "eventTimestamp");
+            var isInvalid = containsBothTierAndNode || containsTimestamp;
+            return !isInvalid;
+        };
+        ADQLClientFilterUtil.isAComplexOrCondition = function (adqlCondition, analyticsFields) {
+            if (adqlCondition instanceof ADQLComplexCondition) {
+                var complexCondition = adqlCondition;
+                if (complexCondition.getOperator().toString() === ADQLBooleanOperator.OR.toString()) {
+                    if (Util.isDefAndNotEmptyArray(analyticsFields) && (analyticsFields.length === 1)) {
+                        var analyticsField = analyticsFields[0];
+                        var filterType = AdqlFilterSet.getFilterTypeForFieldDefinition(analyticsField.fieldDefinition);
+                        if ((filterType === FilterType.DEVICE_TYPE) || (filterType === FilterType.SEARCH_INPUT_TEXT) || (filterType === FilterType.NUMERIC) || (filterType === FilterType.APPLICATION) || (filterType === FilterType.BOOLEAN) || (filterType === FilterType.SYNTHETIC_JOB)) {
+                            return true;
+                        }
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        };
+        ADQLClientFilterUtil.generateCondition = function (filterSet) {
+            var queryConditions = [];
+            _.forEach(filterSet.filters, function (filter) {
+                var condition = filter.getADQLCondition();
+                if (condition) {
+                    queryConditions.push(condition);
+                }
+            });
+            if (queryConditions.length > 1) {
+                return this.generateComplexCondition(queryConditions, ADQLBooleanOperator.AND);
+            }
+            else {
+                return queryConditions[0];
+            }
+        };
+        ADQLClientFilterUtil.generateWhereClause = function (filterSet) {
+            var queryConditions = [];
+            var delimiter = " AND ";
+            _.forEach(filterSet.filters, function (filter) {
+                var condition = filter.getADQLCondition();
+                if (condition) {
+                    queryConditions.push(condition);
+                }
+            });
+            if (queryConditions.length > 0) {
+                return queryConditions.join(delimiter);
+            }
+            return "";
+        };
+        ADQLClientFilterUtil.generateComplexCondition = function (queryConditions, operator) {
+            var complexCondition = null;
+            var i = 0;
+            while (i < queryConditions.length) {
+                if (Util.isUndefOrNull(complexCondition)) {
+                    complexCondition = new ADQLComplexCondition(queryConditions[i], operator, queryConditions[i + 1]);
+                    i = i + 2;
+                }
+                else {
+                    complexCondition = new ADQLComplexCondition(complexCondition, operator, queryConditions[i]);
+                    i = i + 1;
+                }
+            }
+            return complexCondition;
+        };
+        return ADQLClientFilterUtil;
+    })();
+    return ADQLClientFilterUtil;
+});

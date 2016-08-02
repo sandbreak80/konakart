@@ -1,0 +1,274 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_KKConfiguration-array">
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>1</configurationId>
+      <configurationTitle>Store Name</configurationTitle>
+      <configurationKey>STORE_NAME</configurationKey>
+      <configurationValue>KonaKart</configurationValue>
+      <configurationDescription>The name of my store</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>1</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>2</configurationId>
+      <configurationTitle>Store Owner</configurationTitle>
+      <configurationKey>STORE_OWNER</configurationKey>
+      <configurationValue>Kenny Kart</configurationValue>
+      <configurationDescription>The name of my store owner</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>2</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>3</configurationId>
+      <configurationTitle>E-Mail Address</configurationTitle>
+      <configurationKey>STORE_OWNER_EMAIL_ADDRESS</configurationKey>
+      <configurationValue>admin@konakart.com</configurationValue>
+      <configurationDescription>The e-mail address of my store owner</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>3</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>5</configurationId>
+      <configurationTitle>Country</configurationTitle>
+      <configurationKey>STORE_COUNTRY</configurationKey>
+      <configurationValue>223</configurationValue>
+      <configurationDescription>The country my store is located in</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>6</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <useFunction>tep_get_country_name</useFunction>
+      <setFunction>tep_cfg_pull_down_country_list(</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>6</configurationId>
+      <configurationTitle>Zone</configurationTitle>
+      <configurationKey>STORE_ZONE</configurationKey>
+      <configurationValue>18</configurationValue>
+      <configurationDescription>The zone my store is located in</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>7</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <useFunction>tep_cfg_get_zone_name</useFunction>
+      <setFunction>tep_cfg_pull_down_zone_list(</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>274</configurationId>
+      <configurationTitle>Enable KonaKart Content</configurationTitle>
+      <configurationKey>ENABLE_KONAKART_CONTENT</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>When set to true, KonaKart Content is enabled</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>10</sortOrder>
+      <dateAdded>2016-07-15 11:27:59.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>7</configurationId>
+      <configurationTitle>Show Category Counts</configurationTitle>
+      <configurationKey>SHOW_COUNTS</configurationKey>
+      <configurationValue>true</configurationValue>
+      <configurationDescription>Count recursively how many products are in each category</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>19</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>8</configurationId>
+      <configurationTitle>Display Prices with Tax</configurationTitle>
+      <configurationKey>DISPLAY_PRICE_WITH_TAX</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>Display prices with tax included (true) or add the tax at the end (false)</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>21</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>99</configurationId>
+      <configurationTitle>Display Coupon Entry Field</configurationTitle>
+      <configurationKey>DISPLAY_COUPON_ENTRY</configurationKey>
+      <configurationValue>true</configurationValue>
+      <configurationDescription>During checkout the customer will be allowed to enter a coupon if set to true</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>22</sortOrder>
+      <dateAdded>2016-07-15 11:27:49.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>190</configurationId>
+      <configurationTitle>Display Gift Cert Entry Field</configurationTitle>
+      <configurationKey>DISPLAY_GIFT_CERT_ENTRY</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>During checkout the customer will be allowed to enter a gift certificate if set to true</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>22</sortOrder>
+      <dateAdded>2016-07-15 11:27:55.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>105</configurationId>
+      <configurationTitle>Enables Checkout Without Registration</configurationTitle>
+      <configurationKey>ALLOW_CHECKOUT_WITHOUT_REGISTRATION</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>This allows checkout without registration</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>24</sortOrder>
+      <dateAdded>2016-07-15 11:27:49.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>166</configurationId>
+      <configurationTitle>Enable Wish List functionality</configurationTitle>
+      <configurationKey>ENABLE_WISHLIST</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>When set to true, wish list functionality is enabled in the application</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>24</sortOrder>
+      <dateAdded>2016-07-15 11:27:54.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>160</configurationId>
+      <configurationTitle>Store Base URL</configurationTitle>
+      <configurationKey>KK_BASE_URL</configurationKey>
+      <configurationValue>http://localhost:8780/konakart/</configurationValue>
+      <configurationDescription>KonaKart Base URL</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>25</sortOrder>
+      <dateAdded>2016-07-15 11:27:50.0 PDT</dateAdded>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>206</configurationId>
+      <configurationTitle>Allow Wish List when not logged in</configurationTitle>
+      <configurationKey>ALLOW_WISHLIST_WHEN_NOT_LOGGED_IN</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>Allow wish list functionality to be available for customers that have not logged in</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>25</sortOrder>
+      <dateAdded>2016-07-15 11:27:55.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>169</configurationId>
+      <configurationTitle>KonaKart Installation Home</configurationTitle>
+      <configurationKey>INSTALLATION_HOME</configurationKey>
+      <configurationValue>/usr/local/konakart/</configurationValue>
+      <configurationDescription>The home directory of this KonaKart Installation</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>26</sortOrder>
+      <dateAdded>2016-07-15 11:27:54.0 PDT</dateAdded>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>174</configurationId>
+      <configurationTitle>Enable Gift Registry functionality</configurationTitle>
+      <configurationKey>ENABLE_GIFT_REGISTRY</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>When set to true, gift registry functionality is enabled in the application</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>26</sortOrder>
+      <dateAdded>2016-07-15 11:27:54.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>229</configurationId>
+      <configurationTitle>Use Country Names in Msg Cat</configurationTitle>
+      <configurationKey>USE_MSG_CAT_FOR_COUNTRY_NAMES</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>Use the Country Names in the Message Catalogues</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>29</sortOrder>
+      <dateAdded>2016-07-15 11:27:56.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>234</configurationId>
+      <configurationTitle>How to format the URLs for SEO</configurationTitle>
+      <configurationKey>SEO_URL_FORMAT</configurationKey>
+      <configurationValue>2</configurationValue>
+      <configurationDescription>Decide the format of the URLs for SEO</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>30</sortOrder>
+      <dateAdded>2016-07-15 11:27:56.0 PDT</dateAdded>
+      <setFunction>option(0=OFF,1=SEO Parameters,2=SEO Directory Structure)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>247</configurationId>
+      <configurationTitle>Use Slider for price filter</configurationTitle>
+      <configurationKey>PRICE_FACETS_SLIDER</configurationKey>
+      <configurationValue>true</configurationValue>
+      <configurationDescription>When false, price facets are displayed instead of a slider for filtering a result set by price.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>31</sortOrder>
+      <dateAdded>2016-07-15 11:27:57.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>254</configurationId>
+      <configurationTitle>Enable multi-vendor mode</configurationTitle>
+      <configurationKey>MULTI_VENDOR_MODE</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>Set to true to enable multi-vendor mode. KK Engine must be in shared products mode.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>35</sortOrder>
+      <dateAdded>2016-07-15 11:27:58.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>256</configurationId>
+      <configurationTitle>Storefront force login</configurationTitle>
+      <configurationKey>APP_FORCE_LOOGIN</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>Set to true to force customers to login in order to be able to use the storefront application.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>38</sortOrder>
+      <dateAdded>2016-07-15 11:27:58.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+  </result>
+</GWTResponse>

@@ -1,0 +1,24 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminManufacturerSearchResult">
+    <search>
+      <id>-1</id>
+      <nameRule>4</nameRule>
+      <custom1Rule>4</custom1Rule>
+      <custom2Rule>4</custom2Rule>
+      <custom3Rule>4</custom3Rule>
+      <custom4Rule>4</custom4Rule>
+      <custom5Rule>4</custom5Rule>
+    </search>
+    <manufacturers>
+      <com.konakartadmin.client.app.GWT__AdminManufacturer>
+        <id>15</id>
+        <name>Acctim</name>
+        <image>manufacturer/acctim.jpg</image>
+        <urlClicked>0</urlClicked>
+      </com.konakartadmin.client.app.GWT__AdminManufacturer>
+    </manufacturers>
+    <offset>0</offset>
+    <maxGroupSize>1</maxGroupSize>
+    <totalSetSize>25</totalSetSize>
+  </result>
+</GWTResponse>

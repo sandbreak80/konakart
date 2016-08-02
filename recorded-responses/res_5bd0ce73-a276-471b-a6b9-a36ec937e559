@@ -1,0 +1,42 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./ADQLConditionBase"], function (require, exports, ADQLConditionBase) {
+    var ADQLBetweenCondition = (function (_super) {
+        __extends(ADQLBetweenCondition, _super);
+        function ADQLBetweenCondition(fieldName, value) {
+            _super.call(this, false);
+            this.fieldName = fieldName;
+            this.value = value;
+        }
+        ADQLBetweenCondition.prototype.getFieldName = function () {
+            return this.fieldName;
+        };
+        ADQLBetweenCondition.prototype.getValue = function () {
+            return this.value;
+        };
+        ADQLBetweenCondition.prototype.toString = function () {
+            var str = [this.fieldName, ADQLBetweenCondition.BETWEEN, this.value];
+            this.conditionAsString = str.join(" ");
+            return _super.prototype.toString.call(this);
+        };
+        ADQLBetweenCondition.isInstance = function (conditionAsString) {
+            var validRegExp = new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLBetweenCondition.OPERATOR_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLBetweenCondition.VALUE_PATTERN, 'i');
+            return !!validRegExp.test(conditionAsString);
+        };
+        ADQLBetweenCondition.getInstance = function (conditionAsString) {
+            var fieldName = conditionAsString.match(new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN + '\\b', 'i'))[0];
+            var value = StringUtils.getStringBetweenTokens(conditionAsString.match(new RegExp(ADQLBetweenCondition.VALUE_PATTERN, 'i'))[0], '[', ']');
+            return new ADQLBetweenCondition(fieldName, value);
+        };
+        ADQLBetweenCondition.BETWEEN = "BETWEEN";
+        ADQLBetweenCondition.OPERATOR_PATTERN = "BETWEEN";
+        ADQLBetweenCondition.VALUE_PATTERN = "([\\[\\(]\\s*\\d+\\s*,\\s*\\d+\\s*[\\]\\)])";
+        return ADQLBetweenCondition;
+    })(ADQLConditionBase);
+    return ADQLBetweenCondition;
+});

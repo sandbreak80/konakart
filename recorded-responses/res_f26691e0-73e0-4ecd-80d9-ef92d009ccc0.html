@@ -1,0 +1,72 @@
+<div class="ads-left-nav2-directive-root-container">
+
+    <!-- ============================== DB  List  ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickDBList()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_DB_LIST'}"
+             tooltip="{{controller.minimized ?  getString('ms_navItemDatabaseList') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/db_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/db_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_navItemDatabaseList")}}
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ============================== Events ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickEvents()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EVENTS'}"
+             tooltip="{{controller.minimized ?  getString('ms_events') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/events_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/events_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_events")}}
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--- spacer and horizontal line -->
+    <div class="ads-left-nav-horizontal-line-seprarator" />
+
+
+    <!-- ------------------------------ Alert & Respond ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/AlertRespondEntry.html'"></div>
+
+    <!-- ------------------------------ Metric Browser ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/MetricBrowserEntry.html'"></div>
+
+    <!-- ------------------------------ Config ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/ConfigEntry.html'"></div>
+
+</div>

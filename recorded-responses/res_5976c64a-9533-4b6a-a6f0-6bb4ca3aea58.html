@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en" dir="ltr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="robots" content="noindex">
+<title>Login - Adminer</title>
+<link rel="stylesheet" type="text/css" href="../adminer/static/default.css">
+<script type="text/javascript">
+var areYouSure = 'Resend POST data?';
+</script>
+<script type="text/javascript" src="../adminer/static/functions.js"></script>
+<script type="text/javascript" src="static/editing.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="../adminer/static/favicon.ico" id="favicon">
+
+<body class="ltr nojs" onclick="return bodyClick(event, '&#039;, &#039;');" onkeydown="bodyKeydown(event);" onload="bodyLoad(''); verifyVersion();">
+<script type="text/javascript">
+document.body.className = document.body.className.replace(/(^|\s)nojs(\s|$)/, '$1js$2');
+</script>
+
+<div id="content">
+<span id='loader'></span>
+<h2>Login</h2>
+<form action='' method='post' onclick='eventStop(event);'>
+<table cellspacing="0">
+<tr><th>System<td><select name='driver' onchange="loginDriver(this);"><option value="server" selected>MySQL</select><tr><th>Server<td><input name="server" value="localhost" title="hostname[:port]">
+<tr><th>Username<td><input id="username" name="username" value="">
+<tr><th>Password<td><input type="password" name="password">
+</table>
+<script type="text/javascript">
+var username = document.getElementById('username');
+username.focus();
+username.form['driver'].onchange();
+</script>
+<p><input type='submit' value='Login'>
+<label for='checkbox-1'><input type='checkbox' name='permanent' value='1' id='checkbox-1'>Permanent login</label>
+<div></div>
+</form>
+</div>
+
+<form action=''>
+<div id='lang'><input type="hidden" name="server" value="localhost">Language: <select name='lang' onchange="var loc = location.search.replace(/[?&amp;]lang=[^&amp;]*/, &#039;&#039;); location.search = loc + (loc ? &#039;&amp;&#039; : &#039;&#039;) + &#039;lang=&#039; + this.value;"><option value="en" selected>English<option value="cs">Čeština<option value="sk">Slovenčina<option value="nl">Nederlands<option value="es">Español<option value="de">Deutsch<option value="fr">Français<option value="it">Italiano<option value="et">Eesti<option value="hu">Magyar<option value="pl">Polski<option value="ca">Català<option value="pt">Português<option value="sl">Slovenski<option value="lt">Lietuvių<option value="tr">Türkçe<option value="ro">Limba Română<option value="ru">Русский язык<option value="zh">简体中文<option value="zh-tw">繁體中文<option value="ja">日本語<option value="ta">த‌மிழ்<option value="ar">العربية</select> <input type='submit' value='Use' class='hidden'>
+</div>
+</form>
+<div id="menu">
+<h1>
+<a href='http://www.adminer.org/' id='h1'>Adminer</a> <span class="version">3.3.3</span>
+
+</h1>
+</div>

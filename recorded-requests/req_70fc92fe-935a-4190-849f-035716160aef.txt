@@ -1,0 +1,10 @@
+GET https://www.appdynamics.com:443/versioncheck/proversioncheck.html?pid=/APP_DASHBOARD&account=customer1&email=admin@changeme.com HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Referer: http://192.168.1.246:8090/controller/
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: www.appdynamics.com
+Connection: Keep-Alive
+Cookie: csrftoken=9Yrmm8nRuFBGyRu396mgKlKE6IBk9yQZ; _mkto_trk=id:031-WIX-618&token:_mch-appdynamics.com-1469728948648-24643; ajs_user_id=null; ajs_group_id=null; ajs_anonymous_id=%2225ec5430-8283-4187-a494-41bda790f992%22; mp_9b02f4f775baa31809371509addd4a3b_mixpanel=%7B%22distinct_id%22%3A%20%2215632ac298d153-0e6287001c84a1-293e1d4e-1fa400-15632ac298e1be%22%2C%22%24initial_referrer%22%3A%20%22http%3A%2F%2F192.168.1.246%3A8090%2Fcontroller%2F%22%2C%22%24initial_referring_domain%22%3A%20%22192.168.1.246%3A8090%22%7D; mp_mixpanel__c=0; ADRUM=s=1469728962420&r=https%3A%2F%2Fwww.appdynamics.com%2Fversioncheck%2Fproversioncheck.html%3F1177514568
+

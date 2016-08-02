@@ -1,0 +1,9 @@
+GET http://192.168.1.246:8090/controller/images/locationBar/link_gray_20x20.png HTTP/1.1
+Accept: image/png, image/svg+xml, image/jxr, image/*;q=0.8, */*;q=0.5
+Referer: http://192.168.1.246:8090/controller/
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.246:8090
+Cookie: X-CSRF-TOKEN=79857ed042e367bf486b5ae050cb3b146041eddc; JSESSIONID=2abdf7e5ace14c135518d3de6e17
+

@@ -1,0 +1,16 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminConfigData-array">
+    <com.konakartadmin.client.app.GWT__AdminConfigData>
+      <id>2</id>
+      <key>VERSION</key>
+      <value>8.1.0.0 MySQL</value>
+      <dateAdded>2016-07-15 11:28:05.0 PDT</dateAdded>
+    </com.konakartadmin.client.app.GWT__AdminConfigData>
+    <com.konakartadmin.client.app.GWT__AdminConfigData>
+      <id>1</id>
+      <key>HISTORY</key>
+      <value>8.1.0.0 I</value>
+      <dateAdded>2016-07-15 11:28:05.0 PDT</dateAdded>
+    </com.konakartadmin.client.app.GWT__AdminConfigData>
+  </result>
+</GWTResponse>

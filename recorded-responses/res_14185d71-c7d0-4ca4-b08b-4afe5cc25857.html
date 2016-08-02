@@ -1,0 +1,214 @@
+<div style="height: 52px;">
+
+    <!---------------------------- MAIN NAV BUTTON ---------------------------->
+
+    <div class="ads-main-nav-button-container hoverable  dropdown-toggleAD"
+         direction="onTop"
+         ad-left-offset="-1"
+         ad-top-offset="-1"
+         ng-click="controller.onClickZoneSwitcherButton()"
+         ng-show="controller.isZoneSwitcherMenuEnabled"
+            >
+
+        <div class="ads-display-table" style="height: 100%; width: 100%; ">
+
+            <div class="ads-display-table-row">
+
+                <div class="ads-display-table-cell ads-main-nav-hamburger-container" style="vertical-align: middle;">
+                    <img src="images/locationBar/hamburger_gray.svg" class="ads-main-nav-hamburger-icon" style="width: 24px; height: 24px;" />
+                    <img src="images/locationBar/hamburger_white.svg" class="ads-main-nav-hamburger-icon-hover" style="width: 24px; height: 24px;" />
+                </div>
+
+                <div class="ads-main-nav-button-text ads-display-table-cell" style="vertical-align: middle"
+                        ng-show="adShowLabel && !controller.navigationState.isLeftNavMinimized"
+                        >
+                    {{controller.navTopLevelZoneSwitcherLabel}}
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!---------------------------- MAIN NAV FLY OUT ---------------------------->
+
+    <div class="dropdown-menu adsLeftNavZoneSwitcherPopUp" style="overflow: auto; ">
+
+
+        <!-- zone label that goes "on top of" main nav button for newer style pop ups -->
+        <div class="adsLeftNavZoneSwitcherPopUpItem_zone" ng-mousedown="controller.onCurrentZoneLabelClick()">
+
+            <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                <img src="images/locationBar/hamburger_gray.svg" class="ads-main-menu-icon" style="width: 24px; height: 24px;" />
+                <img src="images/locationBar/hamburger_white.svg" class="ads-main-menu-icon-hover" style="width: 24px; height: 24px;" />
+            </div>
+
+            <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                {{controller.navTopLevelZoneSwitcherLabel}}
+            </div>
+        </div>
+
+
+        <div class="adsLeftNavZoneSwitcherPopUpLeftSideContainer">
+
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_home"
+                 ng-click="controller.onZoneSwitchHome()">
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/mainMenu/home_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/mainMenu/home_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    Home
+                </div>
+            </div>
+
+            <div class="ads-main-nav-horizontal-rule" />
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_apps"
+                 ng-click="controller.onZoneSwitchApplications()">
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/mainMenu/apm_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/mainMenu/apm_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    Applications
+                </div>
+
+            </div>
+
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem" ng-show="controller.showEum"
+                 ng-click="controller.onZoneSwitchEum()">
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/mainMenu/eum_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/mainMenu/eum_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    {{::getString("ms_eumTopLevelNavZoneLabel")}}
+                </div>
+            </div>
+
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_dbMon"
+                 ng-show="controller.mainNavConfig.showDatabaseMonitoring"
+                 ng-click="controller.onZoneSwitchDBMon()">
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/mainMenu/db_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/mainMenu/db_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    {{::getString("ms_dbMonTopLevelNavLabel")}}
+                </div>
+            </div>
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_serverMon" ng-show="controller.mainNavConfig.showSim"
+                 ng-click="controller.onZoneSwitchServerMonitoring()">
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/leftNav/machines_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/leftNav/machines_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    {{::getString("ms_serverMonTopLevelNavLabel")}}
+                </div>
+            </div>
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_analytics"
+                 ng-show="controller.mainNavConfig.showAnalytics"
+                 ng-click="controller.onZoneSwitchAnalytics()">
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/mainMenu/analytics_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/mainMenu/analytics_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    Analytics
+                </div>
+            </div>
+
+            <div class="ads-main-nav-horizontal-rule" />
+
+            <!-- ---------------- Dashboards & Reports ---------------- -->
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_customDash"
+                 ng-click="controller.onZoneSwitchDashboardsReports()">
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/leftNav/dashboard2_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/leftNav/dashboard2_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    {{::getString("ms_dashboardsAndRepordsTopLevelNavZone")}}
+                </div>
+            </div>
+
+            <!-- ---------------- Alert & Respond ---------------- -->
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_customDash"
+                 ng-click="controller.onZoneSwitchAlertRespond()">
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/leftNav/alert_and_respond_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/leftNav/alert_and_respond_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    {{::getString("ms_aletAndRespondTopLevelNavZoneLabel")}}
+                </div>
+            </div>
+
+            <!-- ---------------- Cloud Auto-Scaling ---------------- -->
+
+            <div class="ads-main-nav-horizontal-rule"
+                 ng-show="controller.mainNavConfig.showCloudAutoScaling"
+                    />
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_cloudAutoscaling"
+                 ng-show="controller.mainNavConfig.showCloudAutoScaling"
+                 ng-click="controller.onZoneSwitchCloudAutoScaling()">
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/mainMenu/cloudAutoScaling_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/mainMenu/cloudAutoScaling_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    Cloud Auto-Scaling
+                </div>
+            </div>
+
+            <!--  Removing settings...
+            <div class="ads-main-nav-horizontal-rule" />
+
+            <div class="adsLeftNavZoneSwitcherPopUpItem_settings"
+                 ng-click="controller.onZoneSwitchSettings()">
+                <div class="adsLeftNavZoneSwitcherPopUpItemIconContainer">
+                    <img src="images/mainMenu/settings_gray.svg" class="ads-main-menu-icon" />
+                    <img src="images/mainMenu/settings_white.svg" class="ads-main-menu-icon-hover" />
+                </div>
+
+                <div class="adsLeftNavZoneSwitcherPopUpItemLabelContainer">
+                    {{::getString("ms_settingsTopLevelNavLabel")}}
+                </div>
+            </div>
+            -->
+
+        </div>
+
+
+    </div>
+
+</div>
+

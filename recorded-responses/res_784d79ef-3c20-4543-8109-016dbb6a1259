@@ -1,0 +1,34 @@
+"use strict";
+define(["require", "exports", "app/view/analytics/adql/clientApi/AnalyticsADQLClientQueryService"], function (require, exports, AnalyticsADQLClientQueryService) {
+    var AnalyticsDataHelperService = (function () {
+        function AnalyticsDataHelperService($q, resourceManager) {
+            this.$q = $q;
+            this.resourceManager = resourceManager;
+            this.analyticsADQLClientQueryService = AnalyticsADQLClientQueryService.instance();
+            this.timeRangeService = TimeRangeService.instance();
+        }
+        AnalyticsDataHelperService.instance = function () {
+            return AngularUtil.getADInjector().get("analyticsDataHelperService");
+        };
+        AnalyticsDataHelperService.prototype.getCountOfDataSource = function (dataSource) {
+            var query = "SELECT count(*) FROM " + dataSource;
+            var requests = this.analyticsADQLClientQueryService.buildRequestsFromADQL([query], this.timeRangeService.getTimeRange());
+            return this.analyticsADQLClientQueryService.fetchResults(requests, true).then(function (result) {
+                if (result && result.response && result.response.length > 0) {
+                    var response = result.response[0];
+                    if (response.results.length > 0 && response.results[0].length > 0) {
+                        return [dataSource, ViewUtil.formatLargeNumber(StringUtils.parseStringAsNumber(response.results[0][0]), 1, 1000)];
+                    }
+                }
+                return [dataSource, 0];
+            });
+        };
+        AnalyticsDataHelperService.$inject = [
+            '$q',
+            'resourceManager'
+        ];
+        return AnalyticsDataHelperService;
+    })();
+    appdynamicsModule.service("analyticsDataHelperService", AnalyticsDataHelperService);
+    return AnalyticsDataHelperService;
+});

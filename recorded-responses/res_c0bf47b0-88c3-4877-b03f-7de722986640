@@ -1,0 +1,36 @@
+"use strict";
+define(["require", "exports", "../../util/ADQLClientStringUtil"], function (require, exports, ADQLClientStringUtil) {
+    var ADQLClientQuerySelect = (function () {
+        function ADQLClientQuerySelect(select, alias) {
+            this.select = select;
+            this.alias = alias;
+        }
+        ADQLClientQuerySelect.prototype.isValid = function () {
+            return true;
+        };
+        ADQLClientQuerySelect.prototype.toString = function () {
+            if (this.alias) {
+                return this.select + " " + ADQLClientQuerySelect.AS + " " + ADQLClientStringUtil.encloseInDoubleQuotes(this.alias);
+            }
+            return this.select;
+        };
+        ADQLClientQuerySelect.SELECT = "SELECT";
+        ADQLClientQuerySelect.AS = "AS";
+        ADQLClientQuerySelect.COUNT = "count";
+        ADQLClientQuerySelect.COUNT_DISTINCT = "distinctcount";
+        ADQLClientQuerySelect.SUM = "sum";
+        ADQLClientQuerySelect.AVG = "avg";
+        ADQLClientQuerySelect.MIN = "min";
+        ADQLClientQuerySelect.MAX = "max";
+        ADQLClientQuerySelect.RANGE = "range";
+        ADQLClientQuerySelect.SERIES = "series";
+        ADQLClientQuerySelect.STATS = "stats";
+        ADQLClientQuerySelect.PERCENTILE = "percentile";
+        ADQLClientQuerySelect.FUNNEL = "funnel";
+        ADQLClientQuerySelect.FUNCTIONS = [ADQLClientQuerySelect.COUNT, ADQLClientQuerySelect.COUNT_DISTINCT, ADQLClientQuerySelect.SUM, ADQLClientQuerySelect.AVG, ADQLClientQuerySelect.MIN, ADQLClientQuerySelect.MAX, ADQLClientQuerySelect.RANGE, ADQLClientQuerySelect.SERIES, ADQLClientQuerySelect.STATS, ADQLClientQuerySelect.PERCENTILE, ADQLClientQuerySelect.FUNNEL];
+        ADQLClientQuerySelect.ALL = "*";
+        ADQLClientQuerySelect.EVENT_TIMESTAMP = "eventTimestamp";
+        return ADQLClientQuerySelect;
+    })();
+    return ADQLClientQuerySelect;
+});

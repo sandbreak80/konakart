@@ -1,0 +1,10 @@
+<div class="adCheckbox"
+     ng-click="toggleSelected($event)">
+    <div class="adCheckboxRow" ad-selected-state="{{adSwapValue ? !selected : selected}}" ad-selected-partially="{{selectedPartially}}" ad-disabled-state="{{ngDisabled}}">
+        <div class="checkImg"/>
+        <span ng-if="adIconSrc != null" style="padding-left: 12px; padding-right: 4px">
+            <img ng-src="{{adIconSrc}}" ng-class="adIconClass"/>
+        </span>
+        <div class="adsCheckboxLabel" ng-if="label">{{label}}</div>
+    </div>
+</div>

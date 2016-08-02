@@ -1,0 +1,17 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminStore-array">
+    <com.konakartadmin.client.app.GWT__AdminStore>
+      <storeId>store1</storeId>
+      <storeName>Store 1</storeName>
+      <deleted>false</deleted>
+      <enabled>true</enabled>
+      <underMaintenance>false</underMaintenance>
+      <lastUpdated>2016-07-15 13:06:31.725 PDT</lastUpdated>
+      <dateAdded>2016-07-15 13:06:31.725 PDT</dateAdded>
+      <adminEmail></adminEmail>
+      <template>false</template>
+      <maxProducts>-1</maxProducts>
+      <local>true</local>
+    </com.konakartadmin.client.app.GWT__AdminStore>
+  </result>
+</GWTResponse>

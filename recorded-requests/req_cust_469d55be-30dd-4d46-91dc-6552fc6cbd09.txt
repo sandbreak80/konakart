@@ -1,0 +1,66 @@
+POST http://192.168.1.252:8780/konakartadmin/konakartadmin HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.5
+Content-Length: 624
+Content-Type: text/x-gwt-rpc; charset=utf-8
+Cookie: konakart.username=admin%40konakart.com; konakart.storeId=store1; konakart.storeName=Store%201; konakart.logLevel=WARNING; konakart.lastPanel=kk_panel_storeConfiguration
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Referer: http://192.168.1.252:8780/konakartadmin/#kk_panel_products
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+X-GWT-Module-Base: http://192.168.1.252:8780/konakartadmin/
+X-GWT-Permutation: 97CE410F10C6E8C8102ADB274BC59225
+Content-Length: 624
+
+<GWTRequest>
+  <service>com.konakartadmin.client.KKAdminGWTServiceIf</service>
+  <method>searchForProductsWithOptions</method>
+  <strongId>4F3F7CD5FDDBBD8C8F3E94920F660041</strongId>
+  <encoded>false</encoded>
+  <parameters>
+    <String>store1</String>
+    <String>8786ea8d903f1ef839d3011d12aa8047</String>
+    <com.konakartadmin.client.app.GWT__AdminDataDescriptor>
+      <offset>0</offset>
+      <limit>11</limit>
+      <orderBy>ORDER_BY_NAME_ASCENDING</orderBy>
+      <showInvisible>true</showInvisible>
+      <fillCustomAttrArray>false</fillCustomAttrArray>
+      <fillMiscItems>false</fillMiscItems>
+      <showInactive>true</showInactive>
+      <custom1Rule>0</custom1Rule>
+      <custom2Rule>0</custom2Rule>
+      <custom3Rule>0</custom3Rule>
+      <custom4Rule>0</custom4Rule>
+      <custom5Rule>0</custom5Rule>
+      <custom6Rule>0</custom6Rule>
+      <custom7Rule>0</custom7Rule>
+      <custom8Rule>0</custom8Rule>
+      <custom9Rule>0</custom9Rule>
+      <custom10Rule>0</custom10Rule>
+      <custom1IntRule>0</custom1IntRule>
+      <custom2IntRule>0</custom2IntRule>
+      <custom1DecRule>0</custom1DecRule>
+      <custom2DecRule>0</custom2DecRule>
+    </com.konakartadmin.client.app.GWT__AdminDataDescriptor>
+    <com.konakartadmin.client.app.GWT__AdminProductSearch>
+      <skuRule>4</skuRule>
+      <skuIgnoreCase>false</skuIgnoreCase>
+      <manufacturerId>-100</manufacturerId>
+      <categoryId>-100</categoryId>
+      <searchCategoryTree>true</searchCategoryTree>
+      <whereToSearch>0</whereToSearch>
+      <searchTextRule>4</searchTextRule>
+      <searchTextIgnoreCase>false</searchTextIgnoreCase>
+      <onlySpecials>false</onlySpecials>
+      <onlyProductsExpected>false</onlyProductsExpected>
+      <promotionId>-1</promotionId>
+      <paymentScheduleId>-1</paymentScheduleId>
+      <giftCertificates>false</giftCertificates>
+      <productType>-1</productType>
+    </com.konakartadmin.client.app.GWT__AdminProductSearch>
+    <int>1</int>
+    <null/>
+  </parameters>
+</GWTRequest>

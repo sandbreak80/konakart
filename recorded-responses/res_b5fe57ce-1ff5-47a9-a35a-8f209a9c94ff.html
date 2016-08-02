@@ -1,0 +1,733 @@
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+
+
+ 
+ 	
+    
+    
+    
+    
+    
+    
+		<html>
+			<head>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />
+				<title>KonaKart</title>
+				<meta name="keywords" content="KonaKart Java Shopping Cart eCommerce" />
+				<meta name="description" content="Powered by KonaKart Java Shopping Cart " />
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/jquery.selectboxit.css" />
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/font-awesome/css/font-awesome.css" />
+				<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700'  >		
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/jcarousel.css" />				
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/kk-style.css" />
+
+		 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+				<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>				
+				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.validate.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.json-2.3.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.tools.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.selectboxit.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-en.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-de.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-pt.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-es.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/ddpowerzoomer.js">
+				/***********************************************
+				* Image Power Zoomer- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+				* This notice MUST stay intact for legal use
+				* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+				***********************************************/
+				</script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.jcarousel.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.touchSwipe.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.cookie.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery-backward-timer.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/kk.js"></script>	
+				<script type="text/javascript" src="/konakart/script/kk.validation.js"></script>	
+				<script>
+				// Picture element HTML5 shiv
+				document.createElement( "picture" );
+				</script>
+				<script type="text/javascript" src="/konakart/script/picturefill-min.js"></script>							
+				
+				<base href="http://192.168.1.252:8780/konakart/"/>										
+				<!--- KonaKart v8.1.0.0.13129 -->
+			</head>
+			
+				<body id="catalog.showcartitems.page">
+			
+			<input type="hidden" value="null" id="kk_xsrf_token"/>
+	
+	<script language="JavaScript" type="text/javascript">
+		if (top.location != location) {
+					top.location.href = document.location.href ;
+			}
+				
+			// Set jquery validation messages
+			jQuery.validator.messages = {
+					state: 'Required field.',
+					country: 'Required field.',
+					required: 'Required field.',
+					creditcard: 'Please enter a valid credit card number.',
+					digits: 'Please enter only digits.',
+					maxlength: jQuery.validator.format('Please enter no more than {0} characters.'),
+					minlength: jQuery.validator.format('Please enter at least {0} characters.'),
+					expirydate: 'Please specify a valid expiry date in the format MMYY.',
+					email:	'Please enter a valid email address.',
+					url:	'Please enter a valid URL.',
+					number:	'Please enter a valid number.',
+ 					equalTo: 'The passwords do not match.'
+		};		 
+	</script>			
+	
+				
+
+
+
+
+
+
+
+
+
+
+		
+
+<script type="text/javascript">	
+$(function() {
+	$('#lang-select').selectBoxIt({
+		downArrowIcon: "selectboxit-down-arrow"
+    });	 
+
+	
+		
+	$('#currency-select').selectBoxIt({
+		downArrowIcon: "selectboxit-down-arrow"
+    });	
+	
+	
+    $('#open-search').click(function() {
+        $('#slide-out-search').slideToggle('fast');
+    });
+    $('#close-search').click(function() {
+        $('#slide-out-search').slideToggle('fast');
+    });
+    
+	
+
+});
+</script>
+
+<div id="top-bar-container">
+	<div id="slide-out-search">
+		 
+		 <div id="search">
+				
+				<form action="QuickSearch.action" id="quickSearchFormMobile" method="post">
+					<input type="hidden" value="null" name="xsrf_token"/>
+					<input type="hidden" value="true" name="searchInDesc"/>
+					<input type="text" id="search-input" class="rounded-corners-left" name="searchText">
+					<a id="search-button-mobile" class="rounded-corners-right" onclick="javascript:document.getElementById('quickSearchFormMobile').submit();">Search</a>
+				</form>	
+            
+
+			<a id="adv-search-link" href="AdvancedSearch.action">Advanced Search</a>
+		</div>
+		<span id="close-search" class="fa fa-times" title='Close'></span>
+	</div>
+  	<div id="top-bar">
+  		<div id="search-container">
+	  		<div id="top-bar-search" class="top-bar-menu-item">
+			  	<span id="open-search" class="fa fa-search top-bar-menu-icon" title="Search"></span> 
+			</div>
+		</div>
+		<div id="selections-container">
+			<div id="selections">
+		  		<div id="language-selector" class="top-bar-menu-item">
+		  			<form action="SetLocale.action" method="post">  
+		  				<input type="hidden" value="null" name="xsrf_token"/>
+						<select id="lang-select" name="locale"  onchange="submit()">
+							<option  value="en_GB" data-icon="flag flag-en-GB" selected="selected">English</option>
+							<option  value="de_DE" data-icon="flag flag-de-DE"  >Deutsch</option>
+							<option  value="es_ES" data-icon="flag flag-es-ES"  >Español</option>
+							<option  value="pt_BR" data-icon="flag flag-pt-BR"  >Português</option>
+						</select>
+					</form>									
+		  		</div>
+		  		<div id="currency-selector"  class="top-bar-menu-item">
+					<form action="SelectCurrency.action" method="post">  
+						<input type="hidden" value="null" name="xsrf_token"/>
+						<select id="currency-select" name="currencyCode"  onchange="submit()">
+							
+								
+								
+									<option  value="USD">US $</option>
+								
+							
+								
+								
+									<option  value="EUR">EUR €</option>
+								
+							
+						</select>
+					</form>										  			
+		  		</div>
+		  	</div>
+		  </div>
+		 <div id="options-container">
+	  		<div id="options">		
+
+	  			  		
+	  		<div id="my-account" class="top-bar-menu-item">
+	  			<span class="fa fa-user top-bar-menu-icon"><a href="LogIn.action" title='My Account'></a></span>  			
+		  		<span class="top-bar-menu-title"><a href="LogIn.action">My Account</a></span>
+	  			
+	  		</div>
+	  			
+			
+			<div id="shopping-cart" class="top-bar-menu-item">
+				<span class="fa fa-shopping-cart top-bar-menu-icon" title='Shopping Cart'><span id="basket-items">(1)
+				</span></span>  			
+		  		<span class="shopping-cart-title top-bar-menu-title">Shopping Cart<span id="basket-items"> (1)
+				</span></span>
+		  		
+		  		
+		  	
+		    <div id="shopping-cart-container">
+			  	<div id="shopping-cart-mouseover-shadow" class="slide-out-shadow"></div>
+			  	<div id="shopping-cart-contents" class="slide-out-contents shadow">
+					
+				  		<div id="shopping-cart-items">	
+								
+									
+											
+										<div class="shopping-cart-item">
+								  			<a href='SelectProd.action?prodId=21'><img src="/konakart/images/prod/C/4/9/4/C4941395-021B-4C97-B46C-A4491AD3D620_1_tiny.jpg" border="0" alt="SWAT 3: Close Quarters Battle" title=" SWAT 3: Close Quarters Battle "></a>
+								  			<a href='SelectProd.action?prodId=21' class="shopping-cart-item-title">SWAT 3: Close Quarters Battle</a>
+							  				
+								  			<div class="shopping-cart-item-price">
+									  			
+									  				$79.99
+									  			
+									  			&nbsp;Quantity:1					  			
+								  			</div>
+						  				</div>							
+									
+								
+					  	</div>
+					  	<div id="subtotal-and-checkout">
+					  		<div class="subtotal">
+					  			<div class="subtotal-label">Subtotal</div>
+					  			<div class="subtotal-amount">$79.99</div>
+					  			<div id="shopping-cart-checkout-button" class="button small-rounded-corners">Checkout</div>
+					  		</div>
+					  	</div>					
+									  		
+			  	</div>	
+			</div>
+			</div>
+		</div>
+		</div>
+  	</div>
+</div>  
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	<div id="cookie-container">
+		<div id="cookie-warning">
+				<span style="display:table-cell; vertical-align:top;">Cookies help us deliver the best experience on our website. By using our website, you agree to our use of cookies.</span>
+				<span style="display:table-cell; vertical-align:middle;"><div id="cookie-warn-button" class="button small-rounded-corners">Continue</div></span>
+		</div>
+	</div>
+
+
+<div id="header-container">
+	<div id="header">
+		<div id="logo">
+			
+			 
+
+			
+				
+				
+				
+				
+				
+			 
+			<a href="Welcom.action"><img id="logo-1"  
+			    src="/konakart/images/content/logo.png"
+			    alt="KonaKart logo"/></a>
+		</div>
+		<div id="search">
+				
+				<form action="QuickSearch.action" id="quickSearchForm" method="post">
+					<input type="hidden" value="null" name="xsrf_token"/>
+					<input type="hidden" value="true" name="searchInDesc"/>
+					<input type="text" id="search-input" class="rounded-corners-left" name="searchText">
+					<a id="search-button" class="rounded-corners-right" onclick="javascript:document.getElementById('quickSearchForm').submit();">Search</a>
+				</form>	
+            
+		</div>
+		<a id="adv-search-link" href="AdvancedSearch.action">Advanced Search</a>
+ 	</div>
+</div>
+	    		<div id="page-container">
+	    			<div id="page" class="home">
+						
+
+
+
+
+
+
+<div id="main-menu">
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=1' class="menu-item rounded-corners" style="width: auto;">Computer Peripherals</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=2' class="menu-item rounded-corners" style="width: auto;">Games</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=3' class="menu-item rounded-corners" style="width: auto;">DVD Movies</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=22' class="menu-item rounded-corners" style="width: auto;">Software</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=23' class="menu-item rounded-corners" style="width: auto;">Electronics</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=24' class="menu-item rounded-corners" style="width: auto;">Home & Garden</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=21' class="menu-item rounded-corners last-child" style="width: auto;">Gifts</a>
+						
+</div>
+
+						
+
+
+
+
+
+ <div id="breadcrumbs">
+	
+    	<span class="breadcrumb-item"><a href="Welcome.action">Home</a></span>
+													
+	
+    	 
+    	
+            
+			
+				<span class="breadcrumb-separator"></span>				
+				
+				
+				<span class="breadcrumb-item"><a href="ShowCartItems.action">Cart</a></span>
+					    												
+				    												
+	 	
+ </div>
+						
+						<div id="content" class="wide">
+							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+	function setGoToCheckout() {
+		document.getElementById('goToCheckout').value="true";
+		//alert(document.form1.goToCheckout.value);
+	}
+
+	function resetGoToCheckout() {
+		document.getElementById('goToCheckout').value="false";
+		//alert(document.form1.goToCheckout.value);
+	}
+	
+$(function() {	
+ 	    if ($("#form1").length) {
+ 			$("#form1").validate(validationRules);
+		    $("#form1 input[name='prodQty']").each(function() {
+		        $(this).rules("add", { required: true, digits: true, maxlength: 7 });
+		     }); 
+		}
+	
+		var qtyMap = {};
+		var couponCode=null;
+		var giftCertCode=null;
+		var rewardPoints=null;
+		
+		$('#couponCode').keydown(function() {
+			  var elem = $(this);
+			  var id = this.id;
+			  if (couponCode==null) {
+				  couponCode = elem.val();
+			  }
+		});
+		$('#couponCode').keyup(function() {
+			  var elem = $(this);
+			  var val = elem.valid();
+			  if (val==1 || elem.val()=="") {
+				  if (elem.val() != couponCode) {
+					  $('#couponCodeUpdate').show();
+				  }else{
+					  $('#couponCodeUpdate').hide();
+				  }
+			  } else {
+				  $('#couponCodeUpdate').hide();
+			  }
+		});
+		
+		$('#giftCertCode').keydown(function() {
+			  var elem = $(this);
+			  var id = this.id;
+			  if (giftCertCode==null) {
+				  giftCertCode = elem.val();
+			  }
+		});
+		$('#giftCertCode').keyup(function() {
+			  var elem = $(this);
+			  var val = elem.valid();
+			  if (val==1 || elem.val()=="") {
+				  if (elem.val() != giftCertCode) {
+					  $('#giftCertCodeUpdate').show();
+				  }else{
+					  $('#giftCertCodeUpdate').hide();
+				  }
+			  } else {
+				  $('#giftCertCodeUpdate').hide();
+			  }
+		});
+
+		$('#rewardPoints').keydown(function() {
+			  var elem = $(this);
+			  var id = this.id;
+			  if (rewardPoints==null) {
+				  rewardPoints = elem.val();
+			  }
+		});
+		$('#rewardPoints').keyup(function() {
+			  var elem = $(this);
+			  var val = elem.valid();
+			  if (val==1 || elem.val()=="") {
+				  if (elem.val() != rewardPoints) {
+					  $('#rewardPointsUpdate').show();
+				  }else{
+					  $('#rewardPointsUpdate').hide();
+				  }
+			  } else {
+				  $('#rewardPointsUpdate').hide();
+			  }
+		});
+		
+		$('.qty-input').keydown(function() {
+			  var elem = $(this);
+			  var id = this.id;
+			  if (qtyMap[id]==null) {
+				  qtyMap[id] = elem.val();
+			  }
+		});
+		$('.qty-input').keyup(function() {
+			  var elem = $(this);
+			  var id = this.id;
+			  var oldQty = qtyMap[id];
+			  var buttonId = 'b-'+(id).split('-')[1];
+			  var val = elem.valid();
+			  if (val==1) {
+				  if (elem.val() != oldQty) {
+					  $('#'+buttonId).show();
+				  }else{
+					  $('#'+buttonId).hide();
+				  }
+			  } else {
+				  $('#'+buttonId).hide();
+			  }
+		});
+		$('.update-button').click(function() {
+			  var elem = $(this);
+			  var id = this.id;
+			  var basketId = (id).split('-')[1];
+			  if (basketId == null) {
+				  document.getElementById('form1').submit();
+			  } else {
+				  var inputId = 'q-'+basketId;
+				  var qty =  $('#'+inputId).val();
+				  qtyMap[inputId] = qty;
+				  elem.hide();
+				  redirect(getURL("EditCartSubmit.action", new Array("action","q","id",basketId,"qty",qty)));
+			  }
+		});
+	});
+</script>
+   		<h1 id="page-title">Manage your Shopping Cart</h1>
+ 	    		<div id="checkout-area" class="content-area rounded-corners">
+	    			
+	    					    		    		
+							    		
+		    		<form action="EditCartSubmit.action" id="form1" method="post" class="form-section">
+		    			<input type="hidden" value="null" name="xsrf_token"/>
+						<input type="hidden" name="goToCheckout" id="goToCheckout" value="" />
+							
+	    				<table>
+	    					<thead>
+	    						<tr>
+	    							<td class="narrow-col">Item</td>
+	    							<td class="wide-col"></td>
+	    							
+	    							<td class="narrow-col right">Price</td>
+	    							<td class="narrow-col right">Total</td>
+	    							<td class="narrow-col center"></td>
+	    						</tr>
+	    					</thead>
+	    					<tbody>
+								
+									
+		    						<tr>
+		    							<td>
+		    								
+		    								<img class="product-image" src="/konakart/images/prod/C/4/9/4/C4941395-021B-4C97-B46C-A4491AD3D620_1_tiny.jpg" border="0" alt="SWAT 3: Close Quarters Battle" title="SWAT 3: Close Quarters Battle"/>
+		    							</td>
+		    							<td>		    								
+		    								<a href='SelectProd.action?prodId=21'  class="text-link">SWAT 3: Close Quarters Battle
+		    									
+											</a>
+											<input type="text" class="qty-input" name="prodQty" id="q-3" value="1">
+		    								<a id='b-3' class="update-button small-rounded-corners">Update</a>
+		    								<span class="validation-msg"></span>
+		    							</td>
+		    						
+				    												
+										
+				    						<td class="right">
+				    							
+				    								$79.99
+				    							
+				    						</td>
+											<td class="total-price right">$79.99</td>
+												    							
+		    							<td class="center"><a class="remove fa fa-times-circle" href='EditCartSubmit.action?action=r&id=3' title='Remove item'></a></td>
+		    					    </tr>
+								
+	    						<tr id="costs-and-promotions">
+	    							<td id="promotion-codes" colspan="2">
+		    							<div id="promotion-codes-container">
+									    	
+									    		<div class="promotion-codes-field">				
+													<label>Coupon Code</label>
+													<input type="text" name="couponCode" id="couponCode" value=""/>
+													<a id="couponCodeUpdate" class="update-button small-rounded-corners" onmouseover="resetGoToCheckout()">Update</a>
+													<span class="validation-msg"></span>
+												</div>
+											
+											
+											
+										</div>
+	    							</td>	    							
+	    							<td id="cost-overview" colspan="3">
+								    	
+											
+												<table>    									
+													
+														<tr>
+															
+															<td class="cost-overview-labels">
+																																
+																	Sub-Total:<br/>
+																
+															</td>
+															<td class="cost-overview-amounts right">
+																																
+																	$79.99<br/>
+																
+															</td>
+														</tr>		    																		
+													
+														<tr>
+															
+															<td class="cost-overview-labels">
+																																
+																	Flat Rate (Shipping):<br/>
+																
+															</td>
+															<td class="cost-overview-amounts right">
+																																
+																	$5.00<br/>
+																
+															</td>
+														</tr>		    																		
+													
+														<tr>
+															
+															<td class="cost-overview-labels">
+																																
+																	Total:<br/>
+																
+															</td>
+															<td class="cost-overview-amounts right">
+																																
+																	$84.99<br/>
+																
+															</td>
+														</tr>		    																		
+													
+		    									</table>										
+											
+										
+	    							</td>
+									<td></td>
+	    						</tr>	    						
+	    					</tbody>	    				
+	    				</table>
+						<div >
+							<a onmouseover="setGoToCheckout()" onclick="javascript:formValidate('form1', 'continue-button');" id="continue-button" class="button small-rounded-corners"><span>Checkout</span></a>						
+						</div>
+					</form>		
+					    	
+	    		</div>
+ 
+					 		 
+							
+							
+							
+							
+				    	</div>
+						
+
+
+
+
+
+
+<script>
+function onBlur(el) {
+    if (el.value == '') {
+        el.value = el.defaultValue;
+    }
+}
+function onFocus(el) {
+    if (el.value == el.defaultValue) {
+        el.value = '';
+    }
+}
+
+$(function() {
+	$("#newsletter-input").keydown(function (e){
+	    if(e.keyCode == 13){
+	    	submitNewsletterForm();
+	    }
+	});
+});		
+</script>
+
+
+<div id="kkfooter">
+    <div id="contact-info" class="footer-area narrow">
+    	KonaKart<br />
+		020 7946 0000<br />
+		<a href ="#">info@konakart.com</a>
+    </div>
+   	<div id="newsletter" class="footer-area wide">
+   		Subscribe to our Newsletter<br />
+ 		<input type="text" id="newsletter-input" class="rounded-corners-left" onblur="onBlur(this)" onfocus="onFocus(this)" value="Your Email">
+		<a id="newsletter-button" class="rounded-corners-right">Sign Up</a>
+		<div id="newsletter-msg"></div>
+   	</div>
+   	<div id="links-1" class="footer-area narrow">
+		<a href ="AboutUs.action">About Us</a><br />
+		<a href ="ShippingAndHandling.action">Shipping & Handling</a><br />
+		<a href ="Returns.action">Returns</a><br />
+		<a href ="InternationalOrders.action">International Orders</a><br />
+   	</div>
+   	<div id="links-2" class="footer-area narrow">
+		<a href ="PrivacyPolicy.action">Privacy Policy</a><br />
+		<a href ="TermsOfUse.action">Terms of use</a><br />
+		<a href ="Help.action">Help</a><br />
+		<a href ="ContactUs.action">Contact Us</a><br />
+   	</div>
+   	<div id="social" class="footer-area narrow last-child">
+		Connect with us<br />
+		<a href="http://www.twitter.com" target="_blank" class="fa fa-twitter-square"></a>
+		<a href="http://www.facebook.com" target="_blank" class="fa fa-facebook-square"></a>
+		<a href="http://www.pinterest.com" target="_blank" class="fa fa-pinterest-square"></a>
+   	</div>
+</div>
+		    		</div>
+	    		</div>
+				
+<div id="copyright-container">
+	<!-- Please leave the "Powered by KonaKart" link - it's a condition of the licence  -->
+	<div id="copyright">© 2014 KonaKart Store - Powered by <a href="http://www.konakart.com">KonaKart</a></div>
+</div>
+						
+				
+    
+			</body>
+		</html>
+	

@@ -1,0 +1,271 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminCustomerSearchResult">
+    <custSearch>
+      <id>-1</id>
+      <firstName></firstName>
+      <firstNameRule>4</firstNameRule>
+      <firstNameIgnoreCase>false</firstNameIgnoreCase>
+      <lastName></lastName>
+      <lastNameRule>4</lastNameRule>
+      <lastNameIgnoreCase>false</lastNameIgnoreCase>
+      <emailAddr></emailAddr>
+      <emailAddrRule>4</emailAddrRule>
+      <emailAddrIgnoreCase>false</emailAddrIgnoreCase>
+      <useWildCardsOnEmailAddr>true</useWildCardsOnEmailAddr>
+      <promotionId>-1</promotionId>
+      <enabled>-1</enabled>
+      <type>-1</type>
+      <newsletter>-1</newsletter>
+      <notifiedProductId>-1</notifiedProductId>
+      <groupId>-1</groupId>
+      <expressionId>-1</expressionId>
+      <streetAddres></streetAddres>
+      <postcode></postcode>
+      <city></city>
+      <streetAddresRule>4</streetAddresRule>
+      <streetAddressIgnoreCase>false</streetAddressIgnoreCase>
+      <streetAddres1Rule>4</streetAddres1Rule>
+      <streetAddress1IgnoreCase>false</streetAddress1IgnoreCase>
+      <postcodeRule>4</postcodeRule>
+      <postcodeIgnoreCase>false</postcodeIgnoreCase>
+      <cityRule>4</cityRule>
+      <cityIgnoreCase>false</cityIgnoreCase>
+      <showInvisible>false</showInvisible>
+      <emailVerified>-1</emailVerified>
+      <custom1Rule>4</custom1Rule>
+      <custom1IgnoreCase>false</custom1IgnoreCase>
+      <custom2Rule>4</custom2Rule>
+      <custom2IgnoreCase>false</custom2IgnoreCase>
+      <custom3Rule>4</custom3Rule>
+      <custom3IgnoreCase>false</custom3IgnoreCase>
+      <custom4Rule>4</custom4Rule>
+      <custom4IgnoreCase>false</custom4IgnoreCase>
+      <custom5Rule>4</custom5Rule>
+      <custom5IgnoreCase>false</custom5IgnoreCase>
+      <extReference1Rule>4</extReference1Rule>
+      <extReference2Rule>4</extReference2Rule>
+      <orderBy>ORDER_BY_LASTNAME_ASCENDING</orderBy>
+      <returnNonRegisteredCustomers>false</returnNonRegisteredCustomers>
+    </custSearch>
+    <customers>
+      <com.konakartadmin.client.app.GWT__AdminCustomer>
+        <id>2</id>
+        <gender>m</gender>
+        <firstName>Andy</firstName>
+        <lastName>Admin</lastName>
+        <birthDate>1977-01-01 12:06:27.552 PST</birthDate>
+        <emailAddr>admin@konakart.com</emailAddr>
+        <defaultAddr>
+          <id>2</id>
+          <customerId>2</customerId>
+          <manufacturerId>0</manufacturerId>
+          <company>ACME Inc.</company>
+          <streetAddress>1 Way Street</streetAddress>
+          <suburb></suburb>
+          <postcode>PostCode1</postcode>
+          <city>NeverNever</city>
+          <state>California</state>
+          <countryId>223</countryId>
+          <countryName>United States</countryName>
+          <zoneId>12</zoneId>
+          <addressFormatTemplate>$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country</addressFormatTemplate>
+          <addressSummaryTemplate>$city / $country</addressSummaryTemplate>
+          <isPrimary>true</isPrimary>
+          <defaultAddrId>0</defaultAddrId>
+        </defaultAddr>
+        <defaultAddrId>2</defaultAddrId>
+        <telephoneNumber>019081</telephoneNumber>
+        <faxNumber></faxNumber>
+        <password>f5147fc3f6eb46e234c01db939bdb581:08</password>
+        <newsletter>0</newsletter>
+        <lastLogon>2016-07-15 13:06:19.0 PDT</lastLogon>
+        <numberOfLogons>7</numberOfLogons>
+        <accountCreated>2016-07-15 11:27:49.0 PDT</accountCreated>
+        <accountLastModified>2016-07-15 12:31:20.0 PDT</accountLastModified>
+        <globalProdNotifier>0</globalProdNotifier>
+        <groupId>-1</groupId>
+        <invisible>0</invisible>
+        <emailVerified>false</emailVerified>
+        <promotionMaxUse>0</promotionMaxUse>
+        <promotionTimesUsed>0</promotionTimesUsed>
+        <type>1</type>
+        <enabled>true</enabled>
+      </com.konakartadmin.client.app.GWT__AdminCustomer>
+      <com.konakartadmin.client.app.GWT__AdminCustomer>
+        <id>3</id>
+        <gender>m</gender>
+        <firstName>Caty</firstName>
+        <lastName>Catalog</lastName>
+        <birthDate>1977-01-01 12:06:27.552 PST</birthDate>
+        <emailAddr>cat@konakart.com</emailAddr>
+        <defaultAddr>
+          <id>3</id>
+          <customerId>3</customerId>
+          <manufacturerId>0</manufacturerId>
+          <company>ACME Inc.</company>
+          <streetAddress>2 Way Street</streetAddress>
+          <suburb></suburb>
+          <postcode>PostCode2</postcode>
+          <city>NeverNever</city>
+          <state>California</state>
+          <countryId>223</countryId>
+          <countryName>United States</countryName>
+          <zoneId>12</zoneId>
+          <addressFormatTemplate>$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country</addressFormatTemplate>
+          <addressSummaryTemplate>$city / $country</addressSummaryTemplate>
+          <isPrimary>true</isPrimary>
+          <defaultAddrId>0</defaultAddrId>
+        </defaultAddr>
+        <defaultAddrId>3</defaultAddrId>
+        <telephoneNumber>019082</telephoneNumber>
+        <faxNumber></faxNumber>
+        <password>f5147fc3f6eb46e234c01db939bdb581:08</password>
+        <newsletter>0</newsletter>
+        <lastLogon>2016-07-15 11:27:49.0 PDT</lastLogon>
+        <numberOfLogons>0</numberOfLogons>
+        <accountCreated>2016-07-15 11:27:49.0 PDT</accountCreated>
+        <accountLastModified>2016-07-15 11:27:49.0 PDT</accountLastModified>
+        <globalProdNotifier>0</globalProdNotifier>
+        <groupId>-1</groupId>
+        <invisible>0</invisible>
+        <emailVerified>false</emailVerified>
+        <promotionMaxUse>0</promotionMaxUse>
+        <promotionTimesUsed>0</promotionTimesUsed>
+        <type>1</type>
+        <enabled>true</enabled>
+      </com.konakartadmin.client.app.GWT__AdminCustomer>
+      <com.konakartadmin.client.app.GWT__AdminCustomer>
+        <id>1</id>
+        <gender>m</gender>
+        <firstName>John</firstName>
+        <lastName>doe</lastName>
+        <birthDate>2001-01-01 12:06:27.552 PST</birthDate>
+        <emailAddr>doe@konakart.com</emailAddr>
+        <defaultAddr>
+          <id>1</id>
+          <customerId>1</customerId>
+          <manufacturerId>0</manufacturerId>
+          <company>ACME Inc.</company>
+          <streetAddress>1 Way Street</streetAddress>
+          <suburb></suburb>
+          <postcode>12345</postcode>
+          <city>NeverNever</city>
+          <state>California</state>
+          <countryId>223</countryId>
+          <countryName>United States</countryName>
+          <zoneId>12</zoneId>
+          <addressFormatTemplate>$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country</addressFormatTemplate>
+          <addressSummaryTemplate>$city / $country</addressSummaryTemplate>
+          <isPrimary>true</isPrimary>
+          <defaultAddrId>0</defaultAddrId>
+        </defaultAddr>
+        <defaultAddrId>1</defaultAddrId>
+        <telephoneNumber>12345</telephoneNumber>
+        <faxNumber></faxNumber>
+        <password>d95e8fa7f20a009372eb3477473fcd34:1c</password>
+        <newsletter>0</newsletter>
+        <lastLogon>2016-07-15 11:27:47.0 PDT</lastLogon>
+        <numberOfLogons>0</numberOfLogons>
+        <accountCreated>2016-07-15 11:27:47.0 PDT</accountCreated>
+        <accountLastModified>2016-07-15 11:27:47.0 PDT</accountLastModified>
+        <globalProdNotifier>0</globalProdNotifier>
+        <groupId>-1</groupId>
+        <invisible>0</invisible>
+        <emailVerified>false</emailVerified>
+        <promotionMaxUse>0</promotionMaxUse>
+        <promotionTimesUsed>0</promotionTimesUsed>
+        <type>3</type>
+        <enabled>true</enabled>
+      </com.konakartadmin.client.app.GWT__AdminCustomer>
+      <com.konakartadmin.client.app.GWT__AdminCustomer>
+        <id>5</id>
+        <gender>m</gender>
+        <firstName>Order</firstName>
+        <lastName>Followup</lastName>
+        <birthDate>1977-01-01 12:06:27.553 PST</birthDate>
+        <emailAddr>order.followup@konakart.com</emailAddr>
+        <defaultAddr>
+          <id>5</id>
+          <customerId>5</customerId>
+          <manufacturerId>0</manufacturerId>
+          <company>KonaKart Ltd.</company>
+          <streetAddress>4 Way Street</streetAddress>
+          <suburb></suburb>
+          <postcode>PostCode4</postcode>
+          <city>NeverNever</city>
+          <state>California</state>
+          <countryId>223</countryId>
+          <countryName>United States</countryName>
+          <zoneId>12</zoneId>
+          <addressFormatTemplate>$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country</addressFormatTemplate>
+          <addressSummaryTemplate>$city / $country</addressSummaryTemplate>
+          <isPrimary>true</isPrimary>
+          <defaultAddrId>0</defaultAddrId>
+        </defaultAddr>
+        <defaultAddrId>5</defaultAddrId>
+        <telephoneNumber>019084</telephoneNumber>
+        <faxNumber></faxNumber>
+        <password>f5147fc3f6eb46e234c01db939bdb581:08</password>
+        <newsletter>0</newsletter>
+        <lastLogon>2016-07-15 11:28:05.0 PDT</lastLogon>
+        <numberOfLogons>0</numberOfLogons>
+        <accountCreated>2016-07-15 11:28:05.0 PDT</accountCreated>
+        <accountLastModified>2016-07-15 11:28:05.0 PDT</accountLastModified>
+        <globalProdNotifier>0</globalProdNotifier>
+        <groupId>-1</groupId>
+        <invisible>0</invisible>
+        <emailVerified>false</emailVerified>
+        <promotionMaxUse>0</promotionMaxUse>
+        <promotionTimesUsed>0</promotionTimesUsed>
+        <type>1</type>
+        <enabled>true</enabled>
+      </com.konakartadmin.client.app.GWT__AdminCustomer>
+      <com.konakartadmin.client.app.GWT__AdminCustomer>
+        <id>4</id>
+        <gender>m</gender>
+        <firstName>Olly</firstName>
+        <lastName>Order</lastName>
+        <birthDate>1977-01-01 12:06:27.553 PST</birthDate>
+        <emailAddr>order@konakart.com</emailAddr>
+        <defaultAddr>
+          <id>4</id>
+          <customerId>4</customerId>
+          <manufacturerId>0</manufacturerId>
+          <company>ACME Inc.</company>
+          <streetAddress>3 Way Street</streetAddress>
+          <suburb></suburb>
+          <postcode>PostCode3</postcode>
+          <city>NeverNever</city>
+          <state>California</state>
+          <countryId>223</countryId>
+          <countryName>United States</countryName>
+          <zoneId>12</zoneId>
+          <addressFormatTemplate>$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country</addressFormatTemplate>
+          <addressSummaryTemplate>$city / $country</addressSummaryTemplate>
+          <isPrimary>true</isPrimary>
+          <defaultAddrId>0</defaultAddrId>
+        </defaultAddr>
+        <defaultAddrId>4</defaultAddrId>
+        <telephoneNumber>019083</telephoneNumber>
+        <faxNumber></faxNumber>
+        <password>f5147fc3f6eb46e234c01db939bdb581:08</password>
+        <newsletter>0</newsletter>
+        <lastLogon>2016-07-15 11:27:49.0 PDT</lastLogon>
+        <numberOfLogons>0</numberOfLogons>
+        <accountCreated>2016-07-15 11:27:49.0 PDT</accountCreated>
+        <accountLastModified>2016-07-15 11:27:49.0 PDT</accountLastModified>
+        <globalProdNotifier>0</globalProdNotifier>
+        <groupId>-1</groupId>
+        <invisible>0</invisible>
+        <emailVerified>false</emailVerified>
+        <promotionMaxUse>0</promotionMaxUse>
+        <promotionTimesUsed>0</promotionTimesUsed>
+        <type>1</type>
+        <enabled>true</enabled>
+      </com.konakartadmin.client.app.GWT__AdminCustomer>
+    </customers>
+    <offset>0</offset>
+    <maxGroupSize>12</maxGroupSize>
+    <totalSetSize>5</totalSetSize>
+  </result>
+</GWTResponse>

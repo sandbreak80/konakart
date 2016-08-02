@@ -1,0 +1,91 @@
+<div class="ads-display-table">
+
+    <div class="ads-display-table-row">
+
+        <div class="ads-display-table-cell ads-vertical-align">
+
+            <button class="ads-button ads-button-less-horiz-padding ads-display-table hoverable"
+                    ad-drop-down-toggle
+                    ad-in-place="false"
+                    ad-close-mode="clickOutside"
+                    ad-multi-click-enabled="true"
+                    ad-new-compile-mode="true"
+                    ad-debug="true"
+                    ad-dropdown-open="controller.dropdownOpen"
+                    ad-close-invoke-function="controller.closeDropDownFunction"
+                    ng-disabled="adDisabled"
+                    >
+
+                <div class="ads-display-table-row">
+
+                    <!-- setting a max width on this for long app / mobile app names -->
+                    <div style="padding-right: 12px; padding-left: 6px; white-space: nowrap; max-width: 260px; text-overflow: ellipsis; overflow: hidden;"
+                         class="ads-display-table-cell"
+                            ng-if="controller.buttonLabel"
+                            >
+                        {{controller.buttonLabel}}
+                    </div>
+
+                    <div class="ads-display-table-cell" ng-if="!adDisabled">
+                        <img src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions"/>
+                    </div>
+                </div>
+
+            </button>
+
+            <!-- ============== Fly out ============== -->
+            <div class="ads-fly-out-container">
+
+
+                <div style="width: 340px; ">
+
+                    <!-- search box -->
+                    <div>
+
+                        <div class="pull-right"
+                             style="padding-top: 8px; padding-bottom: 12px; padding-right: 8px; "
+                                >
+                            <div ad-search-box ng-model="entitySearchString" class="pull-right"/>
+                        </div>
+
+
+                        <div class="pull-right" style="padding-right: 12px; padding-top: 8px;">
+                            <div class="ads-ui-action-icon-button" ng-click="controller.onRefreshEntities()">
+                                <img src="images/locationBar/refresh_gray.svg" style="width: 18px; height: 18px; ">
+                            </div>
+                        </div>
+
+                        <div class="clearfix"/>
+
+                    </div>
+
+                    <div style="overflow-y: auto; max-height: 400px; padding-bottom: 12px;">
+
+                        <!-- ============== Tiers ============== -->
+                        <div>
+
+                            <div ng-repeat="entity in controller.entities | filter:entitySearchString track by $index"
+                                 class="ads-menu-item"
+                                 ng-click="controller.onClickEntity(entity)"
+                                 ng-class="{'selected' : entity.id == controller.selectedEntity.id}"
+                                    >
+                                {{entity.name}}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,37 @@
+"use strict";
+define(["require", "exports", "../../../adql/widgets/WidgetUtils", "./select/ADQLClientQuerySelect", "./from/ADQLClientQueryFrom", "./select/functions/ADQLFunctionBase", "../util/ADQLClientStringUtil"], function (require, exports, WidgetUtils, ADQLClientQuerySelect, ADQLClientQueryFrom, ADQLFunctionBase, ADQLClientStringUtil) {
+    var ADQLClientQueryBuilder = (function () {
+        function ADQLClientQueryBuilder() {
+        }
+        ADQLClientQueryBuilder.buildSelect = function (field, alias) {
+            var asAlias = " " + ADQLClientQuerySelect.AS + " " + ADQLClientStringUtil.encloseInDoubleQuotes(alias);
+            return field + (alias ? asAlias : "");
+        };
+        ADQLClientQueryBuilder.buildSelectFunction = function (functionName, args, alias) {
+            if (functionName === WidgetUtils.COUNT_DISTINCT) {
+                functionName = ADQLClientQuerySelect.COUNT_DISTINCT;
+            }
+            var func = new ADQLFunctionBase(functionName.toLowerCase(), args);
+            if (alias) {
+                if (alias.indexOf('"') === -1) {
+                    alias = ADQLClientStringUtil.encloseInDoubleQuotes(alias);
+                }
+                var asAlias = " " + ADQLClientQuerySelect.AS + " " + (alias);
+                return func.toString() + asAlias;
+            }
+            return func.toString();
+        };
+        ADQLClientQueryBuilder.buildFrom = function (dataSource, alias) {
+            var asAlias = " " + ADQLClientQueryFrom.AS + " " + ADQLClientStringUtil.encloseInDoubleQuotes(alias);
+            return dataSource + (alias ? asAlias : "");
+        };
+        ADQLClientQueryBuilder.buildWhere = function (value, operator, field) {
+            if (operator && field) {
+                return field + " " + operator + " " + ADQLClientStringUtil.encloseInSingleQuotes(value);
+            }
+            return value;
+        };
+        return ADQLClientQueryBuilder;
+    })();
+    return ADQLClientQueryBuilder;
+});

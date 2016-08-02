@@ -1,0 +1,124 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/2/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAEA-C30B-77D1-61EF-90D4681514D5</clientId>
+        <messageId>71B5CAF6-F80C-39F4-8548-FDC3C08EE89A</messageId>
+        <timestamp>1469728964275</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="object-array">
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Application">
+            <template tagClass="boolean">false</template>
+            <undeployWorkflowId tagClass="double">0.0</undeployWorkflowId>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <visualization/>
+            <environmentProperties tagClass="object-array"/>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description/>
+            <eumAppName/>
+            <version tagClass="int">1</version>
+            <createdOn tagClass="Date">2016-06-23 10:14:22.273 PDT</createdOn>
+            <applicationTypeInfo/>
+            <running tagClass="boolean">false</running>
+            <deployWorkflowId tagClass="double">0.0</deployWorkflowId>
+            <modifiedOn tagClass="Date">2016-06-23 10:14:22.273 PDT</modifiedOn>
+            <createdBy tagClass="String">root</createdBy>
+            <name tagClass="String">Database Monitoring</name>
+            <modifiedBy tagClass="String">root</modifiedBy>
+            <id tagClass="double">1.0</id>
+            <runningSince/>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Application">
+            <template tagClass="boolean">false</template>
+            <undeployWorkflowId tagClass="double">0.0</undeployWorkflowId>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <visualization/>
+            <environmentProperties tagClass="object-array"/>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description/>
+            <eumAppName/>
+            <version tagClass="int">1</version>
+            <createdOn tagClass="Date">2016-06-23 10:14:29.270 PDT</createdOn>
+            <applicationTypeInfo/>
+            <running tagClass="boolean">false</running>
+            <deployWorkflowId tagClass="double">0.0</deployWorkflowId>
+            <modifiedOn tagClass="Date">2016-06-23 10:14:29.270 PDT</modifiedOn>
+            <createdBy tagClass="String">root</createdBy>
+            <name tagClass="String">AppDynamics Analytics-2</name>
+            <modifiedBy tagClass="String">root</modifiedBy>
+            <id tagClass="double">2.0</id>
+            <runningSince/>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Application">
+            <template tagClass="boolean">false</template>
+            <undeployWorkflowId tagClass="double">0.0</undeployWorkflowId>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <visualization/>
+            <environmentProperties tagClass="object-array"/>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description/>
+            <eumAppName/>
+            <version tagClass="int">1</version>
+            <createdOn tagClass="Date">2016-06-23 10:14:36.408 PDT</createdOn>
+            <applicationTypeInfo/>
+            <running tagClass="boolean">false</running>
+            <deployWorkflowId tagClass="double">0.0</deployWorkflowId>
+            <modifiedOn tagClass="Date">2016-06-23 10:14:36.408 PDT</modifiedOn>
+            <createdBy tagClass="String">root</createdBy>
+            <name tagClass="String">Server &amp; Infrastructure Monitoring</name>
+            <modifiedBy tagClass="String">root</modifiedBy>
+            <id tagClass="double">3.0</id>
+            <runningSince/>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Application">
+            <template tagClass="boolean">false</template>
+            <undeployWorkflowId tagClass="double">0.0</undeployWorkflowId>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <visualization/>
+            <environmentProperties tagClass="object-array"/>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description/>
+            <eumAppName/>
+            <version tagClass="int">1</version>
+            <createdOn tagClass="Date">2016-07-10 17:47:59.272 PDT</createdOn>
+            <applicationTypeInfo/>
+            <running tagClass="boolean">false</running>
+            <deployWorkflowId tagClass="double">0.0</deployWorkflowId>
+            <modifiedOn tagClass="Date">2016-07-10 17:47:59.272 PDT</modifiedOn>
+            <createdBy tagClass="String">singularity-agent</createdBy>
+            <name tagClass="String">Tomcat_Turnkey</name>
+            <modifiedBy tagClass="String">singularity-agent</modifiedBy>
+            <id tagClass="double">6.0</id>
+            <runningSince/>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Application">
+            <template tagClass="boolean">false</template>
+            <undeployWorkflowId tagClass="double">0.0</undeployWorkflowId>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <visualization/>
+            <environmentProperties tagClass="object-array"/>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description/>
+            <eumAppName/>
+            <version tagClass="int">1</version>
+            <createdOn tagClass="Date">2016-07-15 11:58:36.96 PDT</createdOn>
+            <applicationTypeInfo/>
+            <running tagClass="boolean">false</running>
+            <deployWorkflowId tagClass="double">0.0</deployWorkflowId>
+            <modifiedOn tagClass="Date">2016-07-15 11:58:36.96 PDT</modifiedOn>
+            <createdBy tagClass="String">singularity-agent</createdBy>
+            <name tagClass="String">KonaKart</name>
+            <modifiedBy tagClass="String">singularity-agent</modifiedBy>
+            <id tagClass="double">7.0</id>
+            <runningSince/>
+          </ASObject>
+        </body>
+        <correlationId>0C2B01C5-DAF2-A861-915F-32ABFA681167</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

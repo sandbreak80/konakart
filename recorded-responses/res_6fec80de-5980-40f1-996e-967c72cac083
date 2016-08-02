@@ -1,0 +1,21 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/1/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5C9E3-170A-45AE-65ED-731784CAA454</clientId>
+        <messageId>71B5C9E3-171F-4765-7F13-0587F3DC7D74</messageId>
+        <timestamp>1469728963758</timestamp>
+        <timeToLive>0</timeToLive>
+        <headers class="ASObject">
+          <DSMessagingVersion tagClass="double">1.0</DSMessagingVersion>
+          <DSId tagClass="String">71B5C6FA-761A-A524-5511-431F1597EFF3</DSId>
+        </headers>
+        <correlationId>4BFE6081-39FB-F1FC-590D-32ABFA8A7B6C</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

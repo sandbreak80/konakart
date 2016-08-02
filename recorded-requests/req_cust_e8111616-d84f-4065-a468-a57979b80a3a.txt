@@ -1,0 +1,44 @@
+POST http://192.168.1.246:8090/controller/messagebroker/amf HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Content-Length: 292
+Content-Type: application/x-amf
+Cookie: X-CSRF-TOKEN=79857ed042e367bf486b5ae050cb3b146041eddc; JSESSIONID=2abdf7e5ace14c135518d3de6e17
+Host: 192.168.1.246:8090
+Pragma: no-cache
+Referer: http://192.168.1.246:8090/controller/Main_20160603-170624.swf
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+x-flash-version: 22,0,0,209
+Content-Length: 292
+
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/2</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <destination>uIManager</destination>
+          <messageId>91BE1235-B82A-0268-47F3-32ABFA4EF2DD</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>getFlexInitData</operation>
+          <parameters/>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

@@ -1,0 +1,45 @@
+POST http://192.168.1.246:8090/controller/messagebroker/amf HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Content-Length: 244
+Content-Type: application/x-amf
+Cookie: X-CSRF-TOKEN=79857ed042e367bf486b5ae050cb3b146041eddc; JSESSIONID=2abdf7e5ace14c135518d3de6e17
+Host: 192.168.1.246:8090
+Pragma: no-cache
+Referer: http://192.168.1.246:8090/controller/Main_20160603-170624.swf
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+x-flash-version: 22,0,0,209
+Content-Length: 244
+
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/1</responseURI>
+      <data class="object-array">
+        <CommandMessage>
+          <destination></destination>
+          <messageId>1FEA36DD-5391-60C2-68F1-32ABF95DDEA3</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSMessagingVersion</String>
+              <int>1</int>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>nil</String>
+            </entry>
+          </headers>
+          <body class="ASObject"/>
+          <correlationId></correlationId>
+          <operation>5</operation>
+        </CommandMessage>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

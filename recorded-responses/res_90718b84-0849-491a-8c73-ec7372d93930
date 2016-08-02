@@ -1,0 +1,19 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./ADQLOperatorBase"], function (require, exports, ADQLOperatorBase) {
+    var ADQLUnaryOperator = (function (_super) {
+        __extends(ADQLUnaryOperator, _super);
+        function ADQLUnaryOperator(value) {
+            _super.call(this, value);
+        }
+        ADQLUnaryOperator.NOT = new ADQLUnaryOperator("!");
+        ADQLUnaryOperator.OPERATOR_PATTERN = "!";
+        return ADQLUnaryOperator;
+    })(ADQLOperatorBase);
+    return ADQLUnaryOperator;
+});

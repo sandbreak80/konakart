@@ -1,0 +1,13 @@
+POST http://192.168.1.252:8780/konakart/CustomerRegistrationSubmit.action HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Referer: http://192.168.1.252:8780/konakart/CustomerRegistration.action?forceReg=true
+Accept-Language: en-US,en;q=0.5
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Content-Length: 439
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Cookie: JSESSIONID=BC6567955CFC749D982F5D9E2F5EF0FB; CUSTOMER_UUID=58daf8e9-2b23-4a88-b88a-38f64ffd4e83; __atuvc=1%7C28; __atuvs=578947153eb368b0000
+
+xsrf_token=null&allowNoRegister=false&gender=m&firstName=fnamuser&lastName=lnameuser&birthDateString=10%2F07%2F1980&emailAddr=fnamuser@lnameuser.com&company=&taxId=&streetAddress=33897+Flora+Springs&streetAddress1=&suburb=&postcode=92592&city=Temecula&state=California&countryId=223&telephoneNumber=760-867-5309&telephoneNumber1=&faxNumber=&__checkbox_newsletterBool=true&password=pass123%21&passwordConfirmation=pass123%21&countryChange=0

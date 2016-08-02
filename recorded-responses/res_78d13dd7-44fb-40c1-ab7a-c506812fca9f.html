@@ -1,0 +1,178 @@
+<div class="ads-time-range-selector-container">
+
+    <button class="ads-time-range-selector-button ads-button ads-button-less-horiz-padding ads-display-table hoverable"
+            ad-drop-down-toggle
+            ad-close-mode="clickAny"
+            ad-in-place="false"
+            ad-fit-to-screen="true"
+            >
+
+        <div class="ads-display-table-row" ng-show="!controller.showDropDownIconOnly">
+
+            <!-- auto refresh indicator -->
+            <div class="ads-display-table-cell"
+                 ng-show="controller.timeRangeService.autoRefreshing" style="padding-right: 2px; padding-left: 2px;">
+                    <img src="images/auto_refresh_gray.svg" style="height: 18px; width: 18px;" />
+            </div>
+
+            <!-- time range display string -->
+            <div class="ads-display-table-cell ads-vertical-align ads-height-100percent">
+                <span class="ads-time-range-selector-text">{{controller.getTimeRangeDisplay(timeRange) | lowercase}}</span>
+            </div>
+
+            <!-- regular down arrow -->
+            <div class="ads-time-range-down-triangle ads-display-table-cell" style="padding-left: 8px; padding-right: 2px;">
+                <img src="images/triangles/triangle-gray-down.svg" style="width: 12px; height: 12px;"/>
+            </div>
+
+            <!-- open face down arrow (only for main title bar) -->
+            <div class="ads-time-range-down-open-triangle ads-display-table-cell" style="padding-left: 8px; padding-right: 2px;">
+                <img src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions"/>
+            </div>
+
+        </div>
+
+        <div class="ads-display-table-row" ng-show="controller.showDropDownIconOnly"
+                title="{{controller.getString('ms_selectDefaultOrCustomTimeRanges')}}">
+            <div class="ads-display-table-cell">
+                <img src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions"/>
+            </div>
+        </div>
+
+    </button>
+
+    <!-- ---------------- Drop Down / Flyout Content ---------------- -->
+    <div class="ads-fly-out-container" style="overflow: auto;">
+
+        <!-- Last minutes -->
+        <div class="ads-menu-item-horiz-padding ads-light-gray-text"
+             style="padding-top: 10px; padding-bottom: 4px; color: #a3a3a3"
+                ng-show="false">
+            LAST MINUTES
+        </div>
+        <div ng-repeat="timeRangeSelectorEntry in controller.beforeNowInMinutesTimeRanges track by $index"
+             class="ads-menu-item"
+             ng-class="{selected : timeRangeSelectorEntry.selected}"
+             ng-click="controller.onTimeRangeSelectorEntryClick(timeRangeSelectorEntry)"
+             title="{{timeRangeSelectorEntry.tooltip}}"
+                >
+            {{timeRangeSelectorEntry.displayName}}
+        </div>
+
+        <!-- Last hours -->
+        <div class="ads-border-top"></div>
+        <div class="ads-menu-item-horiz-padding ads-light-gray-text"
+             style="padding-top: 10px; padding-bottom: 4px; color: #a3a3a3"
+             ng-show="false">
+            LAST HOURS
+        </div>
+        <div ng-repeat="timeRangeSelectorEntry in controller.beforeNowInHoursTimeRanges track by $index"
+             class="ads-menu-item"
+             ng-class="{selected : timeRangeSelectorEntry.selected}"
+             ng-click="controller.onTimeRangeSelectorEntryClick(timeRangeSelectorEntry)"
+             title="{{timeRangeSelectorEntry.tooltip}}"
+                >
+            {{timeRangeSelectorEntry.displayName}}
+        </div>
+
+        <!-- Last DAYS -->
+
+        <div class="ads-border-top"></div>
+        <div class="ads-menu-item-horiz-padding ads-light-gray-text"
+             style="padding-top: 10px; padding-bottom: 4px; color: #a3a3a3"
+             ng-show="false">
+            LAST DAYS
+        </div>
+        <div ng-repeat="timeRangeSelectorEntry in controller.beforeNowInDaysTimeRanges track by $index"
+             class="ads-menu-item"
+             ng-class="{selected : timeRangeSelectorEntry.selected}"
+             ng-click="controller.onTimeRangeSelectorEntryClick(timeRangeSelectorEntry)"
+             title="{{timeRangeSelectorEntry.tooltip}}"
+                >
+            {{timeRangeSelectorEntry.displayName}}
+        </div>
+
+        <!-- Last Months -->
+
+        <div class="ads-border-top"></div>
+        <div class="ads-menu-item-horiz-padding ads-light-gray-text"
+             style="padding-top: 10px; padding-bottom: 4px; color: #a3a3a3"
+             ng-show="false">
+            LAST MONTHS
+        </div>
+        <div ng-repeat="timeRangeSelectorEntry in controller.beforeNowInMonthsTimeRanges track by $index"
+             class="ads-menu-item"
+             ng-class="{selected : timeRangeSelectorEntry.selected}"
+             ng-click="controller.onTimeRangeSelectorEntryClick(timeRangeSelectorEntry)"
+             title="{{timeRangeSelectorEntry.tooltip}}"
+                >
+            {{timeRangeSelectorEntry.displayName}}
+        </div>
+
+        <!-- Custom Time Ranges -->
+        <div ng-if="controller.customTimeRangesEnabled">
+
+            <!-- Manage Time Range -->
+            <div class="ads-menu-item ads-border-top"
+                 ng-click="controller.onCustomItemClick()"
+                    >
+                Custom
+            </div>
+
+            <div class="ads-border-top" ng-if="controller.customTimeRangeEntries.length > 0">
+
+                <div class="ads-menu-section-header">
+                    {{getString("ms_savedTimeRanges")}}
+                </div>
+
+                <div ng-repeat="timeRangeEntry in controller.customTimeRangeEntries track by $index"
+                     class="ads-menu-item"
+                     ng-class="{selected : timeRangeEntry.selected}"
+                     ng-click="controller.onTimeRangeSelectorEntryClick(timeRangeEntry)"
+                        >
+                    {{timeRangeEntry.displayName}}
+                </div>
+
+            </div>
+
+            <!-- Manage Time Range -->
+            <div class="ads-menu-item ads-border-top"
+                 ng-click="controller.onManageCustomTimeRanges()"
+                 ng-if="controller.showManageCustomTimeRange"
+                    >
+                {{getString("ms_manageCustomTimeRanges")}}
+            </div>
+
+
+            <!--- Auto-refresh mode -->
+            <div ng-if="adShowAutoRefresh">
+                <div class="ads-menu-item-horiz-padding ads-border-top"
+                     style="padding-top: 10px; padding-bottom: 10px;"
+                     ng-show="controller.isAutoRefreshAllowed"
+                        >
+                    <ad-checkbox label="Auto-Refresh every 2 minutes"
+                                 ad-selected-change="controller.onAutoRefreshChange(selected, adOptionalData)"
+                                 ad-optional-data="timeRange"
+                                 selected="controller.timeRangeService.autoRefreshMode"></ad-checkbox>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Reduced time range banner ad -->
+        <div ng-if="controller.showReducedTimeRangeBanner" class="ads-time-range-eval-banner">
+            <div style="padding-top: 8px; ">
+                {{getString("ms_timeRangeLimitedToTwentyFourHours")}}
+            </div>
+            <div style="padding-top: 8px; padding-bottom: 8px;">
+                <a target="_blank" href="ExternalUrls.BUY_NOW_PAGE"
+                        class="ads-time-range-eval-bannerUpgradeLink">{{getString("ms_upgradeToPro")}}</a>
+                <img style="padding-left:3px;" src="images/triangleRightWhiteFlexDefault.png">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

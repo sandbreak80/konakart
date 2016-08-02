@@ -1,0 +1,287 @@
+"use strict";
+define(["require", "exports"], function (require, exports) {
+    var WidgetUtils = (function () {
+        function WidgetUtils() {
+        }
+        WidgetUtils.isTimeSeriesWidget = function (widgetProperties) {
+            var isTimeSeriesWidget = false;
+            isTimeSeriesWidget = _.some(WidgetUtils.TIME_SERIES_WIDGET_TYPES, function (widgetType) {
+                if (widgetType === widgetProperties.type) {
+                    return true;
+                }
+            });
+            return isTimeSeriesWidget;
+        };
+        WidgetUtils.getSuperSelectOptionResourceName = function (value) {
+            var options = [].concat(WidgetUtils.NUMERIC_OPERATION_OPTIONS, WidgetUtils.NON_NUMERIC_OPERATION_OPTIONS, WidgetUtils.NUMERIC_XAXIS_OPERATION_OPTIONS);
+            var superSelect = _.findWhere(options, { value: value.toUpperCase() });
+            if (!superSelect) {
+                return value;
+            }
+            return superSelect.name;
+        };
+        WidgetUtils.isValidAnalyticsField = function (field) {
+            if (!field || !field.fullPath) {
+                return false;
+            }
+            return !(!field.fieldDefinition || !field.fieldDefinition.fieldName || !field.fieldDefinition.fieldType || !field.fieldDefinition.category);
+        };
+        WidgetUtils.getWidgetCategory = function (type) {
+            switch (type) {
+                case AnalyticsWidgetType.FUNNEL:
+                    return AnalyticsWidgetCategoryType.FUNNEL;
+                case AnalyticsWidgetType.COHORT:
+                    return AnalyticsWidgetCategoryType.COHORT;
+                case AnalyticsWidgetType.PERCENTILE:
+                    return AnalyticsWidgetCategoryType.PERCENTILE;
+                case AnalyticsWidgetType.STREAM:
+                    return AnalyticsWidgetCategoryType.STREAM;
+                default:
+                    return AnalyticsWidgetCategoryType.AXIS;
+            }
+        };
+        WidgetUtils.getPredefinedTransactionLiveStreamHighChartOptions = function () {
+            var chartOptions = {
+                series: [{
+                    type: 'scatter',
+                    id: RequestUserExperience.NORMAL,
+                    name: ResourceManager.instance().getString('ui', 'ms_normal'),
+                    color: AdColorPalette.COLOR_PALETTE_A20_GREEN,
+                    marker: {
+                        symbol: 'circle',
+                        radius: 4
+                    },
+                    visible: false,
+                    data: []
+                }, {
+                    type: 'scatter',
+                    id: RequestUserExperience.SLOW,
+                    name: ResourceManager.instance().getString('ui', 'ms_slow'),
+                    color: AdColorPalette.COLOR_PALETTE_A20_YELLOW,
+                    marker: {
+                        symbol: 'circle',
+                        radius: 4
+                    },
+                    data: []
+                }, {
+                    type: 'scatter',
+                    id: RequestUserExperience.VERY_SLOW,
+                    name: ResourceManager.instance().getString('ui', 'ms_verySlow'),
+                    color: AdColorPalette.COLOR_PALETTE_A20_ORANGE,
+                    marker: {
+                        symbol: 'circle',
+                        radius: 4
+                    },
+                    data: []
+                }, {
+                    type: 'scatter',
+                    id: RequestUserExperience.STALL,
+                    name: ResourceManager.instance().getString('ui', 'ms_stall'),
+                    color: AdColorPalette.COLOR_PALETTE_A20_PURPLE,
+                    marker: {
+                        symbol: 'circle',
+                        radius: 4
+                    },
+                    data: []
+                }, {
+                    type: 'scatter',
+                    id: RequestUserExperience.ERROR,
+                    name: ResourceManager.instance().getString('ui', 'ms_error'),
+                    color: AdColorPalette.COLOR_PALETTE_A20_RED,
+                    marker: {
+                        symbol: 'circle',
+                        radius: 4
+                    },
+                    data: []
+                }]
+            };
+            return chartOptions;
+        };
+        WidgetUtils.LOAD_MODE = "LOAD_MODE";
+        WidgetUtils.MEASUREMENT_MODE = "MEASUREMENT_MODE";
+        WidgetUtils.AVAILABILITY_MODE = "AVAILABILITY_MODE";
+        WidgetUtils.ROLLING_AVERAGE_MODE = "ROLLING_AVERAGE_MODE";
+        WidgetUtils.SYNTHETIC_JOB_MODE = "SYNTHETIC_JOB_MODE";
+        WidgetUtils.SYNTHETIC_AVAILABILITY_MODE = "SYNTHETIC_AVAILABILITY_MODE";
+        WidgetUtils.SYNTHETIC_ERROR_TYPES_MODE = "SYNTHETIC_ERROR_TYPES_MODE";
+        WidgetUtils.DURATION_MODE = "DURATION_MODE";
+        WidgetUtils.COUNT_MODE = "COUNT_MODE";
+        WidgetUtils.VALUE = "VALUE";
+        WidgetUtils.SUM = "SUM";
+        WidgetUtils.AVG = "AVG";
+        WidgetUtils.MIN = "MIN";
+        WidgetUtils.MAX = "MAX";
+        WidgetUtils.COUNT = "COUNT";
+        WidgetUtils.COUNT_DISTINCT = "COUNT_DISTINCT";
+        WidgetUtils.RANGE = "RANGE";
+        WidgetUtils.SERIES = "SERIES";
+        WidgetUtils.PERCENTILE = "PERCENTILE";
+        WidgetUtils.DEFAULT_PERCENTILE_VALUE = "90";
+        WidgetUtils.TIME_RESOLUTION_SECOND = "s";
+        WidgetUtils.TIME_RESOLUTION_MINUTE = "m";
+        WidgetUtils.TIME_RESOLUTION_HOUR = "h";
+        WidgetUtils.TIME_RESOLUTION_DAY = "d";
+        WidgetUtils.TIME_RESOLUTION_WEEK = "w";
+        WidgetUtils.TIME_RESOLUTION_DEFAULT = "AUTO";
+        WidgetUtils.TIME_RESOLUTION_AUTO_APPROX_BARS = 100;
+        WidgetUtils.OTHER = "OTHER";
+        WidgetUtils.AUTO = "AUTO";
+        WidgetUtils.FIXED = "FIXED";
+        WidgetUtils.BY_FIXED_NUMBER = "By Fixed Number";
+        WidgetUtils.BY_FIXED_INCREMENT = "By Fixed Increment";
+        WidgetUtils.MAX_RANGE_INTERVALS = 20;
+        WidgetUtils.MAX_FIELD_LIMIT = "100";
+        WidgetUtils.TIME_SERIES_WIDGET_TYPES = [
+            AnalyticsWidgetTypes.AREA,
+            AnalyticsWidgetTypes.LINE,
+            AnalyticsWidgetTypes.POINTS,
+            AnalyticsWidgetTypes.HISTOGRAM
+        ];
+        WidgetUtils.NUMERIC_OPERATION_OPTIONS = [
+            {
+                name: "ms_sumOp",
+                value: WidgetUtils.SUM
+            },
+            {
+                name: "ms_averageOp",
+                value: WidgetUtils.AVG
+            },
+            {
+                name: "ms_minimumOp",
+                value: WidgetUtils.MIN
+            },
+            {
+                name: "ms_maximumOp",
+                value: WidgetUtils.MAX
+            },
+            {
+                name: "ms_countOp",
+                value: WidgetUtils.COUNT
+            },
+            {
+                name: "ms_countDistinctOp",
+                value: WidgetUtils.COUNT_DISTINCT
+            },
+            {
+                name: "ms_percentileOp",
+                value: WidgetUtils.PERCENTILE
+            }
+        ];
+        WidgetUtils.NON_NUMERIC_OPERATION_OPTIONS = [
+            {
+                name: "ms_countOp",
+                value: WidgetUtils.COUNT
+            },
+            {
+                name: "ms_countDistinctOp",
+                value: WidgetUtils.COUNT_DISTINCT
+            }
+        ];
+        WidgetUtils.TIME_RESOLUTION_VALUES = [
+            {
+                name: "1",
+                value: "1"
+            },
+            {
+                name: "2",
+                value: "2"
+            },
+            {
+                name: "3",
+                value: "3"
+            },
+            {
+                name: "4",
+                value: "4"
+            },
+            {
+                name: "5",
+                value: "5"
+            },
+            {
+                name: "10",
+                value: "10"
+            },
+            {
+                name: "15",
+                value: "15"
+            },
+            {
+                name: "20",
+                value: "20"
+            },
+            {
+                name: "25",
+                value: "25"
+            },
+            {
+                name: "30",
+                value: "30"
+            }
+        ];
+        WidgetUtils.TIME_RESOLUTION_UNITS = [
+            {
+                name: "ms_second",
+                value: WidgetUtils.TIME_RESOLUTION_SECOND
+            },
+            {
+                name: "ms_minute",
+                value: WidgetUtils.TIME_RESOLUTION_MINUTE
+            },
+            {
+                name: "ms_hour",
+                value: WidgetUtils.TIME_RESOLUTION_HOUR
+            },
+            {
+                name: "ms_day",
+                value: WidgetUtils.TIME_RESOLUTION_DAY
+            },
+            {
+                name: "ms_week",
+                value: WidgetUtils.TIME_RESOLUTION_WEEK
+            }
+        ];
+        WidgetUtils.NUMERIC_XAXIS_OPERATION_OPTIONS = [
+            {
+                name: "ms_rangeOp",
+                value: WidgetUtils.RANGE
+            },
+            {
+                name: "ms_seriesOp",
+                value: WidgetUtils.SERIES
+            }
+        ];
+        WidgetUtils.NON_NUMERIC_TOP_N_LIMIT_OPTIONS = [
+            {
+                name: "5",
+                value: "5"
+            },
+            {
+                name: "10",
+                value: "10"
+            },
+            {
+                name: "15",
+                value: "15"
+            },
+            {
+                name: "20",
+                value: "20"
+            },
+            {
+                name: "25",
+                value: "25"
+            },
+            {
+                name: "30",
+                value: "30"
+            },
+            {
+                name: "40",
+                value: "40"
+            }
+        ];
+        return WidgetUtils;
+    })();
+    return WidgetUtils;
+});

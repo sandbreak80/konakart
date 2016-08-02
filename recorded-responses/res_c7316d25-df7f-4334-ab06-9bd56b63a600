@@ -1,0 +1,522 @@
+var BrowserUtils = (function () {
+    function BrowserUtils() {
+    }
+    BrowserUtils.isBrowserSupported = function (options) {
+        if (options === void 0) { options = {}; }
+        options.vs = { i: 9, f: 6, o: 10, s: 6, n: 10, c: 16 };
+        options.browser = BrowserUtils.getBrowser();
+        if ((!options.browser || !options.browser.n || !options.vs[options.browser.n] || options.browser.v < options.vs[options.browser.n])) {
+            BrowserUtils.browserSupported = false;
+        }
+        else {
+            BrowserUtils.browserSupported = true;
+        }
+        return BrowserUtils.browserSupported;
+    };
+    BrowserUtils.isMobileBrowser = function () {
+        return (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile safari/i.test(navigator.userAgent.toLowerCase()));
+    };
+    BrowserUtils.getBrowser = function () {
+        var n, v, t, ua = navigator.userAgent;
+        var names = { i: 'Internet Explorer', f: 'Firefox', o: 'Opera', s: 'Apple Safari', n: 'Netscape Navigator', c: "Chrome", x: "Other" };
+        if (/bot|googlebot|slurp|mediapartners|adsbot|silk|android|phone|bingbot|google web preview|like firefox|chromeframe|seamonkey|opera mini|min|meego|netfront|moblin|maemo|arora|camino|flot|k-meleon|fennec|kazehakase|galeon|android|mobile|iphone|ipod|ipad|epiphany|rekonq|symbian|webos/i.test(ua))
+            n = "x";
+        else if (/Trident.(\d+\.\d+)/i.test(ua))
+            n = "io";
+        else if (/MSIE.(\d+\.\d+)/i.test(ua))
+            n = "i";
+        else if (/Chrome.(\d+\.\d+)/i.test(ua))
+            n = "c";
+        else if (/Firefox.(\d+\.\d+)/i.test(ua))
+            n = "f";
+        else if (/Version.(\d+.\d+).{0,10}Safari/i.test(ua))
+            n = "s";
+        else if (/Safari.(\d+)/i.test(ua))
+            n = "so";
+        else if (/Opera.*Version.(\d+\.?\d+)/i.test(ua))
+            n = "o";
+        else if (/Opera.(\d+\.?\d+)/i.test(ua))
+            n = "o";
+        else
+            return { n: "x", v: 0, t: names[n] };
+        if (n == "x")
+            return { n: "x", v: 0, t: names[n] };
+        v = new Number(RegExp.$1);
+        if (n == "so") {
+            v = ((v < 100) && 1.0) || ((v < 130) && 1.2) || ((v < 320) && 1.3) || ((v < 520) && 2.0) || ((v < 524) && 3.0) || ((v < 526) && 3.2) || 4.0;
+            n = "s";
+        }
+        if (n == "io") {
+            n = "i";
+            if (v > 5)
+                v = 10;
+            else if (v > 4)
+                v = 9;
+            else if (v > 3.1)
+                v = 8;
+            else if (v > 3)
+                v = 7;
+            else
+                v = 9;
+        }
+        return { n: n, v: v, t: names[n] + " " + v };
+    };
+    BrowserUtils.isBrowserInternetExplorer11orLess = function () {
+        if (BrowserUtils.isBrowserInternetExplorer10orLess() || BrowserUtils.isBrowserInternetExplorer11()) {
+            return true;
+        }
+        return false;
+    };
+    BrowserUtils.isBrowserInternetExplorer10orLess = function () {
+        if (BrowserUtils.isBrowserInternetExplorer8() || BrowserUtils.isBrowserInternetExplorer9() || BrowserUtils.isBrowserInternetExplorer10()) {
+            return true;
+        }
+        return false;
+    };
+    BrowserUtils.isBrowserInternetExplorer9orLess = function () {
+        if (BrowserUtils.isBrowserInternetExplorer8() || BrowserUtils.isBrowserInternetExplorer9()) {
+            return true;
+        }
+        return false;
+    };
+    BrowserUtils.isBrowserInternetExplorer8 = function () {
+        var isIE8 = false;
+        var browserData = BrowserUtils.getBrowser();
+        if (browserData.n && browserData.n == "i" && browserData.v == 8) {
+            isIE8 = true;
+        }
+        return isIE8;
+    };
+    BrowserUtils.isBrowserInternetExplorer9 = function () {
+        var isIE9 = false;
+        var browserData = BrowserUtils.getBrowser();
+        if (browserData.n && browserData.n == "i" && browserData.v == 9) {
+            isIE9 = true;
+        }
+        return isIE9;
+    };
+    BrowserUtils.isBrowserInternetExplorer10 = function () {
+        var isIE10 = false;
+        var browserData = BrowserUtils.getBrowser();
+        if (browserData.n && browserData.n == "i" && browserData.v == 10) {
+            isIE10 = true;
+        }
+        return isIE10;
+    };
+    BrowserUtils.isBrowserInternetExplorer11 = function () {
+        var isIE11 = false;
+        var browserData = BrowserUtils.getBrowser();
+        if (browserData.n && browserData.n == "i" && browserData.v == 11) {
+            isIE11 = true;
+        }
+        return isIE11;
+    };
+    BrowserUtils.isBrowserChrome = function () {
+        return !!window['chrome'];
+    };
+    BrowserUtils.isBrowserFirefox = function () {
+        var browserData = BrowserUtils.getBrowser();
+        return browserData.n && browserData.n === "f";
+    };
+    BrowserUtils.isBrowserSafari = function () {
+        var browserData = BrowserUtils.getBrowser();
+        return browserData.n && browserData.n === "s";
+    };
+    BrowserUtils.getOperatingSystemType = function () {
+        var platform = navigator.platform.toLowerCase();
+        if (platform.indexOf("mac") !== -1) {
+            return 0 /* Mac */;
+        }
+        else if (platform.indexOf("win") !== -1) {
+            return 1 /* Windows */;
+        }
+        else if (platform.indexOf("linux") !== -1) {
+            return 2 /* Linux */;
+        }
+        else {
+            return 3 /* Other */;
+        }
+    };
+    BrowserUtils.getCookie = function (key) {
+        if (BrowserUtils._cachedDocumentCookie !== document.cookie) {
+            BrowserUtils._renewCache();
+        }
+        return BrowserUtils._cache[key];
+    };
+    BrowserUtils.setCookie = function (key, value, options) {
+        options = BrowserUtils._getExtendedOptions(options);
+        options.expires = BrowserUtils._getExpiresDate(value === undefined ? -1 : options.expires);
+        document.cookie = BrowserUtils._generateCookieString(key, value, options);
+    };
+    BrowserUtils.expireCookie = function (key, options) {
+        return BrowserUtils.setCookie(key, undefined, options);
+    };
+    BrowserUtils.getDefaultCookieExpirationDate = function () {
+        var date = new Date();
+        date.setTime(date.getTime() + (180 * 24 * 60 * 60 * 1000));
+        return date;
+    };
+    BrowserUtils.openFullScreen = function () {
+        var element = document.getElementsByTagName('body')[0], requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+        if (requestMethod) {
+            requestMethod.call(element);
+        }
+        else if (typeof window['ActiveXObject'] !== "undefined") {
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    };
+    BrowserUtils._getExtendedOptions = function (options) {
+        return {
+            path: options && options.path || BrowserUtils.defaults.path,
+            domain: options && options.domain || BrowserUtils.defaults.domain,
+            expires: options && options.expires || BrowserUtils.defaults.expires,
+            secure: options && options.secure !== undefined ? options.secure : BrowserUtils.defaults.secure
+        };
+    };
+    BrowserUtils._isValidDate = function (date) {
+        return Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
+    };
+    BrowserUtils._getExpiresDate = function (expires, now) {
+        now = now || new Date();
+        switch (typeof expires) {
+            case 'number':
+                expires = new Date(now.getTime() + expires * 1000);
+                break;
+            case 'string':
+                expires = new Date(expires);
+                break;
+        }
+        if (expires && !BrowserUtils._isValidDate(expires)) {
+            throw new Error('`expires` parameter cannot be converted to a valid Date instance');
+        }
+        return expires;
+    };
+    BrowserUtils._generateCookieString = function (key, value, options) {
+        key = encodeURIComponent(key);
+        value = (value + '').replace(/[^!#$&-+\--:<-\[\]-~]/g, encodeURIComponent);
+        options = options || {};
+        var cookieString = key + '=' + value;
+        cookieString += options.path ? ';path=' + options.path : '';
+        cookieString += options.domain ? ';domain=' + options.domain : '';
+        cookieString += options.expires ? ';expires=' + options.expires.toGMTString() : '';
+        cookieString += options.secure ? ';secure' : '';
+        return cookieString;
+    };
+    BrowserUtils._getCookieObjectFromString = function (documentCookie) {
+        var cookieObject = {};
+        var cookiesArray = documentCookie ? documentCookie.split('; ') : [];
+        for (var i = 0; i < cookiesArray.length; i++) {
+            var cookieKvp = BrowserUtils._getKeyValuePairFromCookieString(cookiesArray[i]);
+            if (cookieObject[cookieKvp.key] === undefined) {
+                cookieObject[cookieKvp.key] = cookieKvp.value;
+            }
+        }
+        return cookieObject;
+    };
+    BrowserUtils._getKeyValuePairFromCookieString = function (cookieString) {
+        var separatorIndex = cookieString.indexOf('=');
+        separatorIndex = separatorIndex < 0 ? cookieString.length : separatorIndex;
+        return {
+            key: decodeURIComponent(cookieString.substr(0, separatorIndex)),
+            value: decodeURIComponent(cookieString.substr(separatorIndex + 1))
+        };
+    };
+    BrowserUtils._renewCache = function () {
+        BrowserUtils._cache = BrowserUtils._getCookieObjectFromString(document.cookie);
+        BrowserUtils._cachedDocumentCookie = document.cookie;
+    };
+    BrowserUtils.browserSupported = false;
+    BrowserUtils.defaults = {
+        path: '/',
+        domain: undefined,
+        expires: undefined,
+        secure: undefined
+    };
+    BrowserUtils._cachedDocumentCookie = null;
+    BrowserUtils._cache = null;
+    return BrowserUtils;
+})();
+var OperatingSystem;
+(function (OperatingSystem) {
+    OperatingSystem[OperatingSystem["Mac"] = 0] = "Mac";
+    OperatingSystem[OperatingSystem["Windows"] = 1] = "Windows";
+    OperatingSystem[OperatingSystem["Linux"] = 2] = "Linux";
+    OperatingSystem[OperatingSystem["Other"] = 3] = "Other";
+})(OperatingSystem || (OperatingSystem = {}));
+;
+
+var ADPageBootstrapUtils = (function () {
+    function ADPageBootstrapUtils() {
+    }
+    ADPageBootstrapUtils.supportedBrowserCheck = function (allowMobileBrowsers) {
+        if (__ad_bootstrap_jasmine__) {
+            return;
+        }
+        var supported = BrowserUtils.isBrowserSupported();
+        if (allowMobileBrowsers && BrowserUtils.isMobileBrowser()) {
+            supported = true;
+        }
+        var bypass = BrowserUtils.getCookie('bypassBrowserVersionCheck');
+        if (!supported && !bypass) {
+            document.location.href = "unsupportedBrowser.jsp";
+        }
+    };
+    ADPageBootstrapUtils.setup = function () {
+        if (ADPageBootstrapUtils.BUILD_ID.indexOf("@BUILD") != 0) {
+            ADPageBootstrapUtils.cache_busting_file_version_id = ADPageBootstrapUtils.BUILD_ID;
+        }
+        ADPageBootstrapUtils.setupRequire();
+        ADPageBootstrapUtils.setupHttpInterceptors();
+        ADPageBootstrapUtils.setupHttpServiceForCacheBusting();
+    };
+    ADPageBootstrapUtils.setupRequire = function () {
+        var requireConfigObj = {
+            baseUrl: "./",
+            urlArgs: ADPageBootstrapUtils.cache_busting_file_version_id
+        };
+        if (window.location.toString().indexOf("dev=true") === -1) {
+            requireConfigObj["paths"] = {
+                "shared/SharedBootstrapModuleCode": "shared/SharedBootstrapModuleCode.min",
+                "shared/SharedModuleCode": "shared/SharedModuleCode.min",
+                "app/pages/main/MainAppModuleCode": "app/pages/main/MainAppModuleCode.min",
+                "app/pages/admin/AdminModuleCode": "app/pages/admin/AdminModuleCode.min",
+                "app/pages/dashboards/DashboardsModuleCode": "app/pages/dashboards/DashboardsModuleCode.min",
+                "app/pages/reports/ReportsModuleCode": "app/pages/reports/ReportsModuleCode.min"
+            };
+        }
+        require.config(requireConfigObj);
+    };
+    ADPageBootstrapUtils.setupHttpInterceptors = function () {
+        ADPageBootstrapUtils.setupHttpServiceForCacheBusting();
+        SessionTimeoutInterceptor.registerInterceptor();
+    };
+    ADPageBootstrapUtils.setupHttpServiceForCacheBusting = function () {
+        var adModule = window["appdynamicsModule"];
+        if (!adModule) {
+            return null;
+        }
+        adModule.config(["$httpProvider", function ($httpProvider) {
+            var interceptors = $httpProvider.interceptors;
+            if (!interceptors) {
+                interceptors = [];
+            }
+            interceptors.push(function () {
+                return {
+                    'request': function (config) {
+                        if (config && config.url && (config.url.indexOf(".html") == (config.url.length - ".html".length)) && (config.url.indexOf("app/") == 0 || config.url.indexOf("shared/") == 0) && (config.url.indexOf("restui/") != 0) && config.method == "GET") {
+                            config.url = config.url + "?" + ADPageBootstrapUtils.cache_busting_file_version_id;
+                        }
+                        return config;
+                    }
+                };
+            });
+            $httpProvider.interceptors = interceptors;
+        }]);
+    };
+    ADPageBootstrapUtils.BUILD_ID = "20160603-170624";
+    ADPageBootstrapUtils.cache_busting_file_version_id = "";
+    return ADPageBootstrapUtils;
+})();
+var SessionTimeoutInterceptor = (function () {
+    function SessionTimeoutInterceptor() {
+    }
+    SessionTimeoutInterceptor.registerInterceptor = function () {
+        if (SessionTimeoutInterceptor._interceptorRegistered) {
+            return;
+        }
+        var adModule = window["appdynamicsModule"];
+        if (!adModule) {
+            return null;
+        }
+        adModule.config(["$httpProvider", function ($httpProvider) {
+            var interceptors = $httpProvider.interceptors;
+            if (!interceptors) {
+                interceptors = [];
+            }
+            interceptors.push(function ($q) {
+                return {
+                    'response': SessionTimeoutInterceptor.responseHandler,
+                    'responseError': function (config) {
+                        return SessionTimeoutInterceptor.errorHandler(config, $q);
+                    }
+                };
+            });
+            $httpProvider.interceptors = interceptors;
+        }]);
+        SessionTimeoutInterceptor._interceptorRegistered = true;
+    };
+    SessionTimeoutInterceptor.responseHandler = function (config) {
+        if (!SessionTimeoutInterceptor._timeoutLogoutInProgress) {
+            var isSessionTimeout = SessionTimeoutInterceptor.isSessionTimeout(config);
+            if (isSessionTimeout) {
+                SessionTimeoutInterceptor._timeoutLogoutInProgress = true;
+                SessionTimeoutInterceptor.handleSessionTimeout();
+            }
+        }
+        return config;
+    };
+    SessionTimeoutInterceptor.errorHandler = function (config, $q) {
+        if (!SessionTimeoutInterceptor._timeoutLogoutInProgress) {
+            var isSessionTimeout = SessionTimeoutInterceptor.isSessionTimeout(config);
+            if (isSessionTimeout) {
+                SessionTimeoutInterceptor._timeoutLogoutInProgress = true;
+                SessionTimeoutInterceptor.handleSessionTimeout();
+            }
+        }
+        return $q.reject(config);
+    };
+    SessionTimeoutInterceptor.isSessionTimeout = function (config) {
+        var isSessionTimeout = false;
+        var subconfig = config.config;
+        if (config && config["status"] && config["status"] == 499) {
+            if (subconfig && subconfig.url != null) {
+                var authIndex = subconfig.url.indexOf("auth");
+                if (authIndex != 0) {
+                    isSessionTimeout = true;
+                }
+            }
+        }
+        else if (config && config["status"] && config["status"] == 401) {
+            if (subconfig && subconfig.url != null) {
+                var restUiIndex = subconfig.url.indexOf("restui/");
+                if (restUiIndex != -1) {
+                    isSessionTimeout = true;
+                }
+            }
+        }
+        return isSessionTimeout;
+    };
+    SessionTimeoutInterceptor.handleSessionTimeout = function () {
+        EventBusService.instance().dispatchEvent(SessionTimeoutInterceptor.UEV_SESSION_TIMEOUT_OCCURRED, {});
+    };
+    SessionTimeoutInterceptor.UEV_SESSION_TIMEOUT_OCCURRED = "UEV_SESSION_TIMEOUT_OCCURRED";
+    SessionTimeoutInterceptor._interceptorRegistered = false;
+    SessionTimeoutInterceptor._timeoutLogoutInProgress = false;
+    return SessionTimeoutInterceptor;
+})();
+
+/****************************************************************
+ Singularity
+ *****************************************************************/
+
+if (typeof Singularity == "undefined") {
+
+    /**
+     * The global namespace object.
+     */
+    var Singularity = {};
+    Singularity.supportIE8 = true;
+}
+
+//thanks to http://www.quirksmode.org/js/cookies.html
+Singularity.getCookie = function (name) {
+    return BrowserUtils.getCookie(name);
+};
+
+
+Singularity.deleteSessionCookie = function (cookieName) {
+//	//delete the cookie named "info" on the "yahoo.com" domain
+//	var domainVal = document.domain; 
+    BrowserUtils.setCookie(cookieName, "-1",
+        {path : "/controller"});
+    BrowserUtils.setCookie(cookieName, "-1",
+        {path : "/controller/"});
+    BrowserUtils.setCookie(cookieName, "-1");
+};
+
+Singularity.deleteSessionCookieDebug = function (cookieName) {
+
+    var cookiesBefore = document.cookie;
+
+    Singularity.deleteSessionCookie(cookieName);
+
+    var cookiesAfter = document.cookie;
+
+    alert("cookies BEFORE:\n" + cookiesBefore + " \n\ncookies AFTER:\n" + cookiesAfter)
+};
+
+function saveImage(imgString, width, height) {
+    window.open("data:image/png;base64," + imgString, "", "width=" + width + ",height=" + height + ",resizable=0, toolbar=no, location=0,directories=0,status=0,menubar=0,scrollbars=0,copyhistory=0, left=120, top=150");
+}
+
+function sendUsageStatistics(url, stats) {
+    if (stats == null || stats.length == 0) return;
+    document.getElementById("vc").src = url + "?" + stats;
+}
+
+function updateLead(url, fields) {
+    if (fields == null || fields.length == 0) return;
+    document.getElementById("vc").src = url + "?" + fields;
+}
+
+Singularity.controllerRedirectProcessor = function () {
+    // Decide if we are going to debug this function
+    var debugRedirect = window && window.location && window.location.href ? window.location.href.indexOf("debugRedirect") > 0 : false;
+
+    // Decide if we will actually redirect.
+    // This is useful because some browsers will clear the console upon setting the pathnames which means any messages
+    // logged to the console will be cleared.
+    var dryRunRedirect = window && window.location && window.location.href ? window.location.href.indexOf("dryRunRedirect") > 0 : false;
+
+    if (!window || !window.location || !window.location.pathname) {
+        if (debugRedirect) {
+            console.log("controllerRedirectProcessor: Cannot access window.location.pathname!");
+        }
+        // Not much we can do :(
+        return;
+    }
+
+    if(window.location.pathname.indexOf("controller") === -1) {
+        if (debugRedirect) {
+            console.log("controllerRedirectProcessor: window.location.pathname (" + window.location.pathname + ") does not contain 'controller' so setting it to '/controller/'.");
+        }
+        if (!dryRunRedirect) {
+
+            if (!navigator || !navigator.userAgent) {
+                if (debugRedirect) {
+                    console.log("controllerRedirectProcessor: Cannot access navigator.userAgent. We are on some unknown browser.");
+                }
+                return;
+            }
+
+            if (navigator.userAgent.search("Firefox") === -1) {
+                window.location.pathname = "/controller/";
+
+            } else {
+                // Setting pathname in Firefox will cause the URL parts after pathname to be cleared out,
+                // thus needs to be handled differently.
+                var origin = window.location.origin;
+                var hrefWithoutOrigin = window.location.href.substring(origin.length);
+
+                // Prepend with controller/ or controller depending on if hrefWithoutOrigin starts with /
+                // This is to avoid a double slash ('//') in the new URL.
+                if (hrefWithoutOrigin.indexOf("/") === 0) {
+                    hrefWithoutOrigin = "/controller" + hrefWithoutOrigin;
+                } else {
+                    hrefWithoutOrigin = "/controller/" + hrefWithoutOrigin;
+                }
+                window.location.replace(origin + hrefWithoutOrigin);
+            }
+        }
+
+    } else {
+        if (debugRedirect) {
+            console.log("controllerRedirectProcessor: window.location.pathname (" + window.location.pathname + ") contains 'controller' so we are leaving it unmodified.");
+        }
+    }
+
+};
+
+Singularity.hideLoader = function () {
+    // Loader now managed by the RouteController.
+    //var loaderDiv = document.getElementById("loaderDiv");
+    //$('#loaderDiv').parent().removeChild(loaderDiv);
+};
+
+Singularity.log = function (msg) {
+    console.log(msg);
+};
+

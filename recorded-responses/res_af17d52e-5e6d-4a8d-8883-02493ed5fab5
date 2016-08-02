@@ -1,0 +1,36 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/2/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAE5-E10A-20B7-177E-DA654413CF9E</clientId>
+        <messageId>71B5CAE8-5208-D018-6DF5-E0943B8ED1D2</messageId>
+        <timestamp>1469728964268</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="object-array">
+          <String>ADMINISTER_RBAC</String>
+          <String>CREATE_APPLICATIONS</String>
+          <String>CONFIG_HTTP_REQUEST_ACTION_PLANS</String>
+          <String>VIEW_BUSINESS_FLOW</String>
+          <String>CONFIG_SAML</String>
+          <String>CONFIG_CUSTOM_EMAIL_ACTION_PLANS</String>
+          <String>CONFIG_NOTIFICATIONS</String>
+          <String>ANALYTICS_MANAGE_API_KEYS</String>
+          <String>CONFIG_LDAP</String>
+          <String>ANALYTICS_MANAGE_METRICS</String>
+          <String>ANALYTICS_MANAGE_ACCESS_FILTERS</String>
+          <String>CREATE_WAR_ROOMS</String>
+          <String>ANALYTICS_VIEW_UI</String>
+          <String>ANALYTICS_CREATE_DASHBOARD</String>
+          <String>EXECUTE_WORKFLOWS</String>
+          <String>ANALYTICS_MANAGE_FIELDS</String>
+          <String>CREATE_DASHBOARDS</String>
+        </body>
+        <correlationId>C3A0A194-9D89-97F1-C53A-32ABFA62A8B9</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

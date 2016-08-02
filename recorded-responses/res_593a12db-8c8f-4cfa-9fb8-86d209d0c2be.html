@@ -1,0 +1,36 @@
+<div class="adsDashboardRowTabs" ng-class="::controller.getTabRowContainerClass()">
+    <div ng-repeat="tab in navigationTabs"
+         ng-class="[controller.getTabRowTabClass(), tab.selected && 'selected']"
+         ng-click="clickTab(tab)">
+        {{tab.name}}
+    </div>
+    <div class="dropdown-toggleAD" ng-class="controller.getTabRowTabClass()" ng-show="controller.showDropdownToggle">
+        &gt;&gt;
+    </div>
+    <div class="dropdown-menu" id="dropdownTabs" style="display: block; visibility: hidden;">
+        <div class="adsTabLevel2" ng-repeat="tab in navigationTabs"
+             ng-click="clickTab(tab)" style="display: block; padding-top: 13px; padding-bottom: 23px;">
+            {{tab.name}}
+        </div>
+    </div>
+
+    <div class="ads-main-dash-actions-button-container" ng-if="adActionDropdownItems && adActionDropdownItems.length > 0">
+        <div class="ads-main-title-bar-light-action-item"
+             ad-drop-down-toggle
+             ad-close-mode="clickAny"
+             ad-in-place="false">
+            {{adActionDropdownTitle || ("ms_actions" | adGetString)}}
+            <img src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions" style="margin-left: 6px;" />
+        </div>
+
+        <ul class="dropdown-menu PopupList">
+            <li class="ads-menu-item" ng-repeat="actionItem in adActionDropdownItems" ng-click="clickAction(actionItem)">
+                <div>
+                    {{actionItem.text}}
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</div>

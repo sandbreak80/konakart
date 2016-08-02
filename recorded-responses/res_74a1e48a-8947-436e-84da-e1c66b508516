@@ -1,0 +1,287 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/2/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CA75-930B-EC22-73B6-585307A69051</clientId>
+        <messageId>71B5CA7A-750D-F223-06A1-E2F0EADCC2A1</messageId>
+        <timestamp>1469728964150</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="ASObject" mappedClass="com.singularity.ee.controller.api.dto.Account">
+          <nameUnique tagClass="boolean">true</nameUnique>
+          <coradiantIntegrationEnabled tagClass="boolean">false</coradiantIntegrationEnabled>
+          <coradiantIntegrationUrl/>
+          <numberOfMachineAgents tagClass="int">0</numberOfMachineAgents>
+          <licensedForEum tagClass="boolean">false</licensedForEum>
+          <displayName tagClass="String">customer1</displayName>
+          <edition tagClass="String">ENTERPRISE_TRIAL</edition>
+          <legacyEUMAccount tagClass="boolean">false</legacyEUMAccount>
+          <numberOfNativeWebServerLicenseUnits tagClass="int">0</numberOfNativeWebServerLicenseUnits>
+          <requireStrongPasswords tagClass="boolean">false</requireStrongPasswords>
+          <numberOfNativeSDKLicenseUnits tagClass="int">0</numberOfNativeSDKLicenseUnits>
+          <securityProvider tagClass="String">INTERNAL</securityProvider>
+          <originalEmail tagClass="String">brad.stoner@appdynamics.com</originalEmail>
+          <eumAccountName/>
+          <eumCloudLicenseKey/>
+          <endDateOfTrial/>
+          <id tagClass="double">2.0</id>
+          <numberOfNativeDynamicLicenseUnits tagClass="int">0</numberOfNativeDynamicLicenseUnits>
+          <key tagClass="String">90eaf88e-a80e-4d61-b18f-ce4a34846da5</key>
+          <numberOfNodeJsLicenseUnits tagClass="int">0</numberOfNodeJsLicenseUnits>
+          <startDateOfTrial/>
+          <expirationDate tagClass="Date">2016-08-24 00:00:00.0 PDT</expirationDate>
+          <originalLastName tagClass="String"></originalLastName>
+          <numberOfDotNetLicenseUnits tagClass="int">0</numberOfDotNetLicenseUnits>
+          <originalFirstName tagClass="String"></originalFirstName>
+          <samlAuthenticationConfig/>
+          <version tagClass="int">6</version>
+          <initializedWithLicenses tagClass="boolean">false</initializedWithLicenses>
+          <eumEventServiceKey/>
+          <accessKey tagClass="String">ae1ee3ed-c29d-4310-876f-4be8443da303</accessKey>
+          <numberOfPythonLicenseUnits tagClass="int">0</numberOfPythonLicenseUnits>
+          <originalCompanyName tagClass="String"></originalCompanyName>
+          <numberOfRubyLicenseUnits tagClass="int">0</numberOfRubyLicenseUnits>
+          <numberOfAppAgentLicenseUnits tagClass="int">0</numberOfAppAgentLicenseUnits>
+          <name tagClass="String">customer1</name>
+          <numberOfNativeLicenseUnits tagClass="int">0</numberOfNativeLicenseUnits>
+          <controllerURL/>
+          <notificationConfig tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.NotificationConfig">
+            <emailPasswd/>
+            <emailUser/>
+            <secureConnectionSSL tagClass="boolean">false</secureConnectionSSL>
+            <smtpPort/>
+            <version tagClass="int">0</version>
+            <secureConnectionTLSIfAvail tagClass="boolean">false</secureConnectionTLSIfAvail>
+            <smtpHost/>
+            <notificationConfigText/>
+            <secureConnectionNever tagClass="boolean">false</secureConnectionNever>
+            <fromAddress/>
+            <id tagClass="double">1.0</id>
+            <smsExtension/>
+            <secureConnectionTLSAlways tagClass="boolean">false</secureConnectionTLSAlways>
+            <useSecureAuthentication tagClass="boolean">false</useSecureAuthentication>
+          </notificationConfig>
+          <numberOfDBCollectorLicenseUnits tagClass="int">0</numberOfDBCollectorLicenseUnits>
+          <properties tagClass="object-array">
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">is-trial</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">true</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">version</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">2</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-native-sdk-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-python-app-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-php-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-service-availability-monitoring-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-nodejs-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-machine-apm-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">0</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-ruby-app-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">0</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-native-web-server-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-app-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-db-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-dotnet-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-native-dynamic-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-machine-sim-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-machine-agents</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">90</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-db-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">no-of-native-app-agent-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">log-analytics-retention-period-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">30</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">log-analytics-volume-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">transaction-analytics-retention-period-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">30</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">transaction-analytics-volume-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">mobile-analytics-retention-period-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">30</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">mobile-analytics-volume-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">browser-analytics-retention-period-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">30</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">browser-analytics-volume-no-of-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">10</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">eum-account-name</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">eum-license-key</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">eum-event-service-key</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">eum-license-type</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">eum-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">eum-license-allows-overages</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">mobile-license-type</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">mobile-license-units</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">mobile-license-allows-overages</name>
+              <id tagClass="double">0.0</id>
+              <value/>
+              <version tagClass="int">0</version>
+            </ASObject>
+          </properties>
+          <numberOfPhpNetLicenseUnits tagClass="int">0</numberOfPhpNetLicenseUnits>
+          <globalAccountName tagClass="String">customer1_90eaf88e-a80e-4d61-b18f-ce4a34846da5</globalAccountName>
+        </body>
+        <correlationId>CDC7011E-1F0C-74F6-E862-32ABFA4968E3</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

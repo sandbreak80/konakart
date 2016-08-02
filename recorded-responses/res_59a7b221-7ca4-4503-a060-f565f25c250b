@@ -1,0 +1,14 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminLanguage">
+    <id>1</id>
+    <name>English</name>
+    <code>en</code>
+    <locale>en_GB</locale>
+    <image>icon.gif</image>
+    <directory>english</directory>
+    <sortOrder>1</sortOrder>
+    <setAsDefault>false</setAsDefault>
+    <displayOnly>false</displayOnly>
+    <dataLanguage>1</dataLanguage>
+  </result>
+</GWTResponse>

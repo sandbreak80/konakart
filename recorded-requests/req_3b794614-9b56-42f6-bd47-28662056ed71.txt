@@ -1,0 +1,9 @@
+GET http://192.168.1.252:8780/konakart/LogOut.action HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Referer: http://192.168.1.252:8780/konakart/LoginSubmit.action
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.252:8780
+Cookie: JSESSIONID=64D498345C698982EB7B34ED75223503; CUSTOMER_UUID=2e7b4e61-4532-4995-bd36-dc0d91617a49
+

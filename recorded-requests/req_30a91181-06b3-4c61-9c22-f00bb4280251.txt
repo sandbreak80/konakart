@@ -1,0 +1,11 @@
+GET https://192.168.1.252:12322/?server=localhost&username=root&db=konakart&table=customers_basket HTTP/1.1
+Accept: */*
+X-Requested-With: XMLHttpRequest
+Referer: https://192.168.1.252:12322/?server=localhost&username=root&db=konakart&indexes=customers_basket
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: 192.168.1.252:12322
+Connection: Keep-Alive
+Cookie: adminer_sid=b62asc019oo8n05dtcpk5ug356; adminer_version=4.2.5
+

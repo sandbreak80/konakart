@@ -1,0 +1,74 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminOrderStatusName-array">
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>29</key>
+      <id>8</id>
+      <name>Cancelled</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>9</key>
+      <id>3</id>
+      <name>Delivered</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>25</key>
+      <id>7</id>
+      <name>Partially Delivered</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>21</key>
+      <id>6</id>
+      <name>Payment Declined</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>17</key>
+      <id>5</id>
+      <name>Payment Received</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>1</key>
+      <id>1</id>
+      <name>Pending</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>5</key>
+      <id>2</id>
+      <name>Processing</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>33</key>
+      <id>9</id>
+      <name>Refund Approved</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>37</key>
+      <id>10</id>
+      <name>Refund Declined</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+    <com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+      <key>13</key>
+      <id>4</id>
+      <name>Waiting for Payment</name>
+      <languageId>1</languageId>
+      <notifyCustomer>false</notifyCustomer>
+    </com.konakartadmin.client.app.GWT__AdminOrderStatusName>
+  </result>
+</GWTResponse>

@@ -1,0 +1,212 @@
+<ad-main-container>
+    <!-- ------------------------- FLOW MAP ------------------------- -->
+
+    <div style="z-index:0;" class="adsFlowMapLayout">
+
+        <!-- gridSelected View - IE 8 compatible -->
+        <!-- todo-spowers Fix hardcoded 40. -->
+        <div ng-if="controller.gridSelected()" class="absoluteExpanded" style="top:40px; ">
+            <ad-grid grid-options="controller.flowGrid" class="absoluteExpanded">
+
+            </ad-grid>
+        </div>
+
+        <!-- treeSelected View - IE 8 compatible -->
+        <!-- todo-spowers Fix hardcoded 40. -->
+        <div ng-if="controller.treeSelected()" class="absoluteExpanded" style="top:40px; ">
+            <ad-tree-grid options="controller.flowGrid" class="absoluteExpanded">
+            </ad-tree-grid>
+        </div>
+
+        <!-- chordSelected View -->
+        <div ng-if="controller.showChordView && controller.chordSelected()" class="absoluteExpanded" style="top:40px;">
+            <div class="ads-chord-diagram absoluteExpanded"
+                 ad-chord-diagram
+                 sv-scale="controller.chordScaleData"
+                 ad-show-chords="controller.showChordsInDiagram"
+                 ad-rotate-degree="controller.chordRotationDegree"
+                 ad-chord-diagram-data="controller.chordData">
+            </div>
+        </div>
+
+        <!-- forceSelected View - Flow map graph editor view using d3/svg visualizations -->
+        <div ng-if="controller.forceSelected()" class="absoluteExpanded">
+
+            <!-- Flowmap -->
+            <div class="adsFlowMap absoluteExpanded"
+                 ad-flowmap
+                 sv-scale="controller.scaleData"
+                 sv-layout="controller.layout"
+                 sv-flowmapdata="controller.flowmapdata"
+                 sv-app-id="controller.applicationId"
+                 sv-center-map="controller.centerMap"
+                 sv-baseline="controller.baselineConfig.selectedBaseline"
+                 ad-refresh="controller.fetchDashboardGraphData()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Flowmap config drop down -->
+    <div class="ads-dash-main-content-configurator">
+        <div style="float: left">
+            <span ng-if="controller.forceSelected()"
+                  class="adsDashFlowmapSelectButton ad-drop-down-toggle"
+                  ad-in-place="false"
+                  ad-multi-click-enabled="true"
+                  ad-dropdown-open="controller.dropdownOpen"
+                  ad-close-handler="controller.getConfiguratorCloseHandler()"
+                  ad-close-mode="clickOutside"
+                  title="Select Flow Map">
+                <div class="adsFlowmapSelectContainer">
+                    <div class="adsFlowmapSelectButtonHitArea">
+                        <span ng-bind="controller.getFlowmapName()"></span>
+                        <img ng-src="images/triangleDownDarkGray1.png"/>
+                    </div>
+                </div>
+            </span>
+
+            <ad-flow-map-configurator
+                class="dropdown-menu"
+                ad-basic-configurator="adBasicConfigurator"
+                ad-main-dashboard-controller="controller"
+                ad-open-to-editor="controller.editFlowmapProperties"
+            />
+        </div>
+        <a ng-if="controller.forceSelected() &amp;&amp; controller.hiddenItemsCount > 0"
+           style="float: left; padding:10px;"
+           ng-click="controller.openFlowmapConfigurator()">
+            {{getString("ms_hiddenFlowItemsWarning", [controller.hiddenItemsCount])}}
+        </a>
+    </div>
+
+    <!-- Chord config area -->
+    <div ng-if="controller.showChordView && controller.chordSelected()"
+         ng-include="'app/view/components/chordDiagram/ChordConfigView.html'"></div>
+
+    <div ng-if="controller.gridSelected()" class="pull-left adsAppListTitle">{{adGridViewTitle}}</div>
+    <div ng-if="controller.treeSelected()" class="pull-left adsAppListTitle">{{adTreeViewTitle}}</div>
+    <!-- Button toolbar -->
+    <div class="adsFlowMapMaximizeRestoreButtonContainer"
+         ng-class="{adsFlowNormalSize: !controller.mainContentMaximized, adsFlowMaxSize: controller.mainContentMaximized}">
+
+        <a href="" class="pull-left explainView" ng-if="controller.gridSelected() && controller.getShowExplainDetailsText()" tooltip-placement="bottom"
+           tooltip="{{getString('ms_appFlowDataListViewExplaination')}}" tooltip-trigger="mouseenter">
+            {{getString('ms_graphicalViewHelpMeWithThisView')}}
+        </a>
+        <a href="" class="pull-left explainView" ng-if="controller.treeSelected()" tooltip-placement="bottom" tooltip="{{getString('ms_btTreeViewExplainHelpTextHTML')}}" tooltip-trigger="mouseenter">
+            {{getString('ms_graphicalViewHelpMeWithThisView')}}
+        </a>
+        <a href="" class="pull-left explainView" ng-if="controller.chordSelected()" tooltip-placement="bottom" tooltip="{{getString('ms_chordViewExplainHelpTextHTML')}}" tooltip-trigger="mouseenter">
+            {{getString('ms_graphicalViewHelpMeWithThisView')}}
+        </a>
+        <!--[if !IE 8]><!-->
+
+        <div class="pull-right">
+
+        <span ng-if="controller.showFlowButton"
+              ng-class="{selected:controller.forceSelected(), adsDashFlowViewButton:true}"
+              ng-click="controller.doGraphicalLayout()"
+              title="Flow Map View">
+        </span>
+            <!--<![endif]-->
+
+        <span ng-if="controller.showGridButton" ng-click="controller.doGrid()"
+              ng-class="{selected:controller.gridSelected(), adsDashGridButton:true}"
+              title="Grid View">
+        </span>
+        <span ng-if="controller.showTreeButton" ng-class="{selected:controller.treeSelected(), adsDashTreeButton:true}"
+              ng-click="controller.doTree()"
+              title="Tree View"
+        >
+        </span>
+        <span ng-if="controller.showChordButton" ng-class="{selected:controller.chordSelected(), adsDashChordButton:true}"
+              ng-click="controller.doChord()"
+              title="Chord View"
+        >
+        </span>
+
+            <span ng-if="controller.forceSelected() && controller.showFlowmapControlDividers" class="adsFlowMapButtonDivider" style="margin-left: 9px"></span>
+            <!-- Action buttons -->
+        <span ng-if="controller.forceSelected()"
+              ng-click="controller.layoutCircular()"
+              title="Circular layout"
+              class="adsDashCircularButton">
+        </span>
+        <span ng-if="controller.forceSelected()"
+              ng-click="controller.layoutForce()"
+              title="Auto layout"
+              class="adsDashLayoutForceButton">
+        </span>
+        <span ng-if="controller.forceSelected()"
+              ng-click="controller.centerMap.execute()"
+              title="Auto fit"
+              class="adsDashAutoFitButton">
+        </span>
+        <span ng-if="controller.forceSelected()"
+              ng-click="controller.toggleAdvanced()"
+              title="Advanced"
+              ng-class="{selected:controller.advancedOptions, adsDashFlowOptionsButton:true}">
+        </span>
+            <span ng-if="controller.showFlowmapControlDividers" class="adsFlowMapButtonDivider"></span>
+
+        <span ng-if="controller.enableMaximizeRestore"
+              ng-click="controller.toggleMainContentMaximized()"
+              title="Maximize / Restore"
+              ng-class="{adsDashMaximizeButton: !controller.mainContentMaximized, adsDashRestoreButton: controller.mainContentMaximized}">
+        </span>
+
+        </div>
+
+    </div>
+
+    <!--Slider -->
+    <div ng-if="controller.forceSelected()" style="position:absolute; left:0px; top:45px;z-index:1; ">
+
+        <!-- Zoom Slider -->
+        <div class="box">
+            <div class="boxRow">
+                <div class="boxItem" style="background-color:rgba(255,255,255,0.65);">
+                    <div style="display:inline-table; margin-left: 10px;">
+                        <div class="boxRow">
+                            <div class="boxItem adsFlowMapSliderAlign">
+                                <!-- scale -->
+                                <div ng-if="controller.forceSelected()"
+                                     ad-slider style="padding: 0px; height: 200px; display: inline-block;"
+                                     sv-min-value="controller.scaleData.lowerBound"
+                                     sv-max-value="3"
+                                     increment=".01"
+                                     decimal-precision="2"
+                                     vertical="true"
+                                     sv-value="controller.scaleData">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legend -->
+    <div ng-if="controller.forceSelected()" class="adsFlowMapLegendContainer"
+         ng-class="{adsFlowNormalSize: !controller.mainContentMaximized, adsFlowMaxSize: controller.mainContentMaximized}">
+        <a class="dropdown-toggleAD" direction="up">Legend</a>
+
+        <div style="box-shadow: 0px 0px 5px #888888; margin-bottom: 5px; display: none;">
+            <ad-flow-legend class="adsFlowMapLegend" ad-cross-application="{{controller.isCrossApp}}"></ad-flow-legend>
+        </div>
+    </div>
+
+    <!-- Not Comparing Against Baseline -->
+    <div ng-if="controller.forceSelected() && controller.baselineAvailable && controller.showReasonForNotComparingWithBaselineMessage"
+         class="adsNotComparingAgainstBaseline"
+         ng-class="{adsFlowNormalSize: !controller.mainContentMaximized, adsFlowMaxSize: controller.mainContentMaximized}">
+        <div style="display: inline-block;">
+            <ad-info-help-item ad-type="info"
+                               ad-link-text="{{getString('ms_dontCompareAgainstBaselineLinkText')}}"
+                               ad-info-title="{{controller.getString('ms_dontCompareAgainstBaselineHelpTitle')}}"
+                               ad-info-message="{{controller.baselineReasonText}}">
+            </ad-info-help-item>
+        </div>
+    </div>
+</ad-main-container>

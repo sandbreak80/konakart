@@ -1,0 +1,477 @@
+<div class="adsMainTitleBarContainerRow" style="position: relative;">
+
+    <div class="ads-display-table ads-main-title-bar-height">
+
+        <div class="ads-display-table-row">
+
+            <!-- -------- BACK / NEXT / REFRESH -------- -->
+
+            <div class="ads-display-table-cell" ng-if="controller.showBackNextButtons"
+                 style="height: 100%; vertical-align: middle; padding-left: 32px; ">
+                <div class="adsLocationBarMainButtonContainer">
+                    <div class="adsLocationBarBackIcon" ng-click="controller.onBackClick()" title="Go back"/>
+                </div>
+            </div>
+
+            <div class="ads-display-table-cell" ng-if="controller.showBackNextButtons"
+                 style="height: 100%; vertical-align: middle;">
+                <div class="adsLocationBarMainButtonContainer">
+                    <div class="adsLocationBarNextIcon" ng-click="controller.onForwardClick()" title="Go forward"/>
+                </div>
+            </div>
+
+            <div class="ads-display-table-cell" ng-if="controller.showBackNextButtons"
+                 style="height: 100%; vertical-align: middle;">
+                <div class="adsLocationBarMainButtonContainer">
+                    <div class="adsLocationBarRefreshIcon" ng-click="controller.onRefreshClick()" title="Refresh"/>
+                </div>
+            </div>
+
+            <!-- -------- Divider -------- -->
+
+            <div class="ads-display-table-cell" ng-if="controller.showBackNextButtons"
+                 style="height: 100%; vertical-align: middle; padding-left: 20px; ">
+                <div class="ads-main-title-bar-vrule-left"/>
+            </div>
+
+
+            <!-- -------- Main Nav Hamburger (shows when nav minimized and no left nav) -------- -->
+
+            <div class="ads-display-table-cell ads-main-nav-hamburger-main-title-bar-container"
+                 style="vertical-align: middle;"
+                 ng-if="controller.navigationState.showMainNavHamburgerInMainTitleBar"
+                 ng-cloak
+                    >
+                <ad-main-navigation-hamburger></ad-main-navigation-hamburger>
+            </div>
+
+
+            <!-- -------- Location / Screen Title -------- -->
+
+            <!-- padding left of screen title -- WITH hamburger -->
+            <div class="ads-display-table-cell" style="padding-left: 6px" ng-show="controller.navigationState.showMainNavHamburgerInMainTitleBar">
+            </div>
+
+            <!-- padding left of screen title -- NO hamburger -->
+            <div class="ads-display-table-cell" style="padding-left: 18px" ng-show="!controller.navigationState.showMainNavHamburgerInMainTitleBar">
+            </div>
+
+            <!-- -----------  Table CELL for Locatin Name, App Selector, Beta Indicator
+                              This is 100% width to take all remaining space not used by stuff on the right.
+                              The location and app selector are in an inner table which is NOT 100%.  So the location and app selector will be
+                              whatever size they are.  The App Selector selected app name has a max width.  So all remaining space goes to the
+                              location.  That will wrap as needed.  Wasn't able to get it to clip, but, wrapping works reasonably well for now, and
+                              it is rare that it even needs to click in.
+            -------- -->
+            <div class="ads-display-table-cell ads-main-title-bar-height ads-width-100percent ads-vertical-align">
+
+                <!-- ----------- Inner TABLE for location name, App selector, Beta Indicator -------- -->
+                <div class="ads-display-table ads-main-title-bar-height">
+
+                    <div class="ads-display-table-row">
+
+                        <!-- ---------------- Screen Title / Location ---------------- -->
+                        <div class="ads-display-table-cell ads-main-title-bar-height ads-vertical-align ads-location-bar-container">
+
+                            <ad-location-bar></ad-location-bar>
+                            <ad-help-bubble-popover ad-content="{{::getString('ms_locationPathHelpBubble')}}"
+                                                    ad-placement="'bottom'"
+                                                    ad-help-bubble-id="LOCATION_BAR_42"
+                                                    ad-append-to-body="true"
+                                                    ad-close-on-target-click="true"
+                                                    ad-popup-enabled="controller.helpBubbleEnabled == 'HELP_BUBBLE_ENABLED_LOCATION_BAR'"
+                                                    ng-if="controller.helpBubbleEnabled == 'HELP_BUBBLE_ENABLED_LOCATION_BAR'"
+                                                    ad-show-after-number-logins="30"
+                                    >
+                            </ad-help-bubble-popover>
+
+
+                        </div>
+
+                        <!-- ---------------- Beta Indicator ---------------- -->
+                        <div class="ads-display-table-cell ads-main-title-bar-height ads-vertical-align ads-light-gray-text"
+                             ng-if="controller.showBetaIndicator"
+                             style="text-transform: uppercase; font-size: 18px; padding-left: 4px;"
+                                >
+                          {{ "" | adAppendBeta }}
+                        </div>
+
+                        <!-- ---------------- Application Selector ---------------- -->
+                        <div class="ads-display-table-cell ads-main-title-bar-height ads-vertical-align"
+                             ng-if="controller.showApplicationSelector"
+                             style="padding-left: 16px; "
+                                >
+                            <ad-application-selector ad-mobile-app-selector-mode="controller.mobileAppSelectorMode"
+                                                     ad-selected-application-id="controller.applicationIdOnUrl"
+                                                     ad-disabled="controller.disableApplicationSelector"
+                                                     ad-apm-only-mode="controller.showOnyApmAppsInAppSelector"
+                                                     ad-show-application-quick-nav-button="controller.showApplicationQuickNavButton"
+                                                     class="ads-application-selector-main-title-bar"
+                                    >
+                            </ad-application-selector>
+                        </div>
+
+                        <ad-help-bubble-popover ad-content="{{::getString('ms_appSelectorHelpBubble')}}"
+                                                ad-placement="'bottom'"
+                                                ad-help-bubble-id="APPLICATION_SELECTOR"
+                                                ad-append-to-body="true"
+                                                ad-close-on-target-click="true"
+                                                ad-popup-enabled="controller.helpBubbleEnabled == 'HELP_BUBBLE_ENABLED_APP_SELECTOR'"
+                                                ng-if="controller.helpBubbleEnabled == 'HELP_BUBBLE_ENABLED_APP_SELECTOR'"
+                                                ad-show-after-number-logins="15"
+                                >
+                        </ad-help-bubble-popover>
+
+                        <!-- ---------------- Analytics Scope Selector ---------------- -->
+                        <div class="ads-display-table-cell ads-main-title-bar-height ads-vertical-align"
+                             ng-if="controller.showAnalayticsScopeSelector"
+                             style="padding-left: 16px; "
+                                >
+                            <ad-analytics-scope-selector
+                                    ng-show ="!controller.adqlDebugTabSelected">
+                            </ad-analytics-scope-selector>
+                        </div>
+
+                        <!-- ---------------- Entity Drop Down Selector (to Switch Tiers on Tier Dash, BTs on BT Dash, Nodes on Node dash, Pages on PAge Dash) ---------------- -->
+                        <div class="ads-display-table-cell ads-main-title-bar-height ads-vertical-align"
+                             ng-if="controller.showEntityDropDownSelector"
+                             style="padding-left: 16px; "
+                                >
+                            <ad-entity-drop-down-selector
+                                    ad-application-id="controller.applicationIdOnUrl"
+                                    ad-entity-type="controller.entityDropDownSelectorEntityType"
+                                    class="ads-use-main-title-bar-buttons"
+                                    >
+                            </ad-entity-drop-down-selector>
+
+                            <ad-help-bubble-popover ad-content="{{::getString('ms_entitySwitcherLocationBarHelpButton')}}"
+                                                    ad-placement="'bottom'"
+                                                    ad-help-bubble-id="TIER_SELECTOR_LOCATION_BAR_42"
+                                                    ad-append-to-body="true"
+                                                    ad-close-on-target-click="true"
+                                                    ad-show-after-number-logins="40"
+                                    >
+                            </ad-help-bubble-popover>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- -------- REFRESH -------- -->
+
+            <div class="ads-display-table-cell ads-main-title-bar-right-side-item-container hoverable"
+                 style="height: 100%; vertical-align: middle; "
+                 ng-if="controller.showRefreshOnRight"
+                 ng-click="controller.onRefreshClick()"
+                    >
+
+                <button class="ads-main-title-bar-button hoverable" style="padding-top: 2px; padding-bottom: 2px;">
+                    <img src="images/locationBar/refresh_gray.svg" style="width: 24px; height: 24px; "/>
+                </button>
+                <!--<div class="adsLocationBarRefreshIcon" ng-click="controller.onRefreshClick()"  />-->
+            </div>
+
+
+            <!-- -------- BASELINE -------- -->
+
+            <div class="ads-display-table-cell ads-main-title-bar-right-side-item-container hoverable"
+                 style="height: 100%; vertical-align: middle; "
+                 ng-show="controller.showBaselineSelector">
+                <ad-baseline-selector sv-baselines-config="controller.baselinesConfig"
+                                      ad-global-baseline-mode="true"
+                                      class="ads-use-main-title-bar-buttons"
+                    />
+            </div>
+
+            <!-- -------- TIME RANGE (CUSTOM)  -------- -->
+            
+            <!-- VRule only included when showing custom -->
+            <div ng-if="controller.showCustomTimeRange && controller.includeTimeRange"
+                 class="ads-display-table-cell" style="padding-top: 10px; padding-left: 4px; padding-right: 4px;">
+                <div class="ads-border-left" style="height: 30px;"/>
+            </div>
+
+            <!-- Date / time fields -->
+            <div class="ads-display-table-cell ads-main-title-bar-right-side-item-container"
+                 style="height: 30px; vertical-align: middle; padding-top: 3px;"
+                 ng-show="controller.showCustomTimeRange && controller.includeTimeRange">
+                <div style="white-space: nowrap; height: 32px; padding-top: 3px;">
+                    <span ng-show="controller.showCustomTimeRange">
+                       <ad-date-input class="ad-date-input ads-use-main-title-bar-buttons" date-output="controller.dateFrom"
+                                      show-time="true"
+                                      style="height: 100%">
+                       </ad-date-input>
+                       <div class="adsInlineBlock" style="padding-top: 6px;">&nbsp;-&nbsp;</div>
+                       <ad-date-input class="ad-date-input ads-use-main-title-bar-buttons" date-output="controller.dateTo"
+                                      show-time="true"
+                                      style="height: 100%">
+                       </ad-date-input>
+                    </span>
+
+                </div>
+            </div>
+
+            <!-- Apply Custom Time Range button -->
+            <div class="ads-display-table-cell hoverable"
+                 style="height: 100%; vertical-align: middle; padding-left: 6px;"
+                 ng-if="controller.showCustomTimeRange && controller.includeTimeRange"
+                 ng-click="controller.onApplyCustomTimeRange()">
+                <button class="ads-main-title-bar-button hoverable" 
+                        style="padding-top: 2px; padding-bottom: 2px;"
+                        title="{{::controller.getString('ms_applyCustomTimeRange')}}">
+                    <img src="images/apply.svg" style="width: 20px; height: 20px;"/>
+                </button>
+            </div>
+
+            <!-- Save Custom Time Range button -->
+            <div class="ads-display-table-cell hoverable"
+                 style="height: 100%; vertical-align: middle; padding-left: 12px; padding-right: 6px;"
+                 ng-if="controller.showCustomTimeRange && controller.includeTimeRange"
+                 ng-click="controller.onSaveCustomTimeRange()">
+                <button class="ads-main-title-bar-button hoverable save-time-range-button" 
+                        style="padding-top: 2px; padding-bottom: 2px;"
+                        title="{{::controller.getString('ms_saveCustomTimeRange')}}">
+                    <img src="images/toolbar/save_gray.svg" style="width: 20px; height: 20px;"/>
+                </button>
+            </div>
+
+            <!-- -------- TIME RANGE (BEFORE NOW)  -------- -->
+
+            <div class="ads-display-table-cell ads-main-title-bar-right-side-item-container ads-main-title-bar-time-range-container hoverable"
+                 style="height: 100%; vertical-align: middle; "
+                 ng-if="controller.includeTimeRange">
+
+                <ad-time-range-selector time-range="controller.timeRange"
+                                        class="adsInlineBlock ads-use-main-title-bar-buttons"
+                                        show-icon="{{controller.showCustomTimeRange}}"
+                                        ad-maximum-allowable-time-range-duration-in-minutes="{{controller.maximumAllowableTimeRangeDurationInMinutes}}"
+                                        ad-eum-web-lite-enabled="{{controller.adEumWebLiteEnabled}}"
+                                        ad-eum-mobile-lite-enabled="{{controller.adEumMobileLiteEnabled}}"
+                                        force-show-all-time-range-options="{{controller.forceShowAllTimeRangeOptions}}"
+                                        use-global-time-range="true"
+                                        ad-show-auto-refresh="true"
+                        >
+                </ad-time-range-selector>
+
+            </div>
+
+            <!-- VRule only included when showing custom -->
+            <div ng-if="controller.showCustomTimeRange && controller.includeTimeRange"
+                 class="ads-display-table-cell" style="padding-top: 10px; padding-left: 4px; padding-right: 4px;">
+                <div class="ads-border-left" style="height: 30px;"/>
+            </div>
+
+            <!-- -------- HELP -------- -->
+
+            <div class="ads-display-table-cell ads-main-title-bar-right-side-item-container hoverable"
+                 ad-drop-down-toggle
+                 ad-close-mode="clickAny"
+                 ad-in-place="false"
+                 ad-fit-to-screen="true"
+                 style="vertical-align: middle;"
+                 ad-top-offset="-8"
+                    >
+                <button class="ads-main-title-bar-button hoverable" style="padding-top: 2px; padding-bottom: 2px;">
+                    <img src="images/locationBar/help_gray.svg " style="width: 20px; height: 20px; ">
+                </button>
+            </div>
+
+            <!-- Capture button for any page reports on the title bar, commented out for now, but we may want it back in the future. -->
+
+            <!--<div class="ads-display-table-cell ads-main-title-bar-right-side-item-container hoverable"
+                 ad-in-place="false"
+                 ad-fit-to-screen="true"
+                 style="vertical-align: middle;"
+                 ad-top-offset="-8"
+                    >
+                <button class="ads-main-title-bar-button hoverable" style="padding-top: 2px; padding-bottom: 2px;" ng-click="controller.onCaptureClick()">
+                    <i class="fa fa-camera-retro"></i>
+                </button>
+            </div>-->
+
+            <div class="ads-fly-out-container" style="overflow-y: auto; width: 420px;">
+
+                <!---------------------------------- HELP - LEFT SIDE ---------------------------------->
+                <div class="pull-left" style="vertical-align: top; width: 50%; ">
+
+                    <!-- -------- Docs / Videos -------- -->
+                    <div class="ads-border-bottom" style="padding-top: 8px; padding-bottom: 8px;  ">
+
+                        <div class="ads-menu-item-padding ads-very-light-gray-text"
+                        >
+                            HELP RESOURCES
+                        </div>
+                        <div class="ads-menu-item" ng-click="controller.openDocumentation()">
+                            <div>{{::getString("ms_docs")}}</div>
+                        </div>
+                        <div class="ads-menu-item" ng-click="controller.onVideos()">
+                            <div>{{::getString("ms_videos")}}</div>
+                        </div>
+                        <div class="ads-menu-item" ng-click="controller.openOpsCentral()">
+                            <div>{{::getString("ms_opsCentral")}}</div>
+                        </div>
+
+                    </div>
+
+                    <!-- -------- Community -------- -->
+                    <div style="padding-top: 8px; padding-bottom: 8px;  ">
+
+                        <div class="ads-menu-item-padding ads-very-light-gray-text"
+                        >
+                            COMMUNITY
+                        </div>
+                        <div class="ads-menu-item" ng-click="controller.openCommunity()">
+                            <div>Discussion Forums</div>
+                        </div>
+                        <div class="ads-menu-item" ng-click="controller.openSupport()">
+                            <div>Support</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!---------------------------------- HELP - RIGHT SIDE ---------------------------------->
+                <div class="pull-left ads-border-left" style="vertical-align: top; width: 50%; ">
+
+                    <!-- -------- GETTING STARTED -------- -->
+                    <div class="ads-border-bottom" style="padding-top: 8px; padding-bottom: 8px;  "
+                         ng-show="controller.showGettingStartedSection"
+                    >
+
+                        <div class="ads-menu-item-padding ads-very-light-gray-text"
+                        >
+                            GETTING STARTED
+                        </div>
+
+                        <div class="ads-menu-item" ng-click="controller.onGettingStarted()"
+                             ng-show="controller.showAgentInstallWizard"
+                        >
+                            <div>{{::getString("ms_agentInstallSetupWizard")}}</div>
+                        </div>
+
+                        <div class="ads-menu-item" ng-click="controller.onProductTour()">
+                            <div>{{::getString("ms_product_tour")}}</div>
+                        </div>
+
+                        <div class="ads-menu-item"
+                             ng-if="controller.isProMode && controller.isQuestsLocation"
+                             ng-click="controller.onQuestsBarToggle()">
+                            <div ng-if="!controller.showQuestsToolbar">
+                                {{::controller.getString("ms_showQuestsToolbar") }}
+                            </div>
+                            <div ng-if="controller.showQuestsToolbar">
+                                {{::controller.getString("ms_hideQuestsToolbar") }}
+                            </div>
+                        </div>
+
+                        <div style="padding-top: 33px;"
+                             ng-if="!(controller.isProMode && controller.isQuestsLocation)"
+                            > <!-- spacer to make top 2 sections line up -->
+                        </div>
+
+                    </div>
+
+                    <!-- -------- Tools -------- -->
+                    <div class="ads-border-bottom" style="padding-top: 8px; padding-bottom: 8px;  ">
+
+                        <div class="ads-menu-item-padding ads-very-light-gray-text"
+                        >
+                            TOOLS
+                        </div>
+                        <div ng-show="!controller.helpPopUpsEnabled && !controller.isSharedDashboardPageWithToken" class="ads-menu-item" ng-click="controller.onEnableHelpPopups(true)"
+                             title="{{::getString('ms_showAllHelpBubbleMenuItemTooltip')}}"
+                        >
+                            <div>{{::getString("ms_enableHelpPopups")}}</div>
+                        </div>
+                        <div ng-show="controller.helpPopUpsEnabled && !controller.isSharedDashboardPageWithToken" class="ads-menu-item" ng-click="controller.onEnableHelpPopups(false)">
+                            <div>{{::getString("ms_disableHelpPopups")}}</div>
+                        </div>
+                        <div class="ads-menu-item" ng-click="controller.onExportControllerLogs()"
+                             ng-show="controller.mainNavConfig.showExportControllerLogsMenuItem">
+                            <div>Export Controller Logs</div>
+                        </div>
+                        <div class="ads-menu-item" ng-if="controller.showDebuggerMenuItem" ng-click="controller.onDebug()">
+                            <div>Debugger</div>
+                        </div>
+                    </div>
+
+                    <!-- -------- About -------- -->
+
+                    <div style="padding-top: 8px; padding-bottom: 8px;  ">
+                        <div class="ads-menu-item" ng-click="controller.onWhatsNewInTheUI()"
+                        >
+                            <div>{{::getString("ms_whatsNewIntheUI")}}</div>
+                        </div>
+                        <div class="ads-menu-item" ng-click="controller.onFeedback()"
+                        >
+                            <div>Give us your Feedback</div>
+                        </div>
+                        <div class="ads-menu-item " ng-click="controller.onAboutAppDynamics()">
+                            <div>About AppDynamics</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <ad-help-bubble-popover ad-title="{{::getString('ms_helpIntroHelpBubbleTitle')}}"
+                                    ad-content="{{::getString('ms_helpIntroHelpBubble')}}"
+                                    ad-placement="'bottom-right'"
+                                    ad-help-bubble-id="HELP_INTRO"
+                                    ad-append-to-body="true"
+                                    ad-close-on-target-click="true"
+                                    ad-show-order="1"
+                                    ad-target="'2above'"
+                                    ad-show-after-number-logins="3"
+                    >
+            </ad-help-bubble-popover>
+
+            <!-- -------- OPTIONS -------- -->
+
+            <div class="ads-display-table-cell ads-main-title-bar-right-side-item-container dropdown-toggleAD hoverable ads-main-title-bar-more-hit-area"
+                 style="vertical-align: middle; "
+                 ad-top-offset="-8"
+                 ng-if="controller.navigationState.isTopMenuBarMinimized"
+                    >
+                <button class="ads-main-title-bar-button" style="padding-top: 2px; padding-bottom: 2px; padding-left: 4px; padding-right: 4px;">
+                    <img src="images/mainMenu/settings_gray.svg" style="height: 20px; width: 20px; "/>
+                </button>
+            </div>
+
+            <ad-top-menu-options class="ads-fly-out-container">
+            </ad-top-menu-options>
+
+            <!-- -------- NOTIFICATIONS -------- -->
+
+            <div class="ads-display-table-cell ads-main-title-bar-right-side-item-container hoverable ads-vertical-align"
+                 ng-show="controller.navigationState.isTopMenuBarMinimized && !!controller.notificationCenterService.notificationsCount"
+                    >
+                <button class="ads-main-title-bar-button ads-button-less-horiz-padding ads-button-blue"
+                        ng-click="controller.onToggleNotificationCenter()"
+                        title="{{controller.notificationCenterService.notificationsCount}} notifications."
+                        >
+                    {{controller.notificationCenterService.notificationsCount}}
+                </button>
+            </div>
+
+            <div class="ads-display-table-cell" style="padding-left: 3px;">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div ng-if="controller.isProductTourInProgress">
+        <div ng-include="'app/view/home/productTour/apmTour/APMTour.html'"></div>
+        <div ng-include="'app/view/home/productTour/eumTour/EUMTour.html'"></div>
+        <div ng-include="'app/view/home/productTour/mobileTour/MobileTour.html'"></div>
+    </div>
+
+</div>

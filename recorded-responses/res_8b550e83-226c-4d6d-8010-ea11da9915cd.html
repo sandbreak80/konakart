@@ -1,0 +1,163 @@
+<div>
+
+    <!-- -------- Eval Toolbar Row -------- -->
+
+    <div class="ads-eval-toolbar-row" ng-show="controller.showEvalToolbar || controller.showQuestsToolbar">
+        <div class="closeButton ads-eval-toolbar-close-button"
+             ng-show="!controller.showEvalToolbar"
+             ng-click="controller.hideToolbar()">
+        </div>
+        <div ng-show="controller.evalBarMessage">
+            <div class="ads-eval-toolbar-message-container" ng-click="controller.onEvalBannerClick()">
+                <span>{{controller.evalBarMessage}}</span>
+                <img src="images/leftNav/triangleRight_gray.svg"
+                     style="margin-top:-2px"
+                     class="ads-triangle-image-left-right-dimensions">
+            </div>
+        </div>
+        <div class="ads-eval-toolbar-quests">
+            <div ng-show="controller.showQuestsToolbar">
+                <div ad-drop-down-toggle
+                     ad-close-mode="clickAny"
+                     ad-in-place="false"
+                     class="ads-eval-toolbar-quest-products-container">
+                    {{::controller.getString("ms_onboarding") }} - {{ controller.questApplication.name }}
+                </div>
+                <div class="ads-fly-out-container ads-eval-toolbar-quest-products">
+                    <div ng-repeat="questApplication in controller.questApplications"
+                         class="ads-eval-toolbar-quest-product"
+                         ng-click="controller.onChangeQuestApplication(questApplication)">
+                        {{ questApplication.name }}
+                    </div>
+                </div>
+                <div style="display:inline-block">
+                    <div class="ads-eval-toolbar-quests-container"
+                         ad-drop-down-toggle
+                         ad-top-offset="-1"
+                         ad-close-mode="clickAny"
+                         ad-in-place="false">
+                        <div class="ads-eval-toolbar-quests-progress">
+                            <ad-progress-bar ad-progress="controller.questState.progress.toString()"></ad-progress-bar>
+                        </div>
+                        <img src="images/leftNav/triangleDown_gray.svg"
+                             class="ads-triangle-image-up-down-dimensions ads-eval-toolbar-quests-dropdown-toggle">
+                    </div>
+                    <div class="ads-fly-out-container ads-eval-toolbar-quests-dropdown">
+                        <div ng-repeat="quest in controller.questState.quests">
+                            <div class="ads-eval-toolbar-quest"
+                                 ng-class="{'ads-eval-toolbar-quest-disabled': quest.disabled}"
+                                 ng-click="!quest.disabled && quest.onStart()">
+                                <img src="images/health/normal.svg"
+                                     ng-if="quest.complete"
+                                     style="margin-top:-2px"
+                                     class="ads-triangle-image-left-right-dimensions">
+                                <img src="images/health/unvisited.svg"
+                                     ng-if="!quest.complete"
+                                     style="margin-top:-2px"
+                                     class="ads-triangle-image-left-right-dimensions">
+                                {{ quest.name }}
+
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear:both"></div>
+    </div>
+
+    <!-- -------- TOP MENU BAR ROW -------- -->
+
+    <div class="ads-top-menu-bar-ContainerRow ads-display-table" style="position: relative;">
+
+        <div class="ads-display-table-row">
+
+            <!-- -------- APP DYNAMICS LOGO -------- -->
+
+            <div class="ads-display-table-cell ads-top-menu-bar-full-logo-container"
+                 style="vertical-align: middle; "
+                 ng-click="controller.onClickLogo()"
+                 ng-show="controller.showFullLogo">
+                <ad-svg-icon ad-tip="{{::controller.resourceManager.getString('ui','ms_appDynamicsLogoTip')}}"
+                             ad-base-image="images/logo/AppDynamicsLogo" 
+                             ad-svg-image-width="141" 
+                             ad-svg-image-height="22"/>
+            </div>
+
+            <div class="ads-display-table-cell ads-top-menu-bar-mini-logo-container"
+                 style="vertical-align: middle; "
+                 ng-click="controller.onClickLogo()"
+                 ng-show="!controller.showFullLogo">
+                <ad-svg-icon ad-tip="{{::controller.resourceManager.getString('ui','ms_appDynamicsLogoTip')}}"
+                             ad-base-image="images/logo/AppDynamicsALogo"
+                             ad-svg-image-width="17"
+                             ad-svg-image-height="17"/>
+            </div>
+
+            <!-- -------- MAIN NAV TABS  -------- -->
+
+            <div class="ads-display-table-cell">
+                <ad-main-navigation-tabs></ad-main-navigation-tabs>
+            </div>
+
+        </div>
+
+
+        <!-- -------- RIGHT SIDE -------- -->
+
+        <div style="position: absolute; top: 0px; right: 0px">
+
+            <div class="ads-display-table ads-top-menu-bar-height">
+
+                <div class="ads-display-table-row">
+
+                    <!-- -------- NOTIFICATIONS -------- -->
+
+                    <div class="ads-display-table-cell ads-top-menu-bar-right-side-item-container hoverable ads-top-menu-bar-height"
+                         style="vertical-align: middle;"
+                         ng-show="!!controller.notificationCenterService.notificationsCount"
+                            >
+                        <button class="ads-button-less-horiz-padding ads-button-blue"
+                                ng-click="controller.onToggleNotificationCenter()"
+                                title="{{controller.notificationCenterService.notificationsCount}} notifications."
+                                >
+                            {{controller.notificationCenterService.notificationsCount}}
+                        </button>
+                    </div>
+
+                    <!-- -------- Options  -------- -->
+                    <div class="ads-display-table-cell ads-top-menu-bar-right-side-item-container ads-top-menu-bar-height"
+                         style="vertical-align: middle;">
+
+                        <div class="ads-top-menu-bar-Gear hoverable"
+                             ad-drop-down-toggle
+                             ad-in-place="false"
+                             ad-close-mode="clickAny"
+                             ad-top-offset="10"
+                                >
+                            <ad-svg-icon ad-tip="{{::controller.resourceManager.getString('ui','ms_viewMySettings')}}"
+                                         ad-base-image="images/mainMenu/settings"
+                                         ad-svg-image-width="20"
+                                         ad-svg-image-height="20"/>
+                        </div>
+
+                        <ad-top-menu-options class="ads-fly-out-container">
+                        </ad-top-menu-options>
+
+                    </div>
+
+                    <div class="ads-display-table-cell" style="padding-left: 10px;">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>

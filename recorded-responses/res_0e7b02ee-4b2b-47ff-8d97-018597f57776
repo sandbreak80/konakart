@@ -1,0 +1,129 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports"], function (require, exports) {
+    var MainAppDashControllerBase = (function (_super) {
+        __extends(MainAppDashControllerBase, _super);
+        function MainAppDashControllerBase($scope, $rootScope, $location, flowMapUiService, businessTransactionViewService, baselineUiService, resourceManager, notificationService, injectorService, applicationViewService, globalCacheService, userPreferenceUiService, masterService, $timeout) {
+            _super.call(this, $scope, $rootScope, $location, flowMapUiService, businessTransactionViewService, baselineUiService, resourceManager, notificationService, injectorService, globalCacheService, userPreferenceUiService, masterService, $timeout);
+            this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.$location = $location;
+            this.flowMapUiService = flowMapUiService;
+            this.businessTransactionViewService = businessTransactionViewService;
+            this.baselineUiService = baselineUiService;
+            this.resourceManager = resourceManager;
+            this.notificationService = notificationService;
+            this.injectorService = injectorService;
+            this.applicationViewService = applicationViewService;
+            this.globalCacheService = globalCacheService;
+            this.userPreferenceUiService = userPreferenceUiService;
+            this.masterService = masterService;
+            this.$timeout = $timeout;
+            this.applicationId = this.getApplicationIdFromUrl();
+            this.baselineConfig = {
+                applicationId: this.applicationId,
+                selectedBaseline: null
+            };
+        }
+        MainAppDashControllerBase.prototype.init = function () {
+            _super.prototype.init.call(this);
+        };
+        MainAppDashControllerBase.prototype.getApplicationLocationBarEntryConfig = function () {
+            if (this.application) {
+                return this.applicationViewService.getApplicationLocationBarEntryConfig(this.application);
+            }
+            return null;
+        };
+        MainAppDashControllerBase.prototype.getAppId = function () {
+            return this.applicationId;
+        };
+        MainAppDashControllerBase.prototype.fetchEventsCounts = function () {
+            var _this = this;
+            this.logDebug("MainDashboardControllerBase.fetchEventCounts");
+            var eventsUiService = this.injectorService.eventsUiService();
+            var resultHandler = function (response) {
+                _this.eventCounts = eventsUiService.getEventCounts_response(response);
+            };
+            var entityDefinition = this.getEntityDefinition();
+            var timeRangeString = this.getTimeRangeString();
+            var promise = eventsUiService.getEventCounts(this.getAppId(), entityDefinition.entityType, entityDefinition.entityId, timeRangeString);
+            promise.then(resultHandler);
+        };
+        MainAppDashControllerBase.prototype.fetchTransactionScorecardData = function () {
+            var _this = this;
+            this.logDebug("MainDashboardControllerBase.fetchTransactionScorecardData");
+            var entityDefinition = this.getEntityDefinition();
+            var timeRangeString = this.getTimeRangeString();
+            var resultHandler = function (response) {
+                var performanceRequestStats = _this.injectorService.businessTransactionUiService().getPerformanceRequestStats_response(response);
+                if (performanceRequestStats) {
+                    if (performanceRequestStats.statsAvailable) {
+                        var stats = performanceRequestStats.performanceStats;
+                        _this.averageResponseTime = stats.averageResponseTime.metricId > -1 ? stats.averageResponseTime.value : -1;
+                        _this.callsPerMinute = stats.callsPerMinute.metricId > -1 ? stats.callsPerMinute.value : -1;
+                        _this.errorsPerMinute = stats.errorsPerMinute.metricId > -1 ? stats.errorsPerMinute.value : -1;
+                        _this.numberOfCalls = stats.numberOfCalls.metricId > -1 ? stats.numberOfCalls.value : -1;
+                        _this.numberOfErrors = stats.errorsPerMinute.metricId > -1 ? stats.numberOfErrors.value : -1;
+                        stats.numberOfErrors.metricId = stats.numberOfErrors.metricId > -1 ? stats.numberOfErrors.metricId : stats.errorsPerMinute.metricId;
+                    }
+                    else {
+                        _this.averageResponseTime = -1;
+                        _this.callsPerMinute = -1;
+                        _this.errorsPerMinute = -1;
+                        _this.numberOfCalls = -1;
+                        _this.numberOfErrors = -1;
+                    }
+                }
+                _this.performanceStats = performanceRequestStats ? performanceRequestStats.performanceStats : null;
+                _this.performanceRequestStats = performanceRequestStats;
+            };
+            var promise = this.injectorService.businessTransactionUiService().getPerformanceRequestStats(this.getAppId(), entityDefinition.entityType, entityDefinition.entityId, timeRangeString);
+            promise.then(resultHandler);
+        };
+        MainAppDashControllerBase.prototype.fetchDefaultBaseline = function (responseCallback) {
+            var _this = this;
+            var responseHandler = function (response) {
+                _this.baselineConfig.defaultBaseline = _this.baselineUiService.getDefaultBaseline_response(response);
+                if (_this.globalCacheService.compareVsDefaultBaselineInFlowMap) {
+                    _this.baselineConfig.selectedBaseline = _this.baselineConfig.defaultBaseline;
+                }
+                responseCallback.apply(_this);
+            };
+            this.baselineUiService.getDefaultBaseline(this.getAppId()).then(responseHandler);
+        };
+        MainAppDashControllerBase.prototype.onViewAppServerList = function () {
+            this.applicationViewService.viewAppInfrastructure(this.getAppId());
+        };
+        MainAppDashControllerBase.prototype.onViewAppErrors = function () {
+            this.applicationViewService.viewAppErrors(this.getAppId());
+        };
+        MainAppDashControllerBase.prototype.gotoAppDash = function () {
+            this.applicationViewService.viewApplicationDashboard(this.getAppId());
+        };
+        MainAppDashControllerBase.prototype.onViewBusinessTransactions = function () {
+            this.businessTransactionViewService.viewBusinessTransactionList(this.getAppId());
+        };
+        MainAppDashControllerBase.$inject = [
+            "$scope",
+            "$rootScope",
+            "$location",
+            "flowMapUiService",
+            "businessTransactionViewService",
+            "baselineUiService",
+            "resourceManager",
+            "notificationService",
+            "injectorService",
+            "applicationViewService",
+            "globalCacheService",
+            "userPreferenceUiService",
+            "masterService",
+            "$timeout"
+        ];
+        return MainAppDashControllerBase;
+    })(MainDashboardControllerBase);
+    return MainAppDashControllerBase;
+});

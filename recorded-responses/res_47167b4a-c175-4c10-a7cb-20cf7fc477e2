@@ -1,0 +1,46 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./ADQLConditionBase"], function (require, exports, ADQLConditionBase) {
+    var ADQLInCondition = (function (_super) {
+        __extends(ADQLInCondition, _super);
+        function ADQLInCondition(fieldName, values) {
+            _super.call(this, false);
+            this.fieldName = fieldName;
+            this.values = values;
+        }
+        ADQLInCondition.prototype.getFieldName = function () {
+            return this.fieldName;
+        };
+        ADQLInCondition.prototype.getValues = function () {
+            return this.values;
+        };
+        ADQLInCondition.prototype.toString = function () {
+            var str = [
+                this.fieldName,
+                ADQLInCondition.IN,
+                " [" + this.values.toString() + "] "
+            ];
+            this.conditionAsString = str.join(" ");
+            return _super.prototype.toString.call(this);
+        };
+        ADQLInCondition.isInstance = function (conditionAsString) {
+            var validRegExp = new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLInCondition.OPERATOR_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLInCondition.VALUE_PATTERN, 'i');
+            return !!validRegExp.test(conditionAsString);
+        };
+        ADQLInCondition.getInstance = function (conditionAsString) {
+            var fieldName = conditionAsString.match(new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN + '\\b', 'i'))[0];
+            var values = StringUtils.getStringBetweenTokens(conditionAsString.match(new RegExp(ADQLInCondition.VALUE_PATTERN, 'i'))[0], '[', ']');
+            return new ADQLInCondition(fieldName, StringUtils.convertCommaSeparatedStringToArray(values));
+        };
+        ADQLInCondition.IN = "IN";
+        ADQLInCondition.OPERATOR_PATTERN = "IN";
+        ADQLInCondition.VALUE_PATTERN = "\\[(\\s*'[\\w\\s]*'\\s*)(,\\s*'[\\w\\s]*'\\s*)*\\]";
+        return ADQLInCondition;
+    })(ADQLConditionBase);
+    return ADQLInCondition;
+});

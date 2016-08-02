@@ -1,0 +1,189 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports"], function (require, exports) {
+    var KeyPerformanceMetricsDirective = (function () {
+        function KeyPerformanceMetricsDirective() {
+            return {
+                restrict: "E",
+                replace: false,
+                templateUrl: "app/view/apm/keyPerformanceMetrics/KeyPerformanceMetricsView.html",
+                scope: {
+                    adApplicationId: "=",
+                    adBaselineId: "=",
+                    adPerformanceStats: "=",
+                    adDashboardGraphData: "=",
+                    adMetricEntityDefinition: "=",
+                    adEnableEndToEnd: "="
+                },
+                controller: KeyPerformanceMetricsController
+            };
+        }
+        KeyPerformanceMetricsDirective.$inject = [];
+        return KeyPerformanceMetricsDirective;
+    })();
+    exports.KeyPerformanceMetricsDirective = KeyPerformanceMetricsDirective;
+    appdynamicsModule.directive(StringUtils.toCamelCase("ad-key-performance-metrics"), KeyPerformanceMetricsDirective);
+    var KeyPerformanceMetricsController = (function (_super) {
+        __extends(KeyPerformanceMetricsController, _super);
+        function KeyPerformanceMetricsController($scope, $rootScope, $location, resourceManager, notificationService, injectorService) {
+            var _this = this;
+            _super.call(this, $scope, resourceManager, notificationService, injectorService);
+            this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.$location = $location;
+            this.resourceManager = resourceManager;
+            this.notificationService = notificationService;
+            this.injectorService = injectorService;
+            this.displayTimingAsEndToEndLatency = false;
+            this.$scope.controller = this;
+            this.$scope.$watch("adPerformanceStats", function () {
+                _this.initPerformanceStats();
+            });
+            this.$scope.$watch("adDashboardGraphData", function () {
+                _this.initGraphData();
+            });
+            this.init();
+        }
+        KeyPerformanceMetricsController.prototype.init = function () {
+            this.initPerformanceStats();
+            this.initGraphData();
+        };
+        KeyPerformanceMetricsController.prototype.initPerformanceStats = function () {
+            this.performanceStats = this.$scope.adPerformanceStats;
+            if (this.performanceStats) {
+                var stats = this.performanceStats;
+                var appId = this.$scope.adApplicationId;
+                this.averageResponseTimeData = MetricUtil.getPerformanceValueData(stats.averageResponseTime, appId, this.$scope.adMetricEntityDefinition);
+                this.endToEndLatencyTimeData = MetricUtil.getPerformanceValueData(stats.endToEndLatencyTime, appId);
+                this.callsPerMinuteData = MetricUtil.getPerformanceValueData(stats.callsPerMinute, appId, this.$scope.adMetricEntityDefinition);
+                this.errorsPerMinuteData = MetricUtil.getPerformanceValueData(stats.errorsPerMinute, appId, this.$scope.adMetricEntityDefinition);
+                this.errorsPerMinuteData.displayAsLargeNumber = true;
+                this.errorsPerMinuteData.thresholdForLargeNumber = 1000;
+                this.numberOfCalls = stats.numberOfCalls.value;
+                this.numberOfErrors = stats.numberOfErrors.value;
+                if (stats.numberOfCalls.value > 0) {
+                    this.percentageErrors = (stats.numberOfErrors.value / stats.numberOfCalls.value) * 100;
+                }
+                else {
+                    this.percentageErrors = 0;
+                }
+            }
+            else {
+                this.numberOfCalls = -1;
+                this.numberOfErrors = -1;
+                this.percentageErrors = -1;
+            }
+        };
+        KeyPerformanceMetricsController.prototype.initGraphData = function () {
+            this.dashboardGraphData = this.$scope.adDashboardGraphData;
+            if (this.dashboardGraphData) {
+                var graphData = this.dashboardGraphData;
+                var baselineId = -1;
+                if (this.$scope.adBaselineId && !isNaN(this.$scope.adBaselineId)) {
+                    baselineId = this.$scope.adBaselineId;
+                }
+                var loadTimeSeriesData = ChartTimeSeriesData.getChartDataFromMetricData(graphData.callsPerMinuteData, true, true);
+                if (baselineId >= 0 && graphData.callsPerMinuteBaselineData) {
+                    var loadTimeSeriesDataBaseline = ChartTimeSeriesData.getChartDataFromMetricData(graphData.callsPerMinuteBaselineData, true, true, true);
+                    this.chartConfigLoad = this.adjustMainDashChartOptions(ChartUtil.getTwoDTimeChartConfigBaseline("Calls Per Minute", "", loadTimeSeriesData.data, loadTimeSeriesDataBaseline.data));
+                }
+                else {
+                    this.chartConfigLoad = this.adjustMainDashChartOptions(ChartUtil.getTwoDTimeChartConfig("Calls Per Minute", "", loadTimeSeriesData.data, -1, -1, false));
+                }
+                this.setUpTimingChart();
+                var errorTimeSeriesData = ChartTimeSeriesData.getChartDataFromMetricData(graphData.errorsPerMinuteData, true, true);
+                this.chartConfigErrors = this.adjustMainDashChartOptions(ChartUtil.getTwoDTimeChartConfig("Errors Per Minute", "", errorTimeSeriesData.data, -1, -1, false));
+            }
+        };
+        KeyPerformanceMetricsController.prototype.onDoubleClickLoadChart = function () {
+            this.openMetricBrowser(this.callsPerMinuteData);
+        };
+        KeyPerformanceMetricsController.prototype.onDoubleClickTimingChart = function () {
+            if (this.displayTimingAsEndToEndLatency) {
+                this.openMetricBrowser(this.endToEndLatencyTimeData);
+            }
+            else {
+                this.openMetricBrowser(this.averageResponseTimeData);
+            }
+        };
+        KeyPerformanceMetricsController.prototype.onDoubleClickErrorChart = function () {
+            this.openMetricBrowser(this.errorsPerMinuteData);
+        };
+        KeyPerformanceMetricsController.prototype.openMetricBrowser = function (performanceValueData) {
+            if (performanceValueData && performanceValueData.performanceValue) {
+                MetricBrowserViewService.instance().openMetricBrowser(this.getApplicationIdFromUrl(), performanceValueData.performanceValue.metricId, MetricUtil.getEntityDefinitionForMetricBrowser(performanceValueData));
+            }
+        };
+        KeyPerformanceMetricsController.prototype.getTitleForActiveTimingType = function () {
+            return this.displayTimingAsEndToEndLatency ? this.getString("ms_endToEndLatencyTime") : this.getString("ms_responseTime");
+        };
+        KeyPerformanceMetricsController.prototype.getTitleForInactiveTimingType = function () {
+            return this.displayTimingAsEndToEndLatency ? this.getString("ms_responseTime") : this.getString("ms_endToEndLatencyTime");
+        };
+        KeyPerformanceMetricsController.prototype.getDataLabelForActiveTimingType = function () {
+            return this.displayTimingAsEndToEndLatency ? this.getString("ms_endToEndLatencyTime_ms") : this.getString("ms_averageResponseTimeMs");
+        };
+        KeyPerformanceMetricsController.prototype.toggleTimingType = function () {
+            if (this.$scope.adEnableEndToEnd) {
+                this.displayTimingAsEndToEndLatency = !this.displayTimingAsEndToEndLatency;
+                this.setUpTimingChart();
+            }
+        };
+        KeyPerformanceMetricsController.prototype.getMetricDataForActiveTimingType = function () {
+            if (this.displayTimingAsEndToEndLatency) {
+                return this.dashboardGraphData.endToEndLatencyData;
+            }
+            else {
+                return this.dashboardGraphData.averageResponseTimeData;
+            }
+        };
+        KeyPerformanceMetricsController.prototype.getPerformanceValueDataForActiveTimingType = function () {
+            return this.displayTimingAsEndToEndLatency ? this.endToEndLatencyTimeData : this.averageResponseTimeData;
+        };
+        KeyPerformanceMetricsController.prototype.setUpTimingChart = function () {
+            var baselineId = -1;
+            if (this.$scope.adBaselineId) {
+                baselineId = this.$scope.adBaselineId;
+            }
+            var timingTimeSeriesData = ChartTimeSeriesData.getChartDataFromMetricData(this.getMetricDataForActiveTimingType(), true, true);
+            if (!timingTimeSeriesData) {
+                timingTimeSeriesData = { data: [] };
+            }
+            if (!this.displayTimingAsEndToEndLatency && baselineId >= 0 && this.dashboardGraphData.averageResponseTimeBaselineData) {
+                var responseTimeSeriesDataBaseline = ChartTimeSeriesData.getChartDataFromMetricData(this.dashboardGraphData.averageResponseTimeBaselineData, true, true, true);
+                this.chartConfigTiming = this.adjustMainDashChartOptions(ChartUtil.getTwoDTimeChartConfigBaseline(this.getString("ms_averageResponseTimeMs"), this.getString("ms_ms"), timingTimeSeriesData.data, responseTimeSeriesDataBaseline.data));
+            }
+            else {
+                this.chartConfigTiming = this.adjustMainDashChartOptions(ChartUtil.getTwoDTimeChartConfig(this.getDataLabelForActiveTimingType(), this.getString("ms_ms"), timingTimeSeriesData.data, -1, -1, false));
+            }
+        };
+        KeyPerformanceMetricsController.prototype.adjustMainDashChartOptions = function (config) {
+            if (!config.series || config.series.length < 1) {
+                config.series = [{}];
+            }
+            config.series[0]["color"] = UiConfig.getColor("MAIN_DASH_PERF_CHART_SERIES_COLOR");
+            if (!config.yAxis.plotBands || config.yAxis.plotBands.length < 1) {
+                config.yAxis.plotBands = [{}];
+            }
+            config.yAxis.plotBands[0].color = UiConfig.getColor("MAIN_DASH_PERF_CHART_BACKGROUND_COLOR");
+            config.yAxis.gridLineColor = UiConfig.getColor("MAIN_DASH_PERF_CHART_GRIDLINE_COLOR");
+            config.tooltip.shared = false;
+            return config;
+        };
+        KeyPerformanceMetricsController.$inject = [
+            "$scope",
+            "$rootScope",
+            "$location",
+            "resourceManager",
+            "notificationService",
+            "injectorService"
+        ];
+        return KeyPerformanceMetricsController;
+    })(ControllerBase);
+    exports.KeyPerformanceMetricsController = KeyPerformanceMetricsController;
+    appdynamicsModule.controller("KeyPerformanceMetricsController", KeyPerformanceMetricsController);
+});

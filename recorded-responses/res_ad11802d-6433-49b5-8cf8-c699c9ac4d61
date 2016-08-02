@@ -1,0 +1,10 @@
+"use strict";
+var adComponentsModule = angular.module('ad-components', [
+    'ngRoute',
+    'ngAnimate',
+    'ui.select',
+    'ui.bootstrap',
+    'ui.bootstrap.tooltip',
+    'mgcrea.ngStrap.popover'
+]);
+window['adComponentsModule'] = adComponentsModule;

@@ -1,0 +1,114 @@
+<div class="ad-multiselect">
+
+    <!-- If not in midWidthMode use original sizing/decorations. -->
+    <!-- Tried ng-if but then add/remove buttons do not work. -->
+    <div ng-show="!minWidthMode">
+        <div class="row" style="width: 100%; margin: 0px">
+            <div class="col-xs-5 ads-display-table" style="text-align: left; margin-bottom: 10px;">
+                <div class="ads-display-table-cell ads-vertical-align">{{selectedText}} {{itemsTitle}}
+                    ({{selectItemsGridOptions.dataProvider.length}})
+                </div>
+                <div class="pull-right" ng-if="!disableFiltering" ad-search-box ng-model="searchString1"
+                     ng-change="handleSearchStringChange(selectItemsGridOptions, searchString1)"></div>
+
+            </div>
+
+            <div class="col-xs-2" style="width: 125px">&nbsp;</div>
+
+            <div class="col-xs-5 ads-display-table pull-right" style="text-align: left; margin-bottom: 10px; ">
+                <div class="ads-display-table-cell ads-vertical-align">{{availableText}} {{itemsTitle}}
+                    ({{allItemsGridOptions.dataProvider.length}})
+                </div>
+                <div  class="pull-right" ng-if="!disableFiltering" ad-search-box ng-model="searchString2"
+                     ng-change="handleSearchStringChange(allItemsGridOptions, searchString2)"></div>
+            </div>
+        </div>
+
+        <div class="row" style="width: 100%; margin: 0px">
+
+            <div class="col-xs-5" style="height: 200px">
+                <ad-grid grid-options="selectItemsGridOptions"
+                         sv-selected-items="selectItemSelected"
+                         on-click="selectItemsGridClick(event)">
+                </ad-grid>
+            </div>
+
+            <div class="col-xs-2" style="height: 200px;">
+                <div style="height: 33%; text-align: center">
+                    <button class="ads-button" style="width: 100px; margin-top: 30px" ng-disabled="!isAddable"
+                            ng-click="add()">&lt; {{getString("ms_add")}}
+                    </button>
+                </div>
+                <div style="text-align: center">
+                    <button class="ads-button" style="width: 100px; padding: 5px 0 5px 0" ng-disabled="!isRemovable"
+                            ng-click="remove()">{{getString("ms_remove")}} &gt;</button>
+                </div>
+                <br/><br/>
+
+                <div class="ads-multi-select-drag-tip">
+                    <p>{{getString("ms_multiselectDragTip")}}</p>
+                </div>
+            </div>
+
+            <div class="col-xs-5 pull-right" style="height: 200px;">
+                <ad-grid grid-options="allItemsGridOptions"
+                         sv-selected-items="allItemSelected"
+                         on-click="allItemsGridClick(event)">
+                </ad-grid>
+            </div>
+        </div>
+    </div>
+
+    <!-- If in midWidthMode drop all padding and use a table to allow small buttons. -->
+    <!-- Tried ng-if but then add/remove buttons do not work. -->
+    <table ng-show="minWidthMode" style="width: 100%; margin: 0px; height: 230px;">
+        <tr style="height: 28px">
+            <td style="width: 47.5%">
+                <div class="pull-left ads-vertical-align">{{selectedText}} {{itemsTitle}}
+                    ({{selectItemsGridOptions.dataProvider.length}})
+                </div>
+                <div class="pull-right" ng-if="!disableFiltering" ad-search-box ng-model="searchString1"
+                     ng-change="handleSearchStringChange(selectItemsGridOptions, searchString1)">
+                </div>
+            </td>
+            <td style="width: 5%;">
+                &nbsp;
+            </td>
+            <td style="width: 47.5%;">
+                <div class="pull-left ads-vertical-align">{{availableText}} {{itemsTitle}}
+                    ({{allItemsGridOptions.dataProvider.length}})
+                </div>
+                <div  class="pull-right" ng-if="!disableFiltering" ad-search-box ng-model="searchString2"
+                      ng-change="handleSearchStringChange(allItemsGridOptions, searchString2)">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 47.5%;">
+                <ad-grid grid-options="selectItemsGridOptions"
+                         sv-selected-items="selectItemSelected"
+                         on-click="selectItemsGridClick(event)">
+                </ad-grid>
+            </td>
+            <td style="width: 5%;">
+                <div style="text-align: center">
+                    <button class="ads-button" title="{{getString('ms_multiselectAddButtonTooltip')}}" style="width: 20px; ; padding: 5px 0 5px 0; margin-top: 30px" ng-disabled="!isAddable"
+                            ng-click="add()">&lt;
+                    </button>
+                </div>
+                <div style="text-align: center">
+                    <button class="ads-button" title="{{getString('ms_multiselectRemoveButtonTooltip')}}"  style="width: 20px; padding: 5px 0 5px 0;" ng-disabled="!isRemovable"
+                            ng-click="remove()">&gt;
+                    </button>
+                </div>
+            </td>
+            <td style="width: 47.5%;">
+                <ad-grid grid-options="allItemsGridOptions"
+                         sv-selected-items="allItemSelected"
+                         on-click="allItemsGridClick(event)">
+                </ad-grid>
+            </td>
+        </tr>
+    </table>
+
+</div>

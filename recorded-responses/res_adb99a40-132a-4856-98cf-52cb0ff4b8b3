@@ -1,0 +1,84 @@
+<GWTResponse>
+  <result class="String-array">
+    <String>STORE_COUNTRY</String>
+    <String>223</String>
+    <String>MULTI_VENDOR_MODE</String>
+    <String>false</String>
+    <String>REPORTS_STATUS_PAGE_URL</String>
+    <String>http://localhost:8780/birtviewer/run?__report=reports/stores/store1/OrdersInLast25DaysChart.rptdesign</String>
+    <String>SHOW_INVISIBLE_PRODUCTS_IN_ADM</String>
+    <String>true</String>
+    <String>ADMIN_APP_LOGGING_LEVEL</String>
+    <String>4</String>
+    <String>ENTRY_PASSWORD_MIN_LENGTH</String>
+    <String>8</String>
+    <String>ADMIN_APP_ADDRESS_FORMAT</String>
+    <String>$street $street1 $suburb $city $state $country</String>
+    <String>HIDDEN_PRODUCT_TYPES</String>
+    <String></String>
+    <String>ADMIN_APP_DEFAULT_CUST_CHOICE_IDX</String>
+    <String>0</String>
+    <String>ADMIN_APP_DEFAULT_CUST_GROUP_IDX</String>
+    <String>0</String>
+    <String>MULTISTORE_ADMIN_ROLE_IDX</String>
+    <String>5</String>
+    <String>ADMIN_APP_PROD_SEL_NUM_PRODS</String>
+    <String>0</String>
+    <String>ADMIN_APP_PROD_SEL_MAX_NUM_PRODS</String>
+    <String>100</String>
+    <String>ADMIN_APP_PROD_SEL_TEMPLATE</String>
+    <String>$name</String>
+    <String>RICH_TEXT_EDITOR</String>
+    <null/>
+    <String>ENABLE_OTHER_GENDER</String>
+    <String>false</String>
+    <String>ADMIN_APP_WARN_OF_DUPLICATE_SKUS</String>
+    <String>false</String>
+    <String>1ST_DAY_OF_WEEK</String>
+    <String>0</String>
+    <String>ADMIN_APP_LOGIN_WINDOW_FEATURES</String>
+    <String>resizable=yes,scrollbars=yes,status=yes,toolbar=yes,location=yes</String>
+    <String>ADMIN_APP_DISPLAY_SUBSCRIPTIONS_BUTTON</String>
+    <String>false</String>
+    <String>ADMIN_CURRENCY_DECIMAL_PLACES</String>
+    <String>2</String>
+    <String>IMG_BASE_URL</String>
+    <String>http://localhost:8780/konakart/images/</String>
+    <String>IMG_BASE_PATH</String>
+    <String>/usr/local/konakart/webapps/konakart/images</String>
+    <String>IMG_SERVLET_URL</String>
+    <String>/konakartadmin/uploadAction</String>
+    <String>ADMIN_APP_SELECT_PROD_ADDR_FORMAT</String>
+    <String>$company $street $street1 $suburb $city $state $country</String>
+    <String>ADMIN_APP_PROD_ADDR_FORMAT</String>
+    <String>$company $street $street1 $suburb $city $state $country</String>
+    <String>ADMIN_APP_CUST_ADDR_FORMAT</String>
+    <String>$street $street1 $suburb $city $state $country</String>
+    <String>ADMIN_APP_MANU_ADDR_FORMAT</String>
+    <String>$street $street1 $suburb $city $state $country</String>
+    <String>ADMIN_APP_STORE_ADDR_FORMAT</String>
+    <String>$street $street1 $suburb $city $state $country</String>
+    <String>ADMIN_APP_ADDR_SEL_NUM_ADDRS</String>
+    <String>50</String>
+    <String>ADMIN_APP_ADDR_SEL_MAX_NUM_ADDRS</String>
+    <String>100</String>
+    <String>ADMIN_APP_MANU_SEL_NUM_MANUS</String>
+    <String>50</String>
+    <String>ADMIN_APP_MANU_SEL_MAX_NUM_MANUS</String>
+    <String>100</String>
+    <String>ADMIN_APP_PROD_ATTR_SEL_NUM_PROD_ATTRS</String>
+    <String>50</String>
+    <String>ADMIN_APP_PROD_ATTR_SEL_MAX_NUM_PROD_ATTRS</String>
+    <String>100</String>
+    <String>ADMIN_APP_PROD_OPT_SEL_NUM_PROD_OPTS</String>
+    <String>50</String>
+    <String>ADMIN_APP_PROD_OPT_SEL_MAX_NUM_PROD_OPTS</String>
+    <String>100</String>
+    <String>ADMIN_APP_TMPL_SEL_NUM_TMPLS</String>
+    <String>50</String>
+    <String>ADMIN_APP_TMPL_SEL_MAX_NUM_TMPLS</String>
+    <String>100</String>
+    <String>MESSAGE_TYPES</String>
+    <String>Application,AdminApp,AdminAppHelp</String>
+  </result>
+</GWTResponse>

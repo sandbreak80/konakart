@@ -1,0 +1,8 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminPromotionSearchResult">
+    <promotions/>
+    <offset>0</offset>
+    <maxGroupSize>4</maxGroupSize>
+    <totalSetSize>0</totalSetSize>
+  </result>
+</GWTResponse>

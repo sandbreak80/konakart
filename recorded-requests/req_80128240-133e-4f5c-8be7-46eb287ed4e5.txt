@@ -1,0 +1,9 @@
+GET http://192.168.1.246:8090/controller/images/leftNav/triangleRight_white.svg HTTP/1.1
+Accept: image/png, image/svg+xml, image/jxr, image/*;q=0.8, */*;q=0.5
+Referer: http://192.168.1.246:8090/controller/
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.246:8090
+Cookie: JSESSIONID=2aba5749c35d50f010364eb946dc
+

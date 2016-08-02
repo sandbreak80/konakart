@@ -1,0 +1,15 @@
+<div class="ads-search-box-container">
+
+    <div class="pull-left" style="padding-top: 2px; padding-left: 2px;">
+        <img src="images/toolbar/search_gray.svg" style="height: 20px; width: 20px;">
+    </div>
+
+    <input type="text"
+           class="ads-search-box-input pull-left"
+           ng-model="searchValue"
+           ng-change="onNgChangeInput()"
+           style="border: none"
+            >
+    <div ng-show="showCloseButton()" class="ads-close-button ads-search-box-clear pull-right" ng-click="clearSearchInput()"></div>
+    <div class="clearfix"></div>
+</div>

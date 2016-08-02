@@ -1,0 +1,77 @@
+<div class="expanded" ng-show="!hidden">
+
+    <!-- ========================= NEW LEFT NAV (>= 4.1 release) ========================= -->
+
+    <div class="absoluteExpanded ads-left-nav2-container">
+
+
+        <!-- -------- main nav hamburger icon - show when in minimized mode -------- -->
+        <div class="ads-main-nav-hamburger-left-nav-container"
+             ng-if="controller.navigationState.isTopMenuBarMinimized">
+            <ad-main-navigation-hamburger ad-show-label="true"></ad-main-navigation-hamburger>
+        </div>
+
+        <!-- -------- viewstack of all the different left navs -------- -->
+        <div class="ads-left-nav2-viewstack-container"
+             ng-class="{'ads-left-nav2-viewstack-container-minimized' : controller.navigationState.isTopMenuBarMinimized}"
+             ng-switch on="openSection"
+                >
+
+            <div ng-switch-when="unselected"></div><!-- empty div when no zone selected -->
+
+            <ad-apm-left-nav ng-switch-when="appMenuSection"></ad-apm-left-nav>
+
+            <ad-db-monitoring-left-nav ng-switch-when="dbMonitoringHeaderSection"></ad-db-monitoring-left-nav>
+
+            <ad-server-monitoring-left-nav ng-switch-when="serverMonitoringHeaderSection"></ad-server-monitoring-left-nav>
+
+            <ad-eum-web-left-nav ng-switch-when="eumWebHeaderSection"></ad-eum-web-left-nav>
+
+            <ad-eum-mobile-left-nav ng-switch-when="eumMobileHeaderSection"></ad-eum-mobile-left-nav>
+
+            <ad-analytics-left-nav ng-switch-when="analyticsHeaderSection"></ad-analytics-left-nav>
+
+            <!-- decided not to have this for now 
+                <ad-dashboards-reports-left-nav ng-switch-when="dashboardsReportsHeaderSection"></ad-dashboards-reports-left-nav>
+             -->
+
+            <ad-alert-respond-left-nav ng-switch-when="alertRespondHeaderSection"></ad-alert-respond-left-nav>
+
+        </div>
+
+        <!-- minimize / maximize left nav arrows -->
+        <div class="ads-left-nav-footer-row-1">
+
+            <div class="ads-display-table" style="width: 100%; height: 100%; ">
+                <div class="ads-display-table-row">
+                    <div class="ads-display-table-cell ads-vertical-align" >
+
+                        <div ng-show="!collapsed" class="ads-left-nav2-hover-toggle-container" style="cursor: pointer; padding-right: 12px;">
+                            <img src="images/leftNav/arrow_left_gray.svg"
+                                 style="width: 18px; height: 18px;"
+                                 ng-click="toggleCollapse()"
+                                 class="ads-left-nav2-item-non-hover"/>
+                            <img src="images/leftNav/arrow_left_blue.svg"
+                                 style="width: 18px; height: 18px; "
+                                 ng-click="toggleCollapse()"
+                                 class="ads-left-nav2-item-hover"/>
+                        </div>
+                        <div ng-show="collapsed" class="ads-left-nav2-hover-toggle-container" style="cursor: pointer; padding-right: 23px;">
+                            <img src="images/leftNav/arrow_right_gray.svg"
+                                 style="width: 18px; height: 18px;"
+                                 ng-click="toggleCollapse()"
+                                 class="ads-left-nav2-item-non-hover"/>
+                            <img src="images/leftNav/arrow_right_blue.svg"
+                                 style="width: 18px; height: 18px; "
+                                 ng-click="toggleCollapse()"
+                                 class="ads-left-nav2-item-hover"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

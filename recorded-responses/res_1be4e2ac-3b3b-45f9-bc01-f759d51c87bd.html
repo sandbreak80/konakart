@@ -1,0 +1,35 @@
+<div>
+    <div title="{{bartooltip}}" class="adsHealthBar">
+        <div class="noData pull-left" ng-style="{'width' : widthUnknown,
+                                                'border-radius' : borderRadius
+                                                }" > </div>
+        <div class="errors pull-left" ng-style="{'width' : widthErrors,
+                                                'border-top-left-radius' : errorsLeftRadius,
+                                                'border-bottom-left-radius' : errorsLeftRadius,
+                                                'border-top-right-radius' : errorsRightRadius,
+                                                'border-bottom-right-radius' : errorsRightRadius
+                                                }" > </div>
+        <div class="warnings pull-left" ng-style="{'width' : widthWarnings,
+                                                  'border-top-left-radius' : warningsLeftRadius,
+                                                  'border-bottom-left-radius' : warningsLeftRadius,
+                                                  'border-top-right-radius' : warningsRightRadius,
+                                                  'border-bottom-right-radius' : warningsRightRadius                                                  
+                                                  }" > </div>
+        <div class="normal pull-left" ng-style="{'width' : widthNormal,
+                                                'border-top-left-radius' : normalLeftRadius,
+                                                'border-bottom-left-radius' : normalLeftRadius,
+                                                'border-top-right-radius' : normalRightRadius,
+                                                'border-bottom-right-radius' : normalRightRadius
+                                                }"> </div>
+
+        <div class="clearfix" />
+    </div>
+
+    <div style="padding-top: 5px" ng-hide="noValues || forceHideValues">
+        <p>{{errors}} {{errorLabel}}, {{warnings}} {{warningLabel}}, {{normal}} {{normalLabel}}</p>
+    </div>
+
+    <div style="padding-top: 5px" ng-show="noValues">
+        <p style="font-size: 8">&nbsp</p>
+    </div>
+</div>

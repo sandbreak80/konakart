@@ -1,0 +1,1476 @@
+body {
+	background-color: white;
+	color: black;
+	font-family: "roboto", sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	margin: 8px;
+	margin-top: 3px;
+}
+
+input,textarea,select,button {
+	font-family: "roboto", sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+button {
+	overflow: visible;
+	height: auto;
+	width: auto;
+}
+
+input,textarea,select {
+	border: 1px solid #A9B6C4;
+	border-radius: 4px;
+	height: 22px;
+	padding: 0;
+	width: 100%;
+}
+
+input[type=radio],input[type=checkbox] {
+	float: left;
+	width: auto !important;
+	margin: 0.25em 0.25em 0.25em 0;
+	padding: 0;
+	vertical-align: middle;
+	height: auto;
+}
+
+input {
+	text-indent: 0.25em;
+}
+
+button,.kkFormTable .kkButtonFlowPanel button,#kk-button-container button,#login-dialog-buttons button,#sign-out
+	{
+	background-color: #fff;
+	border: 1px solid #A9B6C4;
+	box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.16);
+	border-radius: 4px;
+	font-size: 0.84375em;
+	font-weight: 400;
+	height: 29px;
+	margin: 1em 0.25em;
+	padding: 0 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#kk-button-container #New,#kk-button-container #Edit,#kk-button-container #Delete
+	{
+	background-color: #4A90E2;
+	border: 1px solid #2D89C6;
+	color: #fff;
+}
+
+#kk-button-container #New:disabled,#kk-button-container #Edit:disabled,#kk-button-container #Delete:disabled
+	{
+	background-color: #BBBBBB;
+	border: 1px solid #BBBBBB;
+	color: #fff;
+}
+
+/*
+#kk-button-container #Refresh{
+	background-color: #4A90E2;
+ 	border: 1px solid #2D89C6;
+ 	color: #fff;
+	font-size: 0.84375em;	
+	margin: 1em 0.35em;
+	padding: 0.4em 1em 0.25em;
+}
+*/
+.kkFormTable button, #kk-tab-customerTags button {
+	font-size: 0.75em;
+	height: 24px;
+	margin: 0;
+	padding: 0 10px;
+	cursor: pointer;
+}
+
+#sign-out {
+	background-color: #4A90E2;
+	border: 1px solid #2D89C6;
+	color: #fff;
+	font-size: 0.85185185185em;
+	margin: 0.25em 0 0.25em 0.35em;
+	padding: 0.2em 0.75em 0.15em;
+}
+
+/* For portlet */
+#kkAdmin {
+	background-color: white;
+}
+
+a {
+	color: #095F97;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #095F97;
+	text-decoration: none;
+}
+
+.konakart-TopPanelLinks a {
+	color: #102747;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.gwt-DialogBox {
+	border: 1px solid #A9B6C4;
+	background-color: #E7F0F7;
+	max-width: 890px;
+	padding: 1.5em;
+}
+
+.gwt-DialogBox  table {
+	max-width: 890px;
+}
+
+.kk-max-dialog-width {
+	max-width: 890px;
+}
+
+.kk-edit-file-dialog-area  {
+	max-width: 890px;
+	width: 100%;
+	padding-top: 1em;
+}
+
+.kk-html-popup {
+	background-color: #FFFFFF !important;
+}
+
+.gwt-DialogBox .Caption {
+	font-size: 1em;
+	font-weight: 400;
+	cursor: pointer;
+	padding-bottom: 5px;
+	border-bottom: 1px #A9B6C4 solid;
+	margin-bottom: 5px;
+}
+
+#header-line {
+	background-color: #A9B6C4;
+	left: 0;
+	position: absolute;
+	top: 7.5em;
+	width: 100%;
+	height: 1px;
+}
+
+/**
+ * Applied to all HTML label elements.
+ *
+.gwt-HTML {
+	font-size: 0.8em;
+   	line-height: 1.4em;
+}
+ */
+.gwt-MenuBar {
+	background-color: #C3D9FF;
+	cursor: default;
+}
+
+.gwt-MenuItem {
+	font-size: 80%;
+	margin: 1px;
+	cursor: default;
+}
+
+.gwt-MenuItem-selected {
+	background-color: #E8EEF7;
+}
+
+.gwt-RadioButton {
+	font-size: inherit;
+	line-height: 1.4em;
+}
+
+.gwt-Tree {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.gwt-Tree .gwt-TreeItem {
+	cursor: default;
+}
+
+.gwt-Tree div {
+	margin-bottom: 0.25em;
+}
+
+.gwt-Tree div div {
+	margin-bottom: 0;
+}
+
+.gwt-TreeItem-selected {
+	background-color: #D4D4D4;
+}
+
+.kk-tree-node {
+	padding: 3px 3px 3px 19px !important;
+	margin-left: 0 !important;
+}
+
+.gwt-StackPanel {
+	background-color: #E7F0F7;
+	border: 1px solid #A9B6C4;
+	margin-right: 1.5em;
+	padding: 1em;
+	width: 210px;
+}
+
+.gwt-StackPanel .gwt-StackPanelItem {
+	color: #1F80DC;
+	cursor: pointer;
+	font-size: 0.96875em;
+	font-weight: 400;
+}
+
+.gwt-StackPanel .gwt-StackPanelItem-selected {
+	background-color: #E7F0F7;
+	cursor: pointer;
+}
+
+.gwt-StackPanelContent {
+	background-color: #E7F0F7;
+}
+
+.gwt-StackPanelItem {
+	border-bottom: 1px #A9B6C4 solid;
+}
+
+.gwt-StackPanel tbody tr:nth-last-child(2) td {
+	border-bottom: none;
+}
+
+.gwt-TabPanel {
+	margin-top: 0.5em;
+}
+
+.gwt-TabPanelBottom td {
+	padding: 0;
+}
+
+.gwt-TabBar {
+	margin-bottom: 0.5em;
+}
+
+.gwt-TabBar .gwt-TabBarFirst {
+	height: 100%;
+	border-bottom: 1px solid #A9B6C4;
+	padding-left: 3px;
+}
+
+.gwt-TabBar .gwt-TabBarRest {
+	border-bottom: 1px solid #A9B6C4;
+	padding-right: 3px;
+}
+
+.gwt-TabBar .gwt-TabBarItem {
+	color: #095F97;
+	border-bottom: 1px solid #A9B6C4;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.gwt-TabBar .gwt-TabBarItem-selected {
+	color: #000;
+	border-top: 1px solid #A9B6C4;
+	border-left: 1px solid #A9B6C4;
+	border-right: 1px solid #A9B6C4;
+	border-bottom: 1px solid #fff;
+	font-weight: 400;
+	padding: 2px 6px;
+	cursor: default;
+}
+
+/*-------------------KonaKart--------------------------------*/
+.konakart-MasterPanel {
+	margin: 0 auto;
+	max-width: 1020px;
+}
+
+.konakart-MasterPanel>tbody>tr>td {
+	width: 200px;
+}
+
+.konakart-TopPanel {
+	background-color: white;
+	font-size: 1.0em;
+	padding: 1.5em 0 2.5em;
+}
+
+#konakart-TopPanel-Row1,.konakart-TopPanelCatalogs {
+	font-size: 0.84375em;
+}
+
+.konakart-TopPanel .konakart-TopPanel {
+	padding: 0.2em 0;
+}
+
+.konakart-TopPanelRow2 {
+	background-color: white;
+	padding: 0px 4px 0px 4px;
+	font-size: 1.0em;
+}
+
+.konakart-TopPanelLinks td {
+	background-color: white;;
+	font-size: 0.96875em;
+	padding: 4px;
+}
+
+.konakart-AboutText {
+	width: 24em;
+	font-size: 80%;
+}
+
+.konakart-LoadingText {
+	width: 15em;
+	font-size: 100%;
+}
+
+.konakart-Shortcut-Panel {
+	padding-top: 3px;
+	padding-bottom: 2px;
+}
+
+.gwt-ListBox {
+	border: 1px solid #A9B6C4;
+	border-radius: 0;
+	height: auto;
+	padding: 0.5em;
+}
+
+.gwt-Tree {
+	border: 1px solid #A9B6C4;
+	margin-top: 0;
+	padding: 0.5em;
+}
+
+.gwt-Tree td {
+	padding: 0 0.25em 0 0 !important;
+}
+
+.konakart-TextBox {
+	background-color: white;
+	width: 100% !important;
+}
+
+.konakart-TextBox-NoBorder {
+	border: 0px solid #AAAAAA;
+	background-color: white;
+	width: 98% !important;
+}
+
+.konakart-TextBox-Invalid {
+	background-color: #EEE6E8;
+	border: 2px #EAC0CA solid;
+	width: 100% !important;
+	margin-right: 2px;
+}
+
+.gwt-TabBarItem .konakart-TextBox-Invalid {
+	float: none;
+	margin: 0;
+	width: auto;
+}
+
+.konakart-BlankCell {
+	border: 0px solid #AAAAAA;
+	background-color: white;
+}
+
+.konakart-ActionLink {
+	color: #095F97;
+	cursor: pointer;
+}
+
+.konakart-HandCursor {
+	cursor: pointer;
+}
+
+.konakart-PointerCursor {
+	cursor: default;
+}
+
+.konakart-smallFont {
+	font-size: 60%;
+}
+
+.konakart-SuccessText {
+	color: #009900;
+	font-size: 80%;
+}
+
+.konakart-WarningText {
+	color: #F6840E;
+	background: #ffffff url(warning.gif) 10px center no-repeat;
+	padding-left: 20px;
+	font-size: 80%;
+	padding: 0.5em 2em;
+	font-size: 90%;
+	margin: 0.5em 0;
+	border: 1px solid;
+}
+
+.konakart-WarningTextLarge {
+	color: #CCAA00;
+	background: #ffffff url(warning.gif) left center no-repeat;
+	padding-left: 20px;
+	font-size: 100%;
+}
+
+.konakart-ErrorText {
+	color: #CC0000;
+	background: #ffffff url(error.gif) left center no-repeat;
+	padding-left: 20px;
+	font-size: 80%;
+}
+
+.konakart-top-level-cat {
+	font-weight: 500;
+}
+
+/*
+.konakart-child-cat {
+	float: left;
+}
+*/
+.konakart-cat {
+	
+}
+
+.konakart-selected-cat {
+	background-color: #E7F0F7;
+}
+
+/* Right Panel */
+.konakart-DetailPanel {
+	border: 1px solid #AAAAAA;
+	margin-top: 4px;
+}
+
+/* Right Panel Header */
+.konakart-DetailHeader {
+	border-bottom: 1px solid #A9B6C4;
+	font-size: 1.25em;
+	font-weight: 400;
+}
+
+.konakart-DetailHeader div {
+	padding: 0.125em 0;
+}
+
+/* Right Panel , Modules Panel and Detail Panel Inner */
+.konakart-DetailInner {
+	background-color: white;
+}
+
+.konakart-DetailInner table {
+	border-collapse: collapse;
+}
+
+/* Modules Panel */
+.konakart-ModuleDetailPanel {
+	background-color: white;
+	border-top: 1px solid #AAAAAA;
+	border-left: 1px solid #AAAAAA;
+	border-right: 1px solid #AAAAAA;
+	border-bottom: 1px solid #AAAAAA;
+}
+
+/*-------------------KonaKart Table-------------------------*/
+.konakart-Table {
+	border: 1px solid #AAAAAA;
+	background-color: white;
+	cursor: default;
+	font-size: 80%;
+}
+
+.konakart-table-SelectedRow {
+	background-image: url(blue_gradient.gif);
+	background-repeat: repeat-x;
+}
+
+.konakart-table-NotSelectedRow {
+	background-color: white;
+}
+
+.kkButtons {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+#kk-attributes .kkFormTable {
+	margin-bottom: 0.5em;
+}
+
+
+/*------------------ List Table-------------------------*/
+.kkListTable {
+	border-collapse: collapse;
+	cursor: default;
+}
+
+.kkListTable tr {
+	border-bottom: 1px solid #A9B6C4;
+}
+
+.kkListTableHeader_td_left {
+	border-bottom: 1px solid #A9B6C4;
+	color: #333333;
+	font-weight: 400;
+	padding: 0.5em 0.75em 0.5em 0;
+	text-align: left;
+}
+
+.kkListTableHeader_td_right {
+	border-bottom: 1px solid #A9B6C4;
+	color: #333333;
+	font-weight: 400;
+	padding: 0.5em 0 0.5em 0.75em;
+	text-align: right;
+}
+
+.kkListTableHeader_td_center {
+	border-bottom: 1px solid #A9B6C4;
+	font-weight: 400;
+	padding: 0.5em 0;
+	text-align: center;
+}
+
+.kkListTable_tr_even {
+	background: none;
+}
+
+.kkListTable_tr_odd {
+	background: none;
+}
+
+.kkListTable_tr_SelectedRow {
+	background-color: #E7F0F7;
+}
+
+.kkListTable_td_left {
+	line-height: 1.4em;
+	padding: 0.25em 0;
+	padding: 0.25em 0.25em 0.25em 0;
+	text-align: left;
+}
+
+.kkListTable_td_right {
+	line-height: 1.4em;
+	padding: 0.25em 0;
+	padding: 0.25em 0 0.25em 0.25em;
+	text-align: right;
+}
+
+.kkListTable_td_center {
+	line-height: 1.4em;
+	padding: 0.25em;
+	text-align: center;
+}
+
+/* Pager */
+#kk-pager-parent {
+	padding: 0;
+}
+
+#kk-pager {
+	margin: 0.5em 0 1.5em 0;
+}
+
+#kk-pager input {
+	text-align: center;
+	height: 18px;
+	margin: 0 0.25em;
+	width: auto;
+}
+
+#kk-pager .kkFormTable {
+	margin: 0;
+}
+
+.kk-pager-left-arrow {
+	vertical-align: middle;
+	padding-right: 3px;
+}
+
+.kk-pager-right-arrow {
+	vertical-align: middle;
+	padding-left: 3px;
+}
+
+.kkListTable_a a {
+	color: #333333;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.kkListTable_a a:hover {
+	color: #aaaaaa;
+	text-decoration: underline;
+}
+
+.konakart-Custom-Privilege {
+	background-color: rgb(42,235,216);
+}
+
+/*------------------ Form Table-------------------------*/
+.kkButtonFlowPanel {
+	border-collapse: collapse;
+	border: 1px solid white;
+	padding: 1px 1px 1px 1px; /* top&bot left&right */
+	color: #333333;
+	cursor: default;
+}
+
+.kkInfoDialogTable {
+	border-collapse: collapse;
+	border: 1px solid white;
+	border-bottom: 1px solid black;
+	color: #333333;
+	cursor: default;
+}
+
+.kkInfoDialogText {
+	font-size: 1.0em;
+	line-height: 1.4em;
+	color: #333333;
+	padding: 5px 7px; /* top&bot left&right */
+	text-align: left;
+}
+
+.kkInfoDialogImage {
+	font-size: 1.0em;
+	line-height: 1.4em;
+	color: #333333;
+	padding: 5px 7px; /* top&bot left&right */
+	text-align: center;
+}
+
+.kk-gwt-FileUpload,.gwt-FileUpload {
+	border: none;
+	line-height: 1.4em;
+	padding: 0.5em 0;
+	text-align: left;
+	text-indent: 0;
+	vertical-align: middle;
+}
+
+.kkHeaderButtonsTable {
+	border-style: none;
+	padding: 0px 5px; /* top&bot left&right */
+	color: #333333;
+	cursor: default;
+	vertical-align: middle;
+}
+
+#kk_panel_status .kkFormTable td {
+	padding: 0.25em 0 !important;
+}
+
+#kk-pager td {
+	padding: 0;
+}
+
+.kk-sub-header {
+	text-align: left;
+	font-weight: 400;
+	border-bottom: 1px #A9B6C4 solid;
+}
+
+.kk-sub-header-no-line {
+	text-align: left;
+	font-weight: 400;
+}
+
+.kk-light-blue-background {
+	background-color: #E7F0F7;
+}
+
+.kkFormTable_label_above {
+	padding-bottom: 0px !important;
+}
+
+/* Products panel */
+#kk_panel_products .kkFormTable {
+	margin-bottom: 1em;
+}
+
+#kk_panel_products .konakart-MasterRightPanel .kkFormTable {
+	margin: 0;
+}
+
+#kk_panel_products .kkFormTable .kkFormTable {
+	margin-bottom: 0;
+}
+
+/* */
+#kk_panel_status .kkFormTable tr {
+	border-bottom: 1px #A9B6C4 solid;
+}
+
+#kk-button-container {
+	border-bottom: 1px #A9B6C4 solid;
+	border-top: 1px #A9B6C4 solid;
+	margin-top: 1em;
+}
+
+#kk-button-container td {
+	padding: 0;
+}
+
+/* kkFormTable */
+.kkFormTable {
+	border-collapse: collapse;
+	color: #333333;
+	cursor: default;
+	max-width: 890px;
+	vertical-align: middle;
+}
+
+.kkFormTable td {
+	padding: 0.5em 1em;
+}
+
+.kkFormTable tr:last-child {
+	padding-bottom: 1.5em;
+}
+
+.kkFormTable .kkFormTable {
+	border: none;
+	margin: 0;
+}
+
+/* Edit Product Panel */
+.kkProductFormTable {
+	line-height: 1.4em;
+	padding: 0 !important;
+	text-align: left;
+}
+
+.kkProductFormTable table td {
+	padding-left: 0;
+}
+
+.kkProductFormTable table td td {
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-right: 0.3em !important;
+}
+
+.kkProductFormTable table td td:last-child {
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-right: 0 !important;
+}
+
+#kk-tab-categories table {
+	border-collapse: separate;
+}
+
+.GHRMRC-DFJ,.GHRMRC-DFI {
+	background: #fff !important;
+}
+
+.GHRMRC-DGI,.GHRMRC-DGJ {
+	border: none !important;
+	border-bottom: 1px solid #A9B6C4 !important;
+	line-height: 1.4em;
+	padding: 0.25em 0 !important;
+}
+
+.GHRMRC-DMJ {
+	font-size: 100% !important;
+}
+
+#kk_panel_categories .gwt-Tree {
+	height: 50em;
+	width: 15em;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-right: 0.5em !important;
+}
+
+#kk_panel_productOptions .gwt-Tree {
+	height: 25em;
+	width: 15em;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+
+/*
+.kk-category-action-table td td {
+	padding: 0 0.25em 0.5em 0 !important;
+}
+*/
+
+#kk-edit-prod-attr-tab {
+	border-top: 1px solid #A9B6C4;
+}
+
+#kk-option-left {
+	padding: 1em 0 0 0;
+	vertical-align: top;
+}
+
+#kk-edit-prod-attr-tab td table td table {
+	border: none;
+}
+
+#kk-option-left select {
+	border-radius: 0;
+}
+
+#kk-option-left .konakart-TextBox {
+	padding: 0.5em;
+}
+
+#kk-option-right .kkFormTable_td_left {
+	padding-right: 0.3em !important;
+}
+
+#kk-option-right .kkFormTable_td_left:first-child {
+	padding-left: 0.3em !important;
+}
+
+#kk-option-right .kkTdFormTable .kkFormTable_td_left {
+	padding-left: 0 !important;
+	padding-right: 0.3em !important;
+	padding-top: 0.1em !important;
+}
+
+#kk-option-right {
+	padding: 1em 0 !important;
+	vertical-align: top;
+}
+
+#kk-option-right table {
+	border: 1px solid #A9B6C4;
+}
+
+#kk-option-right table table {
+	border: none;
+}
+
+#kk-quantities-table  td {
+	padding-left: 0 !important;
+	padding-right: 0.3em !important;
+	padding-top: 0.2em !important;
+	padding-bottom: 0 !important;
+}
+
+#kk-merch-top-left,#kk-merch-top-center,#kk-merch-top-right {
+	border-top: 1px solid #A9B6C4;
+	border-bottom: 1px solid #A9B6C4;
+}
+
+#kk-merch-top-left,#kk-merch-top-left table td {
+	padding-left: 0 !important;
+}
+
+#kk-merch-left {
+	padding-left: 0;
+}
+
+#kk-merch-right {
+	padding-right: 0;
+}
+
+#kk-tab-prices .kkFormTable_td_left_bold {
+	border-bottom: 1px solid #A9B6C4;
+	font-weight: 500;
+	padding: 0 0 0.5em 0 !important;
+}
+
+#kk-tab-prices .kkFormTable {
+	margin-bottom: 0.5em;
+}
+
+#kk-tier-price {
+	margin-top: 0.5em;
+}
+
+#kk-tab-prices #kk-tier-price td {
+	padding: 0.25em 0.25em 0.25em 0 !important;
+}
+
+#kk-tab-prices #kk-tier-price td td {
+	padding: 0 0.3em 0.5em 0 !important;
+}
+
+.kk-calendar-icon {
+	vertical-align: middle;
+	padding-left: 3px;
+}
+
+#kk-tab-digDownload {
+	margin-top: 0.5em;
+}
+
+#kk-tab-custom .kk-custom-radio-panel td  {
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-right: 0 !important;
+}
+
+#kk-edit-prod-attr-tab #kk-option-center table {
+	border: 0;
+	width: 100%;
+}
+
+#kk-option-search {
+	margin-bottom: 0.5em;
+}
+
+#kk-tab-digDownload .kkFormTable td
+{
+	padding: 0.25em 0.25em;
+}
+
+#kk-tab-tags .gwt-Tree {
+	height: 34em;
+	overflow-y: auto;
+	overflow-x: hidden;	
+	vertical-align: top;
+}
+
+#kk-tab-tags .gwt-ListBox {
+	height: 35em;
+	overflow-y: auto;
+	overflow-x: hidden;	
+	vertical-align: top;
+}
+
+
+#kk-tab-merchandising .gwt-ListBox {
+	height: 35em;
+	overflow-y: auto;
+	overflow-x: hidden;	
+	vertical-align: top;
+}
+
+#kk-tags-right {
+	vertical-align: top;
+}
+
+#kk-tags-left {
+	vertical-align: top;
+}
+
+#kk-tags-left table td {
+	padding: 0 !important;
+}
+
+#kk-tab-customerTags .gwt-ListBox {
+	height: 35em;
+	overflow-y: auto;
+	overflow-x: hidden;	
+	vertical-align: top;
+	padding: 0 !important;
+}
+
+#kk-tab-customerTags .kkCustTagFormTable td {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	padding-top: 0.5em !important;
+	padding-bottom: 0 !important;
+	padding-right: 1em !important;
+	text-align: left;	
+}
+
+.kk-configurations	table td, .kk-modules table td  {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-right: 1em !important;
+	text-align: left;
+}
+
+/* Price Adjustment */
+.kkPriceAdjustmentTable {
+	padding: 0 !important;
+}
+
+.kkPriceAdjustmentTable td {
+	padding: 5 !important;
+}
+
+
+/* Calendar */
+.kkCalendarTable {
+	padding: 0 !important;
+}
+
+.kkCalendarTable td {
+	padding: 0 !important;
+}
+
+/* Table embedded within a td (e.g. coupon get button)*/
+.kkTdFormTable .kkFormTable_td_left {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-right: 1em !important;
+	text-align: left;
+}
+
+.kkTdFormTable .kkFormTable_td_left:last-child {
+	padding-right: 0 !important;
+}
+
+.kkTdFormTable_no_pad .kkFormTable_td_left {
+	line-height: 1.4em;
+	padding: 0 !important;
+	text-align: left;
+}
+
+.kkTdFormTable .gwt-TabBar td {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+	text-align: left;
+}
+
+.kkFormTable_td_left .gwt-TabPanel .kkFormTable_td_left {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	padding-right: 0.3em !important;
+	padding-bottom: 0 !important;
+	text-align: left;
+}
+
+/* kkFormTable_td_left */
+.kkFormTable_td_left {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	text-align: left;
+}
+
+.kkFormTable_td_left_top {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	text-align: left;
+}
+
+.kkFormTable_td_left_warning {
+	line-height: 1.4em;
+	padding-left: 0 !important;
+	text-align: left;
+	background: #ffffff url(warning.gif) right center no-repeat;
+}
+
+/* kkFormTable_td_center */
+.kkFormTable_td_center {
+	line-height: 1.4em;
+	text-align: center;
+}
+
+/* kkFormTable_td_right */
+.kkFormTable_td_right {
+	line-height: 1.4em;
+	padding-right: 0 !important;
+	text-align: right;
+}
+
+/* Search Panel */
+.kk-search-panel td,.kk-search-panel .kkFormTable td {
+	padding: 0.2em 0.1em !important;
+}
+
+.kk-search-panel {
+	border-bottom: 1px solid #A9B6C4;
+	border-collapse: separate !important;
+	padding: 0.35em 0;
+	margin-bottom: 0.5em;
+}
+
+.kk-search-panel-no-border {
+	border-bottom: 0 !important;
+}
+
+.kkExpressionBuilder {
+	font-size: 0.8em;
+	line-height: 1.4em;
+	padding: 2px 2px 2px 2px !important; /* top right bot left */
+	text-align: center;
+	vertical-align: middle;
+}
+
+.kkExpressionGroup {
+	width: 15%;
+}
+
+.kkAttribute_navigation {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.konakart_Sort_Up_Enabled {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.konakart_Sort_Up_Enabled:hover {
+	opacity: 1.0;
+}
+
+.konakart_Sort_Up_Disabled {
+	opacity: 0.2;
+}
+
+.konakart_Sort_Down_Enabled {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.konakart_Sort_Down_Enabled:hover {
+	opacity: 1.0;
+}
+
+.konakart_Sort_Down_Disabled {
+	opacity: 0.2;
+}
+
+/*------------Chart Frame -----------------------*/
+.kkChartFrame {
+	border: 0px solid #fff;
+	text-align: center;
+	vertical-align: middle;
+}
+/*------------Fonts -----------------------*/
+.kkPagerFont {
+	font-weight: 400;
+	cursor: default;
+	vertical-align: bottom;
+}
+
+.kkTableFont {
+	font-size: 1em;
+}
+
+.kkFontInherit {
+	font-size: inherit;
+}
+
+/*------------Cat Tree View --------------*/
+.kkCatSelectionTree {
+	padding-top: 0px;
+	padding-bottom: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border: 1px solid #aaaaaa;
+	vertical-align: top;
+	height: 550px;
+	overflow: scroll;
+}
+
+/*------------Menu -----------------------*/
+.konakart-SubMenus {
+	font-size: 0.96875em;
+	margin: 0.5em 0;
+}
+
+.konakart-SubMenus .gwt-HTML {
+	margin-bottom: 0.125em;
+}
+
+.gwt-StackPanelItem table {
+	border-collapse: collapse;
+}
+
+.gwt-StackPanelItem td {
+	padding: 0.25em 0;
+}
+
+.konakart-SubMenus a {
+	color: #1F80DC;
+	text-decoration: none;
+}
+
+.subMenu-ShortcutPopup {
+	border: 1px solid #AAAAAA;
+	padding: 4px;
+}
+
+.subMenu-ShortcutName {
+	font-size: 80%;
+	font-weight: bold;
+}
+
+.subMenu-ShortcutInfo {
+	font-size: 80%;
+	font-style: italic;
+}
+
+/*------------Mail -----------------------*/
+.mail-Toolbar {
+	
+}
+
+.mail-ToolButton {
+	font-size: 80%;
+	width: 10em;
+}
+
+.mail-DetailSubject {
+	font-size: 80%;
+}
+
+.mail-DetailSender {
+	font-weight: bold;
+	font-size: 80%;
+}
+
+.mail-DetailRecipient {
+	font-style: italic;
+	font-size: 80%;
+}
+
+.mail-DetailBody {
+	padding: 4px;
+}
+
+.mail-List {
+	border: 1px solid #AAAAAA;
+	background-color: white;
+	font-size: 80%;
+	cursor: pointer;
+}
+
+.mail-ListHeader {
+	font-weight: bold;
+}
+
+.mail-ListNavBar {
+	font-size: 80%;
+}
+
+.mail-table-SelectedRow {
+	cursor: default;
+}
+
+/*------------Calendar Widget -----------------------*/
+.CalendarWidget {
+	border: 1px solid #ACA899;
+	background-color: #FFFFFF;
+}
+
+.CalendarWidget .navbar {
+	width: 100%;
+	background-color: #C3D9FF;
+	vertical-align: middle;
+	border-bottom: 1px solid #ACA899;
+}
+
+.CalendarWidget .navbar .gwt-Button {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.CalendarWidget .table {
+	font: 10pt sans-serif;
+	text-align: center;
+}
+
+.CalendarWidget .weekheader {
+	background-color: #ACA899;
+}
+
+.CalendarWidget .weekheader .days {
+	width: 3em;
+}
+
+.CalendarWidget .cell {
+	cursor: pointer;
+}
+
+.CalendarWidget .cell .gwt-HTML {
+	border: 1px solid #ACA899;
+}
+
+.CalendarWidget .cell .gwt-HTML span {
+	width: 100%;
+	height: 100%;
+	line-height: 2em;
+}
+
+.CalendarWidget .today .gwt-HTML {
+	background-color: #C3D9FF;
+}
+
+.CalendarWidget .day .gwt-HTML {
+	border: 1px solid #C3D9FF;
+}
+
+/*----------------- Misc -----------------------------*/
+
+/*
+.kkNoBorderTop {
+	border-top: 1px solid white;
+}
+
+.kkNoBorderRight {
+	border-right: 1px solid white;
+}
+
+.kkNoBorderAbove {
+	border-top: 1px solid white;
+}
+
+.kkNoBorder {
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}
+*/
+.kkBold {
+	font-weight: 400;
+}
+
+.kkNoBorder tr {
+	border: none;
+}
+
+.kkNoPadding {
+	padding: 0 !important;
+}
+
+.kkNoBackground {
+	background-image: none;
+}
+
+.kkRichText {
+	border: 1px solid #A9B6C4;
+	margin-bottom: 0.35em;
+	width: 100%;
+}
+
+.kkRichText tr:last-child td {
+	padding-top: 0 !important;
+}
+
+.kkRichTextInner {
+	background-color: white;
+	border: 1px solid #A9B6C4;
+	padding: 0.25em;
+	width: 99% !important;
+	float: right;
+}
+
+.kkRichTextInner td {
+	padding: 0;
+}
+
+.kkRichTextToolbar {
+	background-color: white;
+	width: 99% !important;
+}
+
+.kkRichTextToolbar td {
+	padding: 0;
+}
+
+.kkRichTextInner-Invalid {
+	background-color: #EEE6E8;
+	border: 2px #EAC0CA solid;
+	width: 99%;
+	float: right;
+	margin-right: 2px;
+}
+
+.kk-manufacturer-img {
+	width: 100px;
+	height: 100px;
+}
+
+.kk-manufacturer-list {
+	height: 40em;
+	overflow:auto;
+}
+
+.kk-category-img {
+	width: 100px;
+	height: 100px;
+}
+
+/* Image upload widget */
+.kk-image-insert {
+	border-bottom: 1px solid #A9B6C4;
+}
+
+.kk-sel-img-label {
+	margin-top: 1em;
+	display: inline-block;
+}
+
+.kkFormTable .kk-image-insert td {
+	padding: 0;
+}
+
+.kk-image-insert td table .kkFormTable_td_left {
+	padding-top: 0.5em;
+}
+
+.kk-image-insert img {
+	border: 1px solid #A9B6C4;
+	margin: 0.5em 0.75em 0.5em 0;
+}
+
+/*------------------ RSS Feed -------------------------*/
+.RSSTitle {
+	font-size: 120%;
+	color: #33bbff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.RSSItemTitle {
+	font-size: 100%;
+	color: #999999;
+	border-bottom: 1px solid #777777;
+}
+
+.RSSItemDate {
+	font-size: 70%;
+	color: #999999;
+}
+
+.RSSItemDescription {
+	font-size: 80%;
+}
+
+/* customer points */
+.kkPointsTotal {
+	font-weight: 400;
+}
+
+.gwt-Frame {
+	border: 0px;
+}
+
+/*------------------ Custom Panel IFrame -------------------------*/
+
+.kkCustomPanel {
+	border: 0px;
+}

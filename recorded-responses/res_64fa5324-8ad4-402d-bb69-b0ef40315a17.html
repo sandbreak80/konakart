@@ -1,0 +1,221 @@
+<div class="ads-left-nav2-directive-root-container">
+
+    <!-- ============================== Policies ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickPolicies()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_POLICIES'}"
+             tooltip="{{controller.minimized ?  getString('ms_navLabelEventReactors') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/policies_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/policies_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_navLabelEventReactors")}}
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ============================== Health Rules ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickHealthRules()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_HEALTH_RULES'}"
+             tooltip="{{controller.minimized ?  getString('ms_navLabelPolicyTemplates') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/healthRules_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/healthRules_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_navLabelPolicyTemplates")}}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Actions ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickActions()"
+             ng-class="{'ads-left-nav-item-selected' : (controller.selectedLeftNavItem == 'NAV_ITEM_ACTIONS' || controller.selectedLeftNavItem == 'NAV_ITEM_ACTION_SUPPRESSION') }"
+             tooltip="{{controller.minimized ?  getString('ms_actionListScreenName') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/actions_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/actions_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_actionListScreenName")}}
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- ============================== Email Digests ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickEmailDigests()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EMAIL_DIGESTS'}"
+             tooltip="{{controller.minimized ?  getString('ms_navLabelDigestAlerts') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/emailDigests_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/emailDigests_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_navLabelDigestAlerts")}}
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-show="controller.showEmailTemplates || controller.showHttpTemplates">
+
+        <div class="ads-left-nav-horizontal-line-seprarator"/>
+
+        <div class="ads-left-nav2-section-title-row"
+             ng-show="!controller.minimized"
+                >
+            {{::getString("ms_actionTemplatesLeftNavZoneTitle")}}
+        </div>
+
+
+        <!-- =================== Email Actions =================== -->
+
+        <div class="ads-display-table ads-left-nav-minor-item hoverable"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EMAIL_TEMPLATES'}"
+             style="width: 100%;"
+             ng-click="controller.onClickEmailActionTemplates()"
+             tooltip="{{controller.minimized ?  getString('ms_emailActionPlans') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+             ng-show="controller.showEmailTemplates"
+                >
+            <div class="ads-display-table-row"
+                    >
+                <div class="ads-display-table-cell ads-left-nav-minor-item-icon-box"
+                     ng-show="controller.minimized"
+                        >
+                    <img src="images/leftNav/emailActionTemplate_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/emailActionTemplate_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <div class="ads-display-table-cell ads-left-nav-minor-item-label"
+                     ng-class="{'ads-left-nav-minor-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EMAIL_TEMPLATES'}"
+                     ng-show="!controller.minimized"
+                        >
+                    {{::getString("ms_emailActionPlans")}}
+                </div>
+            </div>
+        </div>
+
+        <!-- =================== HTTP Templates =================== -->
+
+        <div class="ads-display-table ads-left-nav-minor-item hoverable"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_HTTP_ACTION_TEMPLATES'}"
+             style="width: 100%;"
+             ng-click="controller.onClickHttpActionTemplates()"
+             tooltip="{{controller.minimized ?  getString('ms_httpActionPlans') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+             ng-show="controller.showHttpTemplates"
+                >
+            <div class="ads-display-table-row"
+                    >
+                <div class="ads-display-table-cell ads-left-nav-minor-item-icon-box"
+                     ng-show="controller.minimized"
+                        >
+                    <img src="images/leftNav/httpActionTemplate_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/httpActionTemplate_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <div class="ads-display-table-cell ads-left-nav-minor-item-label"
+                     ng-class="{'ads-left-nav-minor-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_HTTP_ACTION_TEMPLATES'}"
+                     ng-show="!controller.minimized"
+                        >
+                    {{::getString("ms_httpActionPlans")}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- =================== Email / SMS Config =================== -->
+
+    <div ng-show="controller.showEmailSmsConfig">
+
+        <!--- spacer and horizontal line -->
+        <div class="ads-left-nav-horizontal-line-seprarator"/>
+
+        <div class="ads-display-table ads-left-nav-minor-item hoverable"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EMAIL_SMS_CONFIG'}"
+             style="width: 100%;"
+             ng-click="controller.onClickEmailSmsConfig()"
+             tooltip="{{controller.minimized ?  getString('ms_emailSMSConfiguration') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+            <div class="ads-display-table-row"
+                    >
+                <div class="ads-display-table-cell ads-left-nav-minor-item-icon-box"
+                     ng-show="controller.minimized"
+                        >
+                    <img src="images/leftNav/configuration_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/configuration_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <div class="ads-display-table-cell ads-left-nav-minor-item-label"
+                     ng-class="{'ads-left-nav-minor-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EMAIL_SMS_CONFIG'}"
+                     ng-show="!controller.minimized"
+                        >
+                    {{::getString("ms_emailSMSConfiguration")}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

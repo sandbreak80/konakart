@@ -1,0 +1,42 @@
+<p id="breadcrumb"><a href="?server=localhost">MySQL</a> &raquo; <a href='?server=localhost&amp;username=root' accesskey='1' title='Alt+Shift+1'>localhost</a> &raquo; <a href="?server=localhost&amp;username=root&amp;db=konakart">konakart</a> &raquo; Table: customers_basket
+<span id='loader'></span>
+<h2>Table: customers_basket</h2>
+<div class='message'>Indexes have been altered. <a href='#sql-0' onclick="return !toggle('sql-0');">SQL command</a><div id='sql-0' class='hidden'><pre><code class='jush-sql'>ALTER TABLE `customers_basket`
+ADD INDEX `idx_customers_id` (`customers_id`);</code></pre><p><a href="?server=localhost&amp;username=root&amp;db=konakart&amp;sql=&amp;history=0">Edit</a></div></div>
+<p class="tabs"> <a href='?server=localhost&amp;username=root&amp;db=konakart&amp;select=customers_basket'>Select data</a> <a href='?server=localhost&amp;username=root&amp;db=konakart&amp;table=customers_basket' class='active'>Show structure</a> <a href='?server=localhost&amp;username=root&amp;db=konakart&amp;create=customers_basket'>Alter table</a> <a href='?server=localhost&amp;username=root&amp;db=konakart&amp;edit=customers_basket'>New item</a>
+<table cellspacing='0'>
+<thead><tr><th>Column<td>Type<td>Comment</thead>
+<tr><th>customers_basket_id<td title=''>int(11) <i>Auto Increment</i><td>&nbsp;
+<tr class="odd"><th>customers_id<td title=''>int(11)<td>&nbsp;
+<tr><th>products_id<td title='utf8_general_ci'>tinytext<td>&nbsp;
+<tr class="odd"><th>customers_basket_quantity<td title=''>int(2)<td>&nbsp;
+<tr><th>final_price<td title=''>decimal(15,4)<td>&nbsp;
+<tr class="odd"><th>customers_basket_date_added<td title='utf8_general_ci'>char(8) <i>NULL</i><td>&nbsp;
+<tr><th>custom1<td title='utf8_general_ci'>varchar(128) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>custom2<td title='utf8_general_ci'>varchar(128) <i>NULL</i><td>&nbsp;
+<tr><th>custom3<td title='utf8_general_ci'>varchar(128) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>custom4<td title='utf8_general_ci'>varchar(128) <i>NULL</i><td>&nbsp;
+<tr><th>custom5<td title='utf8_general_ci'>varchar(128) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>store_id<td title='utf8_general_ci'>varchar(64) <i>NULL</i><td>&nbsp;
+<tr><th>products_sku<td title='utf8_general_ci'>varchar(255) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>kk_wishlist_id<td title=''>int(11) <i>NULL</i><td>&nbsp;
+<tr><th>kk_wishlist_item_id<td title=''>int(11) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>use_basket_price<td title=''>int(11) <i>NULL</i> [<b>0</b>]<td>&nbsp;
+<tr><th>custom6<td title='utf8_general_ci'>varchar(16) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>custom7<td title='utf8_general_ci'>varchar(16) <i>NULL</i><td>&nbsp;
+<tr><th>custom8<td title='utf8_general_ci'>varchar(16) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>custom9<td title='utf8_general_ci'>varchar(16) <i>NULL</i><td>&nbsp;
+<tr><th>custom10<td title='utf8_general_ci'>varchar(16) <i>NULL</i><td>&nbsp;
+<tr class="odd"><th>reservation_id<td title=''>int(11) [<b>-1</b>]<td>&nbsp;
+</table>
+<h3>Indexes</h3>
+<table cellspacing='0'>
+<tr title='PRIMARY'><th>PRIMARY<td><i>customers_basket_id</i>
+<tr title='idx_store_id'><th>INDEX<td><i>store_id</i>
+<tr title='idx_customers_id'><th>INDEX<td><i>customers_id</i>
+</table>
+<p><a href="?server=localhost&amp;username=root&amp;db=konakart&amp;indexes=customers_basket">Alter indexes</a>
+<h3>Foreign keys</h3>
+<p><a href="?server=localhost&amp;username=root&amp;db=konakart&amp;foreign=customers_basket">Add foreign key</a>
+<h3>Triggers</h3>
+<p><a href="?server=localhost&amp;username=root&amp;db=konakart&amp;trigger=customers_basket">Add trigger</a>

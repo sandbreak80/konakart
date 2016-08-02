@@ -1,0 +1,12 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminCatalogSearchResult">
+    <catalogSearch>
+      <catalogId>-1</catalogId>
+      <catalogNameRule>4</catalogNameRule>
+    </catalogSearch>
+    <catalogs/>
+    <offset>0</offset>
+    <maxGroupSize>1000</maxGroupSize>
+    <totalSetSize>0</totalSetSize>
+  </result>
+</GWTResponse>

@@ -1,0 +1,108 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports"], function (require, exports) {
+    var AppListView = (function (_super) {
+        __extends(AppListView, _super);
+        function AppListView(resourceManager, appId) {
+            _super.call(this, resourceManager, appId);
+        }
+        AppListView.prototype.buildGridOptions = function () {
+            var columns = [
+                new GridColumn({
+                    flex: 10,
+                    dataIndex: "type",
+                    header: this.resourceManager.getString("ui", "ms_type"),
+                    type: "string",
+                    renderer: this.renderType.bind(this),
+                    sortable: true,
+                    sortFn: this.typeSorter.bind(this)
+                }),
+                new GridColumn({
+                    flex: 10,
+                    dataIndex: "callType",
+                    header: this.resourceManager.getString("ui", "ms_callType"),
+                    type: "string",
+                    renderer: this.renderExitCallType.bind(this),
+                    sortable: false
+                }),
+                new GridColumn({
+                    flex: 45,
+                    dataIndex: "name",
+                    header: this.resourceManager.getString("ui", "ms_summary"),
+                    type: "string",
+                    renderer: this.renderSummary.bind(this),
+                    sortable: true,
+                    sortFn: this.summarySorter.bind(this)
+                }),
+                new GridColumn({
+                    flex: 7,
+                    dataIndex: "averageResponseTime",
+                    header: this.resourceManager.getString("ui", "ms_responseTimeMs"),
+                    type: "int",
+                    align: "right",
+                    renderer: GridColumn.itemRenderer,
+                    sortable: true,
+                    convert: this.getTime.bind(this)
+                }),
+                new GridColumn({
+                    flex: 7,
+                    dataIndex: "numberOfCalls",
+                    header: this.resourceManager.getString("ui", "ms_calls"),
+                    type: "int",
+                    align: "right",
+                    renderer: GridColumn.itemRenderer,
+                    sortable: true,
+                    convert: this.getCalls.bind(this)
+                }),
+                new GridColumn({
+                    flex: 7,
+                    dataIndex: "callsPerMinute",
+                    header: this.resourceManager.getString("ui", "ms_callsPerMin"),
+                    type: "int",
+                    align: "right",
+                    renderer: GridColumn.itemRenderer,
+                    sortable: true,
+                    convert: this.getCallsPerMin.bind(this)
+                }),
+                new GridColumn({
+                    flex: 7,
+                    dataIndex: "numberOfErrors",
+                    header: this.resourceManager.getString("ui", "ms_errors"),
+                    type: "int",
+                    align: "right",
+                    renderer: GridColumn.itemRenderer,
+                    sortable: true,
+                    convert: this.getErrors.bind(this)
+                }),
+                new GridColumn({
+                    flex: 7,
+                    dataIndex: "errorsPerMinute",
+                    header: this.resourceManager.getString("ui", "ms_errorsPerMin"),
+                    type: "int",
+                    align: "right",
+                    renderer: GridColumn.itemRenderer,
+                    sortable: true,
+                    convert: this.getErrorsPerMin.bind(this)
+                }),
+            ];
+            var gridOptions = new GridOptions();
+            gridOptions.columnProvider = columns;
+            gridOptions.useDataLoadReader = true;
+            gridOptions.compileRenderers = false;
+            gridOptions.useBufferedRenderer = true;
+            return gridOptions;
+        };
+        AppListView.prototype.buildDataProviderFromGraph = function (listviewdata) {
+            var tiers = listviewdata.nodes.filter(function (item) {
+                return item.entityType === EntityType.APPLICATION_COMPONENT;
+            });
+            return tiers.concat(listviewdata.edges);
+        };
+        return AppListView;
+    })(DashboardListBase);
+    return AppListView;
+});

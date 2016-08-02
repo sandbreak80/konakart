@@ -1,0 +1,13 @@
+#Project description file
+#Mon Aug 01 10:09:25 PDT 2016
+project.name=KonaKart
+project.config.storage=ZIP
+project.id=62292bf2-b4c2-4189-a244-9159872b70e4
+product.version=5.2.2
+team.server.enabled=false
+product.original.name=NeoLoad
+product.name=NeoLoad
+product.original.version=5.1.5
+project.config.path=config.zip
+project.version=5.2
+project.original.version=5.1

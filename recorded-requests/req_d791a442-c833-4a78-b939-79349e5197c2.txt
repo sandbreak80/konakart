@@ -1,0 +1,13 @@
+POST http://192.168.1.252:8780/konakart/CheckoutConfirmationSubmit.action HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Referer: http://192.168.1.252:8780/konakart/CustomerRegistrationSubmit.action
+Accept-Language: en-US,en;q=0.5
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Content-Length: 62
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Cookie: JSESSIONID=BBC751270D4BF1E4FDA8F679DAD8ED80; CUSTOMER_UUID=58daf8e9-2b23-4a88-b88a-38f64ffd4e83; __atuvc=1%7C28; __atuvs=578947153eb368b0000
+
+xsrf_token=null&shipping=flat&payment=cod&couponCode=&comment=

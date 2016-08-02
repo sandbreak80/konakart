@@ -1,0 +1,107 @@
+<div ad-dialog>
+
+    <div class="modal-header">
+        <h1>{{controller.title}}</h1>
+        <div ng-click="$dismiss()" class="closeButton"></div>
+    </div>
+
+    <div class="adsDialogBody">
+
+        <form name="CustomTimeRangeProperties" ng-submit="submit()" style=" max-width: 100%;">
+
+            <div class="ads-ctr-config-view"  style="display: block; position: relative;" >
+
+                <table class="sty-form-table">
+                    <tr>
+                        <td class="ads-ctr-config-label-cell">Name</td>
+                        <td class="ads-ctr-config-control-cell">
+                            <input class="ads-ctr-config-view-input-box"
+                                   ng-model="controller.data.customTimeRange.name"
+                                   name="name" required/>
+                       </td>
+                    </tr>
+                    <tr>
+                        <td class="ads-ctr-config-label-cell">Description</td>
+                        <td class="ads-ctr-config-control-cell">
+                            <textarea class="ads-ctr-config-view-text-area"
+                                      ng-model="controller.data.customTimeRange.description" required/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="ads-ctr-config-label-cell">From</td>
+                        <td class="ads-ctr-config-control-cell">
+                            <ad-date-input class="ad-date-input" date-output="controller.data.customTimeRange.startTime"
+                                           show-time="true">
+                            </ad-date-input>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="ads-ctr-config-label-cell">To</td>
+                        <td class="ads-ctr-config-control-cell">
+                            <ad-date-input class="ad-date-input" date-output="controller.data.customTimeRange.endTime"
+                                           show-time="true">
+                            </ad-date-input>
+                        </td>
+                    </tr>
+
+                    <tr ng-show="controller.isEditMode">
+                        <td class="ads-ctr-config-label-cell">Created By</td>
+                        <td class="ads-ctr-config-control-cell">
+                            <p style="display:inline-block; resize: none; ">{{controller.data.customTimeRange.createdBy}}</p>
+                        </td>
+                    </tr>
+
+                    <tr ng-show="controller.isEditMode">
+                        <td class="ads-ctr-config-label-cell">Last Modified By</td>
+                        <td class="ads-ctr-config-control-cell">
+                            <p style="display:inline-block; resize: none; ">{{controller.data.customTimeRange.modifiedBy}}</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td class="ads-ctr-config-label-cell">
+                        </td>
+
+                        <td class="ads-ctr-config-control-cell">
+
+                            <div style="padding-top: 8px; padding-bottom: 16px;">
+
+                                <div class="adsInlineBlock ads-vertical-align">
+                                    <input id="ads-share-with-everyone" type="checkbox" ng-model="controller.data.customTimeRange.shared">
+                                </div>
+
+                                <div class="adsInlineBlock ads-vertical-align">
+                                    <label for="ads-share-with-everyone">Share with Everyone</label>
+                                </div>
+
+                                <div class="adsInlineBlock ads-vertical-align"
+                                     style="padding-left: 8px; ">
+
+                                    <ad-info-help-item ad-type="info"
+                                                       ad-info-title="{{getString('ms_whatIsSharing')}}"
+                                                       ad-info-message="{{getString('ms_sharingHelpText')}}">
+                                    </ad-info-help-item>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+        <input class="ads-button" type="button" ng-click="$dismiss()" value="Cancel" />
+        <input class="ads-button" type="submit" ng-click="controller.submit()" value="Save" />
+    </div>
+
+</div>

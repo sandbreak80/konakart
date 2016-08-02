@@ -1,0 +1,150 @@
+<div class="adsDashboardBottomGraphsContainer">
+
+    <div class="hbox expanded">
+        <div class="boxRow ">
+            <div class="hboxItem adsDashboardBottomGraphContainer">
+                <div class="expanded">
+
+                    <!-- LOAD -->
+                    <div class="adsMainDashBottomStatsTitleContainer">
+                        <div class="adsMainDashBottomStatsTitleRow">
+                            <div class="adsMainDashBottomStatsTitleCol">
+                                Load
+                            </div>
+
+                            <div class="adsMainDashBottomStatsStatsCol">
+                                <span style="font-size: 18px;">
+                                    {{controller.numberOfCalls | adVeryLargeNumber}}
+                                </span>
+
+                                <span class="values unitsText">
+                                    {{::getString('ms_callslcase')}}
+                                </span>
+                            </div>
+
+                            <div class="adsMainDashBottomStatsStatsCol">
+                                <span style="font-size: 18px">
+                                    <ad-performance-value ad-performance-value-data="controller.callsPerMinuteData">
+                                    </ad-performance-value>
+                                </span>
+
+                                <span class="values unitsText">
+                                    {{::getString('ms_callsSlashMinlcase')}}
+                                </span >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ad-chart
+                         class="adsMainDashboardBottomADChart adsAppDashCharts"
+                         config="controller.chartConfigLoad"
+                         selection-listener=true
+                         ng-dblclick="controller.onDoubleClickLoadChart()"
+                         >
+                    </div>
+
+                    <ad-help-bubble-popover ad-title="{{::getString('ms_helpGraphTipsTitle')}}"
+                                            ad-content="{{::getString('ms_helpGraphTipDoubleClick')}} <br><br> {{::getString('ms_helpGraphTipDragSelect')}}"
+                                            ad-placement="'top'"
+                                            ad-help-bubble-id="HELP_GRAPH_TIPS_APP_DASH"
+                                            ad-append-to-body="true"
+                                            ad-show-order="20"
+                                            ad-show-after-number-logins="35"
+                    >
+                    </ad-help-bubble-popover>
+
+                </div>
+            </div>
+
+            <div class="hboxItem adsDashboardBottomGraphContainer">
+                <div class="expanded adsDashboardCenterBottomGraphBorder">
+                    <!-- RESPONSE TIME -->
+                    <div class="adsMainDashBottomStatsTitleContainer">
+                        <div class="adsMainDashBottomStatsTitleRow">
+                            <div class="adsMainDashBottomStatsTitleCol"
+                                 ad-drop-down-toggle
+                                 ad-close-mode="clickAny"
+                                 ad-in-place="false"
+                                 ad-drop-down-disabled="!adEnableEndToEnd">
+                                {{controller.getTitleForActiveTimingType()}}
+                                <img ng-if="adEnableEndToEnd" src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions"/>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li class="ads-menu-item" ng-click="controller.toggleTimingType()">{{controller.getTitleForInactiveTimingType()}}</li>
+
+                            </ul>
+                            <div class="adsMainDashBottomStatsStatsCol">
+
+                                <span style="font-size: 18px;">
+                                    <ad-performance-value ad-performance-value-data="controller.getPerformanceValueDataForActiveTimingType()">
+                                    </ad-performance-value>
+                                </span>
+
+                                <span class="values unitsText">
+                                {{::getString('ms_msAverage')}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ad-chart
+                         class="adsMainDashboardBottomADChart adsAppDashCharts"
+                         config="controller.chartConfigTiming"
+                         selection-listener=true
+                         ng-dblclick="controller.onDoubleClickTimingChart()"
+                         >
+                    </div>
+                </div>
+            </div>
+
+            <div class="hboxItem adsDashboardBottomGraphContainer">
+                <div class="expanded">
+                    <!-- ERRORS -->
+                    <div class="adsMainDashBottomStatsTitleContainer">
+                        <div class="adsMainDashBottomStatsTitleRow">
+                            <div style="width:20%" class="adsMainDashBottomStatsTitleCol">
+                                Errors
+                            </div>
+
+                            <div style="width:20%" class="adsMainDashBottomStatsStatsCol">
+                                <span ng-if="controller.percentageErrors > 0" class="redText" style="font-size: 18px;">
+                                    {{controller.percentageErrors | adNumber}}%
+                                </span>
+                                <span ng-if="controller.percentageErrors <= 0" style="font-size: 18px;">
+                                    {{controller.percentageErrors | adNumber}}%
+                                </span>
+                            </div>
+
+                            <div style="width:30%" class="adsMainDashBottomStatsStatsCol">
+                                <span style="font-size: 18px;">
+                                    {{controller.numberOfErrors | adLargeNumber}}
+                                </span>
+                                <span class="values unitsText">
+                                    {{::getString('ms_errorslcase')}}
+                                </span>
+                            </div>
+
+                            <div style="width:30%" class="adsMainDashBottomStatsStatsCol">
+                                <span style="font-size: 18px">
+                                    <ad-performance-value ad-performance-value-data="controller.errorsPerMinuteData">
+                                    </ad-performance-value>
+                                </span>
+                                <span class="values unitsText">
+                                    {{::getString('ms_errorsSlashMinlcase')}}
+                                </span >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ad-chart
+                         class="adsMainDashboardBottomADChart adsAppDashCharts"
+                         config="controller.chartConfigErrors"
+                         selection-listener=true
+                         ng-dblclick="controller.onDoubleClickErrorChart()"
+                         >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

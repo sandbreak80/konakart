@@ -1,0 +1,9 @@
+define(["require", "exports"], function (require, exports) {
+    var ADQLResponse = (function () {
+        function ADQLResponse(responseJson) {
+            _.extend(this, responseJson);
+        }
+        return ADQLResponse;
+    })();
+    return ADQLResponse;
+});

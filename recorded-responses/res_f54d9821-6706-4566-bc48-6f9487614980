@@ -1,0 +1,6 @@
+<GWTResponse>
+  <result class="String-array">
+    <String>REPORTS_STATUS_PAGE_URL</String>
+    <String>http://localhost:8780/birtviewer/run?__report=reports/stores/store1/OrdersInLast25DaysChart.rptdesign</String>
+  </result>
+</GWTResponse>

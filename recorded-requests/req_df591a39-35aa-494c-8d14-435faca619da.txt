@@ -1,0 +1,9 @@
+GET http://192.168.1.252:8780/konakart/images/prod/9/5/7/8/95782936-65F3-448F-BF8E-A0F5409B5048_1_medium.jpg HTTP/1.1
+Accept: image/png, image/svg+xml, image/jxr, image/*;q=0.8, */*;q=0.5
+Referer: http://192.168.1.252:8780/konakart/Welcome.action
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.252:8780
+Cookie: JSESSIONID=BC6567955CFC749D982F5D9E2F5EF0FB; CUSTOMER_UUID=58daf8e9-2b23-4a88-b88a-38f64ffd4e83
+

@@ -1,0 +1,120 @@
+POST http://192.168.1.246:8090/controller/messagebroker/amf HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Content-Length: 1386
+Content-Type: application/x-amf
+Cookie: X-CSRF-TOKEN=79857ed042e367bf486b5ae050cb3b146041eddc; JSESSIONID=2abdf7e5ace14c135518d3de6e17
+Host: 192.168.1.246:8090
+Pragma: no-cache
+Referer: http://192.168.1.246:8090/controller/Main_20160603-170624.swf
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+x-flash-version: 22,0,0,209
+Content-Length: 1386
+
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/3</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+          <destination>configurationManager</destination>
+          <messageId>40F4803C-12BA-7E94-5C2F-32ABFA5A387F</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>isEumWebAnalyzeEnabled</operation>
+          <parameters/>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/4</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+          <destination>configurationManager</destination>
+          <messageId>A9FA4F83-DBA0-3003-E2D7-32ABFA5BC114</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>isEumMobileAnalyticsCrashDashboardEnabled</operation>
+          <parameters/>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/5</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+          <destination>configurationManager</destination>
+          <messageId>400FD848-1A27-F4CF-FD34-32ABFA5CCF51</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>isEumMobileLiteEnabled</operation>
+          <parameters/>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/6</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+          <destination>configurationManager</destination>
+          <messageId>8F2DDF30-C90D-B929-6482-32ABFA5E6563</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>isEumWebLiteEnabled</operation>
+          <parameters/>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

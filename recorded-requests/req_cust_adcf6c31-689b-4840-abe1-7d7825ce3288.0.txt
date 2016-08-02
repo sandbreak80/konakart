@@ -1,0 +1,10 @@
+POST http://192.168.1.252:8780/konakart/services/KKWebServiceEng HTTP/1.1
+Accept-Encoding: gzip
+User-Agent: Jetty/9.3.7.v20160115NeotysEdition.12
+SOAPAction: ""
+Content-Type: text/xml; charset=utf-8
+NeoLoad-TransactionName: WSDL.Actions
+Host: 192.168.1.252:8780
+Content-Length: 623
+
+<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:login soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://ws.konakart.com"><emailAddr xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">admin@konakart.com</emailAddr><password xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">princess</password></ns1:login></soapenv:Body></soapenv:Envelope>

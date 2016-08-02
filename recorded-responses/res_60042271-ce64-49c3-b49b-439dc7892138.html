@@ -1,0 +1,42 @@
+<div class="ads-progress-mask-container">
+
+    <div ng-class="{'ads-loading-message':!controller.useSmallSize}" ng-style="controller.getProgressIndicatorContentStyle()"
+         style="position: relative; z-index: 100"
+            ng-if="controller.isVisible"
+            >
+
+        <div>
+
+            <div ng-if="!controller.useSmallSize">
+
+                <!-- close button -->
+                <div style="padding: 0px 4px 2px 0px" class="pull-right">
+                    <div class="hboxItem ads-close-button"
+                         ng-click="controller.onClose()"
+                            >
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div>
+
+                <div class="pull-left ads-progress-indicator-icon" style="padding-right: 12px;  padding-left: 12px">
+                    <i class="fa fa-2x fa-spinner fa-spin"></i>
+                </div>
+
+                <div ng-if="!controller.useSmallSize" class="pull-left ads-progress-indicator-message" style="padding-top: 4px; font-size: 14px">
+                    {{controller.message}}
+                </div>
+
+                <div class="clearfix" />
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

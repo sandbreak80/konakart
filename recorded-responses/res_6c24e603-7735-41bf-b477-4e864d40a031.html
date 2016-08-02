@@ -1,0 +1,133 @@
+<div class="adsTransactionScorecardContainer">
+
+    <div class="adsDashboardSectionHeader">
+        <a ng-click="$emit(EventConstants.UEV_VIEW_SNAPSHOTS_ANALYSIS)">{{controller.headerText}}</a>
+    </div>
+
+    <div class="adsTransactionScorecardTable">
+
+        <!-- NORMAL -->
+        <div class="adsTransactionScorecardRow">
+            <div class="adsTransactionScorecardLabelCol">
+                Normal
+            </div>
+            <div class="adsTransactionScorecardBarCol">
+                <ad-percent-bar sv-percent-value="{{controller.normalData.percent}}"
+                                sv-percent-bar-class="adsGreenBackground"/>
+            </div>
+            <div class="adsTransactionScorecardPercentCol">
+                {{controller.normalData.percentLabel}}
+            </div>
+            <div class="adsTransactionScorecardNumberCol">
+                {{controller.normalData.countLabel}}
+            </div>
+        </div>
+
+        <!-- SLOW -->
+        <div class="adsTransactionScorecardRow">
+            <div class="adsTransactionScorecardLabelCol">
+                <a ng-click="$emit(EventConstants.UEV_VIEW_SLOW_SNAPSHOTS)"
+                   title="{{::getString('ms_searchForAvailSlowSnapshots')}}">{{::getString("ms_slow")}}</a>
+            </div>
+            <div class="adsTransactionScorecardBarCol">
+                <ad-percent-bar sv-percent-value="{{controller.slowData.percent}}"
+                                sv-percent-bar-class="adsYellowBackground"/>
+            </div>
+            <div class="adsTransactionScorecardPercentCol">
+                {{controller.slowData.percentLabel}}
+            </div>
+            <div class="adsTransactionScorecardNumberCol">
+                <div ng-if="controller.slowData.countData != null">
+                    <ad-performance-value ad-performance-value-data="controller.slowData.countData"
+                                          style="display: inline-block"
+                                          title="{{::getString('ms_viewSlowMetric')}}">
+                    </ad-performance-value>
+                </div>
+                <div ng-if="controller.slowData.countData == null">
+                    {{controller.slowData.countLabel}}
+                </div>
+            </div>
+        </div>
+
+        <!-- VERY SLOW -->
+        <div class="adsTransactionScorecardRow">
+            <div class="adsTransactionScorecardLabelCol">
+                <a ng-click="$emit(EventConstants.UEV_VIEW_VERY_SLOW_SNAPSHOTS)"
+                   title="{{::getString('ms_searchForAvailVerySlowSnapshots')}}">{{::getString("ms_verySlow")}}</a>
+            </div>
+            <div class="adsTransactionScorecardBarCol">
+                <ad-percent-bar sv-percent-value="{{controller.verySlowData.percent}}"
+                                sv-percent-bar-class="adsOrangeBackground"/>
+            </div>
+            <div class="adsTransactionScorecardPercentCol">
+                {{controller.verySlowData.percentLabel}}
+            </div>
+            <div class="adsTransactionScorecardNumberCol">
+                <div ng-if="controller.verySlowData.countData != null">
+                    <ad-performance-value ad-performance-value-data="controller.verySlowData.countData"
+                                          title="{{::getString('ms_viewVerySlowMetric')}}"
+                                          style="display: inline-block">
+                    </ad-performance-value>
+                </div>
+                <div ng-if="controller.verySlowData.countData == null">
+                    {{controller.verySlowData.countLabel}}
+                </div>
+            </div>
+        </div>
+
+        <!-- STALL -->
+        <div class="adsTransactionScorecardRow">
+            <div class="adsTransactionScorecardLabelCol">
+                <a ng-click="$emit(EventConstants.UEV_VIEW_STALL_SNAPSHOTS)"
+                   title="{{::getString('ms_searchForAvailStallSnapshots')}}">{{::getString("ms_stall")}}</a>
+            </div>
+            <div class="adsTransactionScorecardBarCol">
+                <ad-percent-bar sv-percent-value="{{controller.stallData.percent}}"
+                                sv-percent-bar-class="adsPurpleBackground"/>
+            </div>
+            <div class="adsTransactionScorecardPercentCol">
+                {{controller.stallData.percentLabel}}
+            </div>
+            <div class="adsTransactionScorecardNumberCol">
+                <div ng-if="controller.stallData.countData != null">
+                    <ad-performance-value ad-performance-value-data="controller.stallData.countData"
+                                          title="{{::getString('ms_viewStallMetric')}}"
+                                          style="display: inline-block">
+                    </ad-performance-value>
+                </div>
+                <div ng-if="controller.stallData.countData == null">
+                    {{controller.stallData.countLabel}}
+                </div>
+            </div>
+        </div>
+
+        <!-- ERRORS -->
+        <div class="adsTransactionScorecardRow" ng-if="!controller.isEndToEndScorecard()">
+            <div class="adsTransactionScorecardLabelCol">
+                <a ng-click="$emit(EventConstants.UEV_VIEW_ERROR_SNAPSHOTS)"
+                   title="{{::getString('ms_searchForAvailErrorSnapshots')}}">{{::getString("ms_errors")}}</a>
+            </div>
+            <div class="adsTransactionScorecardBarCol">
+                <ad-percent-bar sv-percent-value="{{controller.errorData.percent}}"
+                                sv-percent-bar-class="adsRedBackground"/>
+            </div>
+            <div class="adsTransactionScorecardPercentCol">
+                {{controller.errorData.percentLabel}}
+            </div>
+            <div class="adsTransactionScorecardNumberCol">
+                <div ng-if="controller.errorData.countData != null">
+                    <ad-performance-value ad-performance-value-data="controller.errorData.countData"
+                                          title="{{::getString('ms_viewErrorMetric')}}"
+                                          style="display: inline-block">
+                    </ad-performance-value>
+                </div>
+                <div ng-if="controller.errorData.countData == null">
+                    {{controller.errorData.countLabel}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

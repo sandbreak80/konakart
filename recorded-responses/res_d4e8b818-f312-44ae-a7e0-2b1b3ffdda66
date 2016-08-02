@@ -1,0 +1,22 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./ADQLOperatorBase"], function (require, exports, ADQLOperatorBase) {
+    var ADQLArithmeticOperator = (function (_super) {
+        __extends(ADQLArithmeticOperator, _super);
+        function ADQLArithmeticOperator(value) {
+            _super.call(this, value);
+        }
+        ADQLArithmeticOperator.ADD = new ADQLArithmeticOperator("+");
+        ADQLArithmeticOperator.SUB = new ADQLArithmeticOperator("-");
+        ADQLArithmeticOperator.MUL = new ADQLArithmeticOperator("*");
+        ADQLArithmeticOperator.DIV = new ADQLArithmeticOperator("/");
+        ADQLArithmeticOperator.OPERATOR_PATTERN = "((\\+)|(-)|(\\*)|(\\/)){1}";
+        return ADQLArithmeticOperator;
+    })(ADQLOperatorBase);
+    return ADQLArithmeticOperator;
+});

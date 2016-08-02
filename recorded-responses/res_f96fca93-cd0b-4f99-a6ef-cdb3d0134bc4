@@ -1,0 +1,10 @@
+<GWTResponse>
+  <result class="com.konakartadmin.app.KKAdminException">
+    <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" resolves-to="java.util.Collections$UnmodifiableList">
+      <c class="list"/>
+      <list reference="../c"/>
+    </suppressedExceptions>
+    <code>0</code>
+    <hideMoreDetails>false</hideMoreDetails>
+  </result>
+</GWTResponse>

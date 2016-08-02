@@ -1,0 +1,25 @@
+<div class="ads-display-table ads-left-nav-minor-item hoverable"
+     ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_ALERT_AND_RESPOND'}"
+     style="width: 100%;"
+     ng-click="controller.onClickAlertRespond()"
+     tooltip="{{controller.minimized ?  getString('ms_alertAct') : null}}"
+     tooltip-placement="right"
+     tooltip-append-to-body="true"
+        >
+    <div class="ads-display-table-row"
+            >
+        <div class="ads-display-table-cell ads-left-nav-minor-item-icon-box"
+             ng-show="controller.minimized"
+                >
+            <img src="images/leftNav/alert_and_respond_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+            <img src="images/leftNav/alert_and_respond_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+        </div>
+
+        <div class="ads-display-table-cell ads-left-nav-minor-item-label"
+             ng-class="{'ads-left-nav-minor-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_ALERT_AND_RESPOND'}"
+             ng-show="!controller.minimized"
+                >
+            {{::getString("ms_alertAct")}}
+        </div>
+    </div>
+</div>

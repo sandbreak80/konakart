@@ -1,0 +1,6 @@
+<GWTResponse>
+  <result class="String-array">
+    <String>ADMIN_APP_ADDRESS_FORMAT</String>
+    <String>$street $street1 $suburb $city $state $country</String>
+  </result>
+</GWTResponse>

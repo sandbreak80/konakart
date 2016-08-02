@@ -1,0 +1,1 @@
+{"id":26,"version":1,"name":"Daily Trend - Last 30 days","nameUnique":true,"applicationId":7,"seasonality":"DAILY","fixed":false,"fixedStartTime":null,"fixedEndTime":null,"allData":false,"numberOfDays":30,"defaultBaseline":true}

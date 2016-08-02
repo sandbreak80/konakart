@@ -1,0 +1,14 @@
+POST http://192.168.1.252:8780/konakart/ValidateAddress.action HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Referer: http://192.168.1.252:8780/konakart/CustomerRegistration.action?forceReg=true
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Content-Length: 167
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Cookie: JSESSIONID=BC6567955CFC749D982F5D9E2F5EF0FB; CUSTOMER_UUID=58daf8e9-2b23-4a88-b88a-38f64ffd4e83; __atuvc=1%7C28; __atuvs=578947153eb368b0000
+
+{"streetAddress":"33897 Flora Springs","streetAddress1":"","suburb":"","postcode":"92592","city":"Temecula","state":"California","countryId":"223","xsrf_token":"null"}

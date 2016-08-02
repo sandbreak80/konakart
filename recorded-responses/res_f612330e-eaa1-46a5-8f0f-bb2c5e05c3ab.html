@@ -1,0 +1,1028 @@
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+
+
+ 
+ 	
+    
+    
+    
+    
+    
+    
+		<html>
+			<head>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />
+				<title>KonaKart</title>
+				<meta name="keywords" content="KonaKart Java Shopping Cart eCommerce" />
+				<meta name="description" content="Powered by KonaKart Java Shopping Cart " />
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/jquery.selectboxit.css" />
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/font-awesome/css/font-awesome.css" />
+				<link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700'  >		
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/jcarousel.css" />				
+				<link type="text/css" rel="stylesheet" href="/konakart/styles/kk-style.css" />
+
+		 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+				<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>				
+				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.validate.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.json-2.3.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.tools.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.selectboxit.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-en.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-de.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-pt.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.ui.datepicker-es.js"></script>			 
+				<script type="text/javascript" src="/konakart/script/ddpowerzoomer.js">
+				/***********************************************
+				* Image Power Zoomer- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+				* This notice MUST stay intact for legal use
+				* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+				***********************************************/
+				</script>			 
+				<script type="text/javascript" src="/konakart/script/jquery.jcarousel.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.touchSwipe.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery.cookie.js"></script>
+				<script type="text/javascript" src="/konakart/script/jquery-backward-timer.min.js"></script>
+				<script type="text/javascript" src="/konakart/script/kk.js"></script>	
+				<script type="text/javascript" src="/konakart/script/kk.validation.js"></script>	
+				<script>
+				// Picture element HTML5 shiv
+				document.createElement( "picture" );
+				</script>
+				<script type="text/javascript" src="/konakart/script/picturefill-min.js"></script>							
+				
+				<base href="http://192.168.1.252:8780/konakart/"/>										
+				<!--- KonaKart v8.1.0.0.13129 -->
+			</head>
+			
+				<body id="catalog.onepagecheckout.page">
+			
+			<input type="hidden" value="null" id="kk_xsrf_token"/>
+	
+	<script language="JavaScript" type="text/javascript">
+		if (top.location != location) {
+					top.location.href = document.location.href ;
+			}
+				
+			// Set jquery validation messages
+			jQuery.validator.messages = {
+					state: 'Required field.',
+					country: 'Required field.',
+					required: 'Required field.',
+					creditcard: 'Please enter a valid credit card number.',
+					digits: 'Please enter only digits.',
+					maxlength: jQuery.validator.format('Please enter no more than {0} characters.'),
+					minlength: jQuery.validator.format('Please enter at least {0} characters.'),
+					expirydate: 'Please specify a valid expiry date in the format MMYY.',
+					email:	'Please enter a valid email address.',
+					url:	'Please enter a valid URL.',
+					number:	'Please enter a valid number.',
+ 					equalTo: 'The passwords do not match.'
+		};		 
+	</script>			
+	
+				
+
+
+
+
+
+
+
+
+
+
+		
+
+<script type="text/javascript">	
+$(function() {
+	$('#lang-select').selectBoxIt({
+		downArrowIcon: "selectboxit-down-arrow"
+    });	 
+
+	
+		
+	$('#currency-select').selectBoxIt({
+		downArrowIcon: "selectboxit-down-arrow"
+    });	
+	
+	
+    $('#open-search').click(function() {
+        $('#slide-out-search').slideToggle('fast');
+    });
+    $('#close-search').click(function() {
+        $('#slide-out-search').slideToggle('fast');
+    });
+    
+	
+
+});
+</script>
+
+<div id="top-bar-container">
+	<div id="slide-out-search">
+		 
+		 <div id="search">
+				
+				<form action="QuickSearch.action" id="quickSearchFormMobile" method="post">
+					<input type="hidden" value="null" name="xsrf_token"/>
+					<input type="hidden" value="true" name="searchInDesc"/>
+					<input type="text" id="search-input" class="rounded-corners-left" name="searchText">
+					<a id="search-button-mobile" class="rounded-corners-right" onclick="javascript:document.getElementById('quickSearchFormMobile').submit();">Search</a>
+				</form>	
+            
+
+			<a id="adv-search-link" href="AdvancedSearch.action">Advanced Search</a>
+		</div>
+		<span id="close-search" class="fa fa-times" title='Close'></span>
+	</div>
+  	<div id="top-bar">
+  		<div id="search-container">
+	  		<div id="top-bar-search" class="top-bar-menu-item">
+			  	<span id="open-search" class="fa fa-search top-bar-menu-icon" title="Search"></span> 
+			</div>
+		</div>
+		<div id="selections-container">
+			<div id="selections">
+		  		<div id="language-selector" class="top-bar-menu-item">
+		  			<form action="SetLocale.action" method="post">  
+		  				<input type="hidden" value="null" name="xsrf_token"/>
+						<select id="lang-select" name="locale"  onchange="submit()">
+							<option  value="en_GB" data-icon="flag flag-en-GB" selected="selected">English</option>
+							<option  value="de_DE" data-icon="flag flag-de-DE"  >Deutsch</option>
+							<option  value="es_ES" data-icon="flag flag-es-ES"  >Español</option>
+							<option  value="pt_BR" data-icon="flag flag-pt-BR"  >Português</option>
+						</select>
+					</form>									
+		  		</div>
+		  		<div id="currency-selector"  class="top-bar-menu-item">
+					<form action="SelectCurrency.action" method="post">  
+						<input type="hidden" value="null" name="xsrf_token"/>
+						<select id="currency-select" name="currencyCode"  onchange="submit()">
+							
+								
+								
+									<option  value="USD">US $</option>
+								
+							
+								
+								
+									<option  value="EUR">EUR €</option>
+								
+							
+						</select>
+					</form>										  			
+		  		</div>
+		  	</div>
+		  </div>
+		 <div id="options-container">
+	  		<div id="options">		
+
+	  			
+		  		<div  class="top-bar-menu-item">
+		  			<span class="fa fa-unlock-alt top-bar-menu-icon"><a href="LogOut.action" class="header2-top" title='Log Off'></a></span>
+		  			<span class="top-bar-menu-title"><a href="LogOut.action" class="header2-top">Log Off</a></span>
+		  		</div>
+				  		
+	  		<div id="my-account" class="top-bar-menu-item">
+	  			<span class="fa fa-user top-bar-menu-icon"><a href="LogIn.action" title='My Account'></a></span>  			
+		  		<span class="top-bar-menu-title"><a href="LogIn.action">My Account</a></span>
+	  			
+	  		</div>
+	  			
+			
+			<div id="shopping-cart" class="top-bar-menu-item">
+				<span class="fa fa-shopping-cart top-bar-menu-icon" title='Shopping Cart'><span id="basket-items">(1)
+				</span></span>  			
+		  		<span class="shopping-cart-title top-bar-menu-title">Shopping Cart<span id="basket-items"> (1)
+				</span></span>
+		  		
+		  		
+		  	
+		    <div id="shopping-cart-container">
+			  	<div id="shopping-cart-mouseover-shadow" class="slide-out-shadow"></div>
+			  	<div id="shopping-cart-contents" class="slide-out-contents shadow">
+					
+				  		<div id="shopping-cart-items">	
+								
+									
+											
+										<div class="shopping-cart-item">
+								  			<a href='SelectProd.action?prodId=35'><img src="/konakart/images/prod/3/7/4/F/374F4985-53E5-49FF-A277-4A8AEE40FE0D_1_tiny.jpg" border="0" alt="iPhone 5" title=" iPhone 5 "></a>
+								  			<a href='SelectProd.action?prodId=35' class="shopping-cart-item-title">iPhone 5</a>
+							  				
+								  			<div class="shopping-cart-item-price">
+									  			
+									  				$999.99
+									  			
+									  			&nbsp;Quantity:1					  			
+								  			</div>
+						  				</div>							
+									
+								
+					  	</div>
+					  	<div id="subtotal-and-checkout">
+					  		<div class="subtotal">
+					  			<div class="subtotal-label">Subtotal</div>
+					  			<div class="subtotal-amount">$999.99</div>
+					  			<div id="shopping-cart-checkout-button" class="button small-rounded-corners">Checkout</div>
+					  		</div>
+					  	</div>					
+									  		
+			  	</div>	
+			</div>
+			</div>
+		</div>
+		</div>
+  	</div>
+</div>  
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	<div id="cookie-container">
+		<div id="cookie-warning">
+				<span style="display:table-cell; vertical-align:top;">Cookies help us deliver the best experience on our website. By using our website, you agree to our use of cookies.</span>
+				<span style="display:table-cell; vertical-align:middle;"><div id="cookie-warn-button" class="button small-rounded-corners">Continue</div></span>
+		</div>
+	</div>
+
+
+<div id="header-container">
+	<div id="header">
+		<div id="logo">
+			
+			 
+
+			
+				
+				
+				
+				
+				
+			 
+			<a href="Welcom.action"><img id="logo-1"  
+			    src="/konakart/images/content/logo.png"
+			    alt="KonaKart logo"/></a>
+		</div>
+		<div id="search">
+				
+				<form action="QuickSearch.action" id="quickSearchForm" method="post">
+					<input type="hidden" value="null" name="xsrf_token"/>
+					<input type="hidden" value="true" name="searchInDesc"/>
+					<input type="text" id="search-input" class="rounded-corners-left" name="searchText">
+					<a id="search-button" class="rounded-corners-right" onclick="javascript:document.getElementById('quickSearchForm').submit();">Search</a>
+				</form>	
+            
+		</div>
+		<a id="adv-search-link" href="AdvancedSearch.action">Advanced Search</a>
+ 	</div>
+</div>
+	    		<div id="page-container">
+	    			<div id="page" class="home">
+						
+
+
+
+
+
+
+<div id="main-menu">
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=1' class="menu-item rounded-corners" style="width: auto;">Computer Peripherals</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=2' class="menu-item rounded-corners" style="width: auto;">Games</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=3' class="menu-item rounded-corners" style="width: auto;">DVD Movies</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=22' class="menu-item rounded-corners" style="width: auto;">Software</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=23' class="menu-item rounded-corners" style="width: auto;">Electronics</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=24' class="menu-item rounded-corners" style="width: auto;">Home & Garden</a>
+	
+		
+		
+		
+			
+		
+		<a href='SelectCat.action?catId=21' class="menu-item rounded-corners last-child" style="width: auto;">Gifts</a>
+						
+</div>
+
+						
+
+
+
+
+
+ <div id="breadcrumbs">
+	
+    	<span class="breadcrumb-item"><a href="Welcome.action">Home</a></span>
+													
+	
+    	 
+    	
+            
+			
+				<span class="breadcrumb-separator"></span>
+				<span class="breadcrumb-item">Checkout</span>
+					    												
+				    												
+	
+    	 
+    	
+            
+			
+				<span class="breadcrumb-separator"></span>
+				<span class="breadcrumb-item">Order Confirmation</span>
+					    												
+				    												
+	 	
+ </div>
+						
+						<div id="content" class="wide">
+							
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+<script type="text/javascript">	
+
+
+var onePageRefreshCallback = function(result, textStatus, jqXHR) {
+	if (result.timeout != null) {
+		alert('Your session has timed out.');
+		document.getElementById('form1').submit();
+	}else{		
+		if (result.storeId == null) {
+			$("#ot-table").empty();
+			var opArray = result.order.orderProducts;
+			if (opArray != null && opArray.length > 0) {
+				for ( var i = 0; i < opArray.length; i++) {
+					var op = opArray[i];
+					$("#ot-table").append(getOrderProductRow(result, op));				
+				}	
+			}	
+			
+			var otArray = result.order.orderTotals;
+			if (otArray != null && otArray.length > 0) {
+				for ( var i = 0; i < otArray.length; i++) {
+					var ot = otArray[i];
+					$("#ot-table").append(getOrderTotalRow(ot));				
+				}	
+			}			
+		} else {
+			// Multi vendor mode
+			for ( var i = 0; i < result.order.vendorOrders.length; i++) {
+				var order = result.order.vendorOrders[i];
+				$("#ot-table_"+order.storeId).find('tr').slice(0,-1).remove();
+								
+				var otArray = order.orderTotals;
+				if (otArray != null && otArray.length > 0) {
+					for ( var j = 0; j < otArray.length; j++) {
+						var ot = otArray[j];
+						if (ot.className.substr(0,6) == "ot_tax") {
+							$("#ot-table_"+order.storeId).prepend(getOrderTotalRow(ot));	
+						}
+					}	
+				}	
+				
+				var opArray = order.orderProducts;
+				if (opArray != null && opArray.length > 0) {
+					for ( var j = opArray.length-1; j > -1; j--) {
+						var op = opArray[j];
+						$("#ot-table_"+order.storeId).prepend(getOrderProductRow(result, op));				
+					}	
+				}
+				
+				if (order.shippingQuote != null) {
+					var shippingCost;
+					if (result.displayPriceWithTax) {
+						shippingCost = order.shippingQuote.formattedTotalIncTax;
+					} else {
+						shippingCost = order.shippingQuote.formattedTotalExTax;
+					}
+					$("#shipping_price_"+order.storeId).html(shippingCost);
+					$("#shipping_name_"+order.storeId).html(order.shippingQuote.title+":");		
+				}
+			}
+			
+			$("#ot-table").empty();
+			var otArray = result.order.orderTotals;
+			if (otArray != null && otArray.length > 0) {
+				for ( var i = 0; i < otArray.length; i++) {
+					var ot = otArray[i];
+					$("#ot-table").append(getOrderTotalRow(ot));				
+				}	
+			}			
+		}
+		
+		if (result.formattedDeliveryAddr != null) {
+			$("#formattedDeliveryAddr").html(result.formattedDeliveryAddr);
+			$("#editDelivery").attr("href", "EditAddr.action?addrId="+result.deliveryAddrId+"&opcdelivery=true");
+		}	
+		if (result.formattedBillingAddr != null) {
+			$("#formattedBillingAddr").html(result.formattedBillingAddr);
+			$("#editBilling").attr("href", "EditAddr.action?addrId="+result.billingAddrId+"&opcbilling=true");
+		}
+		
+		if ($("#couponCodeUpdate").length) $('#couponCodeUpdate').hide();
+		if ($("#giftCertCodeUpdate").length) $('#giftCertCodeUpdate').hide();
+		if ($("#rewardPointsUpdate").length) $('#rewardPointsUpdate').hide();
+		if (!result.otValid) {
+			openErrorDialog();
+		}else{
+			$('#continue-button').show();
+		}
+		
+		if (result.paymentMethods != null) {
+			var txt = "";
+			for ( var i = 0; i < result.paymentMethods.length; i++) {
+				var nv = result.paymentMethods[i];
+				if (i==0) {
+					txt += '<option  value="'+nv.name+'" selected="selected">'+nv.value+'</option>';
+				} else {
+					txt += '<option  value="'+nv.name+'" >'+nv.value+'</option>';
+				}
+			}			
+			$('#paymentDetails').html(txt);
+		}		
+	}
+};
+
+function getOrderTotalRow(ot) {	
+	var rowClass = "costs-and-promotions";
+	if (ot.className == "ot_total") rowClass = "shopping-cart-total";
+	var row = '<tr class="'+rowClass+'">';
+	if (ot.className == "ot_reward_points") {
+		row += '<td class="cost-overview">'+ot.title+'</td>';	
+		row += '<td class="cost-overview-amounts right">'+ot.value+'</td>';
+	} else if (ot.className == "ot_free_product") {
+		row += '<td class="cost-overview">'+ot.title+'</td>';	
+		row += '<td class="cost-overview-amounts right">'+ot.text+'</td>';
+	} else if (ot.className == "ot_total") {
+		row += '<td>'+ot.title+'</td>';	
+		row += '<td class="right">'+ot.value+'</td>';
+	} else if (isDiscountModule(ot.className)) {
+		row += '<td class="cost-overview"><span class="discount">'+ot.title+'</span></td>';	
+		row += '<td class="cost-overview-amounts right"><span class="discount">-'+ot.value+'</span></td>';
+	} else  {
+		row += '<td class="cost-overview">'+ot.title+'</td>';	
+		row += '<td class="cost-overview-amounts right">'+ot.value+'</td>';
+	}
+	row += '</tr>';
+	return row;
+}
+
+function isDiscountModule(module) {
+	if (module != null
+            && (module=="ot_product_discount" || module=="ot_total_discount"
+            || module=="ot_buy_x_get_y_free"  || module=="ot_gift_certificate"
+            || module=="ot_redeem_points"     || module=="ot_shipping_discount"))
+    {
+        return true;
+    }
+    return false;
+}
+
+function getOrderProductRow(result, op) {	
+ 	var row = '<tr><td>';
+ 	row +='<a href="'+ getURL("SelectProd.action", new Array("prodId",op.productId)) + '"  class="text-link">'+op.name;
+   	if (op.opts != null) {
+		for (var k = 0; k < op.opts.length; k++) {
+			var opt = op.opts[k];
+			if (opt != null) {
+				if (opt.type == 0) { // Simple options
+					row += '<br><span class="shopping-cart-item-option"> - '+opt.name+': '+opt.value+'</span>';
+				} else if (opt.type == 1) { // Variable quantity
+					row += '<br><span class="shopping-cart-item-option"> - '+opt.name+': '+opt.quantity+' '+opt.value+'</span>';
+				} else if (opt.type == 2) { // Customer price
+					row += '<br><span class="shopping-cart-item-option"> - '+opt.name+': '+opt.formattedCustPrice+'</span>';
+				} else if (opt.type == 3) { // Customer text
+					row += '<br><span class="shopping-cart-item-option"> - '+opt.name+': '+opt.customerText+'</span>';
+				}					
+			}						
+		}
+	}				 	
+   	row +='</a>';
+   	row +='<div class="item-quantity">'+result.qtyMsg+': '+ op.quantity+'</div>';				 	
+   	row += '</td>';
+	if (result.displayPriceWithTax) {
+		row += '<td  class="total-price right">';
+		row += op.formattedFinalPriceIncTax;
+		row += '</td>';
+	} else {
+		row += '<td  class="total-price right">';
+		row += op.formattedFinalPriceExTax;
+		row += '</td>';
+	}
+	row += '</tr>';		
+	return row
+}
+
+function shippingRefresh(storeId) {
+	if (storeId==null) {
+		var quotes = document.getElementById("shippingQuotes");
+		var selectedQuote = quotes.options[quotes.selectedIndex].value;
+		callAction(new Array("shipping",selectedQuote), onePageRefreshCallback, "OnePageRefresh.action");
+		setLoading();
+	} else {
+		var quotes = document.getElementById("shipping_"+storeId);
+		var selectedQuote = quotes.options[quotes.selectedIndex].value;
+		callAction(new Array("shipping",selectedQuote, "storeId",storeId), onePageRefreshCallback, "OnePageRefresh.action");
+		setLoading();	
+	}
+}
+
+function paymentRefresh() {	
+	var paymentDetails = document.getElementById("paymentDetails");
+	var selectedPayment = paymentDetails.options[paymentDetails.selectedIndex].value;
+	callAction(new Array("payment",selectedPayment), onePageRefreshCallback, "OnePageRefresh.action");
+	setLoading();
+}
+
+function couponCodeRefresh() {	
+	var val = document.getElementById("couponCode").value;
+	callAction(new Array("couponCode",val), onePageRefreshCallback, "OnePageRefresh.action");
+	setLoading();
+}
+
+function giftCertCodeRefresh() {	
+	var val = document.getElementById("giftCertCode").value;
+	callAction(new Array("giftCertCode",val), onePageRefreshCallback, "OnePageRefresh.action");
+	setLoading();
+}
+
+function rewardPointsRefresh() {	
+	var val = document.getElementById("rewardPoints").value;
+	callAction(new Array("rewardPoints",val), onePageRefreshCallback, "OnePageRefresh.action");
+	setLoading();
+}
+
+function setLoading() {
+	$("#ot-table").empty().append('<tr><td colspan="3" class="loading"></td></tr>');	
+}
+
+var deliveryAddr = true;
+
+function selectAddr(id) {	
+	$("#addr-dialog").dialog('close');
+	if (deliveryAddr) {
+		setLoading();
+		return redirect(getURL("CheckoutNewDeliveryAddr.action", new Array("deliveryId",id)));
+	} else {
+		callAction(new Array("billingAddrId",id), onePageRefreshCallback, "OnePageRefresh.action");
+	}
+	setLoading();
+}
+
+function openErrorDialog() {
+	$('#continue-button').hide();
+	$("#error-dialog").dialog('open');
+}
+
+function closeErrorDialog() {
+	$("#error-dialog").dialog('close');
+}
+
+
+
+$(function() {
+	
+    if ($("#form1").length) {
+		$("#form1").validate(validationRules);
+	}
+	
+	$("#addr-dialog").dialog({
+		autoOpen: false,
+		width: "90%",
+		modal: "true",
+		hide: "blind",
+		open: function( event, ui ) {
+			var width = $( "#addr-dialog" ).width();
+			if (width > 500) {
+				$( "#addr-dialog" ).dialog( "option", "width", 500 );
+			}
+		}
+	});
+	
+	$("#error-dialog").dialog({
+		autoOpen: false,
+		width: "90%",
+		modal: "true",
+		hide: "blind"
+	});
+	
+	
+	
+	
+	
+	$('#couponCode').keyup(function() {
+		  var elem = $(this);
+		  var val = elem.valid();
+		  if (val==1 || elem.val()=="") {
+			  $('#couponCodeUpdate').show();
+		  } else {
+			  $('#couponCodeUpdate').hide();
+		  }
+	});
+	
+
+	$('#giftCertCode').keyup(function() {
+		  var elem = $(this);
+		  var val = elem.valid();
+		  if (val==1 || elem.val()=="") {
+			  $('#giftCertCodeUpdate').show();
+		  } else {
+			  $('#giftCertCodeUpdate').hide();
+		  }
+	});
+
+
+	$('#rewardPoints').keyup(function() {
+		  var elem = $(this);
+		  var val = elem.valid();
+		  if (val==1 || elem.val()=="") {
+			  $('#rewardPointsUpdate').show();
+		  } else {
+			  $('#rewardPointsUpdate').hide();
+		  }
+	});
+
+	$("#abdelivery").click(function() {
+		deliveryAddr = true;
+		$("#addr-dialog").dialog( "open" );
+		return false;
+	});
+	
+	$("#abshipping").click(function() {
+		deliveryAddr = false;
+		$("#addr-dialog").dialog( "open" );
+		return false;
+	});
+	
+});
+
+</script>
+
+
+    			<h1 id="page-title">Order Confirmation</h1>
+	    		<div id="order-confirmation" class="content-area rounded-corners">
+		    		<form action="CheckoutConfirmationSubmit.action" id="form1" method="post" class="form-section">
+		    			<input type="hidden" value="null" name="xsrf_token"/>
+		    			<div id="order-confirmation-column-left">
+		    				
+		    				<div id="delivery-address" class="order-confirmation-area">
+			    				<div class="heading-container">
+			    					<h3>Delivery Address</h3>
+			    					<div class="order-confirmation-options">
+			    					<a href="NewAddr.action?opcdelivery=true" title='Enter a new address and save it in your address book' class="order-confirmation-option text-link has-tooltip">New</a>
+			    					<span class="separator-small"></span>
+			    					<a id="editDelivery" href='EditAddr.action?addrId=6&opcdelivery=true' title='Modify this address and save the changes in your address book' class="order-confirmation-option text-link has-tooltip">Edit</a>
+									
+				    					<span class="separator-small"></span>
+				    					<a id="abdelivery" title='Pick an address from your address book' class="order-confirmation-option text-link has-tooltip">Address Book</a>
+									
+			    				</div>
+			    				</div>
+			    				<div class="order-confirmation-area-content">
+				    				<span id="formattedDeliveryAddr">fnamuser lnameuser<br/>33897 Flora Springs<br/>Temecula, California    92592<br/>United States</span>
+				    				
+										<div id="shipping-info" class="order-confirmation-area-content-select">
+											<label>Shipping Method</label>
+											<select name="shipping" onchange="javascript:shippingRefresh();" id="shippingQuotes">
+																						
+													 
+													
+														
+														
+															<option  value="flat" selected="selected">Flat Rate</option>
+														
+																							
+												
+											</select>
+										</div>
+									
+								</div>		    				
+			    			</div>
+			    			<div id="billing-address" class="order-confirmation-area">
+			    				<div class="heading-container">
+			    					<h3>Billing Address</h3>
+			    					<div class="order-confirmation-options">
+			    					<a href="NewAddr.action?opcbilling=true" title='Enter a new address and save it in your address book' class="order-confirmation-option text-link has-tooltip">New</a>
+			    					<span class="separator-small"></span>
+			    					<a id="editBilling" href='EditAddr.action?addrId=6&opcbilling=true' title='Modify this address and save the changes in your address book' class="order-confirmation-option text-link has-tooltip">Edit</a>
+									
+				    					<span class="separator-small"></span>
+				    					<a id="abshipping" title='Pick an address from your address book' class="order-confirmation-option text-link has-tooltip">Address Book</a>
+									
+			    				</div>
+			    				</div>
+			    				<div class="order-confirmation-area-content">
+			    					<span id="formattedBillingAddr">fnamuser lnameuser<br/>33897 Flora Springs<br/>Temecula, California    92592<br/>United States</span>
+									<div id="payment-method" class="order-confirmation-area-content-select">
+										<label>Payment Method</label>
+										<select name="payment" onchange="javascript:paymentRefresh();" id="paymentDetails">
+																					
+												 						
+												 
+												
+													
+													
+														<option  value="cod" selected="selected">Cash on Delivery</option>
+													
+																						
+											
+										</select>
+									</div>
+									<div id="promotion-codes">
+										<div id="promotion-codes-container">
+									    	
+									    		<div class="promotion-codes-field">				
+													<label>Coupon Code</label>
+													<input type="text" name="couponCode" id="couponCode" value=""/>
+													<a id="couponCodeUpdate" class="update-button small-rounded-corners" onclick="couponCodeRefresh();" onmouseover="resetGoToCheckout()">Update</a>
+													<span class="validation-msg"></span>
+												</div>
+											
+											
+											
+										</div>
+		    						</div>
+								</div>		    				
+			    			</div>
+			    			<div id="delivery-notes" class="order-confirmation-area">
+			    				<div class="heading-container">
+			    					<h3>Delivery Notes</h3>
+			    				</div>
+			    				<div class="order-confirmation-area-content">
+									<label>Comments or Info for Carrier</label> <textarea rows="5" name="comment"></textarea>
+								</div>		    				
+			    			</div>
+		    			</div>
+		    			<div id="order-confirmation-column-right">
+			    			<div id="shopping-cart">
+			    				<div class="heading-container">
+			    					<h3>Shopping Cart</h3>
+			    				</div>
+			    				
+				    				<table>
+				    					<thead>
+				    						<tr>
+				    							<td class="wide-col">Item</td>
+				    							<td class="narrow-col right">Total</td>
+				    						</tr>
+				    					</thead>
+				    					<tbody id="ot-table">
+			   								
+												
+													
+													<tr>
+														<td>
+						    								<a href='SelectProd.action?prodId=35'  class="text-link">iPhone 5
+																																				
+															</a>
+															<div class="item-quantity">Quantity: 1</div>
+														</td>
+														
+															<td  class="total-price right">$999.99</td>
+															
+													</tr>
+												
+											
+											
+												
+													
+													
+																							
+													<tr class="costs-and-promotions">															
+														
+														    <td class="cost-overview">Sub-Total:</td>	
+															<td class="cost-overview-amounts right">$999.99</td>
+																    																		
+													</tr>
+												
+													
+													
+																							
+													<tr class="costs-and-promotions">															
+														
+														    <td class="cost-overview">Flat Rate (Shipping):</td>	
+															<td class="cost-overview-amounts right">$5.00</td>
+																    																		
+													</tr>
+												
+													
+													
+													
+														
+																							
+													<tr class="shopping-cart-total">															
+														
+															<td>Total:</td>
+															<td class="right">$1,004.99</td>
+																    																		
+													</tr>
+												
+											
+				    					</tbody>	    				
+		    						</table>
+	    						
+							</div>
+						</div>			    				
+						<div id="confirm-order-button-container">	
+							<a onclick="javascript:formValidate('form1', 'continue-button');" id="continue-button" class="button small-rounded-corners">
+								<span>Confirm Order</span>
+							</a>
+						</div>
+					</form>			    	
+	    		</div>
+
+  	    	<div id="error-dialog" title="Checkout Validation" class="content-area rounded-corners">
+	    		<div>
+					<div class="form-section">
+						<div class="form-section-title no-margin">
+							<h3>We're sorry but unfortunately there has been a problem processing your order. Please contact our support desk.</h3>									
+						</div>
+						<a onclick='closeErrorDialog();' class="button small-rounded-corners">
+							<span >Close</span>
+						</a>															
+					</div>
+		    	</div>
+		    </div>
+    		
+ 	    	<div id="addr-dialog" title="Address Book" class="content-area rounded-corners">
+	    		<div>
+					<div class="form-section">
+						<div class="form-section-title no-margin">
+							<h3>Select an address from the list</h3>									
+						</div>
+						
+							
+														
+								<div class="select-addr-section even">
+									<div class="select-addr">
+										fnamuser lnameuser<br/>33897 Flora Springs<br/>Temecula, California    92592<br/>United States
+									</div>
+									<div class="select-addr-buttons">
+										<a onclick='selectAddr(6);' class="button small-rounded-corners">
+											<span >Select</span>
+										</a>									
+									</div>
+								</div>
+							
+						
+					</div>
+		    	</div>
+		    </div>
+
+
+
+
+
+ 
+					 		 
+							
+							
+							
+							
+				    	</div>
+						
+
+
+
+
+
+
+<script>
+function onBlur(el) {
+    if (el.value == '') {
+        el.value = el.defaultValue;
+    }
+}
+function onFocus(el) {
+    if (el.value == el.defaultValue) {
+        el.value = '';
+    }
+}
+
+$(function() {
+	$("#newsletter-input").keydown(function (e){
+	    if(e.keyCode == 13){
+	    	submitNewsletterForm();
+	    }
+	});
+});		
+</script>
+
+
+<div id="kkfooter">
+    <div id="contact-info" class="footer-area narrow">
+    	KonaKart<br />
+		020 7946 0000<br />
+		<a href ="#">info@konakart.com</a>
+    </div>
+   	<div id="newsletter" class="footer-area wide">
+   		Subscribe to our Newsletter<br />
+ 		<input type="text" id="newsletter-input" class="rounded-corners-left" onblur="onBlur(this)" onfocus="onFocus(this)" value="Your Email">
+		<a id="newsletter-button" class="rounded-corners-right">Sign Up</a>
+		<div id="newsletter-msg"></div>
+   	</div>
+   	<div id="links-1" class="footer-area narrow">
+		<a href ="AboutUs.action">About Us</a><br />
+		<a href ="ShippingAndHandling.action">Shipping & Handling</a><br />
+		<a href ="Returns.action">Returns</a><br />
+		<a href ="InternationalOrders.action">International Orders</a><br />
+   	</div>
+   	<div id="links-2" class="footer-area narrow">
+		<a href ="PrivacyPolicy.action">Privacy Policy</a><br />
+		<a href ="TermsOfUse.action">Terms of use</a><br />
+		<a href ="Help.action">Help</a><br />
+		<a href ="ContactUs.action">Contact Us</a><br />
+   	</div>
+   	<div id="social" class="footer-area narrow last-child">
+		Connect with us<br />
+		<a href="http://www.twitter.com" target="_blank" class="fa fa-twitter-square"></a>
+		<a href="http://www.facebook.com" target="_blank" class="fa fa-facebook-square"></a>
+		<a href="http://www.pinterest.com" target="_blank" class="fa fa-pinterest-square"></a>
+   	</div>
+</div>
+		    		</div>
+	    		</div>
+				
+<div id="copyright-container">
+	<!-- Please leave the "Powered by KonaKart" link - it's a condition of the licence  -->
+	<div id="copyright">© 2014 KonaKart Store - Powered by <a href="http://www.konakart.com">KonaKart</a></div>
+</div>
+						
+				
+    
+			</body>
+		</html>
+	

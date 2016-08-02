@@ -1,0 +1,33 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminCurrencySearchResult">
+    <currencies>
+      <com.konakartadmin.client.app.GWT__AdminCurrency>
+        <id>2</id>
+        <title>EUR €</title>
+        <code>EUR</code>
+        <symbolLeft>€</symbolLeft>
+        <symbolRight></symbolRight>
+        <decimalPoint>.</decimalPoint>
+        <thousandsPoint>,</thousandsPoint>
+        <decimalPlaces>2</decimalPlaces>
+        <value>1.4</value>
+        <setAsDefault>false</setAsDefault>
+      </com.konakartadmin.client.app.GWT__AdminCurrency>
+      <com.konakartadmin.client.app.GWT__AdminCurrency>
+        <id>1</id>
+        <title>US $</title>
+        <code>USD</code>
+        <symbolLeft>$</symbolLeft>
+        <symbolRight></symbolRight>
+        <decimalPoint>.</decimalPoint>
+        <thousandsPoint>,</thousandsPoint>
+        <decimalPlaces>2</decimalPlaces>
+        <value>1.0</value>
+        <setAsDefault>false</setAsDefault>
+      </com.konakartadmin.client.app.GWT__AdminCurrency>
+    </currencies>
+    <offset>0</offset>
+    <maxGroupSize>0</maxGroupSize>
+    <totalSetSize>2</totalSetSize>
+  </result>
+</GWTResponse>

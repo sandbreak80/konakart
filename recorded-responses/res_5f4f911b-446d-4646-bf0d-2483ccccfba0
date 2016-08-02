@@ -1,0 +1,408 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./AppListView", "../../../controller/MainAppDashControllerBase", "../../serverMonitoring/machines/shared/SIMDataFetcher", "app/view/apm/transactionScorecard/TransactionScorecardDirective", "app/view/apm/keyPerformanceMetrics/KeyPerformanceMetricsDirective", "app/view/apm/errors/exceptionCounts/ExceptionCountsDirective"], function (require, exports, AppListView, MainAppDashControllerBase, SIMDataFetcher, TransactionScorecardDirective, KeyPerformanceMetricsDirective, ExceptionCountsDirective) {
+    TransactionScorecardDirective;
+    KeyPerformanceMetricsDirective;
+    ExceptionCountsDirective;
+    var AppDashboardController = (function (_super) {
+        __extends(AppDashboardController, _super);
+        function AppDashboardController($scope, $rootScope, timeRangeService, flowMapUiService, applicationFlowmapUiService, applicationService, applicationViewService, businessTransactionViewService, businessTransactionUiService, applicationUiService, serviceEndpointUiService, notificationService, resourceManager, injectorService, dashboardGraphService, baselineUiService, errorsUiService, eventsUiService, globalCacheService, userPreferenceUiService, $location, flashService, masterService, $timeout, eventViewService) {
+            var _this = this;
+            _super.call(this, $scope, $rootScope, $location, flowMapUiService, businessTransactionViewService, baselineUiService, resourceManager, notificationService, injectorService, applicationViewService, globalCacheService, userPreferenceUiService, masterService, $timeout);
+            this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.timeRangeService = timeRangeService;
+            this.flowMapUiService = flowMapUiService;
+            this.applicationFlowmapUiService = applicationFlowmapUiService;
+            this.applicationService = applicationService;
+            this.applicationViewService = applicationViewService;
+            this.businessTransactionViewService = businessTransactionViewService;
+            this.businessTransactionUiService = businessTransactionUiService;
+            this.applicationUiService = applicationUiService;
+            this.serviceEndpointUiService = serviceEndpointUiService;
+            this.notificationService = notificationService;
+            this.resourceManager = resourceManager;
+            this.injectorService = injectorService;
+            this.dashboardGraphService = dashboardGraphService;
+            this.baselineUiService = baselineUiService;
+            this.errorsUiService = errorsUiService;
+            this.eventsUiService = eventsUiService;
+            this.globalCacheService = globalCacheService;
+            this.userPreferenceUiService = userPreferenceUiService;
+            this.$location = $location;
+            this.flashService = flashService;
+            this.masterService = masterService;
+            this.$timeout = $timeout;
+            this.eventViewService = eventViewService;
+            this.showMachineSnapshotsTab = false;
+            this.showNetworkSnapshotsTab = false;
+            this.showNetworkAppDashboardTab = false;
+            this.showChordView = InjectorService.instance().$location().absUrl().indexOf("showChord=true") !== -1;
+            this.showChordsInDiagram = true;
+            this.chordMetricTypeSelectOptions = [
+                { name: this.getString("ms_callsPerMinute"), value: "callsPerMinute" },
+                { name: this.getString("ms_averageResponseTimeWithMS"), value: "averageResponseTime" },
+                { name: this.getString("ms_errorsPerMinute"), value: "errorsPerMinute" }
+            ];
+            this.chordMetricType = {
+                name: this.getString("ms_callsPerMinute"),
+                value: "callsPerMinute"
+            };
+            this.chordData = {};
+            this.chordRotationDegree = { value: 0.1 };
+            this.machineHealthSummary = { criticalCount: 0, warningCount: 0, normalCount: 0, unknownCount: 0, isVisible: false };
+            this.handleChordValueRangeChange = function () {
+                _this.chordData.minValue = _this.chordValueMin;
+                _this.chordData.maxValue = _this.chordValueMax;
+            };
+            this.renderChordDiagram = function (graph) {
+                var matrix = [];
+                var entityIdToIndexMap = {};
+                var tempMaxStatValue = 0;
+                var tempMinStatValue = Infinity;
+                var entities = graph.nodes;
+                var edges = graph.edges;
+                _this.chordData.entities = graph.nodes.map(function (node) {
+                    return {
+                        name: node.name,
+                        entityType: node.entityType,
+                        entityId: node.idNum,
+                        iconSource: ImageUtil.getFlowMapComponentIconFromType(node.componentType)
+                    };
+                });
+                for (var i = 0; i < entities.length; i++) {
+                    entityIdToIndexMap[entities[i].id] = i;
+                    var row = [];
+                    for (var j = 0; j < entities.length; j++) {
+                        row[j] = null;
+                    }
+                    matrix.push(row);
+                }
+                for (var idx = 0; idx < edges.length; idx++) {
+                    var edge = edges[idx];
+                    if (Util.isDefAndNotNull(edge)) {
+                        var sourceEntity = edge.sourceNode, targetEntity = edge.targetNode, i = entityIdToIndexMap[sourceEntity], j = entityIdToIndexMap[targetEntity];
+                        var stat = Util.getProperty(_this.chordMetricType.value, edge.stats[0]);
+                        if (Util.isDefAndNotNull(stat)) {
+                            matrix[i][j] = stat.metricValue;
+                            if (stat.metricValue > tempMaxStatValue) {
+                                tempMaxStatValue = stat.metricValue;
+                            }
+                            else if (stat.metricValue < tempMinStatValue) {
+                                tempMinStatValue = stat.metricValue;
+                            }
+                        }
+                    }
+                }
+                _this.chordData.stats = matrix;
+                _this.chordData.metricType = _this.chordMetricType.name;
+                _this.chordValueMax = tempMaxStatValue ? tempMaxStatValue : null;
+                _this.chordValueMin = tempMinStatValue === Infinity ? null : tempMinStatValue;
+            };
+            if (this.getCurrentUrlParams().location() == NavigationDataConstants.APP_DASH) {
+                this.applicationViewService.viewApplicationDashboard(this.getApplicationIdFromUrl());
+            }
+            else {
+                this.init();
+                this.fetchComponentCounts();
+                this.updateApplicationName();
+                ApplicationViewService.instance().getApplicationDashboardNavigationTabs(this.applicationId).then(function (navigationTabs) {
+                    _this.navigationTabs = navigationTabs;
+                    NavigationTabUtil.selectTabByName(_this.navigationTabs, _this.getString("ms_overviewDashboardTabLabel"));
+                });
+                this.showExplainDetailsText = true;
+                this.showChordButton = this.showChordView;
+                this.videoLink = ExternalUrls.VIDEO_MONITOR_APP_OVERVIEW;
+                this.helpLink = ExternalUrls.HELP_URL_APP_DASHBOARD;
+                EventBusService.instance().registerEventListener(EventConstants.UEV_APPLICATION_UPDATED, this.updateApplication.bind(this), $scope);
+                EventBusService.instance().registerEventListener(EventConstants.UEV_APPLICATION_EDITED, this.updateApplication.bind(this), $scope);
+                this.showNetworkAppDashboardTab = NetworkMonitoringViewService.instance().isNetworkMonitoringEnabled();
+                this.applicationViewService.show41AgentAccessKeyMessageIfNeeded();
+            }
+        }
+        AppDashboardController.prototype.updateApplication = function () {
+            this.updateApplicationName();
+            this.fetchDashboardGraphData(true);
+        };
+        AppDashboardController.prototype.updateApplicationName = function () {
+            var _this = this;
+            var applicationId = this.getApplicationIdFromUrl();
+            this.applicationUiService.getApplicationById(applicationId).then(function (response) {
+                var application = _this.applicationUiService.getApplicationById_response(response);
+                _this.applicationName = application.name;
+                _this.initLocationBar();
+            });
+        };
+        AppDashboardController.prototype.getSelectModePreference = function () {
+            return this.masterService.getGeneralUserPreference(UserPreferenceConstants.APP_DASHBOARD_HTML_VIEW_MODE, MainDashboardControllerBase.MODE_FORCE);
+        };
+        AppDashboardController.prototype.setSelectModePreference = function (mode) {
+            this.userPreferenceUiService.setGeneralUserPreference(UserPreferenceConstants.APP_DASHBOARD_HTML_VIEW_MODE, mode);
+            this.masterService.setTemporaryGeneralPreference(UserPreferenceConstants.APP_DASHBOARD_HTML_VIEW_MODE, mode);
+        };
+        AppDashboardController.prototype.getMainContentMaximizedPreference = function () {
+            return this.masterService.getBooleanGeneralUserPreference(UserPreferenceConstants.MAXIMIZE_APP_FLOW, false);
+        };
+        AppDashboardController.prototype.setMainContentMaximizedPreference = function (maximized) {
+            var mainContentMaximizedString = maximized ? "true" : "false";
+            this.userPreferenceUiService.setGeneralUserPreference(UserPreferenceConstants.MAXIMIZE_APP_FLOW, mainContentMaximizedString);
+            this.masterService.setTemporaryGeneralPreference(UserPreferenceConstants.MAXIMIZE_APP_FLOW, mainContentMaximizedString);
+        };
+        AppDashboardController.prototype.onViewEvents = function () {
+            this.applicationViewService.viewAppEvents(this.getAppId());
+        };
+        AppDashboardController.prototype.onViewTopBts = function () {
+            this.applicationViewService.viewAppTopBts(this.getAppId());
+        };
+        AppDashboardController.prototype.onViewSnapshots = function () {
+            this.applicationViewService.viewAppSnapshots(this.getAppId());
+        };
+        AppDashboardController.prototype.onViewTransactionAnalysis = function () {
+            this.applicationViewService.viewApplicationDashboardLocation(NavigationDataConstants.APP_TX_SCORE, this.applicationId);
+        };
+        AppDashboardController.prototype.onViewMachineSnapshots = function () {
+            this.applicationViewService.viewMachineSnapshots(this.getAppId());
+        };
+        AppDashboardController.prototype.onViewNetworkAppDashboard = function () {
+            this.applicationViewService.viewApplicationLocation(NavigationDataConstants.APP_NETWORK_DASHBOARD, this.getAppId());
+        };
+        AppDashboardController.prototype.onViewAppMachineList = function () {
+            ServerMonitoringViewService.instance().viewAppMachineList(this.getAppId());
+        };
+        AppDashboardController.prototype.editApplicationProperties = function () {
+            this.applicationViewService.editApplicationProperties(this.getAppId());
+        };
+        AppDashboardController.prototype.deleteApplication = function () {
+            EventBusService.instance().dispatchEvent(App.UEV_DELETE_APP, null);
+            this.applicationViewService.deleteApplication(this.getAppId(), this.applicationName);
+        };
+        AppDashboardController.prototype.exportApplication = function () {
+            this.applicationViewService.exportApplication(this.getAppId(), this.applicationName);
+        };
+        AppDashboardController.prototype.resetAgents = function () {
+            this.applicationViewService.resetAgents(this.getAppId());
+        };
+        AppDashboardController.prototype.viewFlexDashboard = function () {
+            this.masterService.setTemporaryGeneralPreference(UserPreferenceConstants.SHOW_OLD_APP_FLOW, "true");
+            this.userPreferenceUiService.setGeneralUserPreference(UserPreferenceConstants.SHOW_OLD_APP_FLOW, "true");
+            this.applicationViewService.viewApplicationDashboardForTab(this.getAppId(), DashboardUtil.APP_DASH_TAB_OVERVIEW);
+        };
+        AppDashboardController.prototype.fetchDashboardGraphData = function (autoRefresh) {
+            var _this = this;
+            if (autoRefresh === void 0) { autoRefresh = false; }
+            _super.prototype.fetchDashboardGraphData.call(this, autoRefresh);
+            if (this.timeRangeService.currentTimeRange && Util.isValidId(this.getAppId())) {
+                var timerange = this.getTimeRangeString();
+                var baselineId = this.baselineConfig.selectedBaseline ? this.baselineConfig.selectedBaseline.id : -1;
+                this.baselineId = baselineId;
+                var idToFetch = -1;
+                var promise = this.applicationFlowmapUiService.getApplicationFlowMap(this.getAppId(), timerange, idToFetch, baselineId);
+                var successHandler = function (response) {
+                    _this.processFlowmap(response, autoRefresh);
+                    _this.renderChordDiagram(response);
+                };
+                promise.then(successHandler, this.flowmapErrorHandler.bind(this));
+            }
+        };
+        AppDashboardController.prototype.fetchData = function (autoRefresh) {
+            if (autoRefresh === void 0) { autoRefresh = false; }
+            if (Util.isValidId(this.getAppId())) {
+                _super.prototype.fetchData.call(this, autoRefresh);
+                this.fetchHealthMetersData();
+                this.fetchMachinesHealth();
+                this.fetchExceptionsData();
+            }
+        };
+        AppDashboardController.prototype.on_UEV_APPLICATION_DELETED = function (event) {
+            var args = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+                args[_i - 1] = arguments[_i];
+            }
+            ApplicationViewService.instance().viewAllApplicationsDashboard();
+        };
+        AppDashboardController.prototype.buildListView = function (entityMap) {
+            if (entityMap === void 0) { entityMap = null; }
+            var rtn = new AppListView(resourceManager, this.getAppId());
+            rtn.entityMap = entityMap;
+            return rtn;
+        };
+        AppDashboardController.prototype.fetchHealthMetersData = function () {
+            var _this = this;
+            if (this.timeRangeService.currentTimeRange && Util.isValidId(this.getAppId())) {
+                var successHandler = function (response) {
+                    var healthSummary = _this.applicationUiService.getBusinessTransactionAndNodeHealthSummary_response(response);
+                    ADLoggerService.log("AppDashboardController.fetchHealthMetersData Debug: Retrieved app performance summary.");
+                    _this.nodesHealthStateSummary = healthSummary.nodesHealthStateSummary;
+                    _this.transactionsStateSummary = healthSummary.transactionsStateSummary;
+                    ViewUtil.safeApply(_this.$scope, _this.$rootScope);
+                };
+                var errorHandler = function (error) {
+                    ADLoggerService.error("AppDashboardController.fetchHealthMetersData Error: Could not retrieve app performance summary: " + error);
+                };
+                var timeRangeString = this.getTimeRangeString();
+                var promise = this.applicationUiService.getBusinessTransactionAndNodeHealthSummary(this.getAppId(), timeRangeString);
+                promise.then(successHandler, errorHandler);
+            }
+        };
+        AppDashboardController.prototype.fetchMachinesHealth = function () {
+            var _this = this;
+            var appId = this.getAppId();
+            SIMDataFetcher.instance().getMachinesHealthSummaryForApp(this.timeRangeService.getCurrentTimeRangeStringForUrl(), appId).then(function (machineAndHealthSummary) {
+                _this.machineHealthSummary = machineAndHealthSummary[1];
+            });
+        };
+        AppDashboardController.prototype.fetchExceptionsData = function () {
+            var _this = this;
+            if (this.timeRangeService.currentTimeRange && Util.isValidId(this.getAppId())) {
+                var successHandler = function (response) {
+                    var errorSummary = _this.errorsUiService.getErrorSummary_response(response);
+                    if (!errorSummary || !errorSummary.exceptionsMetricValue || errorSummary.exceptionsMetricValue.value < 1) {
+                        ADLoggerService.warn("AppDashboardController.fetchExceptionsData Info: Retrieved null error summary or exception count was 0");
+                    }
+                    _this.errorSummary = errorSummary;
+                };
+                var timeRangeString = this.getTimeRangeString();
+                var promise = this.errorsUiService.getErrorSummary(this.getAppId(), EntityType.APPLICATION, this.getAppId(), timeRangeString);
+                promise.then(successHandler);
+            }
+        };
+        AppDashboardController.prototype.fetchComponentCounts = function () {
+            var _this = this;
+            this.applicationUiService.getApplicationComponentInfo(this.getAppId()).then(function (response) {
+                var appCompInfo = _this.applicationUiService.getApplicationComponentInfo_response(response);
+                _this.showMachineSnapshotsTab = appCompInfo.numberOfDotNetComponents > 0;
+            });
+        };
+        AppDashboardController.prototype.initLocationBar = function () {
+            this.locationEntries = [
+                ApplicationViewService.instance().getApplicationLocationBarEntryConfigFromNameAndId(this.applicationId, this.applicationName)
+            ];
+            this.setLocationBarConfigData(this.locationEntries, true, this.helpLink, this.videoLink);
+        };
+        AppDashboardController.prototype.handle_UEV_VIEW_EVENTS_EVENT = function (event) {
+            var appId = this.getAppId();
+            this.eventViewService.viewEventDashboard(appId, EntityType.APPLICATION, appId, event);
+            event.stopPropagation();
+        };
+        AppDashboardController.prototype.handle_UEV_VIEW_SNAPSHOTS_EVENT = function (event) {
+            var requestUserExperience = RequestUserExperience.NORMAL;
+            if (event.name == EventConstants.UEV_VIEW_SNAPSHOTS_ANALYSIS) {
+                this.applicationViewService.viewApplicationDashboardLocation(NavigationDataConstants.APP_TX_SCORE, this.getAppId());
+            }
+            else {
+                if (event.name == EventConstants.UEV_VIEW_SLOW_SNAPSHOTS) {
+                    requestUserExperience = RequestUserExperience.SLOW;
+                }
+                else if (event.name == EventConstants.UEV_VIEW_VERY_SLOW_SNAPSHOTS) {
+                    requestUserExperience = RequestUserExperience.VERY_SLOW;
+                }
+                else if (event.name == EventConstants.UEV_VIEW_STALL_SNAPSHOTS) {
+                    requestUserExperience = RequestUserExperience.STALL;
+                }
+                else if (event.name == EventConstants.UEV_VIEW_ERROR_SNAPSHOTS) {
+                    requestUserExperience = RequestUserExperience.ERROR;
+                }
+                if (this.flashService.isHTMLEnabledLocation(NavigationDataConstants.APP_ALL_SNAPSHOT_LIST)) {
+                    SnapshotViewService.instance().viewSnapshotsListForEntity(this.getAppId(), EntityType.APPLICATION, this.getAppId(), requestUserExperience);
+                }
+                else {
+                    this.flashService.viewSnapshotsListForEntity(requestUserExperience, EntityType.APPLICATION);
+                }
+            }
+            event.stopPropagation();
+        };
+        AppDashboardController.prototype.handle_UEV_VIEW_EXCEPTIONS_EVENT = function (event) {
+            if (event.name == EventConstants.UEV_VIEW_EXCEPTIONS_ALL) {
+                this.applicationViewService.viewAppExceptions();
+            }
+            event.stopPropagation();
+        };
+        AppDashboardController.prototype.handle_UEV_VIEW_SERVICE_ENDPOINTS_EVENT = function (event) {
+            if (event.name == EventConstants.UEV_VIEW_SERVICE_ENDPOINTS_ALL) {
+                ServiceEndpointListViewService.instance().viewServiceEndpointListAppLevel(this.getAppId());
+            }
+            event.stopPropagation();
+        };
+        AppDashboardController.prototype.setupEventListeners = function () {
+            var _this = this;
+            _super.prototype.setupEventListeners.call(this);
+            this.$scope.$on(EventConstants.UEV_APPLICATION_DELETED, function (event) {
+                var args = [];
+                for (var _i = 1; _i < arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
+                }
+                _this.on_UEV_APPLICATION_DELETED(event, args);
+            });
+            for (var i = 0; i < EventConstants.ALL_UEV_EVENT_COUNTS_CONTROLLER_EVENTS.length; i++) {
+                var eventType = EventConstants.ALL_UEV_EVENT_COUNTS_CONTROLLER_EVENTS[i];
+                this.$scope.$on(eventType, function (event) {
+                    _this.handle_UEV_VIEW_EVENTS_EVENT(event);
+                });
+            }
+            for (var i = 0; i < EventConstants.ALL_UEV_VIEW_SNAPSHOT_EVENTS.length; i++) {
+                var eventType = EventConstants.ALL_UEV_VIEW_SNAPSHOT_EVENTS[i];
+                this.$scope.$on(eventType, function (event) {
+                    _this.handle_UEV_VIEW_SNAPSHOTS_EVENT(event);
+                });
+            }
+            for (var i = 0; i < EventConstants.ALL_UEV_VIEW_EXCEPTION_EVENTS.length; i++) {
+                var eventType = EventConstants.ALL_UEV_VIEW_EXCEPTION_EVENTS[i];
+                this.$scope.$on(eventType, function (event) {
+                    _this.handle_UEV_VIEW_EXCEPTIONS_EVENT(event);
+                });
+            }
+            for (var i = 0; i < EventConstants.ALL_UEV_VIEW_SERVICE_ENDPOINTS_EVENTS.length; i++) {
+                var eventType = EventConstants.ALL_UEV_VIEW_SERVICE_ENDPOINTS_EVENTS[i];
+                this.$scope.$on(eventType, function (event) {
+                    _this.handle_UEV_VIEW_SERVICE_ENDPOINTS_EVENT(event);
+                });
+            }
+        };
+        AppDashboardController.prototype.createEntityDefinition = function () {
+            var eDef = {};
+            eDef.entityType = EntityType.APPLICATION;
+            eDef.entityId = this.getApplicationIdFromUrl();
+            return eDef;
+        };
+        AppDashboardController.prototype.handleChordMetricTypeChange = function () {
+            this.fetchChordData();
+        };
+        AppDashboardController.prototype.fetchChordData = function () {
+            ApplicationFlowmapUiService.instance().getApplicationFlowMap(this.getApplicationIdFromUrl(), this.getTimeRangeString(), -1, -1).then(this.renderChordDiagram);
+        };
+        AppDashboardController.$inject = [
+            "$scope",
+            "$rootScope",
+            "timeRangeService",
+            "flowMapUiService",
+            "applicationFlowmapUiService",
+            "applicationService",
+            "applicationViewService",
+            "businessTransactionViewService",
+            "businessTransactionUiService",
+            "applicationUiService",
+            "serviceEndpointUiService",
+            "notificationService",
+            "resourceManager",
+            "injectorService",
+            "dashboardGraphService",
+            "baselineUiService",
+            "errorsUiService",
+            "eventsUiService",
+            "globalCacheService",
+            "userPreferenceUiService",
+            "$location",
+            "flashService",
+            "masterService",
+            "$timeout",
+            "eventViewService"
+        ];
+        return AppDashboardController;
+    })(MainAppDashControllerBase);
+    exports.AppDashboardController = AppDashboardController;
+});

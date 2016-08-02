@@ -1,0 +1,1 @@
+{"rawResponse":"[{\"label\":\"0\",\"fields\":[{\"label\":\"count(*)\",\"field\":\"*\",\"type\":\"integer\",\"aggregation\":\"count\"}],\"results\":[[0]],\"total\":1,\"schema\":\"log_v1\"}]"}

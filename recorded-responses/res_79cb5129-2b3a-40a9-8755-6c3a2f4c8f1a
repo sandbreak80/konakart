@@ -1,0 +1,68 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/3/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CA75-930B-EC22-73B6-585307A69051</clientId>
+        <messageId>71B5CB1E-080A-487F-9550-A002ED324846</messageId>
+        <timestamp>1469728964285</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="ASObject" mappedClass="com.singularity.ee.controller.api.dto.AccountProfile">
+          <transactionCorrelationEnabled tagClass="boolean">true</transactionCorrelationEnabled>
+          <automationEnabled tagClass="boolean">true</automationEnabled>
+          <edition tagClass="String">ENTERPRISE_TRIAL</edition>
+          <controllerBusinessTransactionLimitPerApplication tagClass="int">200</controllerBusinessTransactionLimitPerApplication>
+          <automaticSnapshotsForSlowAndErrorRequestsEnabled tagClass="boolean">true</automaticSnapshotsForSlowAndErrorRequestsEnabled>
+          <hardwareMonitoringEnabled tagClass="boolean">true</hardwareMonitoringEnabled>
+          <backendDetectionEnabled tagClass="boolean">true</backendDetectionEnabled>
+          <alertingEnabled tagClass="boolean">true</alertingEnabled>
+          <restAPIEnabled tagClass="boolean">true</restAPIEnabled>
+          <informationalEventsEnabled tagClass="boolean">true</informationalEventsEnabled>
+          <endDateOfTrial/>
+          <clrMonitoringEnabled tagClass="boolean">true</clrMonitoringEnabled>
+          <baselinesEnabled tagClass="boolean">true</baselinesEnabled>
+          <jvmMonitoringEnabled tagClass="boolean">true</jvmMonitoringEnabled>
+          <agentTypesSupported tagClass="object-array">
+            <String>APP_AGENT</String>
+            <String>DOT_NET_APP_AGENT</String>
+            <String>DOT_NET_MACHINE_AGENT</String>
+            <String>MACHINE_AGENT</String>
+            <String>PHP_APP_AGENT</String>
+            <String>PHP_MACHINE_AGENT</String>
+            <String>NODEJS_APP_AGENT</String>
+            <String>NODEJS_MACHINE_AGENT</String>
+          </agentTypesSupported>
+          <policiesEnabled tagClass="boolean">true</policiesEnabled>
+          <azureAutoScalingEnabled tagClass="boolean">false</azureAutoScalingEnabled>
+          <startDateOfTrial/>
+          <timestamp tagClass="double">1.469462618852E12</timestamp>
+          <systemsPanelEnabled tagClass="boolean">true</systemsPanelEnabled>
+          <memoryMonitoringEnabled tagClass="boolean">true</memoryMonitoringEnabled>
+          <businessTransactionLimit tagClass="int">50</businessTransactionLimit>
+          <informationPointsEnabled tagClass="boolean">true</informationPointsEnabled>
+          <nodeLimit tagClass="int">-1</nodeLimit>
+          <endUserExperienceMonitoringEnabled tagClass="boolean">true</endUserExperienceMonitoringEnabled>
+          <customDashboardsEnabled tagClass="boolean">true</customDashboardsEnabled>
+          <customExitPointsEnabled tagClass="boolean">true</customExitPointsEnabled>
+          <advancedAnalysisEnabled tagClass="boolean">true</advancedAnalysisEnabled>
+          <maxPolicies tagClass="int">-1</maxPolicies>
+          <maxApplications tagClass="int">-1</maxApplications>
+          <reportingEnabled tagClass="boolean">true</reportingEnabled>
+          <sqlDiagnosticsEnabled tagClass="boolean">true</sqlDiagnosticsEnabled>
+          <dataRetentionInMinutes tagClass="int">-1</dataRetentionInMinutes>
+          <errorMonitoringEnabled tagClass="boolean">true</errorMonitoringEnabled>
+          <problemsEnabled tagClass="boolean">true</problemsEnabled>
+          <topCallsEnabled tagClass="boolean">true</topCallsEnabled>
+          <snapshotsEnabled tagClass="boolean">true</snapshotsEnabled>
+          <dataCollectorsEnabled tagClass="boolean">true</dataCollectorsEnabled>
+          <snapshotsWithFullCallGraphsEnabled tagClass="boolean">true</snapshotsWithFullCallGraphsEnabled>
+          <metricBrowserEnabled tagClass="boolean">true</metricBrowserEnabled>
+        </body>
+        <correlationId>C841DD9B-5922-C594-3078-32ABFA4A4BD3</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

@@ -1,0 +1,537 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "app/view/dbMonitoring/utils/DbMonitoringUtils", "./HomeUtil", "app/view/serverMonitoring/machines/shared/SIMDataFetcher", "app/view/analytics/services/AnalyticsDataHelperService"], function (require, exports, DbMonitoringUtils, HomeUtil, SIMDataFetcher, AnalyticsDataHelperService) {
+    var HomeController = (function (_super) {
+        __extends(HomeController, _super);
+        function HomeController($scope, $rootScope, $location, resourceManager, notificationService, navigationService, navigationHistoryService, navigationUiService, applicationViewService, homeViewService, customDashboardViewService, injectorService, homeUiService, analyticsViewService, userService, notificationConfigService, httpActionViewService, dbMonitoringViewService, eumViewService) {
+            var _this = this;
+            _super.call(this, $scope, resourceManager, notificationService, injectorService);
+            this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.$location = $location;
+            this.resourceManager = resourceManager;
+            this.notificationService = notificationService;
+            this.navigationService = navigationService;
+            this.navigationHistoryService = navigationHistoryService;
+            this.navigationUiService = navigationUiService;
+            this.applicationViewService = applicationViewService;
+            this.homeViewService = homeViewService;
+            this.customDashboardViewService = customDashboardViewService;
+            this.injectorService = injectorService;
+            this.homeUiService = homeUiService;
+            this.analyticsViewService = analyticsViewService;
+            this.userService = userService;
+            this.notificationConfigService = notificationConfigService;
+            this.httpActionViewService = httpActionViewService;
+            this.dbMonitoringViewService = dbMonitoringViewService;
+            this.eumViewService = eumViewService;
+            this.showScreenContent = false;
+            this.applications = [];
+            this.numberApps = 0;
+            this.eumWebApplications = [];
+            this.numberEUMWebApps = 0;
+            this.eumMobileApplications = [];
+            this.numberEUMMobileApps = 0;
+            this.customDashboards = [];
+            this.numberCustomDashoards = 0;
+            this.numberOfTransactions = "0";
+            this.numberOfLogEvents = "0";
+            this.numberOfBrowserRecords = "0";
+            this.numberOfMobileSnapshots = "0";
+            this.dbServers = [];
+            this.dbServerToPerformanceData = new HashMap();
+            this.dbHealthBarCount = {};
+            this.numberDbServers = 0;
+            this.isNewDBConfigAllowed = true;
+            this.showInProgressIndicator = true;
+            this.showAppsLoading = true;
+            this.showEUMLoading = true;
+            this.showCustomDashboardsLoading = true;
+            this.showDatabasesLoading = true;
+            this.showEum = AppConfig.instance().eumTopLevelNavZoneEnabled;
+            this.showServersLoading = true;
+            this.servers = [];
+            this.serverHealthBarCount = {};
+            this.numberServers = 0;
+            this.noServers = false;
+            this.onViewAllDbServers = function () {
+                _this.dbMonitoringViewService.viewDbServersList();
+            };
+            this.getDBHealthStatusIcon = function (dbServer) {
+                return DbMonitoringUtils.getHealthIcon(dbServer.collectorStatus, dbServer.performanceState);
+            };
+            this.showRecentlyVisited = true;
+            this._isLayoutLaterInProgress = false;
+            if (this.getCurrentUrlParams().location() == NavigationDataConstants.AD_HOME) {
+                HomeViewService.instance().viewHome();
+            }
+            else {
+                this.setupScope();
+                this.init();
+            }
+        }
+        HomeController.prototype.setupScope = function () {
+            var _this = this;
+            this.$scope.controller = this;
+            this.$scope.onViewAllApplications = function () {
+                _this.onViewAllApplications();
+            };
+            this.$scope.onViewCustomDashboards = function () {
+                _this.onViewCustomDashboards();
+            };
+            this.$scope.onViewGettingStarted = function () {
+                _this.onViewGettingStarted();
+            };
+            this.$scope.onViewProductTour = function () {
+                _this.onViewProductTour();
+            };
+            this.$scope.onViewAgentInstallWizard = function () {
+                _this.onViewAgentInstallWizard();
+            };
+            this.$scope.onViewApplicationDashboard = function (app) {
+                _this.onViewApplicationDashboard(app);
+            };
+            this.$scope.onViewCustomDashboard = function (customDashboardUiEntity) {
+                _this.onViewCustomDashboard(customDashboardUiEntity);
+            };
+            this.$scope.onViewAgents = function () {
+                _this.onViewAgents();
+            };
+            this.$scope.getAppHealthIcon = function (applicationId) {
+                var severitySummary;
+                if (_this.$scope.allAppPerformanceViewData) {
+                    severitySummary = _this.$scope.allAppPerformanceViewData.applicationSeveritySummaries[applicationId];
+                }
+                if (!severitySummary) {
+                    return "images/health/unknown.svg";
+                }
+                else if (severitySummary.critical > 0) {
+                    return "images/health/critical.svg";
+                }
+                else if (severitySummary.warning > 0) {
+                    return "images/health/warning.svg";
+                }
+                else {
+                    return "images/health/normal.svg";
+                }
+            };
+            this.$scope.onRefresh = function () {
+                _this.fetchViewData();
+                _this.fetchAnalyticsData();
+            };
+            this.$scope.onViewAdmin = function () {
+                _this.homeViewService.viewAdministration();
+            };
+            this.$scope.onViewLicense = function () {
+                _this.homeViewService.viewLicense();
+            };
+            this.$scope.onConfigEmailSms = function () {
+                _this.notificationConfigService.openEmailSMSConfig(_this.$scope);
+            };
+            this.$scope.onHttpActionPlanListView = function () {
+                _this.httpActionViewService.viewHttpActionPlanListView();
+            };
+            this.$scope.onCreateCustomDashboard = function () {
+                _this.customDashboardViewService.viewCreateCustomDashboard2();
+            };
+            this.$scope.onCreateDbServer = function () {
+                if (!_this.isNewDBConfigAllowed) {
+                    var confirmationDialogConfig = {
+                        title: _this.getString("ms_dbNoLicensesTitle"),
+                        message: _this.getString("ms_dbNoLicensesToolTip"),
+                        showCancelButton: false
+                    };
+                    DialogService.instance().showConfirmationWithConfig(confirmationDialogConfig);
+                    return;
+                }
+                _this.dbMonitoringViewService.createNewDbCollectorConfig();
+            };
+            this.$scope.onViewDbServer = function (dbServer) {
+                var isCluster = DbMonitoringUtils.isDBCluster(dbServer.dbType);
+                _this.dbMonitoringViewService.viewDBServer(!isCluster ? dbServer.id : dbServer.config.id, isCluster);
+            };
+            this.$scope.$on(TimeRangeService.UEV_TIME_RANGE_CHANGE_TR_SERVICE, function () {
+                _this.on_UEV_TIME_RANGE_CHANGE_TR_SERVICE();
+            });
+            this.$scope.$on(TimeRangeService.TIMERANGE_AUTOREFRESH_EVENT, function () {
+                _this.on_TIMERANGE_AUTOREFRESH_EVENT();
+            });
+            this.$scope.$on(EventConstants.UEV_LAYOUT_CHANGED, function () {
+                _this.centerCardsContainer(10);
+            });
+        };
+        HomeController.prototype.init = function () {
+            var _this = this;
+            this.showScreenContent = true;
+            this.navigationTabs = HomeUtil.getHomeNavigationTabs();
+            this.navigationTabs[0].selected = true;
+            this.setupLocationBar();
+            this.fetchViewData();
+            this.fetchMainNavConfig();
+            RecentlyVisitedService.instance().getRecentlyViewedItems().then(function (recentlyVisitedItem) {
+                _this.recentlyVisitedItems = recentlyVisitedItem;
+            });
+        };
+        HomeController.prototype.fetchViewData = function () {
+            var _this = this;
+            this.showInProgressIndicator = true;
+            var resultHandler = function (homeViewData) {
+                _this.homeViewService.setHomeViewdata(homeViewData);
+                _this.setupWithViewData(homeViewData);
+                _this.$rootScope.$broadcast("UEV_ALL_APPLICATIONS_FETCHED");
+                _this.fetchAllApplicationsPerformanceData();
+                _this.showInProgressIndicator = false;
+                _this.centerCardsContainer(2000);
+            };
+            var promise = this.homeUiService.getHomeViewData();
+            promise.then(resultHandler);
+            this.fetchApplications();
+            if (MasterService.instance().initData.mainNavConfig.showEum && AppConfig.instance().eumTopLevelNavZoneEnabled) {
+                this.fetchEUMData();
+            }
+            this.fetchCustomDashboards();
+            this.fetchDatabasesData();
+            this.fetchDatabasePerformanceData();
+            this.fetchServerData();
+        };
+        HomeController.prototype.fetchMainNavConfig = function () {
+            var config = MasterService.instance().initData.mainNavConfig;
+            this.$scope.mainNavConfig = config;
+            this.fetchAnalyticsData();
+        };
+        HomeController.prototype.fetchAnalyticsData = function () {
+            var _this = this;
+            if (!this.$scope.mainNavConfig.showAnalytics) {
+                return;
+            }
+            var analyticsDataHelperService = AnalyticsDataHelperService.instance();
+            var dataSources = [];
+            if (this.$scope.mainNavConfig.showTransactionAnalytics) {
+                dataSources.push(AnalyticsDataSource.TRANSACTIONS);
+            }
+            if (this.$scope.mainNavConfig.showLogAnalytics) {
+                dataSources.push(AnalyticsDataSource.LOGS);
+            }
+            if (this.$scope.mainNavConfig.showBrowserAnalytics) {
+                dataSources.push(AnalyticsDataSource.BROWSER_RECORDS);
+            }
+            if (this.$scope.mainNavConfig.showMobileAnalytics) {
+                dataSources.push(AnalyticsDataSource.MOBILE_SNAPSHOTS);
+            }
+            _.forEach(dataSources, function (dataSource) {
+                analyticsDataHelperService.getCountOfDataSource(dataSource).then(function (dataSourceToCount) {
+                    if (dataSourceToCount && dataSourceToCount.length === 2) {
+                        var dataSource = dataSourceToCount[0];
+                        var count = dataSourceToCount[1];
+                        switch (dataSource) {
+                            case AnalyticsDataSource.TRANSACTIONS:
+                                _this.numberOfTransactions = count;
+                                break;
+                            case AnalyticsDataSource.LOGS:
+                                _this.numberOfLogEvents = count;
+                                break;
+                            case AnalyticsDataSource.BROWSER_RECORDS:
+                                _this.numberOfBrowserRecords = count;
+                                break;
+                            case AnalyticsDataSource.MOBILE_SNAPSHOTS:
+                                _this.numberOfMobileSnapshots = count;
+                                break;
+                        }
+                    }
+                });
+            });
+        };
+        HomeController.prototype.fetchAllApplicationsPerformanceData = function () {
+            var _this = this;
+            this.homeUiService.getAllAppPerformanceViewData(this.injectorService.timeRangeService().getCurrentTimeRangeStringForUrl(), ApplicationSummaryFilterConstants.INCIDENT_SUMMARY).then(function (allAppsData) {
+                _this.$scope.allAppPerformanceViewData = allAppsData;
+            });
+        };
+        HomeController.prototype.setupWithViewData = function (homeViewData) {
+            this.$scope.homeViewData = homeViewData;
+        };
+        HomeController.prototype.getServerHealthStatusIcon = function (machine) {
+            if (machine.simEnabled) {
+                var simHealth = SIMDataFetcher.instance().getSimHealthFromMachine(machine);
+                return ImageUtil.getSvgHealthIcon(simHealth.healthStatus.toUpperCase());
+            }
+            else {
+                return "images/health/unknown.svg";
+            }
+        };
+        HomeController.prototype.setupLocationBar = function () {
+            var _this = this;
+            var config = {};
+            config.isApplicationLocation = false;
+            config.hideTimeRange = false;
+            config.hideRefresh = false;
+            config.onRefreshFunction = function () {
+                _this.$scope.onRefresh();
+            };
+            config.showBaselineSelector = false;
+            var entryConfig = this.homeViewService.getHomeLocationBarEntryConfig();
+            config.locationBarEntryConfigs = [entryConfig];
+            this.setLocationBarConfig(config);
+        };
+        HomeController.prototype.onViewAllApplications = function () {
+            this.applicationViewService.viewAllApplicationsDashboard();
+        };
+        HomeController.prototype.onViewCustomDashboards = function () {
+            this.customDashboardViewService.viewCustomDashboardList();
+        };
+        HomeController.prototype.onCreateCustomDashboards = function () {
+            CustomDashboardViewService.instance().viewCreateCustomDashboard2();
+        };
+        HomeController.prototype.onViewGettingStarted = function () {
+            this.homeViewService.viewGettingStarted();
+        };
+        HomeController.prototype.onGettingStartedEUMWeb = function () {
+            this.homeViewService.viewEumWebGettingStarted();
+        };
+        HomeController.prototype.onGettingStartedEUMMobile = function () {
+            this.homeViewService.viewEumMobileGettingStarted();
+        };
+        HomeController.prototype.onGettingStartedDBMon = function () {
+            this.homeViewService.viewDBGettingStarted();
+        };
+        HomeController.prototype.onViewProductTour = function () {
+            this.homeViewService.viewProductTour();
+        };
+        HomeController.prototype.onViewAgentInstallWizard = function () {
+            this.homeViewService.viewAgentInstallWizard();
+        };
+        HomeController.prototype.onViewAnalytics = function () {
+            this.analyticsViewService.viewDefaultSearch();
+        };
+        HomeController.prototype.onViewTransactionAnalytics = function () {
+            this.analyticsViewService.viewTransactionAnalytics();
+        };
+        HomeController.prototype.onViewLogAnalytics = function () {
+            this.analyticsViewService.viewLogAnalytics();
+        };
+        HomeController.prototype.onViewUserWebActivityAnalytics = function () {
+            this.analyticsViewService.viewUserWebActivityAnalytics();
+        };
+        HomeController.prototype.onViewUserMobileActivityAnalytics = function () {
+            this.analyticsViewService.viewUserMobileActivityAnalytics();
+        };
+        HomeController.prototype.onViewApplicationDashboard = function (app) {
+            this.applicationViewService.viewApplicationDashboard(app.id);
+        };
+        HomeController.prototype.onViewAgents = function () {
+            this.homeViewService.viewAgentList();
+        };
+        HomeController.prototype.onViewSettings = function () {
+            HomeViewService.instance().viewSettingsHome();
+        };
+        HomeController.prototype.onViewCustomDashboard = function (customDashUiEntity) {
+            if (customDashUiEntity && customDashUiEntity.properties && customDashUiEntity.properties[0]) {
+                var nvp = customDashUiEntity.properties[0];
+                if (nvp.value == NavigationDataConstants.CDASHBOARD_DETAIL) {
+                    this.customDashboardViewService.viewCustomDashboard(customDashUiEntity.entityDefinition.entityId);
+                }
+                else {
+                    this.customDashboardViewService.viewCustomDashboardOld(customDashUiEntity.entityDefinition.entityId);
+                }
+            }
+        };
+        HomeController.prototype.on_UEV_TIME_RANGE_CHANGE_TR_SERVICE = function () {
+            this.fetchViewData();
+            this.fetchAnalyticsData();
+        };
+        HomeController.prototype.on_TIMERANGE_AUTOREFRESH_EVENT = function () {
+            this.fetchViewData();
+            this.fetchAnalyticsData();
+        };
+        HomeController.prototype.onViewEumHome = function () {
+            this.eumViewService.viewHome();
+        };
+        HomeController.prototype.onViewBrowserApps = function () {
+            this.eumViewService.viewWebAllApps();
+        };
+        HomeController.prototype.onViewMobileApps = function () {
+            this.eumViewService.viewMobileAllApps();
+        };
+        HomeController.prototype.onViewEumWebApplication = function (application) {
+            this.eumViewService.viewEumWebMainDashboard(application.id);
+        };
+        HomeController.prototype.onViewEumMobileApplication = function (mobileApp) {
+            this.eumViewService.viewEumMobileMainDashboard(mobileApp.applicationId, mobileApp.platform, mobileApp.id);
+        };
+        HomeController.prototype.onViewServers = function () {
+            ServerMonitoringViewService.instance().viewMachineList();
+        };
+        HomeController.prototype.onViewServer = function (machine) {
+            ServerMonitoringViewService.instance().viewMachine(machine);
+        };
+        HomeController.prototype.onGettingStartedServers = function () {
+            HomeViewService.instance().viewServerGettingStarted();
+        };
+        HomeController.prototype.onViewRecentlyVisitedItem = function (item) {
+            NavigationService.instance().navigateTo(item.urlLocationHash);
+        };
+        HomeController.prototype.fetchApplications = function () {
+            var _this = this;
+            this.showAppsLoading = true;
+            var applicationsPromise = this.homeUiService.getApplications();
+            applicationsPromise.then(function (applications) {
+                _this.showAppsLoading = false;
+                if (applications) {
+                    _this.applications = applications;
+                    _this.$scope.noApplications = (applications.length == 0);
+                    _this.numberApps = applications.length;
+                    _this.$rootScope.$broadcast("UEV_ALL_APPLICATIONS_FETCHED");
+                    _this.fetchAllApplicationsPerformanceData();
+                    _this.layoutLater();
+                }
+            });
+        };
+        HomeController.prototype.fetchEUMData = function () {
+            var _this = this;
+            this.showEUMLoading = true;
+            var eumPromise = this.homeUiService.getEUMData();
+            eumPromise.then(function (eumData) {
+                _this.showEUMLoading = false;
+                if (eumData) {
+                    _this.eumWebApplications = eumData.eumWebApplications;
+                    _this.numberEUMWebApps = eumData.eumWebApplications.length;
+                    _this.eumMobileApplications = eumData.eumMobileApplications;
+                    _this.numberEUMMobileApps = eumData.eumMobileApplications.length;
+                }
+            });
+        };
+        HomeController.prototype.fetchCustomDashboards = function () {
+            var _this = this;
+            this.showCustomDashboardsLoading = true;
+            var customDashboardPromise = this.homeUiService.getCustomDashboards();
+            customDashboardPromise.then(function (customDashboards) {
+                _this.showCustomDashboardsLoading = false;
+                if (customDashboards) {
+                    _this.customDashboards = customDashboards;
+                    _this.$scope.noCustomDashboards = (customDashboards.length == 0);
+                    _this.numberCustomDashoards = customDashboards.length;
+                }
+                _this.layoutLater();
+            });
+        };
+        HomeController.prototype.fetchDatabasesData = function () {
+            var _this = this;
+            var databasesPromise = this.homeUiService.getDatabasesData();
+            databasesPromise.then(function (databasesData) {
+                if (databasesData) {
+                    _this.isNewDBConfigAllowed = databasesData.newDBConfigAllowed;
+                }
+            });
+        };
+        HomeController.prototype.fetchDatabasePerformanceData = function () {
+            var _this = this;
+            this.showDatabasesLoading = true;
+            var promise = DbMonitoringUiService.instance().getDatabasesPerformanceStats(TimeRangeService.instance().getCurrentTimeRangeStringForUrl());
+            promise.then(function (dbs) {
+                _this.showDatabasesLoading = false;
+                _this.dbServers = dbs;
+                _this.$scope.noDbServers = dbs.length == 0;
+                _this.numberDbServers = _this.dbServers.length;
+                _.each(dbs, function (db) {
+                    if (db.config) {
+                        _this.dbServerToPerformanceData.put(db.config.id, db);
+                    }
+                });
+                _this.determineHealthBarCount(dbs);
+                _this.layoutLater();
+            });
+        };
+        HomeController.prototype.determineHealthBarCount = function (allDBServers) {
+            if (!this.dbServerToPerformanceData) {
+                return;
+            }
+            var unknown = 0;
+            var normal = 0;
+            var warning = 0;
+            var critical = 0;
+            _.each(allDBServers, function (server) {
+                if (server.performanceState.toUpperCase() == PerformanceState.CRITICAL) {
+                    ++critical;
+                }
+                else if (server.performanceState.toUpperCase() == PerformanceState.WARNING) {
+                    ++warning;
+                }
+                else if (server.performanceState.toUpperCase() == PerformanceState.NORMAL) {
+                    ++normal;
+                }
+                else {
+                    ++unknown;
+                }
+            });
+            this.dbHealthBarCount = {
+                unknown: unknown,
+                normal: normal,
+                warning: warning,
+                critical: critical,
+                undefined: 0
+            };
+        };
+        HomeController.prototype.fetchServerData = function () {
+            var _this = this;
+            this.showServersLoading = true;
+            SIMDataFetcher.instance().getAllMachinesAndHealth(TimeRangeService.instance().getCurrentTimeRangeStringForUrl()).then(function (machinesAndHealth) {
+                if (machinesAndHealth && machinesAndHealth[0] && machinesAndHealth[1]) {
+                    _this.servers = machinesAndHealth[0];
+                    _this.serverHealthBarCount = machinesAndHealth[1];
+                    _this.numberServers = _this.servers.length;
+                }
+                else {
+                    _this.numberServers = 0;
+                }
+                _this.noServers = (_this.numberServers === 0);
+                _this.showServersLoading = false;
+            }).finally(function () {
+                _this.showServersLoading = false;
+                _this.layoutLater();
+            });
+        };
+        HomeController.prototype.centerCardsContainer = function (delayMs) {
+            InjectorService.instance().$timeout()(function () {
+                ViewUtil.centerCardsContainer(".ads-home-view-card-container", ".ads-home-view-card-container-2", HomeController.CARD_WIDTH);
+            }, delayMs);
+        };
+        HomeController.prototype.layoutLater = function () {
+            var _this = this;
+            if (this._isLayoutLaterInProgress)
+                return;
+            this._isLayoutLaterInProgress = true;
+            InjectorService.instance().$timeout()(function () {
+                _this._isLayoutLaterInProgress = false;
+                ViewUtil.layoutAfterDigest(_this.$scope);
+            }, 100);
+        };
+        HomeController.CARD_WIDTH = 380;
+        HomeController.$inject = [
+            "$scope",
+            "$rootScope",
+            "$location",
+            "resourceManager",
+            "notificationService",
+            "navigationService",
+            "navigationHistoryService",
+            "navigationUiService",
+            "applicationViewService",
+            "homeViewService",
+            "customDashboardViewService",
+            "injectorService",
+            "homeUiService",
+            "analyticsViewService",
+            "userService",
+            "notificationConfigService",
+            "httpActionViewService",
+            "dbMonitoringViewService",
+            "eumViewService"
+        ];
+        return HomeController;
+    })(ControllerBase);
+    exports.HomeController = HomeController;
+});

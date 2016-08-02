@@ -1,0 +1,94 @@
+"use strict";
+define(["require", "exports", "./select/ADQLClientQuerySelect", "./from/ADQLClientQueryFrom", "./where/ADQLClientQueryWhere", "./orderby/ADQLClientQueryOrderBy", "./limit/ADQLClientQueryLimit"], function (require, exports, ADQLClientQuerySelect, ADQLClientQueryFrom, ADQLClientQueryWhere, ADQLClientQueryOrderBy, ADQLClientQueryLimit) {
+    var ADQLClientQuery = (function () {
+        function ADQLClientQuery(adql) {
+            if (adql) {
+                var clauses = StringUtils.splitAndTrimIgnoreCase(adql, true, ADQLClientQuerySelect.SELECT, ADQLClientQueryFrom.FROM, ADQLClientQueryWhere.WHERE, ADQLClientQueryOrderBy.ORDER_BY, ADQLClientQueryLimit.LIMIT);
+                var index = 0;
+                if (StringUtils.containsString(adql, ADQLClientQuerySelect.SELECT, true)) {
+                    this.selectClause = clauses[index++];
+                }
+                if (StringUtils.containsString(adql, ADQLClientQueryFrom.FROM, true)) {
+                    this.fromClause = clauses[index++];
+                }
+                if (StringUtils.containsString(adql, ADQLClientQueryWhere.WHERE, true)) {
+                    this.whereClause = clauses[index++];
+                }
+                if (StringUtils.containsString(adql, ADQLClientQueryOrderBy.ORDER_BY, true)) {
+                    this.orderByClause = clauses[index++];
+                }
+                if (StringUtils.containsString(adql, ADQLClientQueryLimit.LIMIT, true)) {
+                    this.limitClause = clauses[index++];
+                }
+            }
+        }
+        ADQLClientQuery.prototype.getSelectClause = function () {
+            return this.selectClause;
+        };
+        ADQLClientQuery.prototype.setSelectClause = function (selectClause) {
+            this.selectClause = selectClause;
+        };
+        ADQLClientQuery.prototype.hasSelectClause = function () {
+            return !!this.selectClause;
+        };
+        ADQLClientQuery.prototype.getFromClause = function () {
+            return this.fromClause;
+        };
+        ADQLClientQuery.prototype.setFromClause = function (fromClause) {
+            this.fromClause = fromClause;
+        };
+        ADQLClientQuery.prototype.hasFromClause = function () {
+            return !!this.fromClause;
+        };
+        ADQLClientQuery.prototype.getWhereClause = function () {
+            return this.whereClause;
+        };
+        ADQLClientQuery.prototype.setWhereClause = function (whereClause) {
+            this.whereClause = whereClause;
+        };
+        ADQLClientQuery.prototype.hasWhereClause = function () {
+            return !!this.whereClause;
+        };
+        ADQLClientQuery.prototype.getOrderByClause = function () {
+            return this.orderByClause;
+        };
+        ADQLClientQuery.prototype.setOrderByClause = function (orderByClause) {
+            this.orderByClause = orderByClause;
+        };
+        ADQLClientQuery.prototype.hasOrderByClause = function () {
+            return !!this.orderByClause;
+        };
+        ADQLClientQuery.prototype.getLimitClause = function () {
+            return this.limitClause;
+        };
+        ADQLClientQuery.prototype.setLimitClause = function (limitClause) {
+            this.limitClause = limitClause;
+        };
+        ADQLClientQuery.prototype.hasLimitClause = function () {
+            return !!this.limitClause;
+        };
+        ADQLClientQuery.prototype.isValid = function () {
+            return this.hasSelectClause() && this.hasFromClause();
+        };
+        ADQLClientQuery.prototype.toString = function () {
+            if (!this.isValid()) {
+                return "";
+            }
+            var queryString;
+            queryString = ADQLClientQuerySelect.SELECT + " " + this.getSelectClause();
+            queryString += " " + ADQLClientQueryFrom.FROM + " " + this.getFromClause();
+            if (this.hasWhereClause()) {
+                queryString += " " + ADQLClientQueryWhere.WHERE + " " + this.getWhereClause();
+            }
+            if (this.hasOrderByClause()) {
+                queryString += " " + ADQLClientQueryOrderBy.ORDER_BY + " " + this.getOrderByClause();
+            }
+            if (this.hasLimitClause()) {
+                queryString += " " + ADQLClientQueryLimit.LIMIT + " " + this.getLimitClause();
+            }
+            return queryString;
+        };
+        return ADQLClientQuery;
+    })();
+    return ADQLClientQuery;
+});

@@ -1,0 +1,17 @@
+"use strict";
+define(["require", "exports"], function (require, exports) {
+    var ADQLClientQueryOrderBy = (function () {
+        function ADQLClientQueryOrderBy(orderBy) {
+            this.orderBy = orderBy;
+        }
+        ADQLClientQueryOrderBy.prototype.isValid = function () {
+            return true;
+        };
+        ADQLClientQueryOrderBy.prototype.toString = function () {
+            return ADQLClientQueryOrderBy.ORDER_BY + " " + this.orderBy;
+        };
+        ADQLClientQueryOrderBy.ORDER_BY = "ORDER BY";
+        return ADQLClientQueryOrderBy;
+    })();
+    return ADQLClientQueryOrderBy;
+});

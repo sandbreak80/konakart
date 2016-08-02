@@ -1,0 +1,129 @@
+<div class="adsApplocationBarContainer" ng-show="false">
+
+
+    <div ng-hide="hideHomeIcon" class="adsLocationBarMainButtonContainer">
+               <div class="adsLocationBarHomeIcon" ng-click="onHomeClick()" title="{{homeTooltip}}" />
+       </div>
+
+       <div ng-hide="hideNavIcons" class="adsLocationBarMainButtonContainer">
+               <div class="adsLocationBarBackIcon" ng-click="onBackClick()" title="{{backTooltip}}" />
+       </div>
+
+       <div ng-hide="hideNavIcons" class="adsLocationBarMainButtonContainer">
+               <div class="adsLocationBarNextIcon" ng-click="onForwardClick()" title="{{forwardTooltip}}" />
+       </div>
+
+       <div class="adsLocationBarMainButtonContainer">
+               <div class="adsLocationBarRefreshIcon" ng-click="onRefreshClick()" title="{{refreshTooltip}}" />
+       </div>
+
+
+       <div class="adsLocationBarBreadcrumbContainer" ng-transclude>
+       </div>
+
+       <a ng-show="adVideoLink" class="adsLocationBarSecondaryButtonContainer" ng-href="{{adVideoLink}}" target="_blank">
+           <div class="adsLocationBarVideoIcon" title="{{videoTooltip}}" />
+       </a>
+
+       <a ng-show="adHelpLink" class="adsLocationBarSecondaryButtonContainer" ng-href="{{adHelpLink}}" target="_blank">
+            <div class="adsLocationBarHelpIcon" title="{{helpTooltip}}" />
+       </a>
+
+       <div ng-hide="hideCopyDeepLinkIcon"
+            class="adsLocationBarSecondaryButtonContainer ad-drop-down-toggle"
+            ad-in-place="false"
+            ad-close-mode="clickAny"
+            ad-multi-click-enabled="false"
+               >
+           <div class="adsLocationBarCopyLinkIcon" title="{{copyLinkTooltip}}" />
+       </div>
+        <ul class="dropdown-menu PopupList">
+            <li class="ads-menu-item" ng-click="controller.onCopyLinkClick()">
+                <div class="ng-binding">{{getString("ms_copyLinkToThisLocationToClipboard")}}</div>
+            </li>
+            <li class="ads-menu-item" ng-click="controller.onCopyLinkFixedTimeRange()"
+                    ng-hide="disableDefaultDeepLinkCopy"
+                    >
+                <div class="ng-binding">{{getString("ms_copyLinkToThisLocationToClipboardFixedTime")}}</div>
+            </li>
+
+            <!--
+                 unable to support some of this... commenting out for now till we port from Flex
+
+            <li class="ads-menu-item" ng-click="controller.onCopyLocationPath()"
+                ng-hide="disableDefaultDeepLinkCopy"
+                    >
+                <div class="ng-binding">{{getString("ms_copyLocationPathToClipboard")}}</div>
+            </li>
+            <li class="ads-menu-item" ng-click="controller.onCopyLinkWithAuth()"
+                ng-hide="disableDefaultDeepLinkCopy"
+                    >
+                <div class="ng-binding">{{getString("ms_copyLinkToThisLocationToClipboardWithUserAuthCredentials")}}</div>
+            </li>
+
+            -->
+
+            <li class="ads-menu-item" ng-click="controller.onSetCurrentLocationAsDefaultLandingScreen()"
+                ng-hide="disableDefaultDeepLinkCopy"
+                    >
+                <div class="ng-binding">{{getString("ms_saveCurrentLocationAsDefaultLandingScreen")}}</div>
+            </li>
+
+
+        </ul>
+
+
+       <a ng-show="includeFullScreenButton" class="adsLocationBarSecondaryButtonContainer">
+            <div class="adsLocationBarFullScreenIcon" ng-click="onFullScreenClick()" title="{{fullScreenTooltip}}" />
+       </a>
+
+       <div ng-show="includeTimeRange" class="adsLocationBarTimeRangeContainer">
+           <!-- input-disabled="licenseExpireNever", handleExpirationDateChange -->
+           <div style="white-space: nowrap">
+               <div ng-if="svShowBaseline" class="adsInlineBlock" style="margin-right: 12px;">
+                   <ad-baseline-selector sv-baselines-config="svBaselinesConfig" title="{{compareTooltip}}" />
+               </div>
+
+               <span ng-show="showCustomRange">
+                   <ad-date-input class="ad-date-input" date-output="dateFrom"
+                                  show-time="true"
+                                  style="height: 100%">
+                   </ad-date-input>
+                   <span style="color: white">&nbsp;-&nbsp;</span>
+                   <ad-date-input class="ad-date-input" date-output="dateTo"
+                                  show-time="true"
+                                  style="height: 100%"
+                                  date-change-handler="">
+                   </ad-date-input>
+                   <!-- Apply Time Range icon -->
+                   <a class="apply-time-range-button" ng-click="applyCustomTimeRange()">
+                       <div class="applocationbarbuttonouter">
+                           <div id="apply-time-range-button" class="applocationbarbuttoninner">
+                               <img title="Apply Time Range" ng-src="images/locationBar/reload_gray_24x24.png" />
+                           </div>
+                       </div>
+                   </a>
+                   <!-- Save Custom Time Range icon -->
+                   <a class="save-time-range-button" ng-click="saveCustomTimeRange()">
+                       <div class="applocationbarbuttonouter">
+                           <div id="save-time-range-button" class="applocationbarbuttoninner">
+                               <img title="Save Time Range" ng-src="images/locationBar/save_gray_24x24.png" />
+                           </div>
+                       </div>
+                   </a>
+               </span>
+
+               <!--  We don't need this code in here running... time range is in MainTitleBarView now
+               <ad-time-range-selector time-range="timeRange"
+                                   class="adsInlineBlock"
+                                   show-icon="{{showCustomRange}}"
+                                   ad-eum-web-lite-enabled="{{adEumWebLiteEnabled}}"
+                                   ad-eum-mobile-lite-enabled="{{adEumMobileLiteEnabled}}"
+                                   force-show-all-time-range-options="{{forceShowAllTimeRangeOptions}}"
+                                   use-global-time-range="true">
+               </ad-time-range-selector>
+               -->
+
+           </div>
+       </div>
+</div>

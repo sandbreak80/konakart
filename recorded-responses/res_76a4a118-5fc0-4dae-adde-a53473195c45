@@ -1,0 +1,16 @@
+<GWTResponse>
+  <result class="String-array">
+    <String>ADMIN_APP_LOGIN_BASE_URL</String>
+    <String>https://localhost:8783/konakart/AdminLoginSubmit.action</String>
+    <String>ADMIN_APP_LOGIN_WINDOW_FEATURES</String>
+    <String>resizable=yes,scrollbars=yes,status=yes,toolbar=yes,location=yes</String>
+    <String>ADMIN_APP_CUST_CUSTOM_LABEL</String>
+    <String></String>
+    <String>ADMIN_APP_CUST_CUSTOM_URL</String>
+    <String>http://www.konakart.com</String>
+    <String>CUST_PANEL_RUN_INITIAL_SEARCH</String>
+    <String>true</String>
+    <String>CUST_PANEL_CLEAR_REMOVES_RESULTS</String>
+    <String>false</String>
+  </result>
+</GWTResponse>

@@ -1,0 +1,11 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminTaxClass-array">
+    <com.konakartadmin.client.app.GWT__AdminTaxClass>
+      <taxClassId>1</taxClassId>
+      <taxClassTitle>Taxable Goods</taxClassTitle>
+      <taxClassDescription>The following types of products are included non-food, services, etc</taxClassDescription>
+      <lastModified>2016-07-15 11:27:48.0 PDT</lastModified>
+      <dateAdded>2016-07-15 11:27:48.0 PDT</dateAdded>
+    </com.konakartadmin.client.app.GWT__AdminTaxClass>
+  </result>
+</GWTResponse>

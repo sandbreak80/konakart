@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    
+
+    <head>
+    
+    
+
+    <title>AppDynamics </title>
+
+    <!-- Request the best possible renderer in IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+
+    
+    
+
+    <script type="text/javascript" src="js-lib-head-concat.js?20160603-170624"></script>
+    <script type="text/javascript" src="ad-bootstrap-concat.js?20160603-170624"></script>
+
+    <!-- TODO: Move font-awesome to build.xml after fixing font-location relative path -->
+    <link rel="stylesheet" type="text/css" href="lib/gridstack/gridstack.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/css-lib-head-concat.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/ext-theme-neptune-all.css?20160603-170624" /> <!-- Keep Ext has issues in concatenated files cause of paths -->
+    <link rel="stylesheet" type="text/css" href="css/libs.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/ui.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/shared.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/ui-pages.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/apm.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/analytics.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/customDashboard.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/dbmon.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/eum.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/sim.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="css/npm.css?20160603-170624" />
+    <link rel="stylesheet" type="text/css" href="lib/angular-gridster/angular-gridster.min.css?20160603-170624" />
+    <link rel="icon" href="favicon.ico" type="image/png"/>
+
+</head>
+
+
+    <body class="appFrame appBackgroundColor" ng-controller="RouteController">
+
+    <script type="text/javascript">
+        "use strict";
+
+        // This named function will be called from flex to change the browser's title.
+        var set_page = function (new_title) {
+            document.title = new_title;
+        };
+        Singularity.controllerRedirectProcessor();
+        Singularity.jspName = "main.jsp";
+
+    </script>
+
+    <script type="text/javascript" src="js-lib-body-concat.js?20160603-170624" charset="utf-8"></script>
+    <script type="text/javascript" src="lib/require/require.js?20160603-170624"></script>
+    <!-- require was causing problems when concatendated -->
+    <script type="text/javascript">
+        require.config({waitSeconds : 90}); // CORE-36052 - Slow / VPN connections need more time to load modules (>1 mb)
+    </script>
+    <script type="text/javascript" src="lib/angular-gridster/angular-gridster.min.js?20160603-170624"></script>
+    <script type="text/javascript">
+        var __ad_bootstrap_jasmine__ = null;
+    </script>
+    <script type="text/javascript" src="app/pages/main/MainAppModule.js?20160603-170624"></script>
+    <!-- Keep outside - this is ours -->
+
+    <!-- This ng-switch will prevent the app from being $compiled until logged in. -->
+    <div ng-show="visibleItems.appVisible" class="appBackgroundColor appContainer">
+
+        <div class="appContainer" id="appContainer">
+
+            <div class="appFrame appBackgroundColor">
+
+                <!-- ---------------- top menu bar on top of everything: main nav, eval toolbar, etc. ---------------- -->
+                <div class="ads-top-menu-bar-container-row ng-cloak" id="topMenuBarContainerDivId">
+                    <ad-top-menu-bar class="titleBarDiv"></ad-top-menu-bar>
+                </div>
+
+                <div class="ng-cloak ads-main-container-under-top-menu-bar">
+
+
+                    <!-- ---------------- LEFT NAV ---------------- -->
+                    <!-- adding position: absolute; z-index: 2; to make drop shadow "on top of" right side content in 4.1 -->
+                    <div id="leftNavComp" class="leftListDiv leftNavPanel" style="height: 100%; width: 256px; display: inline-block; position: absolute; z-index: 2;">
+                        <!-- keep in sync with NAV_PANEL_WIDTH -->
+                        <ad-left-menu-bar class="absoluteExpanded"></ad-left-menu-bar>
+                    </div>
+
+                    <!-- ---------------- RIGHT SIDE ---------------- -->
+
+                    <div class="ads-right-side-content-container">
+
+                        <!-- ---------------- Page Title / Location Bar / Refresh / Time Range ---------------- -->
+                        <ad-main-title-bar id="mainTitleBarContainerId" class="titleBarDiv"></ad-main-title-bar>
+
+                        <div class="ads-right-side-under-location-bar-container" style="overflow: hidden" ng-switch="loadingContent">
+
+                            <!-- ---------------- Main View Stack / Page Content ---------------- -->
+                            <ad-view-stack current-route="currentRoute" ng-switch-when="false">
+                            </ad-view-stack>
+
+                            <!--- loading content -->
+                            <div class="ads-absolute-expanded" ng-switch-when="true">
+                                <div class="ads-display-table ads-height-100percent ads-width-100percent">
+                                    <div class="ads-display-table-row">
+                                        <div class="ads-display-table-cell ads-vertical-align ads-height-100percent ads-width-100percent"
+                                             style="text-align: center;">
+                                            <i class="fa fa-2x fa-spinner fa-spin"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <ad-notification-center ad-is-eval="showEvalToolbar"></ad-notification-center>
+
+    </div>
+
+    <div ng-show="visibleItems.loginVisible" ng-cloak class="sty-login-view">
+        <loginview></loginview>
+    </div>
+
+    <div id="flashDiv" ng-show="visibleItems.appVisible" class="flashDiv" swf="Main_20160603-170624.swf"></div>
+
+    <!-- blank screen / loader while app is bootstrapping -->
+    <div ng-if="visibleItems.loaderVisible" class="ads-absolute-expanded">
+        <div class="ads-display-table ads-height-100percent ads-width-100percent">
+            <div class="ads-display-table-row">
+                <div class="ads-display-table-cell ads-vertical-align ads-height-100percent ads-width-100percent ads-dark-bg-color ads-login-view-background"
+                    style="text-align: center;">
+                    <!-- Still playing with logo vs spinner for loader screen -->
+                    <!--<img src="images/logo/AppDynamicsLogo_white.svg" style="width: 141px; height: 22px; ">-->
+                    <i class="fa fa-2x fa-spinner fa-spin" style="color: #f5f5f5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <noscript>
+        <span><strong>Javascript Required.</strong> Enable Javascript in your browser settings to use AppDynamics</span>
+    </noscript>
+
+    <div style="display:none">
+        <iframe id="vc" width="1" height="0" frameborder="0" src=""></iframe>
+    </div>
+
+</body>
+
+
+</html>

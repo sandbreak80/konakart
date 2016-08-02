@@ -1,0 +1,1036 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_KKModule-array">
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_BUY_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_FREE_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_APPLY_BEFORE_TAX</String>
+      </keys>
+      <title>Buy X Get Y Free</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE</configKeyStub>
+      <implementationFileName>BuyXGetYFree</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_buy_x_get_y_free</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Buy X Get Y Free Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, all of the Buy X Get Y promotions will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.20 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.20 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>choice(&apos;True&apos;, &apos;False&apos;)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_SORT_ORDER</configurationKey>
+          <configurationValue>22</configurationValue>
+          <configurationDescription>Sort Order of Buy X Get Y module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.20 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Buy Quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_BUY_QUANTITY</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The quantity that the customer must buy</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.21 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Free Quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_FREE_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The quantity that the customer gets for free</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.21 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The discount only applies if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.21 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Apply discount before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_BUY_X_GET_Y_FREE_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>Determines whether all calculations are done on amounts before or after tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.21 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>choice(&apos;True&apos;, &apos;False&apos;)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_MIN_TOTAL_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_MIN_SINGLE_PROD_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_APPLY_BEFORE_TAX</String>
+      </keys>
+      <title>Gift Certificate</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE</configKeyStub>
+      <implementationFileName>GiftCertificate</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_gift_certificate</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Gift Certificate Module Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, all of the Gift Certificate promotions will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.24 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.23 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_SORT_ORDER</configurationKey>
+          <configurationValue>26</configurationValue>
+          <configurationDescription>Sort Order of Gift Certificate module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.24 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The gift certificate only applies if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.24 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min total quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_MIN_TOTAL_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The gift certificate only applies if the number of products ordered, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.24 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min quantity for a product</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_MIN_SINGLE_PROD_QUANTITY</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The gift certificate only applies on the total if the quantity of at least one single product, equals or is greater than this minimum value.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.24 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Value of Certificate</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_VALUE</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>The actual gift certificate value for the promotion.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.24 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min order value before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_GIFT_CERTIFICATE_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom5</configurationValue>
+          <configurationDescription>Determines whether minimum order value is calculated on the amount before or after tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>6</sortOrder>
+          <lastModified>2016-07-15 12:36:53.24 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_MIN_SINGLE_PROD_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT</String>
+        <String>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_PERCENT</String>
+        <String>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_APPLY_BEFORE_TAX</String>
+      </keys>
+      <title>Product Discount</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT</configKeyStub>
+      <implementationFileName>ProductDiscount</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_product_discount</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Total Discount Module Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, all of the Product Discount promotions will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.27 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.27 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_SORT_ORDER</configurationKey>
+          <configurationValue>22</configurationValue>
+          <configurationDescription>Sort Order of Product Discount module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.27 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The discount only applies if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.27 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min quantity for a product</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_MIN_SINGLE_PROD_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The discount only applies on a product if its quantity equals or is greater than this minimum value.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.27 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Discount</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The actual discount for the promotion It may represent a percentage discount or an amount discount.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.27 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Percent / Amount</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_PERCENT</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>If true, the discount is a percentage. Otherwise it is an amount</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.27 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Apply discount before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_PRODUCT_DISCOUNT_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom5</configurationValue>
+          <configurationDescription>Determines whether all calculations are done on amounts before or after tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>6</sortOrder>
+          <lastModified>2016-07-15 12:36:53.27 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_MIN_TOTAL_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_MIN_SINGLE_PROD_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_APPLY_BEFORE_TAX</String>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_MULTIPLIER</String>
+        <String>MODULE_ORDER_TOTAL_REWARD_POINTS_INCLUDE_SHIPPING</String>
+      </keys>
+      <title>Reward Points</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_REWARD_POINTS</configKeyStub>
+      <implementationFileName>RewardPoints</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_reward_points</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Reward Points Module Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, the Reward Points promotion will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.30 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_SORT_ORDER</configurationKey>
+          <configurationValue>60</configurationValue>
+          <configurationDescription>Sort Order of Reward Points module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The points are only created if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min total quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_MIN_TOTAL_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The points are only created if the number of products ordered, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min quantity for a product</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_MIN_SINGLE_PROD_QUANTITY</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The points are only created if the quantity of at least one single product, equals or is greater than this minimum value.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Calculate points on amount before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>Determines whether the calculation for determining the number of points is done on amounts before or after tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Points multiplier</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_MULTIPLIER</configurationKey>
+          <configurationValue>custom5</configurationValue>
+          <configurationDescription>The order total is multiplied by this number to calculate the number of points.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>6</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Include shipping cost in calculation</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REWARD_POINTS_INCLUDE_SHIPPING</configurationKey>
+          <configurationValue>custom6</configurationValue>
+          <configurationDescription>Determines whether to include the shipping cost in the points calculation.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>7</sortOrder>
+          <lastModified>2016-07-15 12:36:53.30 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_REDEEM_POINTS_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_REDEEM_POINTS_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_REDEEM_POINTS_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_REDEEM_POINTS_MIN_TOTAL_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_REDEEM_POINTS_MIN_SINGLE_PROD_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_REDEEM_POINTS_APPLY_BEFORE_TAX</String>
+        <String>MODULE_ORDER_TOTAL_REDEEM_POINTS_MULTIPLIER</String>
+      </keys>
+      <title>Redeem Points</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_REDEEM_POINTS</configKeyStub>
+      <implementationFileName>RedeemPoints</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_redeem_points</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Redeem Points Module Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REDEEM_POINTS_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, the Redeem Points promotion will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.33 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.33 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REDEEM_POINTS_SORT_ORDER</configurationKey>
+          <configurationValue>30</configurationValue>
+          <configurationDescription>Sort Order of Redeem Points module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.33 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REDEEM_POINTS_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The points can only be redeemed if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.33 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min total quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REDEEM_POINTS_MIN_TOTAL_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The points can only be redeemed if the number of products ordered, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.33 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min quantity for a product</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REDEEM_POINTS_MIN_SINGLE_PROD_QUANTITY</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The points can only be redeemed if the quantity of at least one single product, equals or is greater than this minimum value.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.33 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Determine min order value on amount before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REDEEM_POINTS_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>Determines whether the minimum order value is taken before or after the application of tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.33 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Points multiplier</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_REDEEM_POINTS_MULTIPLIER</configurationKey>
+          <configurationValue>custom5</configurationValue>
+          <configurationDescription>The number of points redeemed is multiplied by this number to calculate the currency amount credited.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>6</sortOrder>
+          <lastModified>2016-07-15 12:36:53.33 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_MIN_TOTAL_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_MIN_SINGLE_PROD_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_PERCENT</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_APPLY_BEFORE_TAX</String>
+        <String>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_SHIPPING_METHOD</String>
+      </keys>
+      <title>Shipping Discount</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT</configKeyStub>
+      <implementationFileName>ShippingDiscount</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_shipping_discount</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Shipping Discount Module Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, all of the Shipping Discount promotions will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.36 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_SORT_ORDER</configurationKey>
+          <configurationValue>24</configurationValue>
+          <configurationDescription>Sort Order of Shipping Discount module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The discount only applies if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min total quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_MIN_TOTAL_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The discount only applies if the number of products ordered, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min quantity for a product</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_MIN_SINGLE_PROD_QUANTITY</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The discount only applies on the total if the quantity of at least one single product, equals or is greater than this minimum value.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Discount</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>The actual discount for the promotion It may represent a percentage discount or an amount discount.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Percent / Amount</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_PERCENT</configurationKey>
+          <configurationValue>custom5</configurationValue>
+          <configurationDescription>If true, the discount is a percentage. Otherwise it is an amount</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>6</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Do calculations before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom6</configurationValue>
+          <configurationDescription>Determines whether all calculations are done on amounts before or after tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>7</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Discount only applies for</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DISCOUNT_SHIPPING_METHOD</configurationKey>
+          <configurationValue>custom7</configurationValue>
+          <configurationDescription>Discount only applies to the following shipping method</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>8</sortOrder>
+          <lastModified>2016-07-15 12:36:53.36 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>option(ALL=ALL,ups=UPS,fedex=Fedex,usps=USPS,flat=Flat,item=Item,table=Table,zones=Zones)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_MIN_TOTAL_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_MIN_SINGLE_PROD_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT</String>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_PERCENT</String>
+        <String>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_APPLY_BEFORE_TAX</String>
+      </keys>
+      <title>Order Total Discount</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT</configKeyStub>
+      <implementationFileName>TotalDiscount</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_total_discount</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Total Discount Module Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, all of the Total Discount promotions will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.61 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_SORT_ORDER</configurationKey>
+          <configurationValue>20</configurationValue>
+          <configurationDescription>Sort Order of Total Discount module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The discount only applies if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min total quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_MIN_TOTAL_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The discount only applies if the number of products ordered, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min quantity for a product</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_MIN_SINGLE_PROD_QUANTITY</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The discount only applies on the total if the quantity of at least one single product, equals or is greater than this minimum value.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Discount</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>The actual discount for the promotion It may represent a percentage discount or an amount discount.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Percent / Amount</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_PERCENT</configurationKey>
+          <configurationValue>custom5</configurationValue>
+          <configurationDescription>If true, the discount is a percentage. Otherwise it is an amount</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>6</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Apply discount before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_TOTAL_DISCOUNT_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom6</configurationValue>
+          <configurationDescription>Determines whether all calculations are done on amounts before or after tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>7</sortOrder>
+          <lastModified>2016-07-15 12:36:53.61 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+    <com.konakartadmin.client.app.GWT__KKModule>
+      <keys>
+        <String>MODULE_ORDER_TOTAL_FREE_PRODUCT_STATUS</String>
+        <String>MODULE_ORDER_TOTAL_FREE_PRODUCT_SORT_ORDER</String>
+        <String>MODULE_ORDER_TOTAL_FREE_PRODUCT_MIN_ORDER_VALUE</String>
+        <String>MODULE_ORDER_TOTAL_FREE_PRODUCT_MIN_TOTAL_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_FREE_PRODUCT_MIN_SINGLE_PROD_QUANTITY</String>
+        <String>MODULE_ORDER_TOTAL_FREE_PRODUCT_APPLY_BEFORE_TAX</String>
+        <String>MODULE_ORDER_TOTAL_FREE_PRODUCT_ID</String>
+      </keys>
+      <title>Free Product</title>
+      <configKeyStub>MODULE_ORDER_TOTAL_FREE_PRODUCT</configKeyStub>
+      <implementationFileName>FreeProduct</implementationFileName>
+      <moduleType>3</moduleType>
+      <moduleCode>ot_free_product</moduleCode>
+      <configs>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Free Product Module Status</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_FREE_PRODUCT_STATUS</configurationKey>
+          <configurationValue>true</configurationValue>
+          <configurationDescription>If set to false, the Free Product promotion will be unavailable</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>0</sortOrder>
+          <lastModified>2016-07-15 12:36:53.64 PDT</lastModified>
+          <dateAdded>2016-07-15 12:36:53.64 PDT</dateAdded>
+          <useFunction></useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Sort order of display</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_FREE_PRODUCT_SORT_ORDER</configurationKey>
+          <configurationValue>70</configurationValue>
+          <configurationDescription>Sort Order of Free Product module on the UI. Lowest is displayed first.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>1</sortOrder>
+          <lastModified>2016-07-15 12:36:53.64 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction></useFunction>
+          <setFunction></setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Minimum Order Value</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_FREE_PRODUCT_MIN_ORDER_VALUE</configurationKey>
+          <configurationValue>custom1</configurationValue>
+          <configurationDescription>The free product is only added if the total of the order, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>2</sortOrder>
+          <lastModified>2016-07-15 12:36:53.64 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>double(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min total quantity</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_FREE_PRODUCT_MIN_TOTAL_QUANTITY</configurationKey>
+          <configurationValue>custom2</configurationValue>
+          <configurationDescription>The free product is only added if the number of products ordered, equals or is greater than this minimum value</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>3</sortOrder>
+          <lastModified>2016-07-15 12:36:53.64 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Min quantity for a product</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_FREE_PRODUCT_MIN_SINGLE_PROD_QUANTITY</configurationKey>
+          <configurationValue>custom3</configurationValue>
+          <configurationDescription>The free product is only added if the quantity of at least one single product, equals or is greater than this minimum value.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>4</sortOrder>
+          <lastModified>2016-07-15 12:36:53.64 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(0,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Calculate minimum order value on amount before tax</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_FREE_PRODUCT_APPLY_BEFORE_TAX</configurationKey>
+          <configurationValue>custom4</configurationValue>
+          <configurationDescription>Determines whether the minimum order value is taken before or after the application of tax.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>5</sortOrder>
+          <lastModified>2016-07-15 12:36:53.64 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+        <com.konakartadmin.client.app.GWT__KKConfiguration>
+          <statusId>0</statusId>
+          <configurationId>0</configurationId>
+          <configurationTitle>Free Product Id</configurationTitle>
+          <configurationKey>MODULE_ORDER_TOTAL_FREE_PRODUCT_ID</configurationKey>
+          <configurationValue>custom5</configurationValue>
+          <configurationDescription>The numeric id of the product given for free.</configurationDescription>
+          <configurationGroupId>6</configurationGroupId>
+          <sortOrder>6</sortOrder>
+          <lastModified>2016-07-15 12:36:53.64 PDT</lastModified>
+          <dateAdded reference="../../com.konakartadmin.client.app.GWT__KKConfiguration/dateAdded"/>
+          <useFunction>invisible</useFunction>
+          <setFunction>integer(1,null)</setFunction>
+          <returnByApi>false</returnByApi>
+        </com.konakartadmin.client.app.GWT__KKConfiguration>
+      </configs>
+    </com.konakartadmin.client.app.GWT__KKModule>
+  </result>
+</GWTResponse>

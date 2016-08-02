@@ -1,0 +1,14 @@
+<div style="background: #FFFFFF; padding: 5px;">
+    <span style="font-size: 14px; font-weight: bold;">Legend</span>
+    <div style="position: absolute; right: 5px; top: 5px;" >
+        <div class="closeButton" ng-click="controller.closeClicked()"></div>
+    </div>
+    <div ng-switch="adCrossApplication">
+        <div style="padding-top: 5px;" ng-switch-when="true" >
+            <div ng-include="'svg/legends/accountFlowmap.svg'" />
+        </div>
+        <div style="padding-top: 5px;" ng-switch-default>
+            <div ng-include="'svg/legends/tierBackendFlowmap.svg'" />
+        </div>
+    </div>
+</div>

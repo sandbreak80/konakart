@@ -1,0 +1,35 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminRole-array">
+    <com.konakartadmin.client.app.GWT__AdminRole>
+      <id>2</id>
+      <name>Catalog Maintenance</name>
+      <description>Permission to maintain the catalog of products</description>
+      <superUser>false</superUser>
+    </com.konakartadmin.client.app.GWT__AdminRole>
+    <com.konakartadmin.client.app.GWT__AdminRole>
+      <id>4</id>
+      <name>Customer Maintenance</name>
+      <description>Permission to maintain the customers</description>
+      <superUser>false</superUser>
+    </com.konakartadmin.client.app.GWT__AdminRole>
+    <com.konakartadmin.client.app.GWT__AdminRole>
+      <id>3</id>
+      <name>Order Maintenance</name>
+      <description>Permission to maintain the orders</description>
+      <superUser>false</superUser>
+    </com.konakartadmin.client.app.GWT__AdminRole>
+    <com.konakartadmin.client.app.GWT__AdminRole>
+      <id>5</id>
+      <name>Store Administrator</name>
+      <description>Permission to maintain a single store</description>
+      <superUser>false</superUser>
+    </com.konakartadmin.client.app.GWT__AdminRole>
+    <com.konakartadmin.client.app.GWT__AdminRole>
+      <id>1</id>
+      <name>Super User</name>
+      <description>Permission to do everything to all stores</description>
+      <superUser>true</superUser>
+      <custom1>Administrator</custom1>
+    </com.konakartadmin.client.app.GWT__AdminRole>
+  </result>
+</GWTResponse>

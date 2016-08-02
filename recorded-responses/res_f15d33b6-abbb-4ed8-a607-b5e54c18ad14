@@ -1,0 +1,206 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/3/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5C82B-A309-D1AF-64E4-E2AA91008716</clientId>
+        <messageId>71B5C9EF-4C08-4F4F-62A3-0740B1A7E003</messageId>
+        <timestamp>1469728964064</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="ASObject" mappedClass="com.singularity.ee.controller.api.dto.UserPreferences">
+          <userId tagClass="double">4.0</userId>
+          <properties tagClass="object-array">
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">SHOW_ONLY_BTS_WITH_PERF_DATA</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">false</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">SHOW_HISTOGRAM_HELP</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">false</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.NameValuePair">
+              <name tagClass="String">DONT_SHOW_SET_TIME_RANGE_MSG</name>
+              <id tagClass="double">0.0</id>
+              <value tagClass="String">true</value>
+              <version tagClass="int">0</version>
+            </ASObject>
+          </properties>
+        </body>
+        <correlationId>269175FE-E3AA-3FE2-765C-32ABFA4B43E7</correlationId>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>/4/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5C82B-A309-D1AF-64E4-E2AA91008716</clientId>
+        <messageId>71B5C9F1-BD0A-C3B9-C7F8-13F630058C76</messageId>
+        <timestamp>1469728964066</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="object-array">
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <displayName tagClass="String">super-admin</displayName>
+            <name tagClass="String">super-admin</name>
+            <description/>
+            <id tagClass="double">3.0</id>
+            <version tagClass="int">0</version>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <displayName tagClass="String">admin</displayName>
+            <name tagClass="String">admin</name>
+            <description/>
+            <id tagClass="double">4.0</id>
+            <version tagClass="int">0</version>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <displayName tagClass="String">user</displayName>
+            <name tagClass="String">user</name>
+            <description/>
+            <id tagClass="double">5.0</id>
+            <version tagClass="int">0</version>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <displayName tagClass="String">workflow-executor</displayName>
+            <name tagClass="String">workflow-executor</name>
+            <description/>
+            <id tagClass="double">6.0</id>
+            <version tagClass="int">0</version>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <displayName tagClass="String">dashboard-viewer</displayName>
+            <name tagClass="String">dashboard-viewer</name>
+            <description/>
+            <id tagClass="double">7.0</id>
+            <version tagClass="int">0</version>
+          </ASObject>
+        </body>
+        <correlationId>5C21D4FC-8074-7FBB-49E1-32ABFA4C91A7</correlationId>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>/5/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5C82B-A309-D1AF-64E4-E2AA91008716</clientId>
+        <messageId>71B5CA07-B61A-C2C9-4984-977397960BA6</messageId>
+        <timestamp>1469728964066</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="object-array">
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.CustomTimeRange">
+            <shared tagClass="boolean">true</shared>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description tagClass="String"></description>
+            <createdOn tagClass="Date">2016-07-25 12:17:59.833 PDT</createdOn>
+            <version tagClass="int">0</version>
+            <modifiedOn tagClass="Date">2016-07-25 12:17:59.833 PDT</modifiedOn>
+            <createdBy tagClass="String">brad</createdBy>
+            <name tagClass="String">Load Test 1 - Bad Build</name>
+            <modifiedBy tagClass="String">brad</modifiedBy>
+            <id tagClass="double">1.0</id>
+            <modifiable tagClass="boolean">true</modifiable>
+            <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRangeSpecifier">
+              <timeRangeAdjusted tagClass="boolean">false</timeRangeAdjusted>
+              <durationInMinutes tagClass="int">13</durationInMinutes>
+              <startTime tagClass="Date">2016-07-25 10:30:50.530 PDT</startTime>
+              <endTime tagClass="Date">2016-07-25 10:44:43.712 PDT</endTime>
+              <type tagClass="String">BETWEEN_TIMES</type>
+              <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRange">
+                <startTime tagClass="Date" reference="../../startTime"/>
+                <endTime tagClass="Date" reference="../../endTime"/>
+              </timeRange>
+            </timeRange>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.CustomTimeRange">
+            <shared tagClass="boolean">false</shared>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description tagClass="String"></description>
+            <createdOn tagClass="Date">2016-07-25 12:18:27.280 PDT</createdOn>
+            <version tagClass="int">0</version>
+            <modifiedOn tagClass="Date">2016-07-25 12:18:27.280 PDT</modifiedOn>
+            <createdBy tagClass="String">brad</createdBy>
+            <name tagClass="String">Load Test 2 - Slow</name>
+            <modifiedBy tagClass="String">brad</modifiedBy>
+            <id tagClass="double">2.0</id>
+            <modifiable tagClass="boolean">true</modifiable>
+            <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRangeSpecifier">
+              <timeRangeAdjusted tagClass="boolean">false</timeRangeAdjusted>
+              <durationInMinutes tagClass="int">17</durationInMinutes>
+              <startTime tagClass="Date">2016-07-25 11:19:09.690 PDT</startTime>
+              <endTime tagClass="Date">2016-07-25 11:36:23.771 PDT</endTime>
+              <type tagClass="String">BETWEEN_TIMES</type>
+              <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRange">
+                <startTime tagClass="Date" reference="../../startTime"/>
+                <endTime tagClass="Date" reference="../../endTime"/>
+              </timeRange>
+            </timeRange>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.CustomTimeRange">
+            <shared tagClass="boolean">true</shared>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description tagClass="String"></description>
+            <createdOn tagClass="Date">2016-07-25 12:29:12.246 PDT</createdOn>
+            <version tagClass="int">0</version>
+            <modifiedOn tagClass="Date">2016-07-25 12:29:12.246 PDT</modifiedOn>
+            <createdBy tagClass="String">brad</createdBy>
+            <name tagClass="String">Load Test 3 - Added Index</name>
+            <modifiedBy tagClass="String">brad</modifiedBy>
+            <id tagClass="double">3.0</id>
+            <modifiable tagClass="boolean">true</modifiable>
+            <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRangeSpecifier">
+              <timeRangeAdjusted tagClass="boolean">false</timeRangeAdjusted>
+              <durationInMinutes tagClass="int">17</durationInMinutes>
+              <startTime tagClass="Date">2016-07-25 12:12:00.738 PDT</startTime>
+              <endTime tagClass="Date">2016-07-25 12:30:00.631 PDT</endTime>
+              <type tagClass="String">BETWEEN_TIMES</type>
+              <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRange">
+                <startTime tagClass="Date" reference="../../startTime"/>
+                <endTime tagClass="Date" reference="../../endTime"/>
+              </timeRange>
+            </timeRange>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.CustomTimeRange">
+            <shared tagClass="boolean">true</shared>
+            <nameUnique tagClass="boolean">true</nameUnique>
+            <builtIn tagClass="boolean">false</builtIn>
+            <description tagClass="String"></description>
+            <createdOn tagClass="Date">2016-07-27 15:20:27.8 PDT</createdOn>
+            <version tagClass="int">0</version>
+            <modifiedOn tagClass="Date">2016-07-27 15:20:27.8 PDT</modifiedOn>
+            <createdBy tagClass="String">brad</createdBy>
+            <name tagClass="String">neoload scripting</name>
+            <modifiedBy tagClass="String">brad</modifiedBy>
+            <id tagClass="double">4.0</id>
+            <modifiable tagClass="boolean">true</modifiable>
+            <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRangeSpecifier">
+              <timeRangeAdjusted tagClass="boolean">false</timeRangeAdjusted>
+              <durationInMinutes tagClass="int">120</durationInMinutes>
+              <startTime tagClass="Date">2016-07-27 13:20:00.167 PDT</startTime>
+              <endTime tagClass="Date">2016-07-27 15:20:00.167 PDT</endTime>
+              <type tagClass="String">BETWEEN_TIMES</type>
+              <timeRange tagClass="ASObject" mappedClass="com.singularity.ee.controller.api.dto.TimeRange">
+                <startTime tagClass="Date" reference="../../startTime"/>
+                <endTime tagClass="Date" reference="../../endTime"/>
+              </timeRange>
+            </timeRange>
+          </ASObject>
+        </body>
+        <correlationId>24DA694D-49C1-AB26-2CC6-32ABFA641F60</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

@@ -1,0 +1,88 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/2/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5C82B-A309-D1AF-64E4-E2AA91008716</clientId>
+        <messageId>71B5C855-240A-FC07-CCB1-55D5F977C5BD</messageId>
+        <timestamp>1469728963696</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="ASObject" mappedClass="com.singularity.ee.controller.api.dto.User">
+          <nameUnique tagClass="boolean">true</nameUnique>
+          <securityProviderType tagClass="String">INTERNAL</securityProviderType>
+          <providerUniqueName tagClass="String">brad</providerUniqueName>
+          <displayName tagClass="String">brad</displayName>
+          <roles tagClass="object-array">
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+              <nameUnique tagClass="boolean">true</nameUnique>
+              <displayName tagClass="String">super-admin</displayName>
+              <name tagClass="String">super-admin</name>
+              <description/>
+              <id tagClass="double">3.0</id>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+              <nameUnique tagClass="boolean">true</nameUnique>
+              <displayName tagClass="String">admin</displayName>
+              <name tagClass="String">admin</name>
+              <description/>
+              <id tagClass="double">4.0</id>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+              <nameUnique tagClass="boolean">true</nameUnique>
+              <displayName tagClass="String">dashboard-viewer</displayName>
+              <name tagClass="String">dashboard-viewer</name>
+              <description/>
+              <id tagClass="double">7.0</id>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+              <nameUnique tagClass="boolean">true</nameUnique>
+              <displayName tagClass="String">user</displayName>
+              <name tagClass="String">user</name>
+              <description/>
+              <id tagClass="double">5.0</id>
+              <version tagClass="int">0</version>
+            </ASObject>
+            <ASObject mappedClass="com.singularity.ee.controller.api.dto.Role">
+              <nameUnique tagClass="boolean">true</nameUnique>
+              <displayName tagClass="String">workflow-executor</displayName>
+              <name tagClass="String">workflow-executor</name>
+              <description/>
+              <id tagClass="double">6.0</id>
+              <version tagClass="int">0</version>
+            </ASObject>
+          </roles>
+          <builtIn tagClass="boolean">false</builtIn>
+          <mobileDeviceUuids/>
+          <version tagClass="int">8</version>
+          <createdOn tagClass="Date">2016-06-23 10:14:21.434 PDT</createdOn>
+          <accountRoleIds tagClass="object-array">
+            <double>20.0</double>
+            <double>19.0</double>
+            <double>18.0</double>
+            <double>17.0</double>
+            <double>11.0</double>
+            <double>12.0</double>
+            <double>15.0</double>
+            <double>16.0</double>
+            <double>13.0</double>
+            <double>14.0</double>
+          </accountRoleIds>
+          <password/>
+          <modifiedOn tagClass="Date">2016-06-23 10:14:21.434 PDT</modifiedOn>
+          <createdBy tagClass="String">root</createdBy>
+          <name tagClass="String">brad</name>
+          <modifiedBy tagClass="String">root</modifiedBy>
+          <id tagClass="double">4.0</id>
+          <email tagClass="String">admin@changeme.com</email>
+        </body>
+        <correlationId>17C31F12-5369-F0C1-4305-32ABF8BE9073</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

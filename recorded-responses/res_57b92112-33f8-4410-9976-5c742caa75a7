@@ -1,0 +1,8 @@
+<GWTResponse>
+  <result class="String-array">
+    <String>KK_BASE_URL</String>
+    <String>http://localhost:8780/konakart/</String>
+    <String>IMG_BASE_URL</String>
+    <String>http://localhost:8780/konakart/images/</String>
+  </result>
+</GWTResponse>

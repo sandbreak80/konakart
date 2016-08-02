@@ -1,0 +1,48 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./ADQLConditionBase", "../operators/ADQLComparisonOperator"], function (require, exports, ADQLConditionBase, ADQLComparisonOperator) {
+    var ADQLAggregateCondition = (function (_super) {
+        __extends(ADQLAggregateCondition, _super);
+        function ADQLAggregateCondition(fieldName, operator, aggregateFunction) {
+            _super.call(this, false);
+            this.fieldName = fieldName;
+            this.operator = operator;
+            this.aggregateFunction = aggregateFunction;
+        }
+        ADQLAggregateCondition.prototype.getFieldName = function () {
+            return this.fieldName;
+        };
+        ADQLAggregateCondition.prototype.getOperator = function () {
+            return this.operator;
+        };
+        ADQLAggregateCondition.prototype.getAggregationFunction = function () {
+            return this.aggregateFunction;
+        };
+        ADQLAggregateCondition.prototype.toString = function () {
+            var str = [
+                this.fieldName,
+                this.operator.toString(),
+                this.aggregateFunction.toString()
+            ];
+            this.conditionAsString = str.join("");
+            return _super.prototype.toString.call(this);
+        };
+        ADQLAggregateCondition.isInstance = function (conditionAsString) {
+            var validRegExp = new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLComparisonOperator.OPERATOR_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLConditionBase.VALUE_PATTERN);
+            return !!validRegExp.test(conditionAsString);
+        };
+        ADQLAggregateCondition.getInstance = function (conditionAsString) {
+            var fieldName = conditionAsString.match(new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN))[0];
+            var operator = conditionAsString.match(new RegExp(ADQLComparisonOperator.OPERATOR_PATTERN))[0];
+            var value = conditionAsString.match(new RegExp(ADQLConditionBase.VALUE_PATTERN))[0];
+            return null;
+        };
+        return ADQLAggregateCondition;
+    })(ADQLConditionBase);
+    return ADQLAggregateCondition;
+});

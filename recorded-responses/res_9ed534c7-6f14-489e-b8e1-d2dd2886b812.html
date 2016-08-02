@@ -1,0 +1,15 @@
+<!-- SVG icon image  -->
+<img class="hoverable ng-animate-disabled"
+     ng-show="!controller.showHover"
+     title="{{adTip}}"
+     ng-mouseenter="controller.onMouseEnter($event)"
+     ng-src="{{controller.imageSource}}"
+     ng-style="controller.customSvgStyle"/>
+
+<!-- SVG icon hover image  -->
+<img class="hoverable ng-animate-disabled"
+     ng-show="controller.showHover"
+     title="{{adTip}}"
+     ng-mouseleave="controller.onMouseLeave($event)"
+     ng-src="{{controller.hoverImageSource}}"
+     ng-style="controller.customSvgStyle"/>

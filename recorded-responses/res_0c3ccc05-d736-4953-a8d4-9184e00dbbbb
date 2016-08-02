@@ -1,0 +1,49 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./ADQLConditionBase", "../operators/ADQLComparisonOperator", "../expressions/ADQLArithmeticExpression"], function (require, exports, ADQLConditionBase, ADQLComparisonOperator, ADQLArithmeticExpression) {
+    var ADQLArithmeticCondition = (function (_super) {
+        __extends(ADQLArithmeticCondition, _super);
+        function ADQLArithmeticCondition(arithmeticExpression, operator, value) {
+            _super.call(this, false);
+            this.arithmeticExpression = arithmeticExpression;
+            this.operator = operator;
+            this.value = value;
+        }
+        ADQLArithmeticCondition.prototype.getArithmeticExpression = function () {
+            return this.arithmeticExpression;
+        };
+        ADQLArithmeticCondition.prototype.getOperator = function () {
+            return this.operator;
+        };
+        ADQLArithmeticCondition.prototype.getValue = function () {
+            return this.value;
+        };
+        ADQLArithmeticCondition.prototype.toString = function () {
+            var str = [
+                this.arithmeticExpression.toString(),
+                this.operator.toString(),
+                this.value.toString()
+            ];
+            this.conditionAsString = str.join(" ");
+            return _super.prototype.toString.call(this);
+        };
+        ADQLArithmeticCondition.isInstance = function (conditionAsString) {
+            var validRegExp = new RegExp(ADQLArithmeticExpression.EXPRESSION_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLComparisonOperator.OPERATOR_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLConditionBase.VALUE_PATTERN, 'i');
+            return !!validRegExp.test(conditionAsString);
+        };
+        ADQLArithmeticCondition.getInstance = function (conditionAsString) {
+            var expressionString = conditionAsString.match(new RegExp(ADQLArithmeticExpression.EXPRESSION_PATTERN, 'i'))[0];
+            var arithmeticExpression = ADQLArithmeticExpression.getInstance(expressionString);
+            var operator = conditionAsString.match(new RegExp(ADQLComparisonOperator.OPERATOR_PATTERN, 'i'))[0];
+            var value = StringUtils.parseStringAsNumber(conditionAsString.match(new RegExp(ADQLConditionBase.VALUE_PATTERN, 'i'))[0]);
+            return new ADQLArithmeticCondition(arithmeticExpression, operator, value);
+        };
+        return ADQLArithmeticCondition;
+    })(ADQLConditionBase);
+    return ADQLArithmeticCondition;
+});

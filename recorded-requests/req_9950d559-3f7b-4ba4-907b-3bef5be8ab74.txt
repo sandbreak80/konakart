@@ -1,0 +1,10 @@
+GET https://192.168.1.252:12322/externals/jush/jush.css HTTP/1.1
+Accept: text/css, */*
+Referer: https://192.168.1.252:12322/?server=localhost
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.252:12322
+Connection: Keep-Alive
+Cookie: adminer_sid=n5gnq13epn3m85c33cn6d72v95; adminer_version=0
+

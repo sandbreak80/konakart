@@ -1,0 +1,10 @@
+GET https://192.168.1.252:12322/static/editing.js HTTP/1.1
+Accept: application/javascript, */*;q=0.8
+Referer: https://192.168.1.252:12322/?server=localhost
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.252:12322
+Connection: Keep-Alive
+Cookie: adminer_sid=n5gnq13epn3m85c33cn6d72v95
+

@@ -1,0 +1,54 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/3/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+        <messageId>71B5CBC4-0C0C-2CA3-0B05-98CA78CDB151</messageId>
+        <timestamp>1469728964364</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="boolean">true</body>
+        <correlationId>40F4803C-12BA-7E94-5C2F-32ABFA5A387F</correlationId>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>/4/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+        <messageId>71B5CBC4-0C2B-E0AC-0073-00FB92FB47DA</messageId>
+        <timestamp>1469728964364</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="boolean">true</body>
+        <correlationId>A9FA4F83-DBA0-3003-E2D7-32ABFA5BC114</correlationId>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>/5/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+        <messageId>71B5CBC6-7D0D-4114-D69C-012E3F0011D2</messageId>
+        <timestamp>1469728964364</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="boolean">false</body>
+        <correlationId>400FD848-1A27-F4CF-FD34-32ABFA5CCF51</correlationId>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>/6/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+        <messageId>71B5CBC8-EE0D-EE70-2C31-2BEFA745B946</messageId>
+        <timestamp>1469728964365</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="boolean">false</body>
+        <correlationId>8F2DDF30-C90D-B929-6482-32ABFA5E6563</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

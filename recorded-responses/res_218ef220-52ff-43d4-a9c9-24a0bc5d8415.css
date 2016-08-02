@@ -1,0 +1,40 @@
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+.ads-npm-spark-stroke { stroke: #6699ff; }
+
+/*# sourceMappingURL=npm.css.map */

@@ -1,0 +1,13 @@
+POST http://192.168.1.252:8780/konakart/LoginSubmit.action HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Referer: http://192.168.1.252:8780/konakart/LogIn.action
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+Content-Length: 60
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Cookie: JSESSIONID=B373B909F2EB33B13CA59C82F9F9CBA0; CUSTOMER_UUID=2e7b4e61-4532-4995-bd36-dc0d91617a49
+
+xsrf_token=null&emailAddr=doe@konakart.com&password=password

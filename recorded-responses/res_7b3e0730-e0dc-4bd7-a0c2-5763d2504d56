@@ -1,0 +1,372 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_KKConfiguration-array">
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>45</configurationId>
+      <configurationTitle>Installed Modules</configurationTitle>
+      <configurationKey>MODULE_PAYMENT_INSTALLED</configurationKey>
+      <configurationValue>cod.php</configurationValue>
+      <configurationDescription>List of payment module filenames separated by a semi-colon. This is automatically updated. No need to edit. (Example: cc.php;cod.php;paypal.php)</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>46</configurationId>
+      <configurationTitle>Installed Modules</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_INSTALLED</configurationKey>
+      <configurationValue>ot_subtotal.php;ot_tax.php;ot_shipping.php;ot_total.php</configurationValue>
+      <configurationDescription>List of order_total module filenames separated by a semi-colon. This is automatically updated. No need to edit. (Example: ot_subtotal.php;ot_tax.php;ot_shipping.php;ot_total.php)</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>47</configurationId>
+      <configurationTitle>Installed Modules</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_INSTALLED</configurationKey>
+      <configurationValue>DigitalDownload;flat.php</configurationValue>
+      <configurationDescription>List of shipping module filenames separated by a semi-colon. This is automatically updated. No need to edit. (Example: ups.php;flat.php;item.php)</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>50</configurationId>
+      <configurationTitle>Sort order of display.</configurationTitle>
+      <configurationKey>MODULE_PAYMENT_COD_SORT_ORDER</configurationKey>
+      <configurationValue>0</configurationValue>
+      <configurationDescription>Sort order of display. Lowest is displayed first.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>51</configurationId>
+      <configurationTitle>Set Order Status</configurationTitle>
+      <configurationKey>MODULE_PAYMENT_COD_ORDER_STATUS_ID</configurationKey>
+      <configurationValue>0</configurationValue>
+      <configurationDescription>Set the status of orders made with this payment module to this value</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <useFunction>tep_get_order_status_name</useFunction>
+      <setFunction>tep_cfg_pull_down_order_statuses(</setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>52</configurationId>
+      <configurationTitle>Enable Flat Shipping</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_FLAT_STATUS</configurationKey>
+      <configurationValue>True</configurationValue>
+      <configurationDescription>Do you want to offer flat rate shipping?</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>53</configurationId>
+      <configurationTitle>Shipping Cost</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_FLAT_COST</configurationKey>
+      <configurationValue>5.00</configurationValue>
+      <configurationDescription>The shipping cost for all orders using this shipping method.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>54</configurationId>
+      <configurationTitle>Tax Class</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_FLAT_TAX_CLASS</configurationKey>
+      <configurationValue>0</configurationValue>
+      <configurationDescription>Use the following tax class on the shipping fee.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <useFunction>tep_get_tax_class_title</useFunction>
+      <setFunction>tep_cfg_pull_down_tax_classes(</setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>55</configurationId>
+      <configurationTitle>Shipping Zone</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_FLAT_ZONE</configurationKey>
+      <configurationValue>0</configurationValue>
+      <configurationDescription>If a zone is selected, only enable this shipping method for that zone.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <useFunction>tep_get_zone_class_title</useFunction>
+      <setFunction>tep_cfg_pull_down_zone_classes(</setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>56</configurationId>
+      <configurationTitle>Sort Order</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_FLAT_SORT_ORDER</configurationKey>
+      <configurationValue>0</configurationValue>
+      <configurationDescription>Sort order of display.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>65</configurationId>
+      <configurationTitle>Default Currency</configurationTitle>
+      <configurationKey>DEFAULT_CURRENCY</configurationKey>
+      <configurationValue>USD</configurationValue>
+      <configurationDescription>Default Currency</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>66</configurationId>
+      <configurationTitle>Default Language</configurationTitle>
+      <configurationKey>DEFAULT_LANGUAGE</configurationKey>
+      <configurationValue>en</configurationValue>
+      <configurationDescription>Default Language</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>true</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>233</configurationId>
+      <configurationTitle>Installed Other Modules</configurationTitle>
+      <configurationKey>MODULE_OTHERS_INSTALLED</configurationKey>
+      <configurationValue></configurationValue>
+      <configurationDescription>List of Other modules separated by a semi-colon.  Automatically updated.  No need to edit.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:56.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>239</configurationId>
+      <configurationTitle>Enable Digital Downloads</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_DD_STATUS</configurationKey>
+      <configurationValue>True</configurationValue>
+      <configurationDescription>Set it to true if you sell digital downloads</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:56.0 PDT</dateAdded>
+      <setFunction>choice(&apos;true&apos;, &apos;false&apos;)</setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>240</configurationId>
+      <configurationTitle>Sort Order</configurationTitle>
+      <configurationKey>MODULE_SHIPPING_DD_SORT_ORDER</configurationKey>
+      <configurationValue>0</configurationValue>
+      <configurationDescription>Sort order of display.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>0</sortOrder>
+      <dateAdded>2016-07-15 11:27:56.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>48</configurationId>
+      <configurationTitle>Enable Cash On Delivery Module</configurationTitle>
+      <configurationKey>MODULE_PAYMENT_COD_STATUS</configurationKey>
+      <configurationValue>True</configurationValue>
+      <configurationDescription>Do you want to accept Cash On Delevery payments?</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>1</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>57</configurationId>
+      <configurationTitle>Display Shipping</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_STATUS</configurationKey>
+      <configurationValue>true</configurationValue>
+      <configurationDescription>Do you want to display the order shipping cost?</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>1</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>59</configurationId>
+      <configurationTitle>Display Sub-Total</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_SUBTOTAL_STATUS</configurationKey>
+      <configurationValue>true</configurationValue>
+      <configurationDescription>Do you want to display the order sub-total cost?</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>1</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>61</configurationId>
+      <configurationTitle>Display Tax</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_TAX_STATUS</configurationKey>
+      <configurationValue>true</configurationValue>
+      <configurationDescription>Do you want to display the order tax value?</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>1</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>63</configurationId>
+      <configurationTitle>Display Total</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_TOTAL_STATUS</configurationKey>
+      <configurationValue>true</configurationValue>
+      <configurationDescription>Do you want to display the total order value?</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>1</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>49</configurationId>
+      <configurationTitle>Payment Zone</configurationTitle>
+      <configurationKey>MODULE_PAYMENT_COD_ZONE</configurationKey>
+      <configurationValue>0</configurationValue>
+      <configurationDescription>If a zone is selected, only enable this payment method for that zone.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>2</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <useFunction>tep_get_zone_class_title</useFunction>
+      <setFunction>tep_cfg_pull_down_zone_classes(</setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>58</configurationId>
+      <configurationTitle>Sort Order</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_SORT_ORDER</configurationKey>
+      <configurationValue>2</configurationValue>
+      <configurationDescription>Sort order of display.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>2</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>60</configurationId>
+      <configurationTitle>Sort Order</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_SUBTOTAL_SORT_ORDER</configurationKey>
+      <configurationValue>1</configurationValue>
+      <configurationDescription>Sort order of display.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>2</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>62</configurationId>
+      <configurationTitle>Sort Order</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_TAX_SORT_ORDER</configurationKey>
+      <configurationValue>39</configurationValue>
+      <configurationDescription>Sort order of display.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>2</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>64</configurationId>
+      <configurationTitle>Sort Order</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_TOTAL_SORT_ORDER</configurationKey>
+      <configurationValue>40</configurationValue>
+      <configurationDescription>Sort order of display.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>2</sortOrder>
+      <dateAdded>2016-07-15 11:27:47.0 PDT</dateAdded>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>124</configurationId>
+      <configurationTitle>Allow Free Shipping</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_FREE_SHIPPING</configurationKey>
+      <configurationValue>false</configurationValue>
+      <configurationDescription>Do you want to allow free shipping?</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>3</sortOrder>
+      <dateAdded>2016-07-15 11:27:49.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;true&apos;, &apos;false&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>125</configurationId>
+      <configurationTitle>Free Shipping For Orders Over</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_FREE_SHIPPING_OVER</configurationKey>
+      <configurationValue>50</configurationValue>
+      <configurationDescription>Provide free shipping for orders over the set amount.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>4</sortOrder>
+      <dateAdded>2016-07-15 11:27:49.0 PDT</dateAdded>
+      <useFunction>currencies-&gt;format</useFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>126</configurationId>
+      <configurationTitle>Provide Free Shipping For Orders Made</configurationTitle>
+      <configurationKey>MODULE_ORDER_TOTAL_SHIPPING_DESTINATION</configurationKey>
+      <configurationValue>national</configurationValue>
+      <configurationDescription>Provide free shipping for orders sent to the set destination.</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>5</sortOrder>
+      <dateAdded>2016-07-15 11:27:49.0 PDT</dateAdded>
+      <setFunction>tep_cfg_select_option(array(&apos;national&apos;, &apos;international&apos;, &apos;both&apos;), </setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+    <com.konakartadmin.client.app.GWT__KKConfiguration>
+      <statusId>0</statusId>
+      <configurationId>195</configurationId>
+      <configurationTitle>Miscellaneous Config File</configurationTitle>
+      <configurationKey>MODULE_PAYMENT_COD_MISC_CONFIG_FILE</configurationKey>
+      <configurationValue>/var/tmp/cod_misc.properties</configurationValue>
+      <configurationDescription>Miscellaneous Configuration File (just an example - not actually used).</configurationDescription>
+      <configurationGroupId>0</configurationGroupId>
+      <sortOrder>6</sortOrder>
+      <dateAdded>2016-07-15 11:27:55.0 PDT</dateAdded>
+      <useFunction></useFunction>
+      <setFunction>FileUpload</setFunction>
+      <returnByApi>false</returnByApi>
+    </com.konakartadmin.client.app.GWT__KKConfiguration>
+  </result>
+</GWTResponse>

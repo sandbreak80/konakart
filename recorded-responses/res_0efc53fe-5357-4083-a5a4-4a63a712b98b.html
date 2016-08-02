@@ -1,0 +1,548 @@
+<div class="adsPageContainerDiv adsHomePageContainerDiv ads-border-top" ng-show="controller.showScreenContent">
+
+    <ad-tab-row sv-navigation-tabs="controller.navigationTabs"></ad-tab-row>
+
+    <ad-main-container>
+
+        <div class="adsCardPageBackground ads-home-view-card-container expanded" style="padding: 18px; ">
+
+            <div class="ads-home-view-card-container-2">
+
+                <!---------------------------------- Recent Items ---------------------------------->
+                <div class="ads-floating-home-screen-card-container ads-link-toggle-container"
+                     style="overflow: hidden;"
+                     ng-if="controller.showRecentlyVisited"
+                >
+                    <div class="ads-home-screen-header-section">
+                        Recently Visited
+                    </div>
+
+                    <ul ng-show="controller.recentlyVisitedItems.length > 0">
+                        <li ng-repeat="recentlyVisitedItem in controller.recentlyVisitedItems track by $index"
+                            ng-click="controller.onViewRecentlyVisitedItem(recentlyVisitedItem)"
+                            class="ads-home-list-item"
+                            ng-class-odd="'ads-gray-row-background'">
+                            <img class="adsSvgIconSmall" ng-src="{{recentlyVisitedItem.imageSrc}}">
+
+                            <div class="ads-home-list-item-name ads-ellipsis"
+                                 title="{{recentlyVisitedItem.description}}">
+                                {{recentlyVisitedItem.name}}
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div ng-show="controller.recentlyVisitedItems.length == 0"
+                         class="adsHomeNoDataContainer ads-home-content-section">
+
+                        <div>No Recently Visited Locations</div>
+
+                        <div style="padding-top: 12px; " class="ads-light-gray-text ads-readable-text-line-height">
+                            This will automatically populate as you visit Applications, Tiers, Nodes,
+                            Databases, Servers, etc.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!---------------------------------- APM Apps ---------------------------------->
+                <div class="ads-floating-home-screen-card-container ads-link-toggle-container"
+                     style="position: relative;">
+
+                    <div>
+
+                        <div>
+                            <ad-progress-indicator ad-progress-indicator-visible="{{controller.showAppsLoading}}" ad-top-offset-pixels="100"/>
+                        </div>
+
+                        <div class="ads-home-screen-header-section">
+                            <span class="ads-link-toggle-item" ng-click="onViewAllApplications()">Applications</span> <span class="ads-home-count-text">{{controller.numberApps}}</span>
+                        </div>
+
+                        <div ng-show="!noApplications">
+
+                            <div class="ads-home-content-section">
+                                <ad-health-bar ng-click="onViewAllApplications()"
+                                               normal="allAppPerformanceViewData.allApplicationsHealthSummary.normal"
+                                               warnings="allAppPerformanceViewData.allApplicationsHealthSummary.warning"
+                                               errors="allAppPerformanceViewData.allApplicationsHealthSummary.critical"
+                                               style="cursor: pointer;"
+                                >
+                                </ad-health-bar>
+                            </div>
+
+                            <div style="height: 8px;"/><!-- spacer -->
+
+                            <!-- search box -->
+                            <div class="ads-home-content-section"
+                                 ng-show="controller.numberApps > 10"
+                                 style="padding-top: 4px; padding-bottom: 12px"
+                            >
+                                <div ad-search-box ng-model="appSearchString" class="pull-right"/>
+                                <div class="clearfix"/>
+                            </div>
+
+                            <div ng-show="controller.numberApps <= 10" style="padding-top: 8px "/><!-- spacer -->
+
+                        </div>
+
+                    </div>
+
+                    <ad-main-container>
+
+                        <ul ng-show="!noApplications">
+                            <li ng-repeat="application in controller.applications | filter: {name: appSearchString} | orderBy:'name'"
+                                ng-click="onViewApplicationDashboard(application)"
+                                class="ads-home-list-item"
+                                ng-class-odd="'ads-gray-row-background'">
+                                <img class="adsSvgIconSmall" ng-src="{{getAppHealthIcon(application.id)}}">
+
+                                <div class="ads-home-list-item-name ads-ellipsis" title="{{(application.name.length > 35) ? application.name : ''}}">
+                                    {{application.name}}
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div ng-show="noApplications" class="adsHomeNoDataContainer ads-home-content-section">
+
+                            <div>{{::getString("ms_noApplications")}}</div>
+
+                            <div style="padding-top: 12px; ">
+                                <button class="ads-button" ng-click="onViewGettingStarted()">{{::getString("ms_getStartedActionLabel")}}</button>
+                            </div>
+
+                        </div>
+
+                    </ad-main-container>
+
+                </div>
+
+                <!---------------------------------- EUM Applications ---------------------------------->
+                <div class="ads-floating-home-screen-card-container ads-link-toggle-container ads-home-eum-section"
+                     ng-class="{'ads-no-mobile-apps' : controller.numberEUMMobileApps == 0,
+                                'ads-no-web-apps' : controller.numberEUMWebApps == 0,
+                                'ads-search-bar-visible' : controller.numberEUMMobileApps + controller.numberEUMWebApps > 10}"
+                     style="position: relative;"
+                     ng-if="controller.showEum">
+
+                    <div>
+                        <div>
+                            <ad-progress-indicator ad-progress-indicator-visible="{{controller.showEUMLoading}}" ad-top-offset-pixels="100"/>
+                        </div>
+
+                        <div class="ads-home-screen-header-section">
+                            <span class="ads-link-toggle-item"
+                                  ng-click="controller.onViewEumHome()">
+                                {{::getString("ms_eumTopLevelNavZoneLabel")}}
+                            </span>
+                        </div>
+
+                        <!-- search box -->
+                        <div class="ads-home-content-section"
+                             ng-show="controller.numberEUMWebApps + controller.numberEUMMobileApps > 10"
+                             style="padding-bottom: 12px"
+                            >
+                            <div ad-search-box ng-model="eumSearchString" class="pull-right"/>
+                            <div class="clearfix"/>
+                        </div>
+                    </div>
+
+                    <ad-main-container>
+
+                        <!-- Browser Apps -->
+                        <div class="ads-home-screen-header2-section">
+                            <span class="ads-link-toggle-item" ng-click="controller.onViewBrowserApps()">{{::getString("ms_eumWebAppsNavZoneLabel")}}</span>
+                            <span class="ads-home-count-text">{{controller.numberEUMWebApps}}</span>
+                        </div>
+
+                        <div ng-show="controller.numberEUMWebApps > 0"
+                             class="ads-home-eum-web-list">
+                            <ul>
+                                <li ng-repeat="(appIndex, application) in controller.eumWebApplications | filter:eumSearchString | orderBy:'name'"
+                                    ng-click="controller.onViewEumWebApplication(application)"
+                                    class="ads-home-list-item"
+                                    ng-class-odd="'ads-gray-row-background'">
+
+                                    <img class="adsSvgIconSmall" ng-src="images/leftNav/eumWebApp_gray.svg">
+
+                                    <div class="ads-home-list-item-name ads-ellipsis" title="{{(application.name.length > 35) ? application.name : ''}}">
+                                        {{application.name}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div ng-show="controller.numberEUMWebApps == 0" class="adsHomeNoDataContainer ads-home-content-section ads-home-eum-web-list">
+                            <div>{{::getString("ms_noBrowserApps")}}</div>
+
+                            <div style="padding-top: 12px; ">
+                                <button class="ads-button" ng-click="controller.onGettingStartedEUMWeb()">{{::getString("ms_getStartedActionLabel")}}</button>
+                            </div>
+                        </div>
+
+                        <div class="ads-home-content-section-divider ads-home-eum-web-mobile-divider"></div>
+
+                        <!-- Mobile Apps -->
+                        <div class="ads-home-screen-header2-section">
+                            <span class="ads-link-toggle-item" ng-click="controller.onViewMobileApps()">{{::getString("ms_eumMobileAppsNavZoneLabel")}}</span>
+                            <span class="ads-home-count-text">{{controller.numberEUMMobileApps}}</span>
+                        </div>
+
+                        <div ng-show="controller.numberEUMMobileApps > 0"
+                             class="ads-home-eum-mobile-list">
+                            <ul>
+                                <li ng-repeat="(appIndex, application) in controller.eumMobileApplications | filter:{name : eumSearchString} | orderBy:'name'"
+                                    ng-click="controller.onViewEumMobileApplication(application)"
+                                    class="ads-home-list-item"
+                                    ng-class-odd="'ads-gray-row-background'">
+
+                                    <img class="adsSvgIconSmall" ng-src="images/leftNav/mobileApp_gray.svg">
+
+                                    <div class="ads-home-list-item-name ads-ellipsis" title="{{(application.name.length > 35) ? application.name : ''}}">
+                                        {{application.name}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div ng-show="controller.numberEUMMobileApps == 0" class="adsHomeNoDataContainer ads-home-content-section ads-home-eum-mobile-list">
+                            <div>{{::getString("ms_noMobileApps")}}</div>
+
+                            <div style="padding-top: 12px; ">
+                                <button class="ads-button" ng-click="controller.onGettingStartedEUMMobile()">{{::getString("ms_getStartedActionLabel")}}</button>
+                            </div>
+                        </div>
+
+                    </ad-main-container>
+
+                </div>
+
+                <!---------------------------------- Database monitoring ---------------------------------->
+                <div class="ads-floating-home-screen-card-container ads-link-toggle-container"
+                     style="position: relative;"
+                     ng-show="mainNavConfig.showDatabaseMonitoring">
+
+                    <div>
+
+                        <div>
+                            <ad-progress-indicator ad-progress-indicator-visible="{{controller.showDatabasesLoading}}" ad-top-offset-pixels="100"/>
+                        </div>
+
+                        <div class="ads-home-screen-header-section">
+                            <span class="ads-link-toggle-item" ng-click="controller.onViewAllDbServers()">{{::getString('ms_dbMonitoringDBListNavLabel')}}</span> <span class="ads-home-count-text">{{controller.numberDbServers}}</span>
+                        </div>
+
+                        <div ng-show="!noDbServers">
+
+                            <div class="ads-home-content-section">
+                                <ad-health-bar ng-click="controller.onViewAllDbServers()"
+                                               unknown="controller.dbHealthBarCount.unknown"
+                                               normal="controller.dbHealthBarCount.normal"
+                                               warnings="controller.dbHealthBarCount.warning"
+                                               errors="controller.dbHealthBarCount.critical"
+                                               style="cursor: pointer;"
+                                >
+                                </ad-health-bar>
+                            </div>
+
+                            <div style="height: 8px;"/><!-- spacer -->
+
+                            <!-- search box -->
+                            <div class="ads-home-content-section"
+                                 ng-show="controller.numberDbServers > 10"
+                                 style="padding-top: 4px; padding-bottom: 12px"
+                            >
+                                <div ad-search-box ng-model="dbServerSearchString" class="pull-right"/>
+                                <div class="clearfix"/>
+                            </div>
+
+                            <div ng-show="controller.numberDbServers <= 10" style="padding-top: 8px "/><!-- spacer -->
+
+                        </div>
+
+                    </div>
+
+                    <ad-main-container>
+
+                        <ul ng-show="!noDbServers">
+                            <li ng-repeat="dbServer in controller.dbServers | filter:dbServerSearchString | orderBy:'name'"
+                                ng-click="onViewDbServer(dbServer)"
+                                class="ads-home-list-item"
+                                ng-class-odd="'ads-gray-row-background'"
+                            >
+                                <img class="adsSvgIconSmall" ng-src="{{controller.getDBHealthStatusIcon(dbServer)}}">
+
+                                <div class="ads-home-list-item-name ads-ellipsis" title="{{(dbServer.name.length > 35) ? dbServer.name : ''}}">
+                                    {{dbServer.name}}
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div ng-show="noDbServers" class="adsHomeNoDataContainer ads-home-content-section">
+
+                            <div>{{getStringFromBundle('dbmon','ms_dbNoDatabasesMonitoredTitle')}}</div>
+
+                            <div style="padding-top: 12px; ">
+                                <button class="ads-button" ng-click="controller.onGettingStartedDBMon()">{{::getString("ms_getStartedActionLabel")}}</button>
+                            </div>
+
+                        </div>
+
+                    </ad-main-container>
+
+                </div>
+
+                <!---------------------------------- Servers ---------------------------------->
+                <div class="ads-floating-home-screen-card-container ads-link-toggle-container"
+                     style="position: relative;"
+                     ng-if="mainNavConfig.showSim">
+
+                    <div>
+
+                        <div>
+                            <ad-progress-indicator ad-progress-indicator-visible="{{controller.showServersLoading}}" ad-top-offset-pixels="100"/>
+                        </div>
+
+                        <div class="ads-home-screen-header-section">
+                            <span class="ads-link-toggle-item" ng-click="controller.onViewServers()">{{::getString('ms_serverMonTopLevelNavLabel')}}</span> <span class="ads-home-count-text">{{controller.numberServers}}</span>
+                        </div>
+
+                        <div ng-show="!controller.noServers">
+
+                            <div class="ads-home-content-section">
+                                <ad-health-bar ng-click="controller.onViewServers()"
+                                               unknown="controller.serverHealthBarCount.unknown"
+                                               normal="controller.serverHealthBarCount.normal"
+                                               warnings="controller.serverHealthBarCount.warning"
+                                               errors="controller.serverHealthBarCount.critical"
+                                               style="cursor: pointer;"
+                                >
+                                </ad-health-bar>
+                            </div>
+
+                            <div style="height: 8px;"/><!-- spacer -->
+
+                            <!-- search box -->
+                            <div class="ads-home-content-section"
+                                 ng-show="controller.numberServers > 10"
+                                 style="padding-top: 4px; padding-bottom: 12px"
+                            >
+                                <div ad-search-box ng-model="serverSearchString" class="pull-right"/>
+                                <div class="clearfix"/>
+                            </div>
+
+                            <div ng-show="controller.numberServers <= 10" style="padding-top: 8px "/><!-- spacer -->
+
+                        </div>
+
+                    </div>
+
+                    <ad-main-container>
+
+                        <ul>
+                            <li ng-repeat="server in controller.servers | filter:serverSearchString | orderBy:'name'"
+                                ng-click="controller.onViewServer(server)"
+                                class="ads-home-list-item"
+                                ng-class-odd="'ads-gray-row-background'"
+                            >
+                                <img class="adsSvgIconSmall" ng-src="{{controller.getServerHealthStatusIcon(server)}}">
+
+                                <div class="ads-home-list-item-name ads-ellipsis" title="{{(server.name.length > 35) ? server.name : ''}}">
+                                    {{server.name}}
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div ng-show="controller.noServers" class="adsHomeNoDataContainer ads-home-content-section">
+
+                            <div>{{getStringFromBundle('ui','ms_simNoServersMonitoredTitle')}}</div>
+
+                            <div style="padding-top: 12px; ">
+                                <button class="ads-button" ng-click="controller.onGettingStartedServers()">{{::getString("ms_getStartedActionLabel")}}</button>
+                            </div>
+
+                        </div>
+
+                    </ad-main-container>
+
+                </div>
+
+                <!---------------------------------- Analytics ---------------------------------->
+                <div class="ads-floating-home-screen-card-container ads-link-toggle-container"
+                     style="position: relative;"
+                     ng-show="mainNavConfig.showAnalytics">
+
+                    <div class="ads-home-screen-header-section">
+                        <span class="ads-link-toggle-item" ng-click="controller.onViewAnalytics()">{{::getString('ms_analyticsNavLabel')}}</span>
+                    </div>
+
+                    <ad-main-container>
+
+                        <div class="ads-home-content-section" style="padding-left: 0px; padding-right: 0px;">
+
+                            <!-- transactions -->
+                            <div ng-if="mainNavConfig.showTransactionAnalytics"
+                                 ng-click="controller.onViewTransactionAnalytics()" class="ads-ui-action-icon-button"
+                                 style="padding-left: 26px; padding-top: 12px; padding-bottom: 12px;"
+                            >
+
+                                <div class="pull-left" style="padding-top: 4px;">
+                                    <img src="images/leftNav/apm_gray.svg" style="width: 24px; height: 24px; ">
+                                </div>
+
+                                <div class="pull-left" style="padding-left: 16px; ">
+                                    <div class="ads-home-analytics-stats">
+                                        <div ng-click="controller.onViewTransactionAnalytics()">{{controller.numberOfTransactions}}</div>
+                                    </div>
+
+                                    <div class="ads-light-gray-text" style="padding-top: 4px; ">Transactions</div>
+                                </div>
+
+                                <div class="clearfix"/>
+
+                            </div>
+
+                            <!-- logs -->
+                            <div ng-if="mainNavConfig.showLogAnalytics"
+                                 ng-click="controller.onViewLogAnalytics()" class="ads-ui-action-icon-button"
+                                 style="padding-left: 26px; padding-top: 12px; padding-bottom: 12px;"
+                                >
+
+                                <div class="pull-left" style="padding-top: 4px;">
+                                    <img src="images/leftNav/log_analytics_gray.svg" style="width: 24px; height: 24px; ">
+                                </div>
+
+                                <div class="pull-left" style="padding-left: 16px; ">
+                                    <div class="ads-home-analytics-stats">
+                                        <div ng-click="controller.onViewLogAnalytics()">{{controller.numberOfLogEvents}}</div>
+                                    </div>
+
+                                    <div class="ads-light-gray-text" style="padding-top: 4px; ">Log Events</div>
+                                </div>
+
+                                <div class="clearfix"/>
+
+                            </div>
+
+                            <!-- browser -->
+                            <div ng-if="mainNavConfig.showBrowserAnalytics"
+                                 ng-click="controller.onViewUserWebActivityAnalytics()" class="ads-ui-action-icon-button"
+                                 style="padding-left: 26px; padding-top: 12px; padding-bottom: 12px;"
+                            >
+
+                                <div class="pull-left" style="padding-top: 4px;">
+                                    <img src="images/leftNav/eumWebApp_gray.svg" style="width: 24px; height: 24px; ">
+                                </div>
+
+                                <div class="pull-left" style="padding-left: 16px; ">
+                                    <div class="ads-home-analytics-stats">
+                                        <div ng-click="controller.onViewUserWebActivityAnalytics()">{{controller.numberOfBrowserRecords}}</div>
+                                    </div>
+
+                                    <div class="ads-light-gray-text" style="padding-top: 4px; ">Browser Requests</div>
+                                </div>
+
+                                <div class="clearfix"/>
+
+                            </div>
+
+                            <!-- mobile -->
+                            <div ng-if="mainNavConfig.showMobileAnalytics"
+                                 ng-click="controller.onViewUserMobileActivityAnalytics()" class="ads-ui-action-icon-button"
+                                 style="padding-left: 26px; padding-top: 12px; padding-bottom: 12px;"
+                            >
+
+                                <div class="pull-left" style="padding-top: 4px;">
+                                    <img src="images/leftNav/mobileApp_gray.svg" style="width: 24px; height: 24px; ">
+                                </div>
+
+                                <div class="pull-left" style="padding-left: 16px; ">
+                                    <div class="ads-home-analytics-stats">
+                                        <div ng-click="controller.onViewUserMobileActivityAnalytics()">{{controller.numberOfMobileSnapshots}}</div>
+                                    </div>
+
+                                    <div class="ads-light-gray-text" style="padding-top: 4px; ">Mobile Requests</div>
+                                </div>
+
+                                <div class="clearfix"/>
+
+                            </div>
+
+                        </div>
+
+                    </ad-main-container>
+
+                </div>
+
+
+                <!---------------------------------- Custom Dashboards ---------------------------------->
+                <div class="ads-floating-home-screen-card-container ads-link-toggle-container"
+                     style="position: relative;">
+
+                    <div>
+                        <div>
+                            <ad-progress-indicator ad-progress-indicator-visible="{{controller.showCustomDashboardsLoading}}" ad-top-offset-pixels="100"/>
+                        </div>
+
+                        <div class="ads-home-screen-header-section">
+                            <span class="ads-link-toggle-item" ng-click="controller.onViewCustomDashboards()">{{::getString("ms_customDashboardsListNavItemLabel")}}</span><span
+                            class="ads-home-count-text">{{controller.numberCustomDashoards}}</span>
+                        </div>
+
+                        <div ng-show="!noCustomDashboards">
+
+                            <!-- search box -->
+                            <div class="ads-home-content-section"
+                                 ng-show="controller.numberCustomDashoards > 10"
+                                 style="padding-bottom: 12px"
+                            >
+                                <div ad-search-box ng-model="customDashSearchString" class="pull-right"/>
+                                <div class="clearfix"/>
+                            </div>
+
+                        </div>
+
+                        <div ng-show="noCustomDashboards" style="padding-top: 8px "/><!-- spacer -->
+
+                    </div>
+
+                    <ad-main-container>
+
+                        <ul>
+                            <li ng-repeat="customDashboard in controller.customDashboards | filter:customDashSearchString | orderBy:'name'"
+                                ng-click="onViewCustomDashboard(customDashboard)"
+                                class="ads-home-list-item"
+                                ng-class-odd="'ads-gray-row-background'"
+                            >
+                                <img ng-src="images/leftNav/dashboard2_gray.svg" class="adsSvgIconSmall"/>
+
+                                <div class="ads-home-list-item-name ads-ellipsis" title="{{(customDashboard.name.length > 35) ? customDashboard.name : ''}}">
+                                    {{customDashboard.name}}
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div ng-show="noCustomDashboards" class="adsHomeNoDataContainer ads-home-content-section">
+                            <div>
+                                {{::getString("ms_noCustomDashboards")}}
+                            </div>
+                            <br/>
+
+
+                            <button class="ads-button" ng-click="onCreateCustomDashboard()">
+                                {{::getString("ms_createCustomDashboard")}}
+                            </button>
+
+                        </div>
+
+                    </ad-main-container>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </ad-main-container>
+
+</div>

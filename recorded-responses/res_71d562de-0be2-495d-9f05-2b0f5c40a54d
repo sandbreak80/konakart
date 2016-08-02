@@ -1,0 +1,11 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminEngineConfig">
+    <storeId>store1</storeId>
+    <mode>0</mode>
+    <propertiesFileName>konakartadmin.properties</propertiesFileName>
+    <customersShared>false</customersShared>
+    <productsShared>false</productsShared>
+    <categoriesShared>false</categoriesShared>
+    <engineId>C</engineId>
+  </result>
+</GWTResponse>

@@ -1,0 +1,63 @@
+<div>
+
+    <button class="ads-display-table ads-button ads-button-less-horiz-padding hoverable"
+            ad-drop-down-toggle
+            ad-close-mode="clickAny"
+            ad-in-place="false"
+            ad-fit-to-screen="true"
+            ng-class="{'selected' : isBaselineSelected(defaultBaseline)}"
+            >
+
+        <div class="ads-display-table-row">
+
+            <div class="ads-display-table-cell  ads-vertical-align ads-height-100percent adsBaselineSelectorText">
+                {{menuTitle}}
+            </div>
+
+            <div class="ads-display-table-cell" style="min-width: 24px; height: 100%; ">
+                <img src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions"/>
+            </div>
+        </div>
+    </button>
+
+    <div class="ads-fly-out-container" style="overflow-y: auto;">
+
+        <!-- title  -->
+        <div ng-show="svBaselinesConfig.showTitle" class="ads-menu-section-header">
+            {{resourceManager.getString('ui', 'ms_compareResponseTimeAgainstBaseline')}}
+        </div>
+
+        <!-- Don't compare against baseline -->
+        <div class="ads-menu-item"
+             ng-click="stopComparingAgainstBaseline()"
+             ng-class="{'selected' : isNoBaselineSelected()}">
+            {{resourceManager.getString('ui', 'ms_dontCompareAgainstBaseline')}}
+        </div>
+
+        <!-- Default baseline -->
+        <div class="ads-menu-item"
+             ng-click="selectBaseline(defaultBaseline)"
+             ng-if="!svBaselinesConfig.showAllBaselines"
+             ng-class="{'selected' : isBaselineSelected(defaultBaseline)}">
+            {{defaultBaseline.name}} (default)
+        </div>
+
+        <div class="ads-menu-item"
+             ng-if="svBaselinesConfig.showAllBaselines"
+             ng-repeat="baseline in allBaselines"
+             ng-click="selectBaseline(baseline)"
+             ng-class="{'selected' : isBaselineSelected(baseline)}">
+             {{::baseline.name}} {{ baseline.defaultBaseline ? ' (default)' : ''}}
+        </div>
+
+        <div class="ads-border-top" style="margin-top: 4px; margin-bottom: 4px;" />
+
+        <!-- config baselines -->
+        <div class="ads-menu-item"
+             ng-click="configureBaselines()">
+            {{resourceManager.getString('ui', 'ms_configureBaselines')}}
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,128 @@
+<div>
+
+
+    <!-- ---------------- current location ---------------- -->
+    <div ad-multi-click-enabled="true"
+         ad-drop-down-toggle
+         ad-in-place="false"
+         ad-new-compile-mode="true"
+         ad-close-mode="clickAny"
+         ad-on-drop-down-toggle="controller.onDropDownToggle(dropDownOpen)"
+         ng-mouseenter="controller.onMouseEnterLocation()"
+         ng-mouseleave="controller.onMouseLeaveLocation()"
+         class="ads-display-table ads-main-title-bar-location-text ads-main-title-bar-action-item-hover-styles adsCursorPointer hoverable ng-animate-disabled"
+         ng-class="{'ads-invisible' : !controller.showLocation}"
+         ng-show="!controller.isHome"
+         ad-top-offset="-32"
+            >
+        <!--
+        ad-top-offset="-32"
+        -->
+
+        <div class="ads-display-table-row">
+
+            <div class="ads-display-table-cell ads-vertical-align">
+                {{controller.locationBarString}}
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ---------------- Drop down for breadcrumb ---------------- -->
+    
+    <div id="location-drop-down-container"
+         class="dropdown-menu PopupList ads-location-drop-down-container"
+            >
+
+        <!---------- Horizontal path items ------------>
+        <div ng-if="controller.showHorizontalPath" style="max-width: 800px; padding: 2px 6px; background: #F2F2F2;">
+
+            <div ng-repeat="config in controller.locationBarEntryConfigs track by $index"
+                 class="pull-left"
+                    >
+
+                <div class="ads-display-table" style="margin-bottom: 0px; height: 36px !important;">
+
+                    <div class="ads-display-table-row">
+
+                        <div class="ads-display-table-cell ads-vertical-align ads-height-100percent">
+
+                            <!-- home -->
+                            <span class="ads-ui-action-icon-button"
+                                  ng-click="controller.onLocationBarEntryClick(config)"
+                                  ng-show="$index == 0"
+                                    >
+                                <img src="images/mainMenu/home_gray.svg" style="width: 20px; height: 20px;" />
+                            </span>
+
+                            <!-- regular items -->
+                            <span class="ads-ui-action-icon-button"
+                                  ng-click="controller.onLocationBarEntryClick(config)"
+                                  ng-show="$index != 0 && !config.selected"
+                                    >
+                                {{config.label}}
+                            </span>
+
+                            <!-- seleted item (last one) -->
+                            <span style="font-weight: bold;"
+                                  ng-show="$index != 0 && config.selected"
+                                    >
+                                {{config.label}}
+                            </span>
+
+                        </div>
+
+                        <div class="ads-display-table-cell ads-vertical-align ads-height-100percent">
+                            <img src="images/leftNav/triangleRight_lightGray.svg"
+                                 class="ads-display-toggle-item-normal ads-triangle-image-left-right-dimensions"
+                                 style="margin-left: 0px;"
+                                 ng-class="{'ads-invisible' : config.selected}"
+                                    />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+
+        <!---------- Reversed Order Vertical Path (like finder) ------------>
+        <div ng-if="!controller.showHorizontalPath" style="padding-top: 8px; padding-bottom: 8px;">
+
+            <div>
+                <div ng-repeat="config in controller.locationBarEntryConfigsReversed track by $index"
+                     ng-click="controller.onLocationBarEntryClick(config)"
+                     class="ads-main-title-bar-location-bar-entry-item"
+                        >
+                    <div>{{config.label}}</div>
+                </div>
+            </div>
+
+            <div style="padding-top: 12px;" /> <!-- spacer -->
+
+            <div class="ads-display-table">
+                <div class="ads-display-table-row">
+                    <div class="ads-display-table-cell">
+                        <div class="fa fa fa-caret-up" style="color: #939393; padding-left: 24px; font-size: 12px" />
+                    </div>
+                    <div class="ads-display-table-cell" style="color: #939393; padding-left: 8px">
+                        Path
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="ads-display-table ads-main-title-bar-location-text" ng-if="controller.isHome">
+        Home
+    </div>
+
+</div>
+

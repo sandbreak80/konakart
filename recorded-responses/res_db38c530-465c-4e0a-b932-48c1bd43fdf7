@@ -1,0 +1,1146 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/2/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAE0-FF0C-0382-44B7-165FCFE20B83</clientId>
+        <messageId>71B5CAE0-FF39-AB38-5C0F-D12A20A6FF5E</messageId>
+        <timestamp>1469728964237</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="object-array">
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventsvc.request.segment.data.max.retrieval.size</name>
+            <description tagClass="String">Max number of request segment data that can be retrieved from event service in a query</description>
+            <value tagClass="String">5000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">machine.agent.max.new.actions.per.min</name>
+            <description tagClass="String">Maximum number of new actions dispatched per minute for each machine agent</description>
+            <value tagClass="String">15</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">digest.thread.pool.size</name>
+            <description tagClass="String">Size of Thread Pool for Digest Processing</description>
+            <value tagClass="String">4</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">node.permanent.deletion.period</name>
+            <description tagClass="String">Time (in hours) after which a node that has lost contact with the controller is deleted permanently from the system.</description>
+            <value tagClass="String">720</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">http.session.inactive.timeout</name>
+            <description tagClass="String">Http Session Timeout for Controller in Seconds</description>
+            <value tagClass="String">3600</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">reports.httpfallback.enabled</name>
+            <description tagClass="String">Enable HTTP if HTTPS connection fails.</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">metrics.buffer.size</name>
+            <description tagClass="String">Size of in-memory buffer (in Megabytes) storing metric data values uploaded from agents prior to database flush.</description>
+            <value tagClass="String">30</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">aas.service.discovery.host</name>
+            <description tagClass="String">appdynamics.controller.aas.service.discovery.hostname</description>
+            <value tagClass="String">https://consul.api.appdynamics.com:443</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">system.use.notification.message</name>
+            <description tagClass="String">Post-login message which is displayed every time a user logs in, informing the user of the system of its usage requirements</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">backend.config.resolution.interval</name>
+            <description tagClass="String">Interval to randomize in mins in which controller will check and process the agent&apos;s request to get updated backend resolution information</description>
+            <value tagClass="String">0</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.machines.registrations.maxPerSecondPerAccount</name>
+            <description tagClass="String">Maximum number of machine registrations allowed per account per second.</description>
+            <value tagClass="String">60</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">audit.log.file.enabled</name>
+            <description tagClass="String">Enable logging audit information into a file.</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">hotspots.learning.enabled</name>
+            <description tagClass="String">Flag indicating if hot spots learning is enabled (true|false)</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">audit.enabled</name>
+            <description tagClass="String">Enable or disable audit logging</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">async.thread.tracking.registration.limit</name>
+            <description tagClass="String">The maximum number of async threads that may be registered and tracked per account</description>
+            <value tagClass="String">1000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.processes.count.maxPerAccount</name>
+            <description tagClass="String">Maximum total number of processes allowed per account.</description>
+            <value tagClass="String">300000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbtuna.integration.configuration</name>
+            <description tagClass="String">dbtuna integration configuration string to map dbtuna objects</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">reports.host.http</name>
+            <description tagClass="String">Report Service host and port information for the HTTP connection.</description>
+            <value tagClass="String">http://localhost:8020/</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">events.upload.limit.per.min</name>
+            <description tagClass="String">The maximum number of events that may be uploaded per minute per num of license units in the account</description>
+            <value tagClass="String">500</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">application.batch.import.feature</name>
+            <description tagClass="String">Is Application import beta feature enabled? (true|false)</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbmon.event.publisher.asynctask.interval</name>
+            <description tagClass="String">DBMon async event publishing task interval</description>
+            <value tagClass="String">5</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.metrics.duplication.rules.cache.refreshMillis</name>
+            <description tagClass="String">The amount of time, in milliseconds after which cache entries are reloaded from the database</description>
+            <value tagClass="String">600000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">false</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">security.patch.fixed.saml.user.password</name>
+            <description tagClass="String">Security fix - Flag indicating if patch applied to fix saml user password (true|false)</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">events.buffer.size</name>
+            <description tagClass="String">Size of in-memory buffer (in Megabytes) storing events uploaded from agents prior to database flush.</description>
+            <value tagClass="String">8</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">controller.vendor.identifier</name>
+            <description tagClass="String">Controller vendor id</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">collections.ADD.registration.limit</name>
+            <description tagClass="String">The maximum number of collection ADDs that may be registered and tracked per account</description>
+            <value tagClass="String">4000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">aas.service.execution.host</name>
+            <description tagClass="String">appdynamics.controller.aas.service.execution.hostname</description>
+            <value tagClass="String">https://actionservice.api.appdynamics.com:443</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbmon.event.publisher.esclient.batch.size</name>
+            <description tagClass="String">Batch size for each ES client used by DBMon</description>
+            <value tagClass="String">1500</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">app.agent.max.new.actions.per.min</name>
+            <description tagClass="String">Maximum number of new actions dispatched per minute for each app agent</description>
+            <value tagClass="String">5</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">concurrent.agent.restarts</name>
+            <description tagClass="String">Number of agent restart requests processed at a time</description>
+            <value tagClass="String">100</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.processes.terminated.toStaleTimeoutMillis</name>
+            <description tagClass="String">Length of time before a terminated process becomes stale in milliseconds.</description>
+            <value tagClass="String">604800000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">bt.metric.cache.enabled</name>
+            <description tagClass="String">Flag to enable-disable caching BT metrics</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">disable.historic.transactional.flow</name>
+            <description tagClass="String">If true UI shows only the time ranges which are within the cacheable time range as defined by the caches.retention.period property</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">false</updateable>
+            <scope tagClass="String">local</scope>
+            <name tagClass="String">appserver.mode</name>
+            <description tagClass="String">Application Server Mode to track the server state</description>
+            <value tagClass="String">active</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">max.actions.per.min.per.event</name>
+            <description tagClass="String">Maximum number of actions per minute for each type of event</description>
+            <value tagClass="String">-1</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">false</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">schema.version</name>
+            <description tagClass="String">Current version of the controller&apos;s schema, used to track upgrades.</description>
+            <value tagClass="String">004-002-002-002</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">aas.read.time.out.millis</name>
+            <description tagClass="String">Action service read time out in Millis</description>
+            <value tagClass="String">300000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">ui.inactivity.timeout</name>
+            <description tagClass="String">UI user inactivity timeout for controller in seconds</description>
+            <value tagClass="String">-1</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">msds.upload.limit.per.min</name>
+            <description tagClass="String">The maximum number of machine snapshots that may be uploaded per minute per num of license units in the account</description>
+            <value tagClass="String">500</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">controller.id</name>
+            <description tagClass="String">id for the controller</description>
+            <value tagClass="String">OnPremiseController</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">machine.agent.in-progress.actions.timeout</name>
+            <description tagClass="String">Controller timeout (in msec) for IN_PROGRESS machine agent actions</description>
+            <value tagClass="String">86400000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">events.notification.clamp.size</name>
+            <description tagClass="String">The maximum number of event summaries displayed in the events notification emails.</description>
+            <value tagClass="String">100</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">machine.snapshots.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain machine snapshots before they are purged from the system.</description>
+            <value tagClass="String">336</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventdata.query.optimize.on</name>
+            <description tagClass="String">EventData Query Optimization</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">baseline.cache.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain caches in memory for baselines</description>
+            <value tagClass="String">24</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.processes.stale.purgeIntervalMillis</name>
+            <description tagClass="String">Length of time between deleting stale processes for an account.</description>
+            <value tagClass="String">3600000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">node.retention.period</name>
+            <description tagClass="String">Time (in hours) after which a node that has lost contact with the controller is marked deleted.</description>
+            <value tagClass="String">500</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.metrics.remap.maxSimMetricsToRemapPerApp</name>
+            <description tagClass="String">The maximum number cached sim metrics to be copied to an app (restart required)</description>
+            <value tagClass="String">250000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.machines.lastSeenTimestamp.updateIntervalMillis</name>
+            <description tagClass="String">Length of time in milliseconds between updates of the last-seen-timestamp on a machine.</description>
+            <value tagClass="String">3600000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">rsd.cache.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain caches in memory for requests</description>
+            <value tagClass="String">24</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">machine.snapshots.buffer.size</name>
+            <description tagClass="String">Size of in-memory buffer (in Megabytes) storing machine snapshots uploaded from agents prior to database flush.</description>
+            <value tagClass="String">50</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">write.thread.count</name>
+            <description tagClass="String">The count of parallel threads to be used for large object writes.</description>
+            <value tagClass="String">1</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eum.es.host</name>
+            <description tagClass="String">appdynamics.controller.eum.event.service.hostname</description>
+            <value tagClass="String">analytics.api.appdynamics.com</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">stacktrace.ADD.registration.limit</name>
+            <description tagClass="String">The maximum number of stack traces that may be registered and tracked per account</description>
+            <value tagClass="String">4000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.processes.creation.maxConcurrent</name>
+            <description tagClass="String">The maximum number of processes that can be created concurrently.</description>
+            <value tagClass="String">5000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.machines.offline.toStaleTimeoutMillis</name>
+            <description tagClass="String">Length of time in milliseconds before an offline machine is considered stale, and hence eligible for purging.</description>
+            <value tagClass="String">2592000000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.exceptions.stacktrace.enabled</name>
+            <description tagClass="String">Run SIM in debug mode - returns stacktrace to the client.</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">push.notification.service.uri</name>
+            <description tagClass="String">Mobile Push Notification Service URI</description>
+            <value tagClass="String">https://mobile-push.api.appdynamics.com</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventsvc.read.enabled</name>
+            <description tagClass="String">Event and Snapshot queries managed via Event Service</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">rsds.upload.limit.per.min</name>
+            <description tagClass="String">The maximum number of requests that may be uploaded per minute per num of license units in the account</description>
+            <value tagClass="String">500</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventsvc.event.max.retrieval.size</name>
+            <description tagClass="String">Max number of events that can be retrieved from event service in a query</description>
+            <value tagClass="String">5000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">mail.smtp.socketiotimeout</name>
+            <description tagClass="String">Time (in msec) after which a blocking socket operation will timeout.</description>
+            <value tagClass="String">30000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eum.adrumextension.urltemplate.https</name>
+            <description tagClass="String">appdynamics.controller.eum.adrumextension.urltemplate.https</description>
+            <value tagClass="String">cdn.appdynamics.com</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">incidents.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain incidents before they are purged from the system.</description>
+            <value tagClass="String">336</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">license.usage.node.name</name>
+            <description tagClass="String">node name used for persisting license usage data</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">events.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain events before they are purged from the system.</description>
+            <value tagClass="String">336</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.background.queue.maxSize</name>
+            <description tagClass="String">The size of the queue to which background tasks are submitted (restart required)</description>
+            <value tagClass="String">50000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.metrics.duplication.rules.useRulesForFilteringMetricsToDuplicate</name>
+            <description tagClass="String">Should metric duplication rules be used to determine which metrics should be copied to applications</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">disable.dashboard.metrics.caching</name>
+            <description tagClass="String">Disable metrics caching for dashboards? (true|false)</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">license.usage.account.name</name>
+            <description tagClass="String">account name used for persisting license usage data</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">backend.permanent.deletion.period</name>
+            <description tagClass="String">Time (in hours) after which a backend that has lost contact with the controller is deleted permanently from the system.</description>
+            <value tagClass="String">720</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">metric.registration.limit</name>
+            <description tagClass="String">The maximum number of metrics that may be dynamically registered per account</description>
+            <value tagClass="String">2000000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">license.usage.application.name</name>
+            <description tagClass="String">application name used for persisting license usage data</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">multitenant.controller</name>
+            <description tagClass="String">Is the controller running in multi-tenancy mode? (true|false)</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbtuna.integration.enabled</name>
+            <description tagClass="String">Boolean to specify whether dbtuna integration is supported or not.</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbmon.event.publisher.asynctask.batch.size</name>
+            <description tagClass="String">Batch size for each async event publishing task triggered by DBMon</description>
+            <value tagClass="String">500000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">false</updateable>
+            <scope tagClass="String">local</scope>
+            <name tagClass="String">ha.controller.type</name>
+            <description tagClass="String">Controller high availability mode (notapplicable, primary, secondary).</description>
+            <value tagClass="String">notapplicable</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.machines.bridge.pre42.registration</name>
+            <description tagClass="String">Should machine agents older than v 4.2 report to the Servers page</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eum.beacon.host</name>
+            <description tagClass="String">appdynamics.controller.eum.beacon.hostname</description>
+            <value tagClass="String">col.eum-appdynamics.com</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.machines.stale.purgeIntervalMillis</name>
+            <description tagClass="String">Length of time in milliseconds to wait between purging machines for an account.</description>
+            <value tagClass="String">21600000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbtuna.integration.url</name>
+            <description tagClass="String">dbtuna integration url used to back link to third party website</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.machines.simAllowed</name>
+            <description tagClass="String">All Server Monitoring features will be available on sim-enabled machines</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">requestdata.timebucket.size.minutes</name>
+            <description tagClass="String">query time bucket size in minutes, 0 or less means disabled</description>
+            <value tagClass="String">0</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">aas.service.acl.token</name>
+            <description tagClass="String">Action service authentication token</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">snapshots.buffer.size</name>
+            <description tagClass="String">Size of in-memory buffer (in Megabytes) storing snapshots uploaded from agents prior to database flush.</description>
+            <value tagClass="String">10</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">false</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">scs.keystore.password</name>
+            <description tagClass="String">Secure Credential Store Keystore password.</description>
+            <value tagClass="String">AppDynamics</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">caches.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain caches in memory for metrics</description>
+            <value tagClass="String">24</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbmon.event.publisher.thread.count</name>
+            <description tagClass="String">Async publisher thread count</description>
+            <value tagClass="String">4</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">load.e2e.data.enabled</name>
+            <description tagClass="String">Loading of End To End latency and user experience enabled for first in chain RSDs.</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">license.usage.tier.name</name>
+            <description tagClass="String">tier name used for persisting license usage data</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventsvc.verification.url</name>
+            <description tagClass="String">URL of controller event verification service, http://host:port/verification</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">policy.thread.pool.size</name>
+            <description tagClass="String">Size of Thread Pool for Policy Processing</description>
+            <value tagClass="String">4</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">dbmon.event.publisher.queue.size</name>
+            <description tagClass="String">Max measurement queue size maintained by DBMon for each account</description>
+            <value tagClass="String">100000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">app.agent.in-progress.actions.timeout</name>
+            <description tagClass="String">Controller timeout (in msec) for IN_PROGRESS app agent actions</description>
+            <value tagClass="String">86400000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.metrics.trackRegisteredEnabled</name>
+            <description tagClass="String">Should registered metrics be tracked by machine</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">appdynamics.es.eum.key</name>
+            <description tagClass="String">Key to sync eum and events service</description>
+            <value tagClass="String">7d928505-553e-4b4a-8814-a3e87b0fdff6</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">blitz_enabled</name>
+            <description tagClass="String">boolean to indicate whether metric data persistence to blitz is enabled</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">memory.ADD.registration.limit</name>
+            <description tagClass="String">The maximum number of memory ADDs that may be registered and tracked per account</description>
+            <value tagClass="String">4000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">machine.agent.pending.actions.timeout</name>
+            <description tagClass="String">Controller timeout (in msec) for PENDING machine agent actions</description>
+            <value tagClass="String">1800000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">license.usage.persist</name>
+            <description tagClass="String">tracks license usage (true|false)</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">reports.host.https</name>
+            <description tagClass="String">Report Service host and port information for the HTTPS connection.</description>
+            <value tagClass="String">https://localhost:8021/</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">controller.server.identifier</name>
+            <description tagClass="String">Controller server id</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">reports.enabled</name>
+            <description tagClass="String">Report Service enable flag.</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventsvc.write.enabled</name>
+            <description tagClass="String">Event and Snapshot writes managed via Event Service</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">tss.buffer.size</name>
+            <description tagClass="String">Size of in-memory buffer (in Megabytes) storing top summary stats data values uploaded from agents prior to database flush.</description>
+            <value tagClass="String">10</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">tss.detailstring.retention.size</name>
+            <description tagClass="String">Total count 1 million records / 50000 by ID for tss detail string data values before they are purged from the system.</description>
+            <value tagClass="String">20</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.processes.query.maxResultLimit</name>
+            <description tagClass="String">Maximum number of processes queried from database.</description>
+            <value tagClass="String">5000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.machines.count.maxPerAccount</name>
+            <description tagClass="String">Maximum total number of machines allowed per account.</description>
+            <value tagClass="String">2000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">app.agent.pending.actions.timeout</name>
+            <description tagClass="String">Controller timeout (in msec) for PENDING app agent actions</description>
+            <value tagClass="String">1800000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">push.notification.service.enabled</name>
+            <description tagClass="String">Flag to enable-disable Mobile Push Notification Service</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">max.number.of.dotnet.appagent.license.units.per.machine</name>
+            <description tagClass="String">Maximum number of DotNet license units (node agents) per machine agent</description>
+            <value tagClass="String">0</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sep.ADD.registration.limit</name>
+            <description tagClass="String">The maximum number of Service Endpoint ADDs that may be registered and tracked per account</description>
+            <value tagClass="String">4000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eum.beacon.https.host</name>
+            <description tagClass="String">appdynamics.controller.eum.beacon.https.hostname</description>
+            <value tagClass="String">col.eum-appdynamics.com</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">agent.session.timeout</name>
+            <description tagClass="String">Agent inactivity timeout for controller in seconds</description>
+            <value tagClass="String">300</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">backend.registration.limit</name>
+            <description tagClass="String">The maximum number of Backend Registrations that may be allowed per application</description>
+            <value tagClass="String">5000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">error.registration.limit</name>
+            <description tagClass="String">The maximum number of errors that may be registered and tracked per account</description>
+            <value tagClass="String">4000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">business.transaction.retention.period</name>
+            <description tagClass="String">Time (in hours) after which the business transaction is deleted.</description>
+            <value tagClass="String">0</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">usage.data.enabled</name>
+            <description tagClass="String">Enable or disable reporting statistics to AppDynamics</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">events.cache.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain caches in memory for events</description>
+            <value tagClass="String">24</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.processes.registrations.maxPerSecondPerAccount</name>
+            <description tagClass="String">Maximum number of process registration requests allowed per account per second per machine.</description>
+            <value tagClass="String">60</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">mail.smtp.connectiontimeout</name>
+            <description tagClass="String">Time (in msec) after which a connection attempt to the SMTP server will timeout.</description>
+            <value tagClass="String">15000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">tracked.object.ADD.registration.limit</name>
+            <description tagClass="String">The maximum number of tracked object ADDs that may be registered and tracked per account</description>
+            <value tagClass="String">4000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">appdynamics.analytics.local.store.controller.key</name>
+            <description tagClass="String">Key to sync controller and local events service</description>
+            <value tagClass="String">f81e5bdc-98d3-42af-af00-7d7a18a13b3f</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">metrics.ten.min.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain ten minute metric data values before they are purged from the system.</description>
+            <value tagClass="String">48</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">appdynamics.analytics.server.store.controller.key</name>
+            <description tagClass="String">Key to sync controller and remote events service</description>
+            <value tagClass="String">3f8f2338-0ec7-433c-bd99-7098ce5dae09</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventdata.query.min.rows</name>
+            <description tagClass="String">EventData Query Minimal ResultSet Size</description>
+            <value tagClass="String">200</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">audit.log.file.size</name>
+            <description tagClass="String">Maximum log file size for audit logging.</description>
+            <value tagClass="String">50000000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">disable.application.flow.map</name>
+            <description tagClass="String">Disable the Application Flow Map in the UI (it will not show for any user)</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">agent.restart.interval</name>
+            <description tagClass="String">Time (in minutes) between processing batches of agent restart requests</description>
+            <value tagClass="String">5</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventdata.max.query.attempts</name>
+            <description tagClass="String">EventData Query Max Query Attempts</description>
+            <value tagClass="String">6</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">application.diagnostic.data.retention.period.after.jvm.restart</name>
+            <description tagClass="String">Time (in hours) after which the automatic leak detection objects are deleted after jvm restart.</description>
+            <value tagClass="String">0</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.sam.config.maxDownloadSize</name>
+            <description tagClass="String">Maximum size of response content, in bytes, that is stored in the database per ping</description>
+            <value tagClass="String">5000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.background.processing.batchSize</name>
+            <description tagClass="String">The max number of background tasks that should be processed in each batch</description>
+            <value tagClass="String">100</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">license.usage.data.retention.period</name>
+            <description tagClass="String">Hours to retain the data for 5 minute license data storage table</description>
+            <value tagClass="String">2</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.metrics.remap.maxAppsToRemap</name>
+            <description tagClass="String">The maximum number of apps that can cache sim metric mappings for an account (restart required)</description>
+            <value tagClass="String">10000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">events.query.fastpath</name>
+            <description tagClass="String">Event SQL Fast Path queries</description>
+            <value tagClass="String">true</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">audit.log.retention.period</name>
+            <description tagClass="String">Audit log retention period in hours</description>
+            <value tagClass="String">720</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">appdynamics.analytics.server.store.url</name>
+            <description tagClass="String">Location of remote events service</description>
+            <value tagClass="String">http://localhost:9080</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">false</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">performance.profile</name>
+            <description tagClass="String">Controller performance configuration (small, medium, large) based on the size of the controller machine and the number of supported agents.</description>
+            <value tagClass="String">small</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eum.cloud.host</name>
+            <description tagClass="String">appdynamics.controller.eum.cloud.hostname</description>
+            <value tagClass="String">agg.eum-appdynamics.com</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">read.thread.count</name>
+            <description tagClass="String">The count of parallel threads to be used for large object reads.</description>
+            <value tagClass="String">1</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">sim.metrics.duplication.rules.cache.maxAccounts</name>
+            <description tagClass="String">The maximum number of accounts kept in the metric duplication rule cache</description>
+            <value tagClass="String">1000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">events.query.max.result.size</name>
+            <description tagClass="String">Event SQL maximum query retrieval size</description>
+            <value tagClass="String">5000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">psds.upload.limit.per.min</name>
+            <description tagClass="String">The maximum number of process snapshots that may be uploaded per minute per num of license units in the account</description>
+            <value tagClass="String">500</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eum.adrumextension.urltemplate</name>
+            <description tagClass="String">appdynamics.controller.eum.adrumextension.urltemplate</description>
+            <value tagClass="String">cdn.appdynamics.com</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">account.purge.application.limit</name>
+            <description tagClass="String">Set a bucket size for number of applications per single account purge iteration</description>
+            <value tagClass="String">10</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">audit.log.file.location</name>
+            <description tagClass="String">Audit log file location (empty value means $CONTROLLER_HOME/logs/audit.log)</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">metrics.retention.period</name>
+            <description tagClass="String">Time (in days) to retain hour metric data values before they are purged from the system.</description>
+            <value tagClass="String">365</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">aas.remote.execution.enabled</name>
+            <description tagClass="String">Enable or disable remote action service execution</description>
+            <value tagClass="String">false</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">aas.discovery.acl.token</name>
+            <description tagClass="String">Action service discovery consul authentication token</description>
+            <value tagClass="String"></value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">appdynamics.analytics.local.store.url</name>
+            <description tagClass="String">Location of local events service</description>
+            <value tagClass="String">http://localhost:9080</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">aas.max.service.retry</name>
+            <description tagClass="String">Max attempt to retry Action Service Execution on failure</description>
+            <value tagClass="String">2</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">analytics.scheduledqueries.batch.size</name>
+            <description tagClass="String">Number of queries to be batched as a single multi-search request </description>
+            <value tagClass="String">16</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">custom.action.max.new.actions.per.min</name>
+            <description tagClass="String">Maximum number of custom actions dispatched per minute for each account</description>
+            <value tagClass="String">200</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">eventdata.timebucket.size</name>
+            <description tagClass="String">EventData Query TimeBucket Size in Msecs</description>
+            <value tagClass="String">3600000</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">process.snapshots.buffer.size</name>
+            <description tagClass="String">Size of in-memory buffer (in Megabytes) storing process snapshots uploaded from agents prior to database flush.</description>
+            <value tagClass="String">10</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">health.rule.thread.pool.size</name>
+            <description tagClass="String">Size of Thread Pool for Health Rule Processing</description>
+            <value tagClass="String">4</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">tss.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain 12 hour tss data values before they are purged from the system.</description>
+            <value tagClass="String">336</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">snapshots.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain snapshots before they are purged from the system.</description>
+            <value tagClass="String">336</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">metrics.min.retention.period</name>
+            <description tagClass="String">Time (in hours) to retain minute metric data values before they are purged from the system.</description>
+            <value tagClass="String">4</value>
+          </ASObject>
+          <ASObject mappedClass="com.singularity.ee.controller.api.dto.ConfigurationItem">
+            <updateable tagClass="boolean">true</updateable>
+            <scope tagClass="String">cluster</scope>
+            <name tagClass="String">system.notification.event.types</name>
+            <description tagClass="String">Comma separated list of Event Types (with no spaces between each) that will shown as System Notifications in the UI.</description>
+            <value tagClass="String">LICENSE,DISK_SPACE,CONTROLLER_AGENT_VERSION_INCOMPATIBILITY,CONTROLLER_EVENT_UPLOAD_LIMIT_REACHED,CONTROLLER_RSD_UPLOAD_LIMIT_REACHED,CONTROLLER_METRIC_REG_LIMIT_REACHED,CONTROLLER_METRIC_DATA_BUFFER_OVERFLOW,CONTROLLER_ERROR_ADD_REG_LIMIT_REACHED,CONTROLLER_ASYNC_ADD_REG_LIMIT_REACHED,AGENT_ADD_BLACKLIST_REG_LIMIT_REACHED,AGENT_METRIC_BLACKLIST_REG_LIMIT_REACHED,CONTROLLER_STACKTRACE_ADD_REG_LIMIT_REACHED,CONTROLLER_SEP_ADD_REG_LIMIT_REACHED,CONTROLLER_MEMORY_ADD_REG_LIMIT_REACHED,CONTROLLER_TRACKED_OBJECT_ADD_REG_LIMIT_REACHED,CONTROLLER_COLLECTIONS_ADD_REG_LIMIT_REACHED</value>
+          </ASObject>
+        </body>
+        <correlationId>397E0C78-B687-275D-5F3B-32ABFA51DD49</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

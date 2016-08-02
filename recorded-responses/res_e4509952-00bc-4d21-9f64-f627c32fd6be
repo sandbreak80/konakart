@@ -1,0 +1,14 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminCustomerGroupSearchResult">
+    <search>
+      <id>-1</id>
+      <nameRule>4</nameRule>
+      <useDefaultWildCardsWithName>true</useDefaultWildCardsWithName>
+      <languageId>1</languageId>
+    </search>
+    <customerGroups/>
+    <offset>0</offset>
+    <maxGroupSize>0</maxGroupSize>
+    <totalSetSize>0</totalSetSize>
+  </result>
+</GWTResponse>

@@ -1,0 +1,58 @@
+<div class="adsExceptionCountsContainer">
+
+    <!-- todo-spowers-appdash hook up click handlers to all numbers and the titles -->
+    <div class="adsDashboardSectionHeader">
+        <a ng-click="$emit(EventConstants.UEV_VIEW_EXCEPTIONS_ALL)">{{::getString("ms_errorTotalsSectionTitle")}}</a>
+    </div>
+
+    <!--
+        List of exception (error) counts
+    -->
+
+    <div class="adsExceptionCountsRow">
+        <div class="adsExceptionCountsNameCol">
+            {{controller.exceptionData.name}}
+        </div>
+        <div class="adsExceptionCountsCountCol">
+            {{controller.exceptionData.count}}
+        </div>
+        <div class="adsExceptionCountsRateCol">
+            <ad-performance-value ad-performance-value-data="controller.exceptionData.rateData"
+                                  style="display: inline-block">
+            </ad-performance-value>
+            / min
+        </div>
+    </div>
+
+    <div class="adsExceptionCountsRow">
+        <div class="adsExceptionCountsNameCol">
+            {{controller.httpErrorCodesData.name}}
+        </div>
+        <div class="adsExceptionCountsCountCol">
+            {{controller.httpErrorCodesData.count}}
+        </div>
+        <div class="adsExceptionCountsRateCol">
+            <ad-performance-value ad-performance-value-data="controller.httpErrorCodesData.rateData"
+                                  style="display: inline-block">
+            </ad-performance-value>
+            / min
+        </div>
+    </div>
+
+    <div class="adsExceptionCountsRow">
+        <div class="adsExceptionCountsNameCol">
+            {{controller.errorPageRedirectsData.name}}
+        </div>
+        <div class="adsExceptionCountsCountCol">
+            {{controller.errorPageRedirectsData.count}}
+        </div>
+        <div class="adsExceptionCountsRateCol">
+            <ad-performance-value ad-performance-value-data="controller.errorPageRedirectsData.rateData"
+                                  style="display: inline-block">
+            </ad-performance-value>
+            / min
+        </div>
+    </div>
+
+</div>
+

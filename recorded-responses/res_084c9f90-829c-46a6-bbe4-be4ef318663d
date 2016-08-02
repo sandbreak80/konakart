@@ -1,0 +1,87 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports"], function (require, exports) {
+    var ExceptionCountsDirective = (function () {
+        function ExceptionCountsDirective() {
+            return {
+                restrict: "E",
+                replace: false,
+                templateUrl: "app/view/apm/errors/exceptionCounts/ExceptionCountsView.html",
+                scope: {
+                    errorSummary: "=",
+                    adApplicationId: "=",
+                    adMetricEntityDefinition: "="
+                },
+                controller: ExceptionCountsController
+            };
+        }
+        ExceptionCountsDirective.$inject = [];
+        return ExceptionCountsDirective;
+    })();
+    exports.ExceptionCountsDirective = ExceptionCountsDirective;
+    appdynamicsModule.directive(StringUtils.toCamelCase("ad-exception-counts"), ExceptionCountsDirective);
+    var ExceptionCountsController = (function (_super) {
+        __extends(ExceptionCountsController, _super);
+        function ExceptionCountsController($scope, $rootScope, $location, resourceManager, notificationService, injectorService) {
+            var _this = this;
+            _super.call(this, $scope, resourceManager, notificationService, injectorService);
+            this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.$location = $location;
+            this.resourceManager = resourceManager;
+            this.notificationService = notificationService;
+            this.injectorService = injectorService;
+            this.$scope.controller = this;
+            this.$scope.EventConstants = EventConstants;
+            this.$scope.$watch("errorSummary", function () {
+                _this.init();
+            });
+        }
+        ExceptionCountsController.prototype.init = function () {
+            this.errorSummary = this.$scope.errorSummary;
+            this.exceptionData = this.createExceptionCountsRowData(this.getString("ms_errorTotalsSectionTitle"), this.errorSummary && this.errorSummary.exceptionsMetricValue ? this.errorSummary.exceptionsMetricValue.sum : NaN, this.errorSummary && this.errorSummary.exceptionsMetricValue ? this.errorSummary.exceptionsMetricValue.value : NaN, this.errorSummary ? this.errorSummary.exceptionsMetricData : null);
+            this.httpErrorCodesData = this.createExceptionCountsRowData(this.getString("ms_errorTotalsHttpErrorCodesRowLabel"), this.errorSummary && this.errorSummary.httpErrorCodesMetricValue ? this.errorSummary.httpErrorCodesMetricValue.sum : NaN, this.errorSummary && this.errorSummary.httpErrorCodesMetricValue ? this.errorSummary.httpErrorCodesMetricValue.value : NaN, this.errorSummary ? this.errorSummary.httpErrorCodesMetricData : null);
+            this.errorPageRedirectsData = this.createExceptionCountsRowData(this.getString("ms_errorTotalsErrorPageRedirectRowLabel"), this.errorSummary && this.errorSummary.errorPageRedirectsMetricValue ? this.errorSummary.errorPageRedirectsMetricValue.sum : NaN, this.errorSummary && this.errorSummary.errorPageRedirectsMetricValue ? this.errorSummary.errorPageRedirectsMetricValue.value : NaN, this.errorSummary ? this.errorSummary.errorPageRedirectsMetricData : null);
+        };
+        ExceptionCountsController.prototype.createExceptionCountsRowData = function (name, count, rate, metricData) {
+            var exceptionCountsRowData = {};
+            exceptionCountsRowData.name = name;
+            exceptionCountsRowData.count = this.makeTotalString(count);
+            exceptionCountsRowData.rate = this.makeRateString(rate);
+            var performanceValueData = null;
+            if (metricData) {
+                performanceValueData = MetricUtil.getPerformanceValueDataFromMetricData(metricData, this.$scope.adApplicationId, this.$scope.adMetricEntityDefinition);
+                performanceValueData.displayAsLargeNumber = true;
+                performanceValueData.thresholdForLargeNumber = 1000;
+            }
+            exceptionCountsRowData.rateData = performanceValueData;
+            return exceptionCountsRowData;
+        };
+        ExceptionCountsController.prototype.makeTotalString = function (value) {
+            return ViewUtil.formatPositiveLargeNumber(value) + " total";
+        };
+        ExceptionCountsController.prototype.makeRateString = function (value) {
+            if (value > 0) {
+                return ViewUtil.formatLargeNumber(value, 1, 1000) + " / min";
+            }
+            else {
+                return "< 1 / min";
+            }
+        };
+        ExceptionCountsController.$inject = [
+            "$scope",
+            "$rootScope",
+            "$location",
+            "resourceManager",
+            "notificationService",
+            "injectorService"
+        ];
+        return ExceptionCountsController;
+    })(ControllerBase);
+    exports.ExceptionCountsController = ExceptionCountsController;
+    appdynamicsModule.controller("ExceptionCountsController", ExceptionCountsController);
+});

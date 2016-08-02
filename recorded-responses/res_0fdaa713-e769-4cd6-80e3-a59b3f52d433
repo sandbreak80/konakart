@@ -1,0 +1,168 @@
+"use strict";
+define(["require", "exports", "../util/ADQLClientStringUtil", "./select/functions/ADQLFunctionBase", "./select/ADQLClientQuerySelect", "./where/conditions/ADQLConditionBase", "./where/conditions/ADQLArithmeticCondition", "./where/conditions/ADQLComparisonCondition", "./where/conditions/ADQLComplexCondition", "./where/conditions/ADQLInCondition", "./where/conditions/ADQLBetweenCondition", "./where/conditions/ADQLLikeCondition", "./where/conditions/ADQLUnaryCondition", "./where/operators/ADQLBooleanOperator"], function (require, exports, ADQLClientStringUtil, ADQLFunctionBase, ADQLClientQuerySelect, ADQLConditionBase, ADQLArithmeticCondition, ADQLComparisonCondition, ADQLComplexCondition, ADQLInCondition, ADQLBetweenCondition, ADQLLikeCondition, ADQLUnaryCondition, ADQLBooleanOperator) {
+    var ADQLClientQueryParser = (function () {
+        function ADQLClientQueryParser() {
+        }
+        ADQLClientQueryParser.parseSelectClause = function (selectClause) {
+            var expressions = ADQLClientStringUtil.splitOnCommasExcludingParenthesis(selectClause);
+            var adqlFunctions = [];
+            _.forEach(expressions, function (expression) {
+                adqlFunctions.push(ADQLClientQueryParser.parseSelectExpression(expression));
+            });
+            return adqlFunctions;
+        };
+        ADQLClientQueryParser.parseSelectExpression = function (expression) {
+            var aliasSplit = ADQLClientStringUtil.splitOnAlias(expression);
+            var parseFunction = ADQLClientStringUtil.parseFunction(aliasSplit[0]);
+            if (parseFunction && parseFunction.length === 2) {
+                var functionName = parseFunction[0];
+                var args = parseFunction[1];
+                return new ADQLFunctionBase(functionName, StringUtils.convertCommaSeparatedStringToArray(args), ADQLClientStringUtil.trimSurroundingQuotes(aliasSplit[1]));
+            }
+            else {
+                return new ADQLFunctionBase(aliasSplit[0], [], ADQLClientStringUtil.trimSurroundingQuotes(aliasSplit[1]));
+            }
+        };
+        ADQLClientQueryParser.parseWhereClause = function (whereClause, adqlConditions) {
+            var whereParts = ADQLClientQueryParser.prepareConditionStringForParsing(whereClause);
+            var conditionStack = [];
+            var isUnsupportedSimpleCondition;
+            isUnsupportedSimpleCondition = ADQLClientQueryParser.createSimpleConditionObjects(whereParts, conditionStack);
+            ADQLClientQueryParser.createComplexConditionObjects(conditionStack);
+            _.forEach(conditionStack, function (condition) {
+                if (condition instanceof ADQLConditionBase) {
+                    adqlConditions.push(condition);
+                }
+            });
+            return isUnsupportedSimpleCondition;
+        };
+        ADQLClientQueryParser.prepareConditionStringForParsing = function (adqlConditionString) {
+            var regex = new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN + "|(!=)|(<=)|(>=)|(=)|" + ADQLConditionBase.VALUE_PATTERN + "|(\\()|(\\))| |AND|OR|LIKE|IN", "g");
+            var matches = adqlConditionString.match(regex);
+            matches = _.filter(matches, function (match) {
+                if (match === " " || match === "") {
+                    return false;
+                }
+                return true;
+            });
+            return matches;
+        };
+        ADQLClientQueryParser.createSimpleConditionObjects = function (adqlConditionArray, conditionStack) {
+            var isUnsupportedSimpleCondition = false;
+            var token;
+            var currentCondition = '';
+            for (var index = 0; index < adqlConditionArray.length; index++) {
+                token = adqlConditionArray[index].toUpperCase();
+                if (token === '(') {
+                    conditionStack.push(token);
+                }
+                else if (token === ')' || token === ADQLBooleanOperator.AND.toString() || token === ADQLBooleanOperator.OR.toString()) {
+                    if (!StringUtils.isNullOrEmptyString(currentCondition)) {
+                        var condition = ADQLClientQueryParser.getADQLQueryConditionObject(currentCondition.trim());
+                        conditionStack.push(condition);
+                        currentCondition = '';
+                    }
+                    conditionStack.push(token);
+                }
+                else if (token === ADQLInCondition.IN || token === ADQLBetweenCondition.BETWEEN) {
+                    isUnsupportedSimpleCondition = true;
+                    break;
+                }
+                else {
+                    currentCondition += ' ' + adqlConditionArray[index];
+                }
+            }
+            if (!StringUtils.isNullOrEmptyString(currentCondition)) {
+                var condition = ADQLClientQueryParser.getADQLQueryConditionObject(currentCondition.trim());
+                conditionStack.push(condition);
+            }
+            return isUnsupportedSimpleCondition;
+        };
+        ADQLClientQueryParser.createComplexConditionObjects = function (conditionStack) {
+            var item;
+            var startingIndex = -1;
+            var closingIndex = -1;
+            while (true) {
+                for (var index = 0; index < conditionStack.length; index++) {
+                    item = conditionStack[index];
+                    if (item === '(') {
+                        startingIndex = index;
+                    }
+                    else if (item === ')') {
+                        closingIndex = index;
+                        break;
+                    }
+                }
+                if (startingIndex === -1 || closingIndex === -1) {
+                    break;
+                }
+                conditionStack.splice(closingIndex, 1);
+                conditionStack.splice(startingIndex, 1);
+                closingIndex--;
+                for (var index = startingIndex; index < closingIndex; index++) {
+                    if (conditionStack[index] === ADQLBooleanOperator.AND.toString() || conditionStack[index] === ADQLBooleanOperator.OR.toString()) {
+                        closingIndex -= ADQLClientQueryParser.combineSimpleConditions(conditionStack, index - 1);
+                        index--;
+                    }
+                }
+                startingIndex = -1;
+                closingIndex = -1;
+            }
+            startingIndex = 0;
+            for (var index = 0; index < conditionStack.length; index++) {
+                item = conditionStack[index];
+                if (item === ADQLBooleanOperator.OR.toString()) {
+                    index -= ADQLClientQueryParser.reduceLeftHandConditions(conditionStack, startingIndex, index);
+                    ADQLClientQueryParser.combineSimpleConditions(conditionStack, index);
+                    startingIndex = index;
+                }
+            }
+        };
+        ADQLClientQueryParser.reduceLeftHandConditions = function (conditionStack, startingIndex, closingIndex) {
+            var totalElementsRemoved = closingIndex - startingIndex;
+            while (startingIndex < closingIndex - 1) {
+                closingIndex -= ADQLClientQueryParser.combineSimpleConditions(conditionStack, startingIndex);
+            }
+            return totalElementsRemoved;
+        };
+        ADQLClientQueryParser.combineSimpleConditions = function (conditionStack, startingIndex) {
+            var condition1;
+            var op;
+            var condition2;
+            var complexCondition;
+            condition1 = conditionStack[startingIndex];
+            op = conditionStack[startingIndex + 1];
+            condition2 = conditionStack[startingIndex + 2];
+            complexCondition = new ADQLComplexCondition(condition1, op, condition2);
+            conditionStack.splice(startingIndex, 3, complexCondition);
+            return 2;
+        };
+        ADQLClientQueryParser.getADQLQueryConditionObject = function (conditionString) {
+            if (ADQLComparisonCondition.isInstance(conditionString)) {
+                return ADQLComparisonCondition.getInstance(conditionString);
+            }
+            else if (ADQLInCondition.isInstance(conditionString)) {
+                return ADQLInCondition.getInstance(conditionString);
+            }
+            else if (ADQLBetweenCondition.isInstance(conditionString)) {
+                return ADQLBetweenCondition.getInstance(conditionString);
+            }
+            else if (ADQLLikeCondition.isInstance(conditionString)) {
+                return ADQLLikeCondition.getInstance(conditionString);
+            }
+            else if (ADQLUnaryCondition.isInstance(conditionString)) {
+                return ADQLUnaryCondition.getInstance(conditionString);
+            }
+            else if (ADQLArithmeticCondition.isInstance(conditionString)) {
+                return ADQLArithmeticCondition.getInstance(conditionString);
+            }
+            else {
+                return null;
+            }
+        };
+        ADQLClientQueryParser.AS_PATTERN = '\\s' + ADQLClientQuerySelect.AS + '\\s';
+        ADQLClientQueryParser.AS_REGEXP = new RegExp(ADQLClientQueryParser.AS_PATTERN, 'i');
+        return ADQLClientQueryParser;
+    })();
+    return ADQLClientQueryParser;
+});

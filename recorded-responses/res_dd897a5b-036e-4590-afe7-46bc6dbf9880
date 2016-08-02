@@ -1,0 +1,42 @@
+"use strict";
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports", "./ADQLConditionBase", "../operators/ADQLUnaryOperator"], function (require, exports, ADQLConditionBase, ADQLUnaryOperator) {
+    var ADQLUnaryCondition = (function (_super) {
+        __extends(ADQLUnaryCondition, _super);
+        function ADQLUnaryCondition(fieldName, operator) {
+            _super.call(this, false);
+            this.fieldName = fieldName;
+            this.operator = operator;
+        }
+        ADQLUnaryCondition.prototype.getFieldName = function () {
+            return this.fieldName;
+        };
+        ADQLUnaryCondition.prototype.getOperator = function () {
+            return this.operator;
+        };
+        ADQLUnaryCondition.prototype.toString = function () {
+            var str = [
+                this.operator.toString(),
+                this.fieldName
+            ];
+            this.conditionAsString = str.join("");
+            return _super.prototype.toString.call(this);
+        };
+        ADQLUnaryCondition.isInstance = function (conditionAsString) {
+            var validRegExp = new RegExp(ADQLUnaryOperator.OPERATOR_PATTERN + ADQLConditionBase.FIELD_NAME_PATTERN, 'i');
+            return !!validRegExp.test(conditionAsString);
+        };
+        ADQLUnaryCondition.getInstance = function (conditionAsString) {
+            var fieldName = conditionAsString.match(new RegExp(ADQLConditionBase.FIELD_NAME_PATTERN, 'i'))[0];
+            var operator = conditionAsString.match(new RegExp(ADQLUnaryOperator.OPERATOR_PATTERN, 'i'))[0];
+            return new ADQLUnaryCondition(fieldName, operator);
+        };
+        return ADQLUnaryCondition;
+    })(ADQLConditionBase);
+    return ADQLUnaryCondition;
+});

@@ -1,0 +1,8 @@
+<GWTResponse>
+  <result class="String-array">
+    <String>ADMIN_APP_ORDERS_DISPLAY_ORDER_NUM</String>
+    <String></String>
+    <String>PDF_BASE_DIRECTORY</String>
+    <String>/usr/local/konakart/pdf/</String>
+  </result>
+</GWTResponse>

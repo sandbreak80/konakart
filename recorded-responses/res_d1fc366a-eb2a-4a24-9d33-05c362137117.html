@@ -1,0 +1,105 @@
+<div class="ads-display-table ads-main-nav-tabs-container">
+
+    <div class="ads-display-table-row">
+
+        <!-- ---------------- HOME ---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_HOME'}"
+             ng-click="controller.onZoneSwitchHome()"
+                >
+            {{::getString("ms_home")}}
+        </div>
+
+        <!-- ---------------- APPS ---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_APPLICATIONS'}"
+             ng-click="controller.onZoneSwitchApplications()"
+                >
+            {{::getString("ms_applications")}}
+        </div>
+
+        <!-- ---------------- EUM ---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_EUM'}"
+             ng-click="controller.onZoneSwitchEum()"
+             ng-if="controller.showEum"
+                >
+            {{::getString("ms_eumTopLevelNavZoneLabel")}}
+        </div>
+
+        <!-- ---------------- DB ---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_DB_MONITORING'}"
+             ng-click="controller.onZoneSwitchDBMon()"
+             ng-if="controller.mainNavConfig.showDatabaseMonitoring"
+                >
+            {{::getString("ms_dbMonTopLevelNavLabel")}}
+        </div>
+
+        <!-- ---------------- Servers---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_SERVER_MONITORING'}"
+             ng-click="controller.onZoneSwitchServerMonitoring()"
+             ng-if="controller.mainNavConfig.showSim"
+                >
+            {{::getString("ms_serverMonTopLevelNavLabel")}}
+        </div>
+
+        <!-- ---------------- Analytics---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_ANALYTICS'}"
+             ng-click="controller.onZoneSwitchAnalytics()"
+             ng-if="controller.mainNavConfig.showAnalytics"
+                >
+            Analytics
+        </div>
+
+        <!-- ---------------- Dashboards & Reports ---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_DASHBOARDS_REPORTS'}"
+             ng-click="controller.onZoneSwitchDashboardsReports()"
+                >
+            {{::getString("ms_dashboardsAndRepordsTopLevelNavZone")}}
+        </div>
+
+
+        <!-- ---------------- Alert & Respond ---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_ALERT_RESPOND'}"
+             ng-click="controller.onZoneSwitchAlertRespond()"
+                >
+            {{::getString("ms_aletAndRespondTopLevelNavZoneLabel")}}
+        </div>
+
+        <ad-help-bubble-popover ad-content="{{::getString('ms_alertRespondMainNavTabHelpBubble')}}"
+                                ad-placement="'bottom'"
+                                ad-help-bubble-id="ALERT_RESPOND_MAIN_NAV_TAB"
+                                ad-append-to-body="true"
+                                ad-close-on-target-click="true"
+                                ad-popup-enabled="controller.alertRespondHelpBubbleEnabled"
+                                ad-show-after-number-logins="5"
+                >
+        </ad-help-bubble-popover>
+
+        <!-- ---------------- Cloud Auto-scaling ---------------- -->
+        <div class="ads-display-table-cell ads-main-nav-tab-item-container hoverable"
+             style="height: 100%; vertical-align: middle;  "
+             ng-class="{'selected' : controller.topLevelNav == 'TOP_LEVEL_NAV_INFRASTRUCTURE'}"
+             ng-show="controller.mainNavConfig.showCloudAutoScaling"
+             ng-click="controller.onZoneSwitchCloudAutoScaling()"
+                >
+            Cloud Auto-Scaling
+        </div>
+
+    </div>
+
+</div>
+

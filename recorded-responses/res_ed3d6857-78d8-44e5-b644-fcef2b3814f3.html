@@ -1,0 +1,201 @@
+<div id="flowMapBackground" class="adsPageContainerDiv" style="overflow:hidden">
+
+    <!-- Top navigation bar area -->
+    <div class="adsNavContainerDiv">
+
+        <ad-applocationbar include-time-range="true"
+                           sv-show-baseline="true"
+                           sv-baselines-config="controller.baselineConfig"
+                           sv-location-entries="controller.locationEntries"
+                           ad-help-link="{{controller.helpLink}}"
+                           ad-video-link="{{controller.videoLink}}"
+                           refresh="controller.fetchData()">
+        </ad-applocationbar>
+
+    </div>
+
+    <div class="adsTabRowLevel1 adsDashboardRowTabs">
+
+        <!-- Tab Row -->
+        <ad-tab-row sv-navigation-tabs="controller.navigationTabs"></ad-tab-row>
+
+        <!-- actions, positioned absolutely, to the right side -->
+        <div class="ads-main-dash-actions-button-container">
+
+            <div class="ads-main-title-bar-light-action-item"
+                 ad-drop-down-toggle
+                 ad-close-mode="clickAny"
+                 ad-in-place="false"
+                    >
+                {{::getString("ms_actions")}}
+                <img src="images/leftNav/triangleDown_gray.svg"
+                     class="ads-triangle-image-up-down-dimensions" style="margin-left: 6px;" />
+            </div>
+
+            <ul class="dropdown-menu">
+                <li class="ads-menu-item" ng-click="controller.editApplicationProperties()">
+                    <div>
+                        {{::controller.getString("ms_editApplicationProperties")}}
+                    </div>
+                </li>
+                <li class="ads-menu-item" ng-click="controller.deleteApplication()">
+                    <div>
+                        {{::controller.getString("ms_delete")}}
+                    </div>
+                </li>
+                <li class="ads-menu-item" ng-click="controller.exportApplication()">
+                    <div>
+                        {{::controller.getString("ms_export")}}
+                    </div>
+                </li>
+                <li class="ads-menu-item" ng-click="controller.resetAgents()">
+                    <div>
+                        {{::controller.getString("ms_resetAgents")}}
+                    </div>
+                </li>
+                <li class="ads-menu-item" ng-click="controller.viewFlexDashboard()">
+                    <div>
+                        {{::controller.getString("ms_viewOldDashboard")}}
+                    </div>
+                </li>
+                <li class="ads-menu-item" ng-click="controller.importOldFlowmaps()">
+                    <div>
+                        {{::controller.getString("ms_importOldFlowmaps")}}
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <ad-help-bubble-popover ad-content="{{::getString('ms_appDashActionsHelpBubble')}}"
+                                ad-placement="'left'"
+                                ad-help-bubble-id="APP_DASH_ACTIONS"
+                                ad-append-to-body="true"
+                                ad-close-on-target-click="true"
+                                ad-show-after-number-logins="30"
+                                ad-show-order="1000"
+                >
+        </ad-help-bubble-popover>
+
+    </div>
+
+    <!-- The page content area -->
+    <div class="adsDashboardContainer" >
+
+        <!-- ============== Flow map / List view ============== -->
+        <ad-dash-main-content>
+        </ad-dash-main-content>
+
+        <!-- ============== Right side scorecards ============== -->
+
+        <div ng-if="!controller.mainContentMaximized" class="adsDashboardRightSidePanel">
+
+            <!-- ============== Event Counts ============== -->
+            <ad-event-counts style="width: 100%;" event-counts="controller.eventCounts">
+            </ad-event-counts>
+
+            <div class="adsDashboardSectionFooter"/>
+
+            <!-- ============== BT Health ============== -->
+            <div style="width:100%;">
+
+                <div class="adsDashboardSectionHeader">
+                    <a ng-click="controller.onViewBusinessTransactions()">{{::controller.getString("ms_btHealthBarPieForAppLabel")}}</a>
+                </div>
+
+                <div style="padding: 10px 12px 4px 12px">
+                    <ad-health-bar normal="controller.transactionsStateSummary.normal"
+                                   warnings="controller.transactionsStateSummary.warning"
+                                   errors="controller.transactionsStateSummary.critical"
+                                   bartooltip="controller.getString('ms_btBarPieToolTip')"
+                                   ng-click="controller.onViewBusinessTransactions()"
+                                   class="adsCursorPointer"
+                            ></ad-health-bar>
+                </div>
+
+                <div class="adsDashboardSectionFooter"/>
+
+            </div>
+
+            <ad-help-bubble-popover ad-title="{{::getString('ms_health')}}"
+                                    ad-content="{{::getString('ms_healthOverviewHelpBubble')}}"
+                                    ad-placement="'left'"
+                                    ad-help-bubble-id="HEALTH_OVERVIEW_42"
+                                    ad-append-to-body="true"
+                                    ad-close-on-target-click="true"
+                                    ad-show-after-number-logins="10"
+                    >
+            </ad-help-bubble-popover>
+
+            <!-- ============== Server Health ============== -->
+            <div style="width:100%;">
+
+                <div class="adsDashboardSectionHeader">
+                    <a ng-click="controller.onViewAppServerList()">{{::controller.getString("ms_nodeHealthBarPieForAppLabel")}}</a>
+                </div>
+
+                <div style="padding: 10px 12px 4px 12px">
+                    <ad-health-bar normal="controller.nodesHealthStateSummary.normal"
+                                   warnings="controller.nodesHealthStateSummary.warning"
+                                   errors="controller.nodesHealthStateSummary.critical"
+                                   bartooltip="controller.getString('ms_nodeBarPieToolTipMainDash')"
+                                   ng-click="controller.onViewAppServerList()"
+                                   class="adsCursorPointer"
+                            ></ad-health-bar>
+                </div>
+
+                <div class="adsDashboardSectionFooter"/>
+            </div>
+
+            <!-- ============== Machines Health ============== -->
+            <div class="ads-width-100percent" ng-if="controller.machineHealthSummary.isVisible">
+
+                <div class="adsDashboardSectionHeader">
+                    <a ng-click="controller.onViewAppMachineList()">{{::controller.getString("ms_serverHealth")}}</a>
+                </div>
+
+                <div style="padding: 10px 12px 4px 12px">
+                    <ad-health-bar normal="controller.machineHealthSummary.normalCount"
+                                   warnings="controller.machineHealthSummary.warningCount"
+                                   errors="controller.machineHealthSummary.criticalCount"
+                                   bartooltip="controller.getString('ms_serverToolTipMainDash')"
+                                   ng-click="controller.onViewAppMachineList()"
+                                   class="adsCursorPointer"
+                            ></ad-health-bar>
+                </div>
+
+                <div class="adsDashboardSectionFooter"/>
+            </div>
+
+            <!-- ============== Transaction Scorecard ============== -->
+
+            <ad-transaction-scorecard style="width: 100%;"
+                                      performance-request-stats="controller.performanceRequestStats"
+                                      ad-application-id="controller.applicationId"
+                                      ad-metric-entity-definition="controller.metricEntityDefinition">
+            </ad-transaction-scorecard>
+
+            <div class="adsDashboardSectionFooter"/>
+
+            <!-- ============== Errors, Exceptions ============== -->
+            <ad-exception-counts style="width: 100%"
+                                 error-summary="controller.errorSummary"
+                                 ad-application-id="controller.applicationId">
+            </ad-exception-counts>
+        </div>
+
+        <!-- ------------------------- BOTTOM GRAPHS ------------------------- -->
+        <div ng-if="!controller.mainContentMaximized" class="adsDashboardBottomGraphsContainer">
+
+            <ad-key-performance-metrics
+                    ad-application-id="controller.applicationId"
+                    ad-baseline-id="controller.baselineId"
+                    ad-performance-stats="controller.performanceStats"
+                    ad-dashboard-graph-data="controller.dashboardGraphData"
+                    ad-metric-entity-definition="controller.metricEntityDefinition">
+            </ad-key-performance-metrics>
+
+        </div>
+
+    </div>
+</div>

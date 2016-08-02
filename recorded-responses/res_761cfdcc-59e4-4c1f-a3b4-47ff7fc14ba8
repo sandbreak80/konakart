@@ -1,0 +1,145 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+define(["require", "exports"], function (require, exports) {
+    var CaptureRequestStatsValueType;
+    (function (CaptureRequestStatsValueType) {
+        CaptureRequestStatsValueType[CaptureRequestStatsValueType["STALL"] = 0] = "STALL";
+        CaptureRequestStatsValueType[CaptureRequestStatsValueType["SLOW"] = 1] = "SLOW";
+        CaptureRequestStatsValueType[CaptureRequestStatsValueType["EXTREMELY_SLOW"] = 2] = "EXTREMELY_SLOW";
+    })(CaptureRequestStatsValueType || (CaptureRequestStatsValueType = {}));
+    var TransactionScorecardDirective = (function () {
+        function TransactionScorecardDirective() {
+            return {
+                restrict: "E",
+                replace: false,
+                templateUrl: "app/view/apm/transactionScorecard/TransactionScorecardView.html",
+                scope: {
+                    performanceRequestStats: "=",
+                    adApplicationId: "=",
+                    adMetricEntityDefinition: "=",
+                    adDisplayEndToEnd: "="
+                },
+                controller: TransactionScorecardController
+            };
+        }
+        TransactionScorecardDirective.$inject = [];
+        return TransactionScorecardDirective;
+    })();
+    exports.TransactionScorecardDirective = TransactionScorecardDirective;
+    appdynamicsModule.directive(StringUtils.toCamelCase("ad-transaction-scorecard"), TransactionScorecardDirective);
+    var TransactionScorecardController = (function (_super) {
+        __extends(TransactionScorecardController, _super);
+        function TransactionScorecardController($scope, $rootScope, $location, resourceManager, notificationService, injectorService) {
+            var _this = this;
+            _super.call(this, $scope, resourceManager, notificationService, injectorService);
+            this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.$location = $location;
+            this.resourceManager = resourceManager;
+            this.notificationService = notificationService;
+            this.injectorService = injectorService;
+            this.$scope.controller = this;
+            this.headerText = this.isEndToEndScorecard() ? this.getString("ms_e2eLatencyBreakdownSectionTitle") : this.getString("ms_requestBreakdownSectionTitle");
+            this.$scope.$watch("performanceRequestStats", function () {
+                _this.init();
+            });
+            this.$scope.EventConstants = EventConstants;
+        }
+        TransactionScorecardController.prototype.init = function () {
+            this.performanceRequestStats = this.$scope.performanceRequestStats;
+            if (this.performanceRequestStats) {
+                var total = this.getTotal();
+                this.slowData = this.getTransactionScorecardItemData(this.getCaptureRequestStatsPerformanceValue(1 /* SLOW */), total, true);
+                this.verySlowData = this.getTransactionScorecardItemData(this.getCaptureRequestStatsPerformanceValue(2 /* EXTREMELY_SLOW */), total, true);
+                this.stallData = this.getTransactionScorecardItemData(this.getCaptureRequestStatsPerformanceValue(0 /* STALL */), total, true);
+                this.errorData = this.getTransactionScorecardItemData(this.getErrorsPerformanceValue(), total, true);
+                var numNormal = this.getTotal() - Math.max(0, this.slowData.count) - Math.max(0, this.verySlowData.count) - Math.max(0, this.stallData.count);
+                if (!this.isEndToEndScorecard()) {
+                    numNormal -= Math.max(0, this.errorData.count);
+                }
+                this.normalData = this.getTransactionScorecardItemDataForNum(numNormal, total);
+            }
+        };
+        TransactionScorecardController.prototype.getTotal = function () {
+            if (this.performanceRequestStats && this.performanceRequestStats.performanceStats && this.performanceRequestStats.performanceStats.numberOfCalls) {
+                return this.performanceRequestStats.performanceStats.numberOfCalls.value;
+            }
+            return 0;
+        };
+        TransactionScorecardController.prototype.getCaptureRequestStatsPerformanceValue = function (valueType) {
+            if (!this.performanceRequestStats) {
+                return null;
+            }
+            var stats = this.isEndToEndScorecard() ? this.performanceRequestStats.endToEndCaptureRequestStats : this.performanceRequestStats.captureRequestStats;
+            if (!stats) {
+                return null;
+            }
+            var returnVal;
+            switch (valueType) {
+                case 1 /* SLOW */:
+                    returnVal = stats.slow;
+                    break;
+                case 2 /* EXTREMELY_SLOW */:
+                    returnVal = stats.extremelySlow;
+                    break;
+                case 0 /* STALL */:
+                    returnVal = stats.stalls;
+                    break;
+            }
+            return returnVal ? returnVal : null;
+        };
+        TransactionScorecardController.prototype.getErrorsPerformanceValue = function () {
+            if (this.performanceRequestStats && this.performanceRequestStats.performanceStats && this.performanceRequestStats.performanceStats.numberOfErrors) {
+                return this.performanceRequestStats.performanceStats.numberOfErrors;
+            }
+            return null;
+        };
+        TransactionScorecardController.prototype.getTransactionScorecardItemData = function (performanceValue, total, linkToMetric) {
+            if (linkToMetric === void 0) { linkToMetric = false; }
+            var value = 0;
+            if (performanceValue) {
+                value = performanceValue.value;
+            }
+            var itemData = this.getTransactionScorecardItemDataForNum(value, total);
+            if (linkToMetric && performanceValue) {
+                var performanceValueData = MetricUtil.getPerformanceValueData(performanceValue, this.$scope.adApplicationId, this.$scope.adMetricEntityDefinition);
+                performanceValueData.displayAsLargeNumber = true;
+                performanceValueData.thresholdForLargeNumber = 1000;
+                itemData.countData = performanceValueData;
+            }
+            return itemData;
+        };
+        TransactionScorecardController.prototype.getTransactionScorecardItemDataForNum = function (count, total) {
+            var itemData = {};
+            itemData.countData = null;
+            itemData.count = count;
+            itemData.countLabel = ViewUtil.formatPositiveLargeNumber(itemData.count, 1, 1000);
+            if (total > 0 && itemData.count >= 0) {
+                itemData.percent = (itemData.count / total) * 100;
+            }
+            else {
+                itemData.percent = 0;
+            }
+            itemData.percentLabel = itemData.percent.toFixed(1) + " %";
+            return itemData;
+        };
+        TransactionScorecardController.prototype.isEndToEndScorecard = function () {
+            return this.$scope.adDisplayEndToEnd;
+        };
+        TransactionScorecardController.$inject = [
+            "$scope",
+            "$rootScope",
+            "$location",
+            "resourceManager",
+            "notificationService",
+            "injectorService"
+        ];
+        return TransactionScorecardController;
+    })(ControllerBase);
+    exports.TransactionScorecardController = TransactionScorecardController;
+    appdynamicsModule.controller("transactionScorecardController", TransactionScorecardController);
+});

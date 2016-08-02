@@ -1,0 +1,162 @@
+<div class="adsEventCountsContainer">
+
+    <div class="adsDashboardSectionHeader">
+        <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_ALL)">Events</a>
+    </div>
+
+    <!--
+        List of all key event counts; last one is used if none of the others are visible.
+    -->
+
+    <div class="adsEventCountsRow" ng-show="controller.allHealthRuleViolationsData.visible">
+        <div class="adsEventCountsLabelCol">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_POLICY)">Health Rule Violations Started</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+               {{controller.allHealthRuleViolationsData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+               <img ng-src="{{controller.allHealthRuleViolationsData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.overallAppPerformanceData.visible">
+        <div class="adsEventCountsLabelColSubCategory">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_POLICY_OVERALL_APP)">Overall Application Performance</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.overallAppPerformanceData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.overallAppPerformanceData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.btHealthData.visible">
+        <div class="adsEventCountsLabelColSubCategory">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_POLICY_BT)">Business Transaction Health</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.btHealthData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.btHealthData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.nodeHealthData.visible">
+        <div class="adsEventCountsLabelColSubCategory">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_POLICY_NODE)">Node Health</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.nodeHealthData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.nodeHealthData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.errorRateData.visible">
+        <div class="adsEventCountsLabelColSubCategory">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_POLICY_ERROR)">Error Rates</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.errorRateData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.errorRateData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.intoPointsData.visible">
+        <div class="adsEventCountsLabelColSubCategory">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_POLICY_INFORMATION_POINTS)">Information Points</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.intoPointsData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.intoPointsData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.databasesAndRemoteServicesData.visible">
+        <div class="adsEventCountsLabelColSubCategory">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_POLICY_BACKENDS)">Databases and Remote Services</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.databasesAndRemoteServicesData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.databasesAndRemoteServicesData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.customData.visible">
+        <div class="adsEventCountsLabelCol">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_CUSTOM)">Custom</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.customData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.customData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.codeProblemsData.visible">
+        <div class="adsEventCountsLabelCol">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_CODE_PROBLEMS)">Code Problems</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.codeProblemsData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.codeProblemsData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.applicationChangesData.visible">
+        <div class="adsEventCountsLabelCol">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_APP_CHANGES)">{{getString("ms_eventCategory_appChanges")}}</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.applicationChangesData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.applicationChangesData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.serverCrashesData.visible">
+        <div class="adsEventCountsLabelCol">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_INFRA_CHANGES)">{{getString("ms_eventCategory_infraEvents")}}</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.serverCrashesData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.serverCrashesData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-show="controller.appDynamicsConfigWarningsData.visible">
+        <div class="adsEventCountsLabelCol">
+            <a ng-click="$emit(EventConstants.UEV_VIEW_EVENTS_AD_CONFIG)">{{getString("ms_eventCategory_adConfigWarnings")}}</a>
+        </div>
+        <div class="adsEventCountsNumberCol">
+            {{controller.appDynamicsConfigWarningsData.total}}
+        </div>
+        <div class="adsEventCountsIconCol">
+            <img ng-src="{{controller.appDynamicsConfigWarningsData.iconSource}}" class="adsSvgIconSmall"/>
+        </div>
+    </div>
+
+    <div class="adsEventCountsRow" ng-hide="controller.eventFound">
+        <div class="adsEventCountsEmptyCol">
+            No Events in selected time range
+        </div>
+    </div>
+
+</div>
+

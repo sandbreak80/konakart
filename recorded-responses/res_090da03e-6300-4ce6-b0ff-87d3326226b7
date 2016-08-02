@@ -1,0 +1,21 @@
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>/2/onResult</targetURI>
+      <responseURI></responseURI>
+      <data class="flex.messaging.messages.AcknowledgeMessageExt">
+        <clientId class="String">71B5CAE0-FF2D-007C-323F-6F40C62B539C</clientId>
+        <messageId>71B5CAE3-700E-2562-CD2B-74B55D7F16BE</messageId>
+        <timestamp>1469728964221</timestamp>
+        <timeToLive>0</timeToLive>
+        <body class="ASObject" mappedClass="com.singularity.ee.controller.api.dto.ui.FlexInitData">
+          <transactionAnalyticsEnabled tagClass="boolean">true</transactionAnalyticsEnabled>
+          <logAnalyticsEnabled tagClass="boolean">true</logAnalyticsEnabled>
+        </body>
+        <correlationId>91BE1235-B82A-0268-47F3-32ABFA4EF2DD</correlationId>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

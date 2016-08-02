@@ -1,0 +1,39 @@
+"use strict";
+define(["require", "exports", "../../util/ADQLClientStringUtil"], function (require, exports, ADQLClientStringUtil) {
+    var ADQLClientQueryWhere = (function () {
+        function ADQLClientQueryWhere(where, operator, value, useParenthesis) {
+            if (useParenthesis === void 0) { useParenthesis = false; }
+            this.where = where;
+            this.operator = operator;
+            this.value = value;
+            this.useParenthesis = useParenthesis;
+        }
+        ADQLClientQueryWhere.prototype.enableParenthesis = function () {
+            this.useParenthesis = true;
+        };
+        ADQLClientQueryWhere.prototype.disableParenthesis = function () {
+            this.useParenthesis = false;
+        };
+        ADQLClientQueryWhere.prototype.isValid = function () {
+            return true;
+        };
+        ADQLClientQueryWhere.prototype.toString = function () {
+            var conditionAsString = this.toString();
+            if (this.useParenthesis) {
+                conditionAsString = ADQLClientStringUtil.encloseStringInParenthesis(conditionAsString);
+            }
+            return conditionAsString;
+        };
+        ADQLClientQueryWhere.WHERE = "WHERE";
+        ADQLClientQueryWhere.AND = "AND";
+        ADQLClientQueryWhere.OR = "OR";
+        ADQLClientQueryWhere.NOT = "NOT";
+        ADQLClientQueryWhere.EQUAL_TO = "=";
+        ADQLClientQueryWhere.LESS_THAN = "<";
+        ADQLClientQueryWhere.GREATER_THAN = ">";
+        ADQLClientQueryWhere.LESS_THAN_OR_EQUAL_TO = "<=";
+        ADQLClientQueryWhere.GREATER_THAN_OR_EQUAL_TO = ">=";
+        return ADQLClientQueryWhere;
+    })();
+    return ADQLClientQueryWhere;
+});

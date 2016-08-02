@@ -1,0 +1,938 @@
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** Loader div **/
+.loaderDiv, .loaderImage { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; }
+
+.loaderDiv { background-color: #3F4248; background: #3F4248; }
+
+/* First loading screen */
+.loaderImage { background: url(../images/preloader_grey.gif) no-repeat center; }
+
+/* Content Loading image */
+.adsContentLoaderImage { background-image: url("../images/preloader_white.gif"); background-repeat: no-repeat; background-position: center; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-server-list .container-fluid { padding-left: 33px; padding-right: 33px; padding-top: 12px; }
+.ads-db-server-list .container-fluid div[class^="col-md-"], .ads-db-server-list .container-fluid div[class^="col-lg-"] { padding-left: 6px; padding-right: 6px; }
+.ads-db-server-list .container-fluid .row { margin-top: 12px; }
+.ads-db-server-list .container-fluid { padding-left: 18px; padding-right: 18px; }
+.ads-db-server-list .adsContentContainerDiv { position: absolute; overflow: auto; width: 100%; }
+.ads-db-server-list .tooltip .tooltip-inner { min-width: 350px; text-align: left; background-color: #EF5C5D; color: #FFFFFF; }
+.ads-db-server-list .ads-db-sparkline-chart { width: 80%; height: 16px; padding: 0 20px; display: inline-block; }
+.ads-db-server-list .ads-db-server-list-grid { height: 100%; position: absolute; }
+.ads-db-server-list .ads-db-filter-bar { padding-left: 8px; min-height: 44px; background-color: #FFFFFF; border-top: 1px solid #DBDBDC; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-database-card { margin-bottom: 12px; width: 300px; }
+.ads-database-card .row { margin-top: 10px; margin-left: 0; margin-right: 0; padding-left: 10px; padding-right: 10px; }
+.ads-database-card .headerRow { font-weight: bold; height: 36px; padding-left: 4px; }
+.ads-database-card .headerRow .nameType .dbName { font-size: 16px; font-weight: 300; font-style: normal; }
+.ads-database-card .headerRow .nameType .dbType { font-size: 11px; color: #888F9D; font-weight: 300; font-style: normal; line-height: 1.5em; }
+.ads-database-card .ads-db-card-config-error { padding-top: 20px; font-size: 16px; }
+.ads-database-card .ads-db-card-config-error a { color: #EF5C5D; }
+.ads-database-card .tooltip .tooltip-inner { width: 400px; text-align: left; background-color: #EF5C5D; color: #FFFFFF; }
+.ads-database-card .statsRow { border-top: 1px solid #e9e9e9; padding-top: 12px; }
+.ads-database-card .statsRow .title, .ads-database-card .statsRow .sparkLine, .ads-database-card .statsRow .noHardwareMonitoring { height: 50px; }
+.ads-database-card .statsRow .title { padding-top: 8px; font-size: 14px; }
+.ads-database-card .statsRow .title .value { font-size: 16px; }
+.ads-database-card .statsRow .title .heading { font-size: 11px; text-transform: uppercase; margin-top: 6px; color: #888F9D; }
+.ads-database-card .statsRow .sparkLine { padding-left: 10px; }
+.ads-database-card .statsRow .sparkLine { padding-top: 2px; }
+.ads-database-card .statsRow .noHardwareMonitoring { padding-top: 20px; }
+
+/** Styles for the database monitoring report page */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-report .container-fluid { padding-left: 33px; padding-right: 33px; padding-top: 12px; }
+.ads-db-report .container-fluid div[class^="col-md-"], .ads-db-report .container-fluid div[class^="col-lg-"] { padding-left: 6px; padding-right: 6px; }
+.ads-db-report .container-fluid .row { margin-top: 12px; }
+.ads-db-report .adsContentContainerDiv { position: absolute; overflow: auto; width: 100%; }
+.ads-db-report .spinner { background-image: url("../images/preloader_white.gif"); background-repeat: no-repeat; background-position: center; display: inline-block; margin-left: 40%; width: 40px; height: 40px; border: 0; }
+.ads-db-report .loading { font-size: 20px; margin-top: 100px; padding-left: 10px; display: inline-block; }
+.ads-db-report .charts .chart { padding-right: 20px; background-color: #FFFFFF; }
+.ads-db-report .charts .noData { padding-top: 95px; min-height: 190px; text-align: center; }
+.ads-db-report .info { padding: 10px; }
+.ads-db-report .info .row { margin-bottom: 20px; }
+.ads-db-report .info .grid { width: 100%; height: 200px; }
+.ads-db-report .rect { height: 12px; width: 16px; }
+.ads-db-report .name { display: inline-block; margin-right: 5px; font-weight: bold; }
+.ads-db-report .desc code { background-color: transparent; }
+.ads-db-report .gridCell { white-space: normal; }
+.ads-db-report .adMultiLineRow .x-grid-cell-inner { white-space: normal !important; }
+.ads-db-report .time-comparison-table .x-grid-cell-first { border-right: 1px solid #DBDBDC; border-bottom: 1px solid #DBDBDC; }
+.ads-db-report .queryCell { height: 30px; line-height: 15px; overflow: hidden; }
+.ads-db-report .queryCell::before { content: ''; float: right; height: 15px; }
+.ads-db-report .queryText.ellipsis::before { content: "\2026"; float: right; clear: right; }
+.ads-db-report .queryText::before { content: ""; float: right; clear: right; }
+.ads-db-report .ads-tooltip-query-text { padding-top: 5px; padding-bottom: 5px; }
+.ads-db-report .ads-keyword { color: #2692FF; }
+.ads-db-report .ads-keyword-red { color: #EF5C5D; }
+.ads-db-report .ads-db-name { font-weight: 300; font-style: normal; font-size: 22px; padding-top: 2px; }
+.ads-db-report .ads-db-report-title { font-weight: 300; font-style: normal; font-size: 19px; padding-bottom: 32px; }
+.ads-db-report .ads-db-stat-option { width: 150px; text-transform: capitalize; }
+.ads-db-report .ads-db-top-num-option { width: 150px; text-transform: capitalize; }
+.ads-db-report .ads-db-stat-type-card { padding: 10px; }
+.ads-db-report .ads-db-stat-type-filter { margin: 0; }
+.ads-db-report .ads-db-comparison-filter-label { vertical-align: top; padding-top: 5px; }
+.ads-db-report .customTimeRangePadding { padding-top: 2px; }
+.ads-db-report .beforeTimePadding { padding-top: 8px; }
+.ads-db-report .dbHBox { display: inline-block; }
+.ads-db-report .ads-db-io-metrics-table { margin: 12px 33px 15px; }
+.ads-db-report .ads-db-io-metrics-table .row { border-bottom: 1px solid #F5F5F5; border-left: 1px solid #F5F5F5; border-right: 1px solid #F5F5F5; margin-top: 0; margin-bottom: 0; padding: 0; }
+.ads-db-report .ads-db-io-metrics-table .row:first-child { border-top: 1px solid #F5F5F5; }
+.ads-db-report .ads-db-io-metrics-table .ads-db-io-metrics-table-row-left-col { background-color: #F5F6F7; border-right: 1px solid #F5F5F5; }
+.ads-db-report .ads-db-io-metrics-table .ads-db-io-metrics-table-row-label, .ads-db-report .ads-db-io-metrics-table .ads-db-io-metrics-table-row-value { padding-top: 10px; padding-bottom: 10px; }
+.ads-db-report .ads-db-io-metrics-table .ads-db-io-metrics-table-row-value { text-transform: uppercase; }
+.ads-db-report .ads-db-io-metrics-table-title { font-weight: 300; font-style: normal; font-size: 19px; }
+.ads-db-report .ads-db-space-grid-title { font-weight: 300; font-style: normal; margin-left: 12px; margin-right: 12px; padding: 10px; font-size: 14px; }
+.ads-db-report .ads-db-io-size-breakdown-grid { margin-bottom: 12px; }
+.ads-db-report .ads-db-io-statistic-grid-card { min-height: 200px; }
+.ads-db-report .ads-db-io-statistic-grid-card .ads-db-redo-statistic-grid { margin-bottom: 10px; }
+.ads-db-report .ads-db-io-statistic-grid-card .ads-db-redo-statistic-grid .x-column-header-text { text-transform: capitalize; }
+.ads-db-report .ads-db-io-statistic-grid-card, .ads-db-report .ads-db-io-size-breakdown-grid, .ads-db-report .ads-db-filter-card { padding-left: 12px; padding-right: 12px; }
+.ads-db-report .ads-db-io-statistic-grid-card .row, .ads-db-report .ads-db-io-size-breakdown-grid .row, .ads-db-report .ads-db-filter-card .row { padding-left: 12px; padding-right: 12px; }
+.ads-db-report .ads-db-last-card-margin-bottom { margin-bottom: 15px; }
+.ads-db-report .ads-db-io-sparkline { width: 90%; height: 20px; padding: 0 20px; }
+
+/** Styles for the database monitoring dashboard page */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-server-dashboard .container-fluid { padding-left: 33px; padding-right: 33px; padding-top: 12px; }
+.ads-db-server-dashboard .container-fluid div[class^="col-md-"], .ads-db-server-dashboard .container-fluid div[class^="col-lg-"] { padding-left: 6px; padding-right: 6px; }
+.ads-db-server-dashboard .container-fluid .row { margin-top: 12px; }
+.ads-db-server-dashboard .ads-db-server-dashboard-error-message { color: #EF5C5D; -webkit-touch-callout: text; -webkit-user-select: text; -khtml-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; }
+.ads-db-server-dashboard .headerRow { margin-top: 12px; padding-top: 16px; padding-bottom: 14px; margin-left: -10px; margin-right: -10px; }
+.ads-db-server-dashboard .headerRow .dbIcon { width: 10%; display: inline-block; padding-top: 6px; }
+.ads-db-server-dashboard .headerRow .dbName { font-weight: 300; font-style: normal; max-width: 70%; font-size: 22px; display: inline-block; vertical-align: middle; padding-right: 8px; }
+.ads-db-server-dashboard .headerRow .showClusterButton { width: 18%; display: inline-block; vertical-align: middle; }
+.ads-db-server-dashboard .error { border-radius: 2px; font-size: 14px; padding: 10px 0 10px 10px; }
+.ads-db-server-dashboard .error div { display: inline-block; }
+.ads-db-server-dashboard .charts { margin-top: 12px; }
+.ads-db-server-dashboard .charts .chart { padding-right: 10px; }
+.ads-db-server-dashboard .charts .noData { padding-top: 95px; min-height: 190px; text-align: center; }
+.ads-db-server-dashboard .noHardwareMetricsMessage { background-color: #D1E9FF; padding: 10px; font-size: 14px; }
+.ads-db-server-dashboard .serverHealth { cursor: pointer; }
+.ads-db-server-dashboard .serverHealth span { padding-left: 4px; text-transform: capitalize; }
+
+/** Styles for the database monitoring live view page */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-live-view .container-fluid { padding-left: 33px; padding-right: 33px; padding-top: 12px; }
+.ads-db-live-view .container-fluid div[class^="col-md-"], .ads-db-live-view .container-fluid div[class^="col-lg-"] { padding-left: 6px; padding-right: 6px; }
+.ads-db-live-view .container-fluid .row { margin-top: 12px; }
+.ads-db-live-view .ads-toolbar-new-container { height: 48px; }
+.ads-db-live-view .ads-toolbar-new-container .ads-toolbar-item-container { padding-top: 14px; }
+.ads-db-live-view .ads-toolbar-new-container .ads-toolbar-separator { height: 24px; }
+.ads-db-live-view .ads-live-view-grid-title { font-weight: 300; font-style: normal; padding: 5px 0 14px 15px; font-size: 19px; }
+.ads-db-live-view .ads-live-view-grid-card .ads-live-view-grid { width: 100%; height: 300px; }
+.ads-db-live-view .ads-live-view-grid-card .ads-live-view-grid .x-column-header-text { text-transform: capitalize; }
+.ads-db-live-view .ads-live-view-grid-header-row { margin-top: 12px; padding-top: 16px; padding-bottom: 14px; margin-left: -10px; margin-right: -10px; }
+.ads-db-live-view .ads-live-view-grid-header-row .ads-live-view-grid-db-icon { width: 10%; display: inline-block; }
+.ads-db-live-view .ads-live-view-grid-header-row .ads-live-view-grid-db-name { font-weight: 300; font-style: normal; width: 89%; font-size: 22px; display: inline-block; vertical-align: middle; }
+.ads-db-live-view .ads-live-view-charts .chart { padding-right: 20px; background-color: #FFFFFF; }
+.ads-db-live-view .ads-live-view-charts .ads-no-data-block { height: 150px; }
+.ads-db-live-view .ads-no-hardware-metrics-message { background-color: #D1E9FF; margin-left: 15px; margin-right: 15px; padding: 10px; font-size: 14px; }
+.ads-db-live-view .ads-live-view-spinner { background-image: url("../images/preloader_white.gif"); background-repeat: no-repeat; background-position: center; display: inline-block; margin-left: 40%; width: 40px; height: 40px; border: 0; }
+.ads-db-live-view .ads-live-view-loading { font-size: 20px; margin-top: 100px; padding-left: 10px; display: inline-block; }
+.ads-db-live-view .adMultiLineRow .x-grid-cell-inner { white-space: normal !important; }
+.ads-db-live-view .ads-live-view-error { margin-top: 20px; margin-bottom: 10px; border-radius: 2px; font-size: 14px; padding: 20px 0 10px 10px; color: #EF5C5D; }
+.ads-db-live-view .ads-db-live-view-hbox { display: inline-block; vertical-align: top; }
+.ads-db-live-view .ads-db-live-view-hbox-title { display: inline-block; vertical-align: top; padding-top: 4px; padding-right: 4px; }
+.ads-db-live-view .ads-db-warning-message { color: #EF5C5D; border-radius: 2px; font-size: 14px; padding: 10px 0 10px 10px; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-collector-detail-dialog .sty-form-table > tbody > tr > td:first-child { padding-left: 0px; }
+.ads-db-collector-detail-dialog .label-cell { padding-left: 10px; padding-bottom: 10px; white-space: nowrap; text-align: right; min-width: 200px; }
+.ads-db-collector-detail-dialog .control-cell { white-space: nowrap; text-align: left; width: 300px; padding-right: 30px; padding-left: 10px; }
+.ads-db-collector-detail-dialog .checkbox-cell { padding-top: 10px; }
+.ads-db-collector-detail-dialog .modal-info { text-align: left; padding-left: 25px; padding-right: 25px; padding-top: 10px; }
+.ads-db-collector-detail-dialog .group-view { background: none; width: 90%; min-width: 500px; margin: auto; border-bottom: 1px solid #dbdbdb; display: block; padding: 10px; margin-top: 10px; margin-bottom: 10px; }
+.ads-db-collector-detail-dialog .group-view:last-child { border-bottom: none; }
+.ads-db-collector-detail-dialog input.ng-invalid.showError { border-color: #EF5C5D !important; }
+.ads-db-collector-detail-dialog .adsCheckboxLabel { white-space: normal; color: #EF5C5D; }
+.ads-db-collector-detail-dialog .ads-os-select-not-valid .ads-select-input-combo-box .x-form-trigger-wrap { border-color: #EF5C5D; }
+
+.ads-db-collector-list { width: 100%; height: 100%; display: table; overflow: hidden; }
+.ads-db-collector-list .ads-db-expanded-row { width: 100%; height: 100%; overflow: hidden; display: table-row; }
+.ads-db-collector-list .ads-db-collector-list-grid-cell { width: 100%; height: 100%; display: table-cell; }
+.ads-db-collector-list .ads-db-collector-list-grid { width: 100%; height: 100%; }
+.ads-db-collector-list .emptyListMessage { position: absolute; top: 35%; left: 40%; }
+.ads-db-collector-list .emptyListMessage .msg { font-size: 14px; margin-right: 10px; }
+.ads-db-collector-list .filter { padding-top: 10px; padding-right: 10px; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-backend-mapping-dialog .x-grid-view { overflow-x: hidden !important; }
+.ads-backend-mapping-dialog .header { margin-top: 20px; text-align: left; }
+.ads-backend-mapping-dialog .adsSearchBox { margin-top: 10px; }
+.ads-backend-mapping-dialog .unmap { margin-top: 20px; text-align: left; }
+.ads-backend-mapping-dialog .mappedDbServerName { font-weight: bold; font-size: 14px; padding-left: 4px; }
+.ads-backend-mapping-dialog .warn { color: #EF5C5D; padding-top: 2px; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+.ads-db-info-grid .centerOptions { padding-top: 10px; padding-left: 20px; padding-right: 0px; }
+.ads-db-info-grid .centerOptions .center { padding-top: 5px; padding-right: 5px; }
+.ads-db-info-grid .adsNavContainerDiv { width: inherit; }
+.ads-db-info-grid .adsContentContainerDiv { position: absolute; }
+.ads-db-info-grid div[db-query-filter] { display: block; height: 59px; }
+.ads-db-info-grid .adsTabRowLevel1 { width: inherit; }
+.ads-db-info-grid .adMultiLineRow .x-grid-cell-inner { white-space: normal !important; }
+
+.ads-fly-out-container .ads-db-more-actions-header { font-weight: bold; padding: 8px 20px; }
+.ads-fly-out-container .ads-db-more-actions-list { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; white-space: nowrap; padding: 8px 20px; cursor: pointer; }
+.ads-fly-out-container .ads-db-more-actions-list:hover { background-color: #D1E9FF; }
+.ads-fly-out-container .ads-db-more-actions-list:active { background-color: #B9DDFF; }
+.ads-fly-out-container .ads-db-more-actions-list.selected { background-color: #B9DDFE; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Container for multiple cards - background color. */
+.adsCardPageBackground { background-color: #EAEAEA; }
+
+.ads-card-container { background-color: #FFFFFF; border: 1px solid #FFFFFF; -webkit-box-shadow: rgba(0, 0, 0, 0.21961) 0px 1px 2px 0px; -moz-box-shadow: rgba(0, 0, 0, 0.21961) 0px 1px 2px 0px; box-shadow: rgba(0, 0, 0, 0.21961) 0px 1px 2px 0px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+
+/** Card container style. */
+.adsCard { background-color: #FFFFFF; border: 1px solid #FFFFFF; -webkit-box-shadow: rgba(0, 0, 0, 0.21961) 0px 1px 2px 0px; -moz-box-shadow: rgba(0, 0, 0, 0.21961) 0px 1px 2px 0px; box-shadow: rgba(0, 0, 0, 0.21961) 0px 1px 2px 0px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.adsCard .ads-card-title-container { margin-top: 16px; margin-bottom: 14px; }
+.adsCard .ads-card-title { font-weight: 300; font-style: normal; font-size: 18px; }
+.adsCard .ads-card-stat-value { font-size: 20px; }
+.adsCard .ads-card-stat-unit { font-size: 12px; }
+.adsCard .ads-card-stat-name { font-size: 12px; padding: 4px 0px 12px 0px; color: #757575; min-height: 28px; }
+.adsCard .row { padding-left: 12px; padding-right: 12px; }
+.adsCard .ads-card-stats-row { padding-left: 48px; }
+
+/** An optional top border for card views when they are under toolbar with the same gray.  This prevents the cards container and the tabs / toolbar from bleeding into each other */
+.ads-db-query-details .container-fluid { padding-left: 33px; padding-right: 33px; padding-top: 12px; }
+.ads-db-query-details .container-fluid div[class^="col-md-"], .ads-db-query-details .container-fluid div[class^="col-lg-"] { padding-left: 6px; padding-right: 6px; }
+.ads-db-query-details .container-fluid .row { margin-top: 12px; }
+.ads-db-query-details .adsContentContainerDiv { position: absolute; overflow: auto; width: 100%; }
+.ads-db-query-details ad-db-tab-row { height: 46px; display: block; }
+.ads-db-query-details .info { padding: 15px; }
+.ads-db-query-details .activeDB, .ads-db-query-details .ads-sql-hash { padding: 15px; }
+.ads-db-query-details .code { font-family: Consolas, 'Liberation Mono', Courier, monospace; line-height: 1.5em; font-size: 12px; overflow: scroll; -webkit-touch-callout: text; -webkit-user-select: text; -khtml-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; }
+.ads-db-query-details .ads-single-query-vertical-gap { margin-top: 12px; }
+.ads-db-query-details .ads-db-query-plan-card-header { font-size: 19px; padding-bottom: 14px; font-weight: 300; font-style: normal; }
+.ads-db-query-details .ads-single-query-detail-sql { max-height: 400px; }
+.ads-db-query-details .ads-single-query-detail-sql pre { background-color: #FFFFFF; }
+.ads-db-query-details .ads-batch-query-detail-sql { height: 150px; }
+.ads-db-query-details .ads-batch-query-breakdown { margin-bottom: 20px; }
+.ads-db-query-details .ads-batch-query-breakdown .ads-table-header-row { margin-left: 0; margin-right: 0; padding-top: 10px; padding-bottom: 10px; }
+.ads-db-query-details .ads-batch-query-breakdown .ads-query-breakdown-row { margin-left: 0; margin-right: 0; padding-bottom: 10px; line-height: 1.5em; }
+.ads-db-query-details .ads-batch-query-breakdown .ads-query-breakdown-row { border-bottom: 1px solid #DBDBDC; }
+.ads-db-query-details .ads-no-data-block { height: 250px; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-object-browser { overflow: hidden; }
+.ads-db-object-browser .ads-db-obj-browser-left-side { position: absolute; bottom: 0px; overflow: auto; width: 300px; top: 46px; left: 0px; padding-top: 10px; display: inline-block; border-right: 1px solid #DBDBDC; background-color: #FFFFFF; }
+.ads-db-object-browser .ads-db-obj-browser-left-side .ads-db-object-browser-category { padding-bottom: 7px; padding-top: 7px; margin-top: 5px; margin-bottom: 5px; cursor: pointer; padding-left: 20px; font-size: 12px; }
+.ads-db-object-browser .ads-db-obj-browser-left-side .ads-db-object-browser-category img { width: 16px; height: 16px; }
+.ads-db-object-browser .ads-db-obj-browser-left-side .ads-db-object-browser-category .ads-object-browser-menu-label { padding-left: 8px; }
+.ads-db-object-browser .ads-db-obj-browser-right-side { position: absolute; display: inline-block; right: 0px; left: 300px; top: 46px; bottom: 0; overflow: auto; padding-right: 30px; padding-left: 40px; background-color: #FFFFFF; }
+.ads-db-object-browser .loading { margin-top: 100px; padding-left: 10px; display: inline-block; }
+.ads-db-object-browser .ads-search-box { margin-top: 10px; margin-bottom: 10px; }
+.ads-db-object-browser .x-tree-icon { display: none !important; }
+.ads-db-object-browser .x-grid-row-over .x-grid-td { background-color: #D1E9FF; }
+.ads-db-object-browser .x-grid-row-focused .x-grid-td { border-bottom-color: #D1E9FF; }
+.ads-db-object-browser .x-grid-row-selected .x-grid-td { background-color: #D1E9FF; }
+.ads-db-object-browser .x-panel .x-tree-view { width: 270px !important; }
+.ads-db-object-browser .x-grid-view { overflow-x: auto; }
+.ads-db-object-browser .ads-db-object-browser-objects-tree { padding-left: 30px; padding-right: 0; }
+.ads-db-object-browser .adExtGenTree .x-tree-node-text { font-size: 12px; }
+.ads-db-object-browser .ad-db-object-search-input { padding: 2px; border: 1px solid #dbdbdb; width: 100%; }
+.ads-db-object-browser .ad-db-object-browser-page-title { font-weight: 300; font-style: normal; margin-top: 18px; font-size: 18px; text-transform: capitalize; }
+.ads-db-object-browser .db-object-search-box { margin-top: 25px; background-color: #F5F5F5; padding: 10px; }
+.ads-db-object-browser .db-object-table-wrapper { margin-top: 30px; }
+.ads-db-object-browser .db-object-table-wrapper .db-object-table-row-left-col { border-right: 1px solid #F5F5F5; background-color: #F5F6F7; }
+.ads-db-object-browser .db-object-table-wrapper .row { border-bottom: 1px solid #F5F5F5; border-left: 1px solid #F5F5F5; border-right: 1px solid #F5F5F5; margin-left: 0; margin-right: 0; }
+.ads-db-object-browser .db-object-table-wrapper .row:first-child { border-top: 1px solid #F5F5F5; }
+.ads-db-object-browser .db-object-table-wrapper .db-object-table-row-label, .ads-db-object-browser .db-object-table-wrapper .db-object-table-row-value { padding-top: 10px; padding-bottom: 10px; }
+.ads-db-object-browser .adMultiLineRow .x-grid-cell-inner { white-space: normal !important; }
+.ads-db-object-browser .ads-db-object-details-page { padding-top: 18px; }
+.ads-db-object-browser .ads-db-object-details-page .ads-db-object-details-page-title { font-weight: 300; font-style: normal; font-size: 16px; }
+.ads-db-object-browser .ads-db-object-details-page .ads-table-title { margin-top: 30px; margin-bottom: 20px; }
+.ads-db-object-browser .ads-db-object-details-page .ads-table-no-data { padding-left: 45%; padding-top: 5px; padding-bottom: 5px; }
+.ads-db-object-browser .ads-db-object-details-page .ads-db-object-details-viewRenderer { margin-top: 30px; line-height: 1.5em; }
+.ads-db-object-browser .ads-db-object-server-selector { margin: 10px 0 20px 0; }
+.ads-db-object-browser .ads-db-object-server-selector .ads-db-object-server-selector-label { padding-left: 20px; padding-right: 5px; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-query-plan { background-color: #FFFFFF; padding: 16px; }
+.ads-db-query-plan .header { margin-bottom: 20px; }
+.ads-db-query-plan .header h1 { font-size: 18px; }
+.ads-db-query-plan .bold { font-weight: bold; }
+.ads-db-query-plan .error { color: #EF5C5D; }
+.ads-db-query-plan .ads-queryplan-blue { color: #2692FF; }
+.ads-db-query-plan .black { color: #404040; }
+.ads-db-query-plan .oracleInfo { padding-top: 15px; padding-bottom: 5px; }
+.ads-db-query-plan .ads-db-queryplan-title, .ads-db-query-plan .ads-db-queryplan-first-title { font-size: 16px; margin-top: 32px; margin-bottom: 16px; }
+.ads-db-query-plan .ads-db-queryplan-first-title { margin-top: 0; }
+.ads-db-query-plan .parsedOutput { margin-top: 15px; }
+.ads-db-query-plan .parsedOutput h3 { font-weight: bold; }
+.ads-db-query-plan .parsedOutput .parsedSqlText { width: 100%; height: 100px; }
+.ads-db-query-plan .spinner { background-image: url("../images/preloader_white.gif"); background-repeat: no-repeat; background-position: center; display: inline-block; margin-left: 40%; width: 40px; height: 40px; border: 0; }
+.ads-db-query-plan .loading { margin-top: 20px; padding-left: 10px; display: inline-block; }
+.ads-db-query-plan .x-tree-icon { display: none !important; }
+.ads-db-query-plan .tooltip .tooltip-inner { max-width: 400px; text-align: left; background-color: #D1E9FF; color: #222222; }
+.ads-db-query-plan .ads-explain-table-wrapper { overflow-y: hidden; overflow-x: auto; }
+.ads-db-query-plan .ads-explain-table-wrapper .ads-table { border-collapse: collapse; }
+.ads-db-query-plan .ads-db-queryplan-planId { margin-top: 20px; margin-bottom: 20px; }
+.ads-db-query-plan .ads-db-query-plan-comparison-left-side { width: 48%; border-right: 1px solid #DBDBDC; padding-right: 20px; float: left; }
+.ads-db-query-plan .ads-db-query-plan-comparison-right-side { width: 48%; padding-left: 20px; float: left; }
+.ads-db-query-plan .ads-progress-mask-container .ads-loading-message { padding: 0; min-height: 60px; }
+.ads-db-query-plan .ads-db-query-plan-code { font-family: Consolas, 'Liberation Mono', Courier, monospace; line-height: 1.5em; font-size: 12px; overflow: scroll; -webkit-touch-callout: text; -webkit-user-select: text; -khtml-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; }
+.ads-db-query-plan .ads-db-query-plan-filter-box-label { display: inline-block; vertical-align: top; margin-top: 2px; padding-right: 5px; }
+.ads-db-query-plan .ads-db-query-plan-filter-box { display: inline-block; vertical-align: top; }
+
+/** Styles for the database monitoring report page */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-config-wait-state-filtering .container-fluid { padding-left: 33px; padding-right: 33px; padding-top: 12px; }
+.ads-db-config-wait-state-filtering .container-fluid div[class^="col-md-"], .ads-db-config-wait-state-filtering .container-fluid div[class^="col-lg-"] { padding-left: 6px; padding-right: 6px; }
+.ads-db-config-wait-state-filtering .container-fluid .row { margin-top: 12px; }
+.ads-db-config-wait-state-filtering .ads-wait-state-filtering-message { margin-top: 20px; }
+.ads-db-config-wait-state-filtering .ads-wait-state-config-grid { width: 100%; height: 500px; padding-top: 12px; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-tab-row-level-1 .adsTabLevel1.ng-hide-add, .ads-db-tab-row-level-1 .adsTabLevel1.ng-hide-remove { display: table-cell !important; }
+
+.ads-db-custom-metrics-dialog .col-sm-9 { text-align: left; }
+.ads-db-custom-metrics-dialog input[type='text'], .ads-db-custom-metrics-dialog .ads-super-select { width: 80%; }
+.ads-db-custom-metrics-dialog .adCheckbox { padding-top: 2px; margin-left: -2px; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+.ads-db-query-text .ads-query-cell { height: 30px; line-height: 15px; overflow: hidden; }
+.ads-db-query-text .ads-query-cell::before { content: ''; float: right; height: 15px; }
+.ads-db-query-text .ads-query-text::before { content: ""; float: right; clear: right; }
+.ads-db-query-text .ads-query-text.ellipsis::before { content: "\2026"; float: right; clear: right; }
+.ads-db-query-text .ads-keyword { color: #2692FF; }
+.ads-db-query-text .ads-keyword-red { color: #EF5C5D; }
+.ads-db-query-text .tooltip.bottom { margin-top: -10px !important; }
+.ads-db-query-text .tooltip-arrow { display: none; }
+.ads-db-query-text .tooltip .tooltip-inner { padding-top: 5px; padding-bottom: 5px; min-width: 400px; text-align: left; background-color: #f5f6f7; font-size: 12px; color: #404040; -moz-box-shadow: 0px 1px 2px 0px #888; -webkit-box-shadow: 0px 1px 2px 0px #888; box-shadow: 0px 1px 2px 0px #888; }
+.ads-db-query-text .tooltip .tooltip-inner .ads-keyword { color: #2692FF; }
+.ads-db-query-text .tooltip .tooltip-inner .ads-keyword-red { color: #EF5C5D; }
+
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+/** Centers the target both vertically and horizontally. Takes a width for exact horizontal text centering. */
+/**
+* Handles text overflow in a container
+* Requires inline-block or block for proper styling
+*/
+/** Default text input style  */
+/** API: box-shadow: 10px 10px; box-shadow: 10px 10px 5px #888; box-shadow: inset 2px 2px 2px 2px black; box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+**/
+/** The drop shadow on cards used in card layouts. **/
+/** The drop shadow on cards used in card layouts. **/
+/** Use this to create container that will be 100% of the available remaining height of its parent. Because HTML does not do this well, we need to pass in top, which is the height of stuff "above" this box. */
+/** Similar to ui-action-item, but the hover color is gray. Active and selected use the normal blue shades. */
+/** Card container style. */
+/** Container for multiple cards - background color. */
+/** When the card background bleeds into the toolbar or tabs above it, this is is used to put a line between the toolbar and cards */
+/** Popup list items */
+/** The core button container styles.  Both ads-button and all combo boxes are "button" like, in that they are core component that are click-able.  We are aiming to have all components feel the same.  NOTE: Keep in sync with flex! */
+/** boostrap grid fixes **/
+/** Rotates the text by given number of degrees. Degrees are measures clockwise 90deg => 9'o-clock position 180deg => 12'o-clock position 270deg => 3'o-clock position and so on */
+/** This is the place where we define global style configuration variables  This is analogous to UiConfig.as on the Flex side.  While we transition, many of the styles will need to be kept in sync between these two places */
+/* keep in sync: UiConfig.LINK_COLOR, STYLink, $LINK_COLOR was 0x3B6AC8  */
+/** The height of the tab row in the toolabr, pre summer12 release when we had the blue tabs */
+/** The width of the actions button in the toolabr */
+/** This is the padding to the left and right of menu items, like in the NodeOptionsMenu on the node dash. */
+/* keep in sync with STYnavigationAccordion */
+/* was 3E3E3E */
+/** The horizontalCenter value for the toggle button bars that are in toolbars which have the time range selector. This makes them appear more centered */
+/** The spacing between buttons in the control bar (bottom row on modals, etc) buttons. From Mac Aqua UI guidelines */
+.ads-db-cluster-topology .ads-db-topology-tree-container { height: 100%; width: 100%; }
+.ads-db-cluster-topology .ads-db-topology-tree-container img.x-tree-icon { background-size: 16px 16px; }
+
+/** This is used by the tab row directive in DB Monitoring */
+div[class^="ads-db-"] ad-db-tab-row { height: 46px; display: block; }
+div[class^="ads-db-"] ad-db-secondary-tab-row { height: 46px; display: block; }
+
+/*# sourceMappingURL=dbmon.css.map */

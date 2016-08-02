@@ -1,0 +1,16 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminGeoZone-array">
+    <com.konakartadmin.client.app.GWT__AdminGeoZone>
+      <geoZoneId>0</geoZoneId>
+      <geoZoneName>--none--</geoZoneName>
+      <geoZoneDescription>none specified</geoZoneDescription>
+    </com.konakartadmin.client.app.GWT__AdminGeoZone>
+    <com.konakartadmin.client.app.GWT__AdminGeoZone>
+      <geoZoneId>1</geoZoneId>
+      <geoZoneName>Florida</geoZoneName>
+      <geoZoneDescription>Florida local sales tax zone</geoZoneDescription>
+      <lastModified>2016-07-15 11:27:48.0 PDT</lastModified>
+      <dateAdded>2016-07-15 11:27:48.0 PDT</dateAdded>
+    </com.konakartadmin.client.app.GWT__AdminGeoZone>
+  </result>
+</GWTResponse>

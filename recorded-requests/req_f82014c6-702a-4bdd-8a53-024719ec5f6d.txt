@@ -1,0 +1,15 @@
+POST https://192.168.1.252:12322/?server=localhost&username=root&db=konakart&indexes=customers_basket HTTP/1.1
+Accept: */*
+Content-Type: application/x-www-form-urlencoded
+X-Requested-With: XMLHttpRequest
+Referer: https://192.168.1.252:12322/?server=localhost&username=root&db=konakart&indexes=customers_basket
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: 192.168.1.252:12322
+Content-Length: 782
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: adminer_sid=b62asc019oo8n05dtcpk5ug356; adminer_version=4.2.5
+
+indexes%5B1%5D%5Btype%5D=PRIMARY&indexes%5B1%5D%5Bcolumns%5D%5B1%5D=customers_basket_id&indexes%5B1%5D%5Blengths%5D%5B1%5D=&indexes%5B1%5D%5Bcolumns%5D%5B2%5D=&indexes%5B1%5D%5Blengths%5D%5B2%5D=&indexes%5B1%5D%5Bname%5D=PRIMARY&indexes%5B2%5D%5Btype%5D=INDEX&indexes%5B2%5D%5Bcolumns%5D%5B1%5D=store_id&indexes%5B2%5D%5Blengths%5D%5B1%5D=&indexes%5B2%5D%5Bcolumns%5D%5B2%5D=&indexes%5B2%5D%5Blengths%5D%5B2%5D=&indexes%5B2%5D%5Bname%5D=idx_store_id&indexes%5B3%5D%5Btype%5D=&indexes%5B3%5D%5Bcolumns%5D%5B1%5D=&indexes%5B3%5D%5Blengths%5D%5B1%5D=&indexes%5B3%5D%5Bcolumns%5D%5B2%5D=&indexes%5B3%5D%5Blengths%5D%5B2%5D=&indexes%5B3%5D%5Bname%5D=&indexes%5B4%5D%5Btype%5D=&indexes%5B4%5D%5Bcolumns%5D%5B1%5D=&indexes%5B4%5D%5Blengths%5D%5B1%5D=&indexes%5B4%5D%5Bname%5D=&token=407577

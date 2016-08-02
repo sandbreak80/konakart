@@ -1,0 +1,60 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminOrderSearchResult">
+    <orderSearch>
+      <orderStatusId>-1</orderStatusId>
+      <customerNameRule>4</customerNameRule>
+      <customerEmailRule>4</customerEmailRule>
+      <customerPostcodeRule>4</customerPostcodeRule>
+      <customerCityRule>4</customerCityRule>
+      <customerId>-1</customerId>
+      <searchingUserId>-1</searchingUserId>
+      <orderId>-1</orderId>
+      <orderNumberRule>4</orderNumberRule>
+      <paymentMethodRule>4</paymentMethodRule>
+      <paymentModuleCodeRule>4</paymentModuleCodeRule>
+      <creatorRule>4</creatorRule>
+      <affiliateIdRule>4</affiliateIdRule>
+      <orderBy>ORDER_BY_ORDER_ID_DESCENDING</orderBy>
+      <parentId>-1</parentId>
+      <custom1Rule>4</custom1Rule>
+      <custom2Rule>4</custom2Rule>
+      <custom3Rule>4</custom3Rule>
+      <custom4Rule>4</custom4Rule>
+      <custom5Rule>4</custom5Rule>
+      <custom6Rule>4</custom6Rule>
+      <custom7Rule>4</custom7Rule>
+      <custom8Rule>4</custom8Rule>
+      <custom9Rule>4</custom9Rule>
+      <custom10Rule>4</custom10Rule>
+    </orderSearch>
+    <orders>
+      <com.konakartadmin.client.app.GWT__AdminOrder>
+        <id>1</id>
+        <orderNumber>1468611916161</orderNumber>
+        <customerId>2</customerId>
+        <customerName>Andy Admin</customerName>
+        <customerAddrId>0</customerAddrId>
+        <customerStreetAddress>1 Way Street</customerStreetAddress>
+        <customerCity>NeverNever</customerCity>
+        <customerAddrFormatId>0</customerAddrFormatId>
+        <deliveryAddrId>0</deliveryAddrId>
+        <deliveryAddrFormatId>0</deliveryAddrFormatId>
+        <billingAddrId>0</billingAddrId>
+        <billingAddrFormatId>0</billingAddrFormatId>
+        <datePurchased>2016-07-15 12:45:16.0 PDT</datePurchased>
+        <status>1</status>
+        <statusText>Pending</statusText>
+        <totalIncTax>234.99</totalIncTax>
+        <formattedTotalIncTax>$234.99</formattedTotalIncTax>
+        <numProducts>0</numProducts>
+        <pointsRedeemed>0</pointsRedeemed>
+        <pointsAwarded>0</pointsAwarded>
+        <pointsReservationId>-1</pointsReservationId>
+        <parentId>0</parentId>
+      </com.konakartadmin.client.app.GWT__AdminOrder>
+    </orders>
+    <offset>0</offset>
+    <maxGroupSize>11</maxGroupSize>
+    <totalSetSize>1</totalSetSize>
+  </result>
+</GWTResponse>

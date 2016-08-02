@@ -1,0 +1,334 @@
+<div class="ads-display-table">
+
+    <div class="ads-display-table-row">
+
+        <div class="ads-display-table-cell ads-vertical-align">
+
+            <!--
+                    class="ads-button dropdown-toggleAD"
+                    multiclick="false"
+                    in-place="false"
+
+                    ad-in-place="false"
+                    ad-close-mode="clickOutside"
+                    ad-multi-click-enabled="true"
+
+                    ad-disable-compile-on-render="false"
+            -->
+
+            <button class="ads-app-selector-button ads-display-table hoverable"
+                    ad-drop-down-toggle
+                    ad-in-place="false"
+                    ad-close-mode="clickOutside"
+                    ad-multi-click-enabled="true"
+                    ad-new-compile-mode="true"
+                    ad-debug="true"
+                    ad-dropdown-open="controller.dropdownOpen"
+                    ad-close-invoke-function="controller.closeDropDownFunction"
+                    ng-disabled="adDisabled"
+                    >
+
+                <div class="ads-display-table-row">
+
+                    <!-- setting a max width on this for long app / mobile app names -->
+                    <div style="position: relative; top: 1px; padding-right: 12px; padding-left: 6px; white-space: nowrap; max-width: 260px; text-overflow: ellipsis; overflow: hidden;"
+                         class="ads-display-table-cell">
+                        {{controller.buttonLabel}}
+                    </div>
+
+                    <div class="ads-display-table-cell" ng-if="!adDisabled">
+                        <img src="images/leftNav/triangleDown_gray.svg" class="ads-triangle-image-up-down-dimensions"/>
+                    </div>
+                </div>
+
+            </button>
+
+            <!-- ============== Fly out ============== -->
+            <div class="dropdown-menu ads-display-table">
+
+
+                <!-- ============== Application Selector Mode ============== -->
+
+                <div class="ads-display-table" ng-if="!controller.mobileAppSelectorMode">
+
+                    <div class="ads-display-table-row">
+
+                        <!-- ============== Left Side ============== -->
+                        <div class="ads-display-table-cell" style="min-width: 250px; vertical-align: top;"
+                             ng-hide="controller.showOnlyApm || controller.showOnlyEumWeb"
+                                >
+
+                            <!-- APM -->
+                            <div class="ads-menu-item"
+                                 style="padding-right: 6px; position: relative;"
+                                 ng-click="controller.onClickApm()"
+                                 ng-mouseenter="controller.onClickApm()"
+                                 ng-if="controller.showApmApplications"
+                                    >
+                                {{getString("ms_applications")}}
+
+                                <div style="position: absolute; top: 8px; right: 8px; ">
+                                    <img src="images/leftNav/triangleRight_gray.svg" class="ads-triangle-image-left-right-dimensions"/>
+                                </div>
+
+                            </div>
+
+                            <!-- EUM -->
+                            <!--<div class="ads-border-top"></div>-->
+
+                            <!--
+                            <div style="padding-left: 12px; padding-top: 12px; padding-bottom: 12px">
+                                {{getString("ms_eumTopLevelNavZoneLabel")}}
+                            </div>
+                            -->
+
+                            <div class="ads-menu-item"
+                                 ng-click="controller.onClickEumWeb()"
+                                 ng-mouseenter="controller.onClickEumWeb()"
+                                 style="padding-right: 6px; position: relative;"
+                                 ng-if="controller.showEumWeb"
+                                    >
+                                {{getString("ms_eumTopLevelNavZoneLabel")}}:
+                                {{getString("ms_eumWebAppsNavZoneLabel")}}
+
+                                <div style="position: absolute; top: 8px; right: 8px; ">
+                                    <img src="images/leftNav/triangleRight_gray.svg" class="ads-triangle-image-left-right-dimensions"/>
+                                </div>
+                            </div>
+                            <div class="ads-menu-item"
+                                 ng-click="controller.onClickEumMobile()"
+                                 ng-mouseenter="controller.onClickEumMobile()"
+                                 ng-class="{'selected' : controller.selectedView == 'VIEW_EUM_MOBILE'}"
+                                 style="padding-right: 6px; position: relative;"
+                                 ng-if="controller.showEumMobileAppContainers"
+                                    >
+                                {{getString("ms_eumTopLevelNavZoneLabel")}}:
+                                {{getString("ms_eumMobileAppsNavZoneLabel")}}
+
+                                <div class="pull-right">
+                                    <img src="images/leftNav/triangleRight_gray.svg" class="ads-triangle-image-left-right-dimensions"/>
+                                </div>
+                            </div>
+
+                            <!-- DB Mon -->
+                            <!--<div class="ads-border-top"></div>-->
+                            <div class="ads-menu-item"
+                                 ng-click="controller.onClickDbMon()"
+                                 ng-mouseenter="controller.onMouseEnterDBSimAnalytics()"
+                                 ng-if="controller.showDbMon"
+                                    >
+                                {{getString("ms_dbMonTopLevelNavLabel")}}
+                            </div>
+
+                            <!-- SIM -->
+                            <!--<div class="ads-border-top"></div>-->
+                            <div class="ads-menu-item"
+                                 ng-click="controller.onClickSim()"
+                                 ng-mouseenter="controller.onMouseEnterDBSimAnalytics()"
+                                 ng-if="controller.showSim"
+                                    >
+                                {{getString("ms_serverMonTopLevelNavLabel")}}
+                            </div>
+
+                            <!-- Analytics -->
+                            <!--<div class="ads-border-top"></div>-->
+                            <div class="ads-menu-item"
+                                 ng-click="controller.onClickAnalytics()"
+                                 ng-mouseenter="controller.onMouseEnterDBSimAnalytics()"
+                                 style="padding-top: 12px; padding-bottom: 12px; "
+                                 ng-if="controller.showAnalytics"
+                                    >
+                                {{getString("ms_analyticsNavLabel")}}
+                            </div>
+
+
+                        </div>
+
+                        <!-- ============== Right Side ============== -->
+                        <div class="ads-display-table-cell ads-border-left" style="width: 340px; "
+                             ng-show="controller.showRightSide"
+                                >
+
+                            <!-- search box -->
+                            <div>
+                                <div class="pull-right"
+                                     style="padding-top: 8px; padding-bottom: 12px; padding-right: 8px; "
+                                        >
+
+                                    <div class="pull-left ads-ui-action-icon-button"
+                                         style="margin-right: 8px; "
+                                         ng-click="controller.onRefreshApps()">
+                                        <img src="images/locationBar/refresh_gray.svg" class="adsSvgIconSmall" />
+                                    </div>
+
+                                    <div ad-search-box ng-model="appSearchString" class="pull-left"/>
+
+                                </div>
+
+                                <div class="clearfix"/>
+
+                            </div>
+
+                            <div style="overflow-y: auto; max-height: 400px; padding-bottom: 12px;">
+
+                                <!-- ============== APM Apps ============== -->
+                                <div ng-if="controller.selectedView == 'VIEW_APM'">
+
+                                    <div ng-repeat="application in controller.allApplications.apmApplications | filter : { name : appSearchString } track by $index"
+                                         class="ads-menu-item"
+                                         ng-click="controller.onClickApplication(application)"
+                                         ng-class="{'selected' : application.id == controller.selectedApplication.id}"
+                                            >
+                                        {{application.name}}
+                                    </div>
+
+                                    <!-- no apps -->
+                                    <div ng-if="controller.allApplications.apmApplications.length == 0"
+                                            style="padding: 12px; "
+                                            >
+
+                                            <div class="ads-light-gray-text" style="padding-bottom: 12px; ">
+                                                No Applications
+                                        </div>
+                                        <a ng-click="controller.onViewGettingStarted()">Install an Agent</a> to start monitoring your Application
+
+                                    </div>
+                                </div>
+
+                                <!-- ============== EUM Web Applications ============== -->
+                                <div ng-if="controller.selectedView == 'VIEW_EUM_WEB'">
+
+                                    <div ng-repeat="application in controller.allApplications.eumWebApplications | filter : { name : appSearchString } track by $index"
+                                         class="ads-menu-item"
+                                         ng-click="controller.onClickApplication(application)"
+                                         ng-class="{'selected' : application.id == controller.selectedApplication.id}"
+                                            >
+                                        {{application.name}}
+                                    </div>
+                                </div>
+
+                                <!-- ============== EUM Mobile App Container Apps ============== -->
+                                <div ng-if="controller.selectedView == 'VIEW_EUM_MOBILE'">
+
+                                    <!-- info message about mobile app container apps -->
+                                    <div class="ads-light-gray-text ads-readable-text-line-height ads-menu-container-left-right-padding"
+                                         style="padding-bottom: 12px; ">
+                                        These are the Applications, or Browser Apps that contain Mobile Apps.
+                                        <ad-info-help-item ad-type="info"
+                                                           ad-link-text="More info"
+                                                           ad-info-title="{{:: getString('ms_eumMobileAppContainers') }}"
+                                                           ad-info-message="{{:: getString('ms_eumMobileAppContainersInfoText') }}"
+                                                           style="margin-left: 8px; ">
+                                        </ad-info-help-item>
+                                    </div>
+
+                                    <div ng-repeat="application in controller.allApplications.mobileAppContainers | filter : { name : appSearchString } track by $index"
+                                         class="ads-menu-item"
+                                         ng-click="controller.onClickApplication(application)"
+                                         ng-class="{'selected' : application.id == controller.selectedApplication.id}"
+                                    >
+                                        {{application.name}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!--- Buttons at the bottom
+
+                            <div style="padding-top: 12px; padding-bottom: 12px; padding-right: 6px; position: absolute; bottom: 0px; right: 0px;">
+
+                                <div class="pull-right">
+                                    <button class="ads-button pull-left"
+                                            ng-click="controller.onCancel()"
+                                            >
+                                        {{getString("ms_cancel")}}
+                                    </button>
+                                    <div class="pull-left" style="padding-left: 6px; padding-right: 6px; height: 24px;">
+                                    </div>
+                                    <button class="ads-button pull-left"
+                                            ng-click="controller.onSubmit()"
+                                            ng-disabled="!controller.selectedApplication"
+                                            >
+                                        {{getString("ms_ok")}}
+                                    </button>
+                                </div>
+                                <div class="clearfix" />
+
+                            </div>
+
+                            ---->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ============== Mobile App Selector Mode ============== -->
+
+                <div ng-if="controller.mobileAppSelectorMode" style="overflow: auto; max-height: 500px;">
+
+                    <div class="ads-menu-item-horiz-padding"
+                         style="padding-top: 12px; padding-bottom: 8px; font-weight: bold;">
+                        iOS
+                    </div>
+                    <div ng-repeat="mobileApplication in controller.iosMobileApps track by $index"
+                         class="ads-menu-item"
+                         ng-click="controller.onClickMobileApplication(mobileApplication)"
+                            >
+                        {{mobileApplication.name}}
+                    </div>
+                    <div ng-if="controller.iosMobileApps.length == 0"
+                         class="ads-menu-item-horiz-padding ads-light-gray-text"
+                         style="padding-top: 12px; padding-bottom: 12px"
+                            >
+                        {{getString("ms_no")}} iOS Apps
+                    </div>
+
+                    <div style="padding-top: 4px; padding-bottom: 4px;">
+                        <div class="ads-border-top"></div>
+                    </div>
+
+                    <div class="ads-menu-item-horiz-padding"
+                         style="padding-top: 12px; padding-bottom: 8px; font-weight: bold;">
+                        Android
+                    </div>
+                    <div ng-repeat="mobileApplication in controller.androidMobileApps track by $index"
+                         class="ads-menu-item"
+                         ng-click="controller.onClickMobileApplication(mobileApplication)"
+                            >
+                        {{mobileApplication.name}}
+                    </div>
+                    <div ng-if="controller.androidMobileApps.length == 0"
+                         class="ads-menu-item-horiz-padding ads-light-gray-text"
+                         style="padding-top: 12px; padding-bottom: 12px"
+                            >
+                        {{getString("ms_no")}} Android Apps
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ads-display-table-cell ads-vertical-align"
+             style="padding-left: 12px;"
+             ng-if="controller.showApplicationQuickNavButton"
+                >
+
+            <button class="ads-main-title-bar-button hoverable" style="padding: 2px 4px;"
+                    ng-click="controller.onAppQuickNavButton()"
+                    title="View Dashboard"
+                    >
+                <img ng-src="{{controller.applicationQuickNavButtonIconSrc}}" class="ads-left-nav-main-item-icon-unselected"
+                     style="width: 20px; height: 20px;"
+                />
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

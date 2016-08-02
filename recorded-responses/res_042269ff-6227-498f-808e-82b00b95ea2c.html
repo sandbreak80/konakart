@@ -1,0 +1,327 @@
+<div class="ads-left-nav2-directive-root-container">
+
+    <!-- ========== Application Name, Main Dashboard Button, And Drop Down (on right) for other apps ========= -->
+
+    <div style="width: 100%; "
+         class="ads-display-toggle-container ads-app-name-and-drop-down-container hoverable"
+         ad-direction="downLeft"
+         ad-drop-down-toggle
+         ad-close-mode="clickOutside"
+         ad-in-place="false"
+         ad-new-compile-mode="true"
+         ad-fit-to-screen="true"
+            >
+
+        <!-- app name -->
+        <div title="{{controller.selectedMobileApplication.text}}"
+             class="ads-display-table"
+                >
+            <div class="ads-display-table-row">
+                <div class="ads-display-table-cell ads-vertical-align ads-app-name-container"
+                     ng-show="!controller.minimized"
+                        >
+                    {{controller.selectedMobileApplication.name}}
+                </div>
+
+                <div class="ads-display-table-cell ads-app-name-minimized-icon-container ads-left-nav-main-item-icon-box ads-vertical-align hoverable"
+                     ng-show="controller.minimized"
+                        >
+                    <img src="images/leftNav/mobileAppsList_gray.svg" class="ads-left-nav-main-item-icon-unselected"
+                         style="width: 30px; height: 30px;"
+                            />
+                    <img src="images/leftNav/mobileAppsList_white.svg" class="ads-left-nav-main-item-icon-selected"
+                         style="width: 30px; height: 30px;"
+                            />
+                </div>
+
+            </div>
+        </div>
+
+        <!-- drop down triangle -->
+        <div class="hoverable ads-apps-drop-down-triangle-container"
+             ng-show="!controller.minimized"
+                >
+            <img src="images/leftNav/triangleDown_gray.svg"
+                 class="adsAppDropDownTriangleImage ads-triangle-image-up-down-dimensions ads-display-toggle-item-normal"/>
+            <img src="images/leftNav/triangleDown_white.svg"
+                 class="adsAppDropDownTriangleImage ads-triangle-image-up-down-dimensions ads-display-toggle-item-hover"/>
+        </div>
+
+    </div>
+
+    <!-- Drop down listing other apps -->
+    <ul class="ads-fly-out-container ads-left-nav-panel-width" style="overflow: auto; min-width: 0px; ">
+
+        <li class="ads-menu-item" ng-click="controller.onClickViewAllAppsInAllApplicationsDropDown()">
+            {{::getString("ms_viewAllMobileApplications")}}
+        </li>
+
+        <li style="margin-top: 4px; margin-bottom: 8px">
+            <div class="ads-list-divider"/>
+        </li>
+
+        <!-- search box -->
+        <div class="ads-menu-item-padding"
+        >
+            <div ad-search-box ng-model="appSearchString" />
+        </div>
+
+        <li class="ads-menu-item" ng-repeat="mobileApplication in controller.mobileApplications | filter : { name : appSearchString } track by $index"
+            ng-click="controller.onClickApplicationInAllApplicationsDropDown(mobileApplication)">
+            <img ng-src="{{controller.getPlatformIcon(mobileApplication.platform)}}" class="adsSvgIconSmall">
+            {{mobileApplication.name}}
+        </li>
+
+    </ul>
+
+    <div style="padding-top: 4px" /><!-- spacer -->
+
+    <!-- horizontal line -->
+    <div class="ads-left-nav-horizontal-line" />
+
+    <div style="padding-top: 4px" /><!-- spacer -->
+
+
+    <!-- ============================== Application Dashboard ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickApplicationName()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_APP_NAME'}"
+             tooltip="{{controller.minimized ?  controller.selectedMobileApplication.name + ' Dashboard' : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/dashboard_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/dashboard_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                Mobile App Dashboard
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                    >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Sessions ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;" ng-if="controller.featureService.isMobileEUMProEnabled()">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickSessions()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SESSIONS'}"
+             tooltip="{{controller.minimized ?  getString('ms_eumWebSessionsNavLabel') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/sessions_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/sessions_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_eumWebSessionsNavLabel")}}
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                    >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Network Requests ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickNetworkRequests()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_NETWORK_REQUESTS'}"
+             tooltip="{{controller.minimized ?  getString('ms_requestsAndEpisodes') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/network_request_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/network_request_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_requestsAndEpisodes")}}
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                    >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Crashes ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickCrashes()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_CRASHES'}"
+             tooltip="{{controller.minimized ?  getString('ms_crashes') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/crash_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/crash_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_crashes")}}
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                    >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Custom Data ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickCustomData()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_CUSTOM_DATA'}"
+             tooltip="{{controller.minimized ?  getString('ms_policyViolations') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/custom_data_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/custom_data_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_customData")}}
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                    >
+            </div>
+
+        </div>
+    </div>
+
+    <!--- spacer and horizontal line -->
+    <div class="ads-left-nav-horizontal-line-seprarator" />
+
+    <!-- ============================== Health Rule Violations ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickHealthRuleViolations()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_HEALTH_RULE_VIOLATIONS'}"
+             tooltip="{{controller.minimized ?  getString('ms_policyViolations') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+            >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/health_rule_violation_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/health_rule_violation_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_policyViolations")}}
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Events ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickEvents()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EVENTS'}"
+             tooltip="{{controller.minimized ?  getString('ms_events') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+            >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/events_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/events_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_events")}}
+            </div>
+
+        </div>
+    </div>
+
+    <!--- spacer and horizontal line -->
+    <div class="ads-left-nav-horizontal-line-seprarator" />
+
+    <!-- ------------------------------ Alert & Respond ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/AlertRespondEntry.html'"></div>
+
+    <!-- ------------------------------ Metric Browser ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/MetricBrowserEntry.html'"></div>
+
+    <!-- ------------------------------ Config ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/ConfigEntry.html'"></div>
+
+
+
+</div>

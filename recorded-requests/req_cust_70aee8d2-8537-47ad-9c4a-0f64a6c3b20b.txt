@@ -1,0 +1,29 @@
+POST http://192.168.1.252:8780/konakartadmin/konakartadmin HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.5
+Content-Length: 329
+Content-Type: text/x-gwt-rpc; charset=utf-8
+Cookie: konakart.username=admin%40konakart.com; konakart.storeId=store1; konakart.storeName=Store%201; konakart.logLevel=WARNING; konakart.lastPanel=kk_panel_orders
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Referer: http://192.168.1.252:8780/konakartadmin/#kk_panel_orders
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+X-GWT-Module-Base: http://192.168.1.252:8780/konakartadmin/
+X-GWT-Permutation: 97CE410F10C6E8C8102ADB274BC59225
+Content-Length: 329
+
+<GWTRequest>
+  <service>com.konakartadmin.client.KKAdminGWTServiceIf</service>
+  <method>getConfigurationInfo</method>
+  <strongId>4F3F7CD5FDDBBD8C8F3E94920F660041</strongId>
+  <encoded>false</encoded>
+  <parameters>
+    <String>store1</String>
+    <String>8786ea8d903f1ef839d3011d12aa8047</String>
+    <String-array>
+      <String>ADMIN_APP_ORDERS_DISPLAY_ORDER_NUM</String>
+      <String>PDF_BASE_DIRECTORY</String>
+    </String-array>
+  </parameters>
+</GWTRequest>

@@ -1,0 +1,10 @@
+GET http://192.168.1.252:8780/konakart/images/content/black-ops-2.png HTTP/1.1
+Accept: image/png, image/svg+xml, image/jxr, image/*;q=0.8, */*;q=0.5
+Referer: http://192.168.1.252:8780/konakart/Games/1_2_-1_-1.action
+Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.252:8780
+Proxy-Connection: Keep-Alive
+Cookie: JSESSIONID=9FE3368B57EDB202F25172C8034FE649; CUSTOMER_UUID=0b7f8e1c-5271-41b1-b48c-a6ec1d286afa
+

@@ -1,0 +1,7 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminProducts">
+    <totalNumProducts>63</totalNumProducts>
+    <offset>0</offset>
+    <productArray/>
+  </result>
+</GWTResponse>

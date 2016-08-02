@@ -1,0 +1,267 @@
+"use strict";
+define(["require", "exports", "./AnalyticsADQLClientQueryUtil", "./query/ADQLClientQuery", "./query/ADQLClientQueryBuilder", "./query/ADQLClientQueryParser", "./query/select/ADQLClientQuerySelect", "../../../components/filterBar/filters/Adql/AdqlFilterSet", "./response/ADQLResponse", "./../common/AnalyticsQuery", "./util/ADQLClientFilterUtil"], function (require, exports, AnalyticsADQLClientQueryUtil, ADQLClientQuery, ADQLClientQueryBuilder, ADQLClientQueryParser, ADQLClientQuerySelect, AdqlFilterSet, ADQLResponse, AnalyticsQuery, ADQLClientFilterUtil) {
+    var AnalyticsADQLClientQueryService = (function () {
+        function AnalyticsADQLClientQueryService() {
+            this.notificationService = NotificationService.instance();
+            this.analyticsDataAccessHelperUiService = AnalyticsDataAccessHelperUiService.instance();
+            this.$q = SharedInjectorService.instance().$q();
+            this.applications = [];
+            this.fetchApplications();
+        }
+        AnalyticsADQLClientQueryService.instance = function () {
+            return AngularUtil.getADInjector().get("AnalyticsADQLClientQueryService");
+        };
+        AnalyticsADQLClientQueryService.prototype.fetchApplications = function () {
+            var _this = this;
+            var deferred = this.$q.defer();
+            var params = URLParams.getCurrentUrlParams();
+            this.analyticsDataAccessHelperUiService.getAllowedApplications(true, params.getSharedDashboardToken()).then(function (allApplications) {
+                _this.applications = allApplications;
+                deferred.resolve(_this.applications);
+            });
+            return deferred.promise;
+        };
+        AnalyticsADQLClientQueryService.prototype.onInitialized = function () {
+            var deferred = this.$q.defer();
+            if (this.applications.length) {
+                deferred.resolve(true);
+            }
+            this.fetchApplications().then(function () {
+                deferred.resolve(true);
+            });
+            return deferred.promise;
+        };
+        AnalyticsADQLClientQueryService.prototype.parseQueries = function (queries) {
+            var _this = this;
+            var analyticsQueries = [];
+            _.forEach(queries, function (adqlQuery) {
+                analyticsQueries.push(_this.parseQuery(adqlQuery));
+            });
+            return analyticsQueries;
+        };
+        AnalyticsADQLClientQueryService.prototype.parseQuery = function (query) {
+            var adqlQuery = new ADQLClientQuery(query);
+            var analyticsQuery = new AnalyticsQuery();
+            analyticsQuery.fields = this.parseSelectClause(adqlQuery.getSelectClause());
+            analyticsQuery.dataSource = this.parseFromClause(adqlQuery.getFromClause());
+            if (adqlQuery.hasWhereClause()) {
+                analyticsQuery.filters = this.parseWhereClause(adqlQuery.getWhereClause());
+            }
+            if (adqlQuery.hasOrderByClause()) {
+                analyticsQuery.orderBys = this.parseOrderByClause(adqlQuery.getOrderByClause());
+            }
+            if (adqlQuery.hasLimitClause()) {
+                analyticsQuery.limits = this.parseLimitClause(adqlQuery.getLimitClause());
+            }
+            return analyticsQuery;
+        };
+        AnalyticsADQLClientQueryService.prototype.parseSelectClause = function (selectClause) {
+            var analyticsFields = [];
+            var adqlFunctions = ADQLClientQueryParser.parseSelectClause(selectClause);
+            _.forEach(adqlFunctions, function (adqlFunction) {
+                var analyticsField;
+                if (adqlFunction.isFunction()) {
+                    analyticsField = AnalyticsADQLClientQueryUtil.createAnalyticsFieldFunction(adqlFunction.getFunctionName(), adqlFunction.getArgs(), adqlFunction.getAlias());
+                }
+                else {
+                    analyticsField = AnalyticsADQLClientQueryUtil.createAnalyticsField(adqlFunction.getFieldName(), adqlFunction.getAlias());
+                }
+                analyticsFields.push(analyticsField);
+            });
+            return analyticsFields;
+        };
+        AnalyticsADQLClientQueryService.prototype.parseFromClause = function (fromClause) {
+            return fromClause ? fromClause.split(",") : [];
+        };
+        AnalyticsADQLClientQueryService.prototype.parseWhereClause = function (whereClause) {
+            var filterSet = new AdqlFilterSet();
+            filterSet.applications = this.applications;
+            var analyticsFields = [];
+            var adqlConditions = [];
+            var isUnsupportedSimpleCondition;
+            isUnsupportedSimpleCondition = ADQLClientQueryParser.parseWhereClause(whereClause, adqlConditions);
+            if (isUnsupportedSimpleCondition) {
+                filterSet.isIncomplete = true;
+            }
+            var isComplexQuery = _.any(adqlConditions, function (adqlCondition) {
+                var fields = AnalyticsADQLClientQueryUtil.createAnalyticsFieldsForFilters(adqlCondition);
+                if (!fields) {
+                    filterSet.isIncomplete = true;
+                }
+                else {
+                    if (ADQLClientFilterUtil.isAComplexOrCondition(adqlCondition, fields)) {
+                        filterSet.isIncomplete = true;
+                        return filterSet.isIncomplete;
+                    }
+                    analyticsFields = analyticsFields.concat(fields);
+                }
+                return filterSet.isIncomplete;
+            });
+            if (isUnsupportedSimpleCondition || isComplexQuery) {
+                return filterSet;
+            }
+            if (!ADQLClientFilterUtil.isValidFieldsForFilterSet(analyticsFields)) {
+                filterSet.isIncomplete = true;
+                return filterSet;
+            }
+            _.forEach(analyticsFields, function (analyticsField) {
+                var filterType = AdqlFilterSet.getFilterTypeForFieldDefinition(analyticsField.fieldDefinition);
+                var comparisonOperator = analyticsField.selectedOperator;
+                var value = analyticsField.selectedOperation.value;
+                if (filterType === FilterType.TEXT) {
+                    if (!StringUtils.isStringWrappedInDoubleQuotes(value)) {
+                        if (value.indexOf(",") > -1) {
+                            value = value.split(",").join(" OR ");
+                        }
+                    }
+                }
+                filterSet.addFilterToContext(filterType, analyticsField, value, false, true, comparisonOperator);
+            });
+            return filterSet;
+        };
+        AnalyticsADQLClientQueryService.prototype.parseOrderByClause = function (orderByClause) {
+            return orderByClause ? orderByClause.split(",") : [];
+        };
+        AnalyticsADQLClientQueryService.prototype.parseLimitClause = function (limitClause) {
+            return limitClause ? _.map(limitClause.split(","), function (num) {
+                return parseInt(num, 10);
+            }) : [];
+        };
+        AnalyticsADQLClientQueryService.prototype.buildQueries = function (analyticsQueries) {
+            var _this = this;
+            var queries = [];
+            _.forEach(analyticsQueries, function (analyticsQuery) {
+                queries.push(_this.buildQuery(analyticsQuery));
+            });
+            return queries;
+        };
+        AnalyticsADQLClientQueryService.prototype.buildQuery = function (analyticsQuery) {
+            var adqlQuery = new ADQLClientQuery();
+            adqlQuery.setSelectClause(this.buildSelectClause(analyticsQuery.fields));
+            adqlQuery.setFromClause(this.buildFromClause(analyticsQuery.dataSource));
+            adqlQuery.setWhereClause(this.buildWhereClause(analyticsQuery.filters));
+            adqlQuery.setOrderByClause(this.buildOrderByClause(analyticsQuery.orderBys));
+            adqlQuery.setLimitClause(this.buildLimitClause(analyticsQuery.limits));
+            return adqlQuery.toString();
+        };
+        AnalyticsADQLClientQueryService.prototype.buildSelectClause = function (fields) {
+            var selectItems = [];
+            _.forEach(fields, function (analyticsField) {
+                var operation = analyticsField.selectedOperation;
+                var alias = analyticsField.alias;
+                if (operation) {
+                    var func = analyticsField.selectedOperation.value;
+                    var functionArgs = analyticsField.functionArgs;
+                    selectItems.push(ADQLClientQueryBuilder.buildSelectFunction(func, functionArgs, alias));
+                }
+                else {
+                    var field = analyticsField.getFullPath();
+                    selectItems.push(ADQLClientQueryBuilder.buildSelect(field, alias));
+                }
+            });
+            if (!selectItems.length) {
+                selectItems.push(ADQLClientQueryBuilder.buildSelect(ADQLClientQuerySelect.ALL));
+            }
+            return selectItems.join(", ");
+        };
+        AnalyticsADQLClientQueryService.prototype.buildFromClause = function (dataSources) {
+            return dataSources.join(",");
+        };
+        AnalyticsADQLClientQueryService.prototype.buildWhereClause = function (filters) {
+            return ADQLClientFilterUtil.generateWhereClause(filters);
+        };
+        AnalyticsADQLClientQueryService.prototype.buildOrderByClause = function (orderBys) {
+            return orderBys.join(",");
+        };
+        AnalyticsADQLClientQueryService.prototype.buildLimitClause = function (limits) {
+            return limits.join(",");
+        };
+        AnalyticsADQLClientQueryService.prototype.buildRequestsFromADQL = function (adqlQueries, timeRange, limit) {
+            var _this = this;
+            var requests = [];
+            _.forEach(adqlQueries, function (adqlQuery) {
+                requests.push(_this.buildRequestFromADQL(adqlQuery, timeRange, limit));
+            });
+            return requests;
+        };
+        AnalyticsADQLClientQueryService.prototype.buildRequestFromADQL = function (adqlQuery, timeRange, limit) {
+            var timeRangeBetween = DateTimeUtil.convertToBetweenTimes(timeRange);
+            var request = {
+                query: adqlQuery,
+                start: timeRangeBetween.startTime.getTime().toString(),
+                end: timeRangeBetween.endTime.getTime().toString()
+            };
+            if (limit) {
+                request.limit = limit;
+            }
+            return request;
+        };
+        AnalyticsADQLClientQueryService.prototype.buildRequestsFromAnalyticsQueries = function (analyticsQueries, timeRange, limit) {
+            return this.buildRequestsFromADQL(this.buildQueries(analyticsQueries), timeRange, limit);
+        };
+        AnalyticsADQLClientQueryService.prototype.buildRequestFromAnalyticsQuery = function (analyticsQuery, timeRange, limit) {
+            return this.buildRequestFromADQL(this.buildQuery(analyticsQuery), timeRange, limit);
+        };
+        AnalyticsADQLClientQueryService.prototype.fetchResult = function (request) {
+            var _this = this;
+            var deferred = this.$q.defer();
+            var params = URLParams.getCurrentUrlParams();
+            var serviceQuery = AnalyticsQueryUiService.instance().queryEvents(request.query, request.start, request.end, request.limit ? request.limit.toString() : "", "false", "false", params.getSharedDashboardToken(), "");
+            serviceQuery.then(function (raw) {
+                var response = new ADQLResponse(JSON.parse(raw.rawResponse));
+                if (response.error) {
+                    _this.notificationService.displayError(response.error, "");
+                    deferred.reject(response.error);
+                }
+                else {
+                    var result = {
+                        request: [request],
+                        response: [response]
+                    };
+                    deferred.resolve(result);
+                }
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+        AnalyticsADQLClientQueryService.prototype.fetchResults = function (requests, noException) {
+            var _this = this;
+            if (noException === void 0) { noException = false; }
+            var deferred = this.$q.defer();
+            _.forEach(requests, function (request, index) {
+                request.label = index.toString();
+            });
+            var params = URLParams.getCurrentUrlParams();
+            var serviceQuery = AnalyticsQueryUiService.instance().queryEvents(JSON.stringify(requests), "", "", "", "false", "" + noException, params.getSharedDashboardToken(), "");
+            serviceQuery.then(function (raw) {
+                if (raw) {
+                    var responses = JSON.parse(raw.rawResponse);
+                    responses.sort(function (response1, response2) {
+                        return (+response1.label) - (+response2.label);
+                    });
+                    _.forEach(responses, function (response, responseIndex) {
+                        responses[responseIndex] = new ADQLResponse(response);
+                        if (response.error) {
+                            _this.notificationService.displayError(response.error, "");
+                        }
+                    });
+                    var result = {
+                        request: requests,
+                        response: responses
+                    };
+                    deferred.resolve(result);
+                }
+                else {
+                    deferred.resolve({});
+                }
+            }, function (error) {
+                deferred.reject(error);
+            });
+            return deferred.promise;
+        };
+        return AnalyticsADQLClientQueryService;
+    })();
+    appdynamicsModule.service("AnalyticsADQLClientQueryService", AnalyticsADQLClientQueryService);
+    return AnalyticsADQLClientQueryService;
+});

@@ -1,0 +1,100 @@
+<div class="ads-left-nav2-directive-root-container">
+
+    <!-- ============================== Machine List  ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickMachineList()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_MACHINE_LIST'}"
+             tooltip="{{controller.minimized ?  getString('ms_navItemSimMachineList') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/machines_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/machines_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_navItemSimMachineList")}}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Service Monitoring ============================= -->
+
+    <div class="ads-display-table ads-width-100percent">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickService()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SERVICE_MONITORING_LIST'}"
+             tooltip="{{controller.minimized ?  getString('ms_simServiceMonitoringNavItem') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+            >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/serviceAvailability_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/serviceAvailability_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_simServiceMonitoringNavItem")}}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================== Events ============================= -->
+
+    <div class="ads-display-table ads-width-100percent">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickEvents()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EVENTS'}"
+             tooltip="{{controller.minimized ?  getString('ms_events') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/events_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/events_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_events")}}
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!--- spacer and horizontal line -->
+    <div class="ads-left-nav-horizontal-line-seprarator" />
+
+    <!-- ------------------------------ Alert & Respond ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/AlertRespondEntry.html'"></div>
+
+    <!-- ------------------------------ Metric Browser ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/MetricBrowserEntry.html'"></div>
+
+    <!-- ------------------------------ Config ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/ConfigEntry.html'"></div>
+
+</div>

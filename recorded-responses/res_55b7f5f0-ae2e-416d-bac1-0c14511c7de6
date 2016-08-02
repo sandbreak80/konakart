@@ -1,0 +1,8 @@
+<GWTResponse>
+  <result class="String-array">
+    <String>EMAIL_FROM</String>
+    <String>admin@konakart.com</String>
+    <String>STORE_NAME</String>
+    <String>KonaKart</String>
+  </result>
+</GWTResponse>

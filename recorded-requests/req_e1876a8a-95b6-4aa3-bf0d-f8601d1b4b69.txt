@@ -1,0 +1,13 @@
+POST https://col.eum-appdynamics.com:443/eumcollector/beacons/browser/v1/AD-AAB-AAA-KVK/adrum HTTP/1.1
+Host: col.eum-appdynamics.com
+Connection: keep-alive
+Content-Length: 503
+Origin: https://docs.appdynamics.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
+Content-type: text/plain
+Accept: */*
+Referer: https://docs.appdynamics.com/display/PRO42/Time+Ranges
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+
+{"vr":"4.2.3.0","dt":"R","rg":"0","es":[{"eg":"1","et":2,"eu":"0://1/2/3/4/5?6","ts":1469728940671,"mg":"0","au":"0://1/7/8/9","at":0,"pp":3,"mx":{"PLC":1,"FBT":2977,"DDT":0,"DPT":1,"PLT":2978,"ARE":0},"md":"GET","si":5963}],"ai":"e887743c_d56a_5574_038e_b7c34dd85694","gs":["5624c593_7c80_384d_e079_748d33b450dc","ffc1a843_c3f1_e6e1_c035_4a6859136ed8"],"up":["https","docs.appdynamics.com","rest","quickreload","latest","34271891","since=1469465396055&_=1469728940671","display","PRO42","Time+Ranges"]}

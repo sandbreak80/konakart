@@ -1,0 +1,22 @@
+"use strict";
+define(["require", "exports", "./../../../components/filterBar/filters/Adql/AdqlFilterSet"], function (require, exports, AdqlFilterSet) {
+    var AnalyticsQuery = (function () {
+        function AnalyticsQuery(analyticsQuery) {
+            this.fields = [];
+            this.dataSource = [];
+            this.filters = new AdqlFilterSet();
+            this.orderBys = [];
+            this.limits = [];
+            if (analyticsQuery) {
+                angular.copy(analyticsQuery, this);
+            }
+        }
+        AnalyticsQuery.prototype.isValid = function () {
+            var fieldsValid = !!this.fields.length;
+            var dataSourceValid = !!this.dataSource.length;
+            return fieldsValid && dataSourceValid;
+        };
+        return AnalyticsQuery;
+    })();
+    return AnalyticsQuery;
+});

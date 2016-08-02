@@ -1,0 +1,38 @@
+<div class="adsNotificationCenter">
+
+    <div ng-switch="controller.notificationCenterService.isNotificationCenterVisible">
+
+        <div ng-switch-when="true" class="adsExpanded" ng-class="{adsEvalBar:adIsEval}">
+
+            <div class="adsNotificationPanel">
+
+                <div class="adsHeader">
+
+                    <div class="pull-left">
+                        <div>Notifications</div>
+                    </div>
+
+                    <div class="pull-right" ng-click="controller.onClosePanel()">
+                        <div class="fa fa-close" style="color: #9199AD; margin-top: -4px; margin-right: 2px; cursor: pointer">&nbsp;</div>
+                    </div>
+
+                    <div style="clear:both"></div>
+
+                </div>
+
+                <div class="adsBody">
+                    <ad-notification-center-list ad-notifications="controller.notificationCenterService.notifications">
+                    </ad-notification-center-list>
+                </div>
+
+                <div class="adsFooter">
+                    <a ng-click="controller.removeAllAndClose()">Clear All</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

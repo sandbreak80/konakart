@@ -1,0 +1,22 @@
+"use strict";
+define(["require", "exports", "../conditions/ADQLConditionBase", "../operators/ADQLArithmeticOperator", "../../../util/ADQLClientStringUtil"], function (require, exports, ADQLConditionBase, ADQLArithmeticOperator, ADQLClientStringUtil) {
+    var ADQLArithmeticExpression = (function () {
+        function ADQLArithmeticExpression(fieldName1, operator, fieldName2) {
+            this.fieldName1 = fieldName1;
+            this.operator = operator;
+            this.fieldName2 = fieldName2;
+        }
+        ADQLArithmeticExpression.prototype.toString = function () {
+            this.conditionAsString = this.fieldName1 + " " + this.operator.toString() + " " + this.fieldName2;
+            return ADQLClientStringUtil.encloseStringInParenthesis(this.conditionAsString);
+        };
+        ADQLArithmeticExpression.getInstance = function (expressionAsString) {
+            var fieldNames = expressionAsString.match(new RegExp('\\b' + ADQLConditionBase.FIELD_NAME_PATTERN + '\\b', 'gi'));
+            var operator = expressionAsString.match(new RegExp(ADQLArithmeticOperator.OPERATOR_PATTERN, 'i'))[0];
+            return new ADQLArithmeticExpression(fieldNames[0], operator, fieldNames[1]);
+        };
+        ADQLArithmeticExpression.EXPRESSION_PATTERN = ADQLConditionBase.FIELD_NAME_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLArithmeticOperator.OPERATOR_PATTERN + ADQLConditionBase.SPACE_PATTERN + ADQLConditionBase.FIELD_NAME_PATTERN;
+        return ADQLArithmeticExpression;
+    })();
+    return ADQLArithmeticExpression;
+});

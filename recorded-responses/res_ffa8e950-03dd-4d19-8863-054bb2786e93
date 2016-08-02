@@ -1,0 +1,29 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminAddressFormat-array">
+    <com.konakartadmin.client.app.GWT__AdminAddressFormat>
+      <addressFormatId>1</addressFormatId>
+      <addressFormat>$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country</addressFormat>
+      <addressSummary>$city / $country</addressSummary>
+    </com.konakartadmin.client.app.GWT__AdminAddressFormat>
+    <com.konakartadmin.client.app.GWT__AdminAddressFormat>
+      <addressFormatId>2</addressFormatId>
+      <addressFormat>$firstname $lastname$cr$streets$cr$city, $state    $postcode$cr$country</addressFormat>
+      <addressSummary>$city, $state / $country</addressSummary>
+    </com.konakartadmin.client.app.GWT__AdminAddressFormat>
+    <com.konakartadmin.client.app.GWT__AdminAddressFormat>
+      <addressFormatId>3</addressFormatId>
+      <addressFormat>$firstname $lastname$cr$streets$cr$city$cr$postcode - $statecomma$country</addressFormat>
+      <addressSummary>$state / $country</addressSummary>
+    </com.konakartadmin.client.app.GWT__AdminAddressFormat>
+    <com.konakartadmin.client.app.GWT__AdminAddressFormat>
+      <addressFormatId>4</addressFormatId>
+      <addressFormat>$firstname $lastname$cr$streets$cr$city ($postcode)$cr$country</addressFormat>
+      <addressSummary>$postcode / $country</addressSummary>
+    </com.konakartadmin.client.app.GWT__AdminAddressFormat>
+    <com.konakartadmin.client.app.GWT__AdminAddressFormat>
+      <addressFormatId>5</addressFormatId>
+      <addressFormat>$firstname $lastname$cr$streets$cr$postcode $city$cr$country</addressFormat>
+      <addressSummary>$city / $country</addressSummary>
+    </com.konakartadmin.client.app.GWT__AdminAddressFormat>
+  </result>
+</GWTResponse>

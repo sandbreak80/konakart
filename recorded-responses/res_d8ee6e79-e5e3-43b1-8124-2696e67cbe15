@@ -1,0 +1,173 @@
+"use strict";
+define(["require", "exports", "./util/ADQLClientStringUtil", "./query/select/ADQLClientQuerySelect", "./query/where/ADQLClientQueryWhere", "./query/where/conditions/ADQLAggregateCondition", "./query/where/conditions/ADQLArithmeticCondition", "./query/where/conditions/ADQLComparisonCondition", "./query/where/conditions/ADQLComplexCondition", "./query/where/conditions/ADQLInCondition", "./query/where/conditions/ADQLBetweenCondition", "./query/where/conditions/ADQLLikeCondition", "./query/where/conditions/ADQLUnaryCondition"], function (require, exports, ADQLClientStringUtil, ADQLClientQuerySelect, ADQLClientQueryWhere, ADQLAggregateCondition, ADQLArithmeticCondition, ADQLComparisonCondition, ADQLComplexCondition, ADQLInCondition, ADQLBetweenCondition, ADQLLikeCondition, ADQLUnaryCondition) {
+    var AnalyticsADQLClientQueryUtil = (function () {
+        function AnalyticsADQLClientQueryUtil() {
+        }
+        AnalyticsADQLClientQueryUtil.createAnalyticsField = function (fullPath, alias, fieldType) {
+            var fullPath = StringUtils.trimSurroundingBackticks(fullPath);
+            var analyticsField = new AnalyticsField({ fieldName: fullPath, fieldType: fieldType });
+            analyticsField.alias = alias;
+            return analyticsField;
+        };
+        AnalyticsADQLClientQueryUtil.createAnalyticsFieldFunction = function (funcName, functionArgs, alias, fieldType) {
+            funcName = funcName.toLowerCase();
+            var fullPath = StringUtils.trimSurroundingBackticks(functionArgs[0]);
+            var analyticsField = new AnalyticsField({ fieldName: fullPath, fieldType: fieldType });
+            analyticsField.functionArgs = functionArgs;
+            analyticsField.selectedOperation = { value: funcName, name: alias ? alias : funcName };
+            analyticsField.alias = alias;
+            return analyticsField;
+        };
+        AnalyticsADQLClientQueryUtil.createAnalyticsFieldFilter = function (fullPath, value, fieldType, operator) {
+            var fullPath = StringUtils.trimSurroundingBackticks(fullPath);
+            var fieldName = _.last(fullPath.split("."));
+            var analyticsField = new AnalyticsField({ fieldName: fieldName, fieldType: fieldType });
+            analyticsField.functionArgs = [fullPath];
+            analyticsField.fullPath = fullPath;
+            analyticsField.selectedOperation = { value: value, name: value };
+            analyticsField.selectedOperator = operator;
+            return analyticsField;
+        };
+        AnalyticsADQLClientQueryUtil.createAnalyticsFieldFilterForWidgets = function (fullPath, value) {
+            var fullPath = StringUtils.trimSurroundingBackticks(fullPath);
+            var fieldDefinition = MetaDataService.instance().getFieldDefinitionForFullPathField(fullPath);
+            var analyticsField = new AnalyticsField(fieldDefinition);
+            analyticsField.functionArgs = [fullPath];
+            analyticsField.selectedOperation = { value: value, name: value };
+            return analyticsField;
+        };
+        AnalyticsADQLClientQueryUtil.parseAnalyticsFieldFuncName = function (analyticsField) {
+            return analyticsField.selectedOperation.value;
+        };
+        AnalyticsADQLClientQueryUtil.parseAnalyticsFieldFuncArgs = function (analyticsField) {
+            return analyticsField.functionArgs;
+        };
+        AnalyticsADQLClientQueryUtil.parseAnalyticsFieldFullPathFuncArgs = function (analyticsField) {
+            return analyticsField.functionArgs;
+        };
+        AnalyticsADQLClientQueryUtil.buildCountAggregation = function (fullPath) {
+            var countAgg = new AnalyticsField({ fieldName: fullPath });
+            countAgg.functionArgs = [fullPath];
+            countAgg.selectedOperation = {
+                value: ADQLClientQuerySelect.COUNT,
+                name: ADQLClientQuerySelect.COUNT
+            };
+            return countAgg;
+        };
+        AnalyticsADQLClientQueryUtil.buildSeriesAggregation = function (fullPath, interval, startTime, endTime) {
+            var seriesArgs = [
+                fullPath,
+                "'" + interval + "'",
+                startTime.toString(),
+                endTime.toString()
+            ];
+            var seriesAgg = new AnalyticsField({ fieldName: fullPath });
+            seriesAgg.functionArgs = seriesArgs;
+            seriesAgg.selectedOperation = {
+                value: ADQLClientQuerySelect.SERIES,
+                name: ADQLClientQuerySelect.SERIES
+            };
+            return seriesAgg;
+        };
+        AnalyticsADQLClientQueryUtil.createAnalyticsFieldsForFilters = function (adqlCondition) {
+            var analyticsFields = [];
+            var fullPath;
+            var value;
+            var operator;
+            var isFieldTypeNumeric = false;
+            if (adqlCondition instanceof ADQLAggregateCondition) {
+                var aggregationCondition = adqlCondition;
+                fullPath = aggregationCondition.getFieldName();
+                value = aggregationCondition.getAggregationFunction().toString();
+            }
+            else if (adqlCondition instanceof ADQLArithmeticCondition) {
+                var arithmeticCondition = adqlCondition;
+                fullPath = arithmeticCondition.getArithmeticExpression().toString();
+                value = String(arithmeticCondition.getValue());
+            }
+            else if (adqlCondition instanceof ADQLComparisonCondition) {
+                var comparisonCondition = adqlCondition;
+                isFieldTypeNumeric = comparisonCondition.getIsNumeric();
+                operator = comparisonCondition.getOperator().toString();
+                fullPath = comparisonCondition.getFieldName();
+                value = comparisonCondition.getValue();
+            }
+            else if (adqlCondition instanceof ADQLInCondition) {
+                var inCondition = adqlCondition;
+                fullPath = inCondition.getFieldName();
+                value = inCondition.getValues().join();
+            }
+            else if (adqlCondition instanceof ADQLBetweenCondition) {
+                var betweenCondition = adqlCondition;
+                fullPath = betweenCondition.getFieldName();
+                value = betweenCondition.getValue();
+            }
+            else if (adqlCondition instanceof ADQLLikeCondition) {
+                var likeCondition = adqlCondition;
+                fullPath = likeCondition.getFieldName();
+                value = likeCondition.getValue();
+            }
+            else if (adqlCondition instanceof ADQLUnaryCondition) {
+                var unaryCondition = adqlCondition;
+                fullPath = unaryCondition.getFieldName();
+            }
+            else if (adqlCondition instanceof ADQLComplexCondition) {
+                var complexCondition = adqlCondition;
+                var condition1 = complexCondition.getCondition1();
+                var condition2 = complexCondition.getCondition2();
+                var analyticsFields1 = AnalyticsADQLClientQueryUtil.createAnalyticsFieldsForFilters(condition1);
+                var analyticsFields2 = AnalyticsADQLClientQueryUtil.createAnalyticsFieldsForFilters(condition2);
+                switch (complexCondition.getOperator()) {
+                    case ADQLClientQueryWhere.AND:
+                        analyticsFields = analyticsFields.concat(analyticsFields1).concat(analyticsFields2);
+                        break;
+                    case ADQLClientQueryWhere.OR:
+                        var field1FullPath = analyticsFields1.length ? analyticsFields1[0].fullPath : null;
+                        var field2FullPath = analyticsFields2.length ? analyticsFields2[0].fullPath : null;
+                        if (field1FullPath !== field2FullPath) {
+                            return null;
+                        }
+                        var values = [];
+                        _.forEach(analyticsFields1, function (field1) {
+                            values.push(ADQLClientStringUtil.trimSurroundingQuotes(field1.selectedOperation.value));
+                        });
+                        _.forEach(analyticsFields2, function (field2) {
+                            values.push(ADQLClientStringUtil.trimSurroundingQuotes(field2.selectedOperation.value));
+                        });
+                        value = values.join();
+                        analyticsFields = analyticsFields.concat([AnalyticsADQLClientQueryUtil.createAnalyticsFieldFilter(field1FullPath, value)]);
+                        break;
+                }
+                return analyticsFields;
+            }
+            else {
+                throw new Error("Unknown ADQL condition " + adqlCondition);
+            }
+            var fieldName = _.last(fullPath.split("."));
+            var fieldType = MetaDataService.instance().isFieldTypeNumeric(fieldName) || isFieldTypeNumeric ? FieldType.INTEGER : null;
+            var fields = analyticsFields.concat(AnalyticsADQLClientQueryUtil.createAnalyticsFieldFilter(fullPath, ADQLClientStringUtil.trimSurroundingQuotes(value), fieldType, operator));
+            return fields;
+        };
+        AnalyticsADQLClientQueryUtil.getAllValuesForMultiSelectField = function (analyticsFields) {
+            var allValues = [];
+            _.forEach(analyticsFields, function (analyticsField) {
+                allValues.push(analyticsField.selectedOperation.value);
+            });
+            return allValues;
+        };
+        AnalyticsADQLClientQueryUtil.getMapMultiSelectFields = function (analyticsFields) {
+            var mapMultiSelectFields = new HashMap();
+            _.forEach(analyticsFields, function (analyticsField) {
+                if (mapMultiSelectFields.containsKey(analyticsField.fieldDefinition.fieldName)) {
+                    mapMultiSelectFields.get(analyticsField.fieldDefinition.fieldName).push(analyticsField);
+                }
+                else {
+                    mapMultiSelectFields.put(analyticsField.fieldDefinition.fieldName, [analyticsField]);
+                }
+            });
+            return mapMultiSelectFields;
+        };
+        return AnalyticsADQLClientQueryUtil;
+    })();
+    return AnalyticsADQLClientQueryUtil;
+});

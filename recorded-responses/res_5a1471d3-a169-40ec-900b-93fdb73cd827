@@ -1,0 +1,40 @@
+"use strict";
+if (!__ad_bootstrap_jasmine__) {
+    ADPageBootstrapUtils.supportedBrowserCheck(false);
+}
+var appdynamicsModule = angular.module('appdynamics', [
+    'ng',
+    'ngRoute',
+    'ngSanitize',
+    'ngAnimate',
+    'ngCookies',
+    'ngUpload',
+    'ui.bootstrap',
+    'ui.bootstrap.tooltip',
+    'ui.select',
+    'ui.grid',
+    'ui.grid.autoResize',
+    'ui.grid.exporter',
+    'ui.grid.expandable',
+    'ui.grid.moveColumns',
+    'ui.grid.pagination',
+    'ui.grid.resizeColumns',
+    'ui.grid.selection',
+    'mgcrea.ngStrap.popover',
+    'gridster',
+    'ngDragDrop',
+    'highcharts-ng',
+    'ad-components',
+    'vs-repeat',
+    'oc.lazyLoad'
+]);
+if (!__ad_bootstrap_jasmine__) {
+    ADPageBootstrapUtils.setup();
+}
+require(["shared/SharedModule"], function () {
+    require(["shared/SharedBootstrapModuleCode"], function () {
+        require(["shared/SharedModuleCode"], function () {
+            require(["app/pages/main/MainAppModuleCode"]);
+        });
+    });
+});

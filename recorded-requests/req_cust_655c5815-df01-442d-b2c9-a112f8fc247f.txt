@@ -1,0 +1,67 @@
+POST http://192.168.1.252:8780/konakartadmin/konakartadmin HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.5
+Content-Length: 1489
+Content-Type: text/x-gwt-rpc; charset=utf-8
+Cookie: konakart.username=admin%40konakart.com; konakart.storeId=store1; konakart.storeName=Store%201; konakart.logLevel=WARNING
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Referer: http://192.168.1.252:8780/konakartadmin/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+X-GWT-Module-Base: http://192.168.1.252:8780/konakartadmin/
+X-GWT-Permutation: 97CE410F10C6E8C8102ADB274BC59225
+Content-Length: 1489
+
+<GWTRequest>
+  <service>com.konakartadmin.client.KKAdminGWTServiceIf</service>
+  <method>getConfigurationInfo</method>
+  <strongId>4F3F7CD5FDDBBD8C8F3E94920F660041</strongId>
+  <encoded>false</encoded>
+  <parameters>
+    <String>store1</String>
+    <String>8786ea8d903f1ef839d3011d12aa8047</String>
+    <String-array>
+      <String>STORE_COUNTRY</String>
+      <String>MULTI_VENDOR_MODE</String>
+      <String>REPORTS_STATUS_PAGE_URL</String>
+      <String>SHOW_INVISIBLE_PRODUCTS_IN_ADM</String>
+      <String>ADMIN_APP_LOGGING_LEVEL</String>
+      <String>ENTRY_PASSWORD_MIN_LENGTH</String>
+      <String>ADMIN_APP_ADDRESS_FORMAT</String>
+      <String>HIDDEN_PRODUCT_TYPES</String>
+      <String>ADMIN_APP_DEFAULT_CUST_CHOICE_IDX</String>
+      <String>ADMIN_APP_DEFAULT_CUST_GROUP_IDX</String>
+      <String>MULTISTORE_ADMIN_ROLE_IDX</String>
+      <String>ADMIN_APP_PROD_SEL_NUM_PRODS</String>
+      <String>ADMIN_APP_PROD_SEL_MAX_NUM_PRODS</String>
+      <String>ADMIN_APP_PROD_SEL_TEMPLATE</String>
+      <String>RICH_TEXT_EDITOR</String>
+      <String>ENABLE_OTHER_GENDER</String>
+      <String>ADMIN_APP_WARN_OF_DUPLICATE_SKUS</String>
+      <String>1ST_DAY_OF_WEEK</String>
+      <String>ADMIN_APP_LOGIN_WINDOW_FEATURES</String>
+      <String>ADMIN_APP_DISPLAY_SUBSCRIPTIONS_BUTTON</String>
+      <String>ADMIN_CURRENCY_DECIMAL_PLACES</String>
+      <String>IMG_BASE_URL</String>
+      <String>IMG_BASE_PATH</String>
+      <String>IMG_SERVLET_URL</String>
+      <String>ADMIN_APP_SELECT_PROD_ADDR_FORMAT</String>
+      <String>ADMIN_APP_PROD_ADDR_FORMAT</String>
+      <String>ADMIN_APP_CUST_ADDR_FORMAT</String>
+      <String>ADMIN_APP_MANU_ADDR_FORMAT</String>
+      <String>ADMIN_APP_STORE_ADDR_FORMAT</String>
+      <String>ADMIN_APP_ADDR_SEL_NUM_ADDRS</String>
+      <String>ADMIN_APP_ADDR_SEL_MAX_NUM_ADDRS</String>
+      <String>ADMIN_APP_MANU_SEL_NUM_MANUS</String>
+      <String>ADMIN_APP_MANU_SEL_MAX_NUM_MANUS</String>
+      <String>ADMIN_APP_PROD_ATTR_SEL_NUM_PROD_ATTRS</String>
+      <String>ADMIN_APP_PROD_ATTR_SEL_MAX_NUM_PROD_ATTRS</String>
+      <String>ADMIN_APP_PROD_OPT_SEL_NUM_PROD_OPTS</String>
+      <String>ADMIN_APP_PROD_OPT_SEL_MAX_NUM_PROD_OPTS</String>
+      <String>ADMIN_APP_TMPL_SEL_NUM_TMPLS</String>
+      <String>ADMIN_APP_TMPL_SEL_MAX_NUM_TMPLS</String>
+      <String>MESSAGE_TYPES</String>
+    </String-array>
+  </parameters>
+</GWTRequest>

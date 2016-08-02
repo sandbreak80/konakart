@@ -1,0 +1,49 @@
+"use strict";
+define(["require", "exports", "../../../util/ADQLClientStringUtil", "../ADQLClientQuerySelect"], function (require, exports, ADQLClientStringUtil, ADQLClientQuerySelect) {
+    var ADQLFunctionBase = (function () {
+        function ADQLFunctionBase(functionName, args, alias) {
+            if (args === void 0) { args = []; }
+            this.functionName = functionName;
+            this.args = args;
+            this.alias = alias;
+        }
+        ADQLFunctionBase.prototype.getFunctionName = function () {
+            if (!this.isFunction()) {
+                throw new Error("Can not get a function name from a field");
+            }
+            return this.functionName;
+        };
+        ADQLFunctionBase.prototype.getFieldName = function () {
+            if (this.isFunction()) {
+                throw new Error("Can not get a field name from a function");
+            }
+            return this.functionName;
+        };
+        ADQLFunctionBase.prototype.getName = function () {
+            return this.functionName;
+        };
+        ADQLFunctionBase.prototype.getArgs = function () {
+            return this.args;
+        };
+        ADQLFunctionBase.prototype.getAlias = function () {
+            return this.alias;
+        };
+        ADQLFunctionBase.prototype.isFunction = function () {
+            return !!this.args.length;
+        };
+        ADQLFunctionBase.prototype.toString = function () {
+            this.args[0] = StringUtils.encloseInBackticks(this.args[0]);
+            var str = [
+                this.functionName,
+                ADQLClientStringUtil.encloseStringInParenthesis(this.args.join(", ").toString()),
+                this.alias ? (" " + ADQLClientQuerySelect.AS + " " + this.alias) : ""
+            ];
+            return str.join("");
+        };
+        ADQLFunctionBase.prototype.isValid = function () {
+            return true;
+        };
+        return ADQLFunctionBase;
+    })();
+    return ADQLFunctionBase;
+});

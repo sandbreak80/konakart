@@ -1,0 +1,8 @@
+GET https://192.168.1.252:12322/adminer/static/favicon.ico HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: 192.168.1.252:12322
+Connection: Keep-Alive
+Cookie: adminer_sid=qu1q1586g5955o9a558at5muf1; adminer_version=0
+

@@ -1,0 +1,97 @@
+POST http://192.168.1.246:8090/controller/messagebroker/amf HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US
+Content-Length: 989
+Content-Type: application/x-amf
+Cookie: X-CSRF-TOKEN=79857ed042e367bf486b5ae050cb3b146041eddc; JSESSIONID=2abdf7e5ace14c135518d3de6e17
+Host: 192.168.1.246:8090
+Pragma: no-cache
+Referer: http://192.168.1.246:8090/controller/Main_20160603-170624.swf
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+x-flash-version: 22,0,0,209
+Content-Length: 989
+
+<ActionMessage>
+  <version>3</version>
+  <headers/>
+  <bodies>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/3</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <clientId class="String">71B5C82B-A309-D1AF-64E4-E2AA91008716</clientId>
+          <destination>userManager</destination>
+          <messageId>269175FE-E3AA-3FE2-765C-32ABFA4B43E7</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>getUserPreferences</operation>
+          <parameters>
+            <int>4</int>
+          </parameters>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/4</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <clientId class="String">71B5C82B-A309-D1AF-64E4-E2AA91008716</clientId>
+          <destination>userManager</destination>
+          <messageId>5C21D4FC-8074-7FBB-49E1-32ABFA4C91A7</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>getAllRoles</operation>
+          <parameters/>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+    <MessageBody>
+      <targetURI>null</targetURI>
+      <responseURI>/5</responseURI>
+      <data class="object-array">
+        <RemotingMessage>
+          <clientId class="String">71B5C82B-A309-D1AF-64E4-E2AA91008716</clientId>
+          <destination>userManager</destination>
+          <messageId>24DA694D-49C1-AB26-2CC6-32ABFA641F60</messageId>
+          <timestamp>0</timestamp>
+          <timeToLive>0</timeToLive>
+          <headers>
+            <entry>
+              <String>DSEndpoint</String>
+              <String>my-amf</String>
+            </entry>
+            <entry>
+              <String>DSId</String>
+              <String>71B5C6FA-761A-A524-5511-431F1597EFF3</String>
+            </entry>
+          </headers>
+          <operation>getAllCustomTimeRanges</operation>
+          <parameters/>
+        </RemotingMessage>
+      </data>
+    </MessageBody>
+  </bodies>
+</ActionMessage>

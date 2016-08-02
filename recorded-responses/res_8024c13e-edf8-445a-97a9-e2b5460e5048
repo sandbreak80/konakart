@@ -1,0 +1,17 @@
+"use strict";
+define(["require", "exports"], function (require, exports) {
+    var ADQLClientQueryLimit = (function () {
+        function ADQLClientQueryLimit(limit) {
+            this.limit = limit;
+        }
+        ADQLClientQueryLimit.prototype.isValid = function () {
+            return true;
+        };
+        ADQLClientQueryLimit.prototype.toString = function () {
+            return ADQLClientQueryLimit.LIMIT + " " + this.limit;
+        };
+        ADQLClientQueryLimit.LIMIT = "LIMIT";
+        return ADQLClientQueryLimit;
+    })();
+    return ADQLClientQueryLimit;
+});

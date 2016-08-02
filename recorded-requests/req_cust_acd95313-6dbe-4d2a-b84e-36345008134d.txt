@@ -1,0 +1,74 @@
+POST http://192.168.1.252:8780/konakartadmin/konakartadmin HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.5
+Content-Length: 460
+Content-Type: text/x-gwt-rpc; charset=utf-8
+Cookie: konakart.username=admin%40konakart.com; konakart.storeId=store1; konakart.storeName=Store%201; konakart.logLevel=WARNING; konakart.lastPanel=kk_panel_customers
+Host: 192.168.1.252:8780
+Pragma: no-cache
+Referer: http://192.168.1.252:8780/konakartadmin/#kk_panel_customers
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+X-GWT-Module-Base: http://192.168.1.252:8780/konakartadmin/
+X-GWT-Permutation: 97CE410F10C6E8C8102ADB274BC59225
+Content-Length: 460
+
+<GWTRequest>
+  <service>com.konakartadmin.client.KKAdminGWTServiceIf</service>
+  <method>getCustomers</method>
+  <strongId>4F3F7CD5FDDBBD8C8F3E94920F660041</strongId>
+  <encoded>false</encoded>
+  <parameters>
+    <String>store1</String>
+    <String>8786ea8d903f1ef839d3011d12aa8047</String>
+    <com.konakartadmin.client.app.GWT__AdminCustomerSearch>
+      <id>-1</id>
+      <firstName></firstName>
+      <firstNameRule>4</firstNameRule>
+      <firstNameIgnoreCase>false</firstNameIgnoreCase>
+      <lastName></lastName>
+      <lastNameRule>4</lastNameRule>
+      <lastNameIgnoreCase>false</lastNameIgnoreCase>
+      <emailAddr></emailAddr>
+      <emailAddrRule>4</emailAddrRule>
+      <emailAddrIgnoreCase>false</emailAddrIgnoreCase>
+      <useWildCardsOnEmailAddr>true</useWildCardsOnEmailAddr>
+      <promotionId>-1</promotionId>
+      <enabled>-1</enabled>
+      <type>-1</type>
+      <newsletter>-1</newsletter>
+      <notifiedProductId>-1</notifiedProductId>
+      <groupId>-1</groupId>
+      <expressionId>-1</expressionId>
+      <streetAddres></streetAddres>
+      <postcode></postcode>
+      <city></city>
+      <streetAddresRule>4</streetAddresRule>
+      <streetAddressIgnoreCase>false</streetAddressIgnoreCase>
+      <streetAddres1Rule>4</streetAddres1Rule>
+      <streetAddress1IgnoreCase>false</streetAddress1IgnoreCase>
+      <postcodeRule>4</postcodeRule>
+      <postcodeIgnoreCase>false</postcodeIgnoreCase>
+      <cityRule>4</cityRule>
+      <cityIgnoreCase>false</cityIgnoreCase>
+      <showInvisible>false</showInvisible>
+      <emailVerified>-1</emailVerified>
+      <custom1Rule>4</custom1Rule>
+      <custom1IgnoreCase>false</custom1IgnoreCase>
+      <custom2Rule>4</custom2Rule>
+      <custom2IgnoreCase>false</custom2IgnoreCase>
+      <custom3Rule>4</custom3Rule>
+      <custom3IgnoreCase>false</custom3IgnoreCase>
+      <custom4Rule>4</custom4Rule>
+      <custom4IgnoreCase>false</custom4IgnoreCase>
+      <custom5Rule>4</custom5Rule>
+      <custom5IgnoreCase>false</custom5IgnoreCase>
+      <extReference1Rule>4</extReference1Rule>
+      <extReference2Rule>4</extReference2Rule>
+      <orderBy>ORDER_BY_LASTNAME_ASCENDING</orderBy>
+      <returnNonRegisteredCustomers>false</returnNonRegisteredCustomers>
+    </com.konakartadmin.client.app.GWT__AdminCustomerSearch>
+    <int>0</int>
+    <int>12</int>
+  </parameters>
+</GWTRequest>

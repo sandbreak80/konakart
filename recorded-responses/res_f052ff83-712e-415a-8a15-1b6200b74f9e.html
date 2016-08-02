@@ -1,0 +1,157 @@
+<div>
+
+    <!------- hide and show main nav / top row -------->
+    <div class="ads-border-bottom"
+         style="padding-top: 8px; padding-bottom: 8px; ">
+
+        <div class="ads-menu-item ads-logout-menu-item ads-display-table ads-width-100percent"
+             ng-click="controller.onToggleTopMenuBar()"
+             style="padding-top: 4px; padding-bottom: 4px; padding-left: 14px;"
+                >
+            <div class="ads-display-table-row">
+                <div class="ads-display-table-cell ads-vertical-align">
+                    <img src="images/arrow_down_gray.svg" class="ads-svg-icon-medium"
+                         ng-show="controller.navigationState.isTopMenuBarMinimized"
+                            />
+                    <img src="images/arrow_up_gray.svg" class="ads-svg-icon-medium"
+                         ng-show="!controller.navigationState.isTopMenuBarMinimized"
+                            />
+                </div>
+                <div class="ads-display-table-cell ads-vertical-align"
+                     style="padding-left: 12px;">
+                    <div ng-show="controller.navigationState.isTopMenuBarMinimized">
+                        Show Top Navigation Bar
+                    </div>
+                    <div ng-show="!controller.navigationState.isTopMenuBarMinimized">
+                        Hide Top Navigation Bar
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- -------- SETTINGS / ADMIN -------- -->
+    <div ng-show="controller.showSetupMenu" class="ads-border-bottom"
+         style="padding-top: 8px; padding-bottom: 8px;  "
+            >
+
+        <div class="ads-menu-item-padding ads-very-light-gray-text"
+                >
+            ADMIN
+        </div>
+
+
+        <!-- Show/hide based on user access permission.
+        <div class="ads-menu-item"
+             ng-click="controller.onClickSettings()"
+             ng-show="controller.showSetupMenu">
+            <div>Settings</div>
+        </div>
+
+        -->
+
+        <div class="ads-menu-item" ng-click="controller.onViewAgents()"
+             ng-show="controller.mainNavConfig.showAdministrationMenuItem"
+                >
+            AppDynamics Agents
+        </div>
+
+        <div class="ads-menu-item" ng-click="controller.onViewAdmin()"
+             ng-show="controller.mainNavConfig.showAdministrationMenuItem"
+                >
+            Administration
+        </div>
+
+        <div class="ads-menu-item" ng-click="controller.onViewLicense()"
+             ng-show="controller.mainNavConfig.showAdministrationMenuItem"
+                >
+            License
+        </div>
+
+    </div>
+
+
+    <!-- -------- ADVANCED / TOOLS -------- -->
+    <div class="ads-border-bottom"
+         style="padding-top: 8px; padding-bottom: 8px;  "
+            >
+
+        <div class="ads-menu-item-padding ads-very-light-gray-text"
+                >
+            TOOLS
+        </div>
+
+        <div class="ads-menu-item" ng-click="controller.onCopyLinkClick()">
+            <div class="ng-binding">{{::getString("ms_copyLinkToThisLocationToClipboard")}}</div>
+        </div>
+        <div class="ads-menu-item" ng-click="controller.onCopyLinkFixedTimeRange()"
+             ng-hide="disableDefadivtDeepLinkCopy"
+                >
+            <div class="ng-binding">{{::getString("ms_copyLinkToThisLocationToClipboardFixedTime")}}</div>
+        </div>
+
+        <!--
+             unable to support some of this... commenting out for now till we port from Flex
+
+        <div class="ads-menu-item" ng-click="controller.onCopyLocationPath()"
+            ng-hide="disableDefadivtDeepLinkCopy"
+                >
+            <div class="ng-binding">{{::getString("ms_copyLocationPathToClipboard")}}</div>
+        </div>
+        <div class="ads-menu-item" ng-click="controller.onCopyLinkWithAuth()"
+            ng-hide="disableDefadivtDeepLinkCopy"
+                >
+            <div class="ng-binding">{{::getString("ms_copyLinkToThisLocationToClipboardWithUserAuthCredentials")}}</div>
+        </div>
+
+        -->
+
+        <div class="ads-menu-item" ng-click="controller.onSetCurrentLocationAsDefaultLandingScreen()"
+             ng-hide="controller.disableDefaultDeepLinkCopy"
+                >
+            <div>{{::getString("ms_saveCurrentLocationAsDefaultLandingScreen")}}</div>
+        </div>
+
+
+    </div>
+
+    <!-- -------- MY SETTINGS -------- -->
+    <div class="ads-border-bottom"
+         style="padding-top: 8px; padding-bottom: 8px;  "
+            >
+
+        <div class="ads-menu-item-padding ads-very-light-gray-text">
+            MY SETTINGS
+        </div>
+
+        <div class="ads-menu-item" ng-click="controller.openMyPreferences()">
+            <div>My Preferences</div>
+        </div>
+
+        <div class="ads-menu-item" ng-click="controller.onMyADAccount()">
+            <div>My AppDynamics Account</div>
+        </div>
+
+    </div>
+
+    <!-- -------- LOGOUT -------- -->
+    <div style="padding-top: 8px; padding-bottom: 8px;  "
+            >
+        <div class="ads-menu-item ads-logout-menu-item ads-display-table ads-width-100percent" ng-click="controller.onLogout()"
+             style="padding-top: 4px; padding-bottom: 4px; padding-left: 16px"
+                >
+            <div class="ads-display-table-row">
+                <div class="ads-display-table-cell ads-vertical-align">
+                    <img src="images/mainMenu/log_out_gray.svg" class="ads-svg-icon-medium"/>
+                </div>
+                <div class="ads-display-table-cell ads-vertical-align" style="padding-left: 12px; ">
+                    Logout {{controller.mainNavConfig.username}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

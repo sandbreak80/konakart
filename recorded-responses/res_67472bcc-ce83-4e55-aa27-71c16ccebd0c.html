@@ -1,0 +1,512 @@
+<div class="ads-left-nav2-directive-root-container">
+
+    <!-- ========== Real vs Synthetic Selector ========= -->
+
+    <!--
+    <div style="padding-left: 12px; padding-top: 8px; padding-bottom: 8px; padding-right: 12px;">
+
+        <ad-super-select ad-options="controller.realVsSyntheticSelectorOptions"
+                         ad-selected="controller.realVsSyntheticSelected"
+                         ad-change="controller.onRealVsSyntheticChange()"
+                         style="width: 100%;"
+                >
+        </ad-super-select>
+
+    </div>
+
+    --->
+
+    <!-- ========== Application Name, Main Dashboard Button, And Drop Down (on right) for other apps =========
+         ng-class="controller.applicationSelectedClassName + ' ads-app-name-and-drop-down-container hoverable'"
+    -->
+
+    <div style="width: 100%; position: relative;"
+         class="ads-display-toggle-container ads-app-name-and-drop-down-container hoverable"
+         ad-direction="downLeft"
+         ad-drop-down-toggle
+         ad-close-mode="clickOutside"
+         ad-in-place="false"
+         ad-new-compile-mode="true"
+         ad-fit-to-screen="true"
+            >
+
+        <!-- app name -->
+        <div title="{{controller.selectedApplication.text}}"
+             class="ads-display-table">
+            <div class="ads-display-table-row">
+
+                <div class="ads-display-table-cell ads-vertical-align ads-app-name-container"
+                     ng-show="!controller.minimized"
+                        >
+                    {{controller.selectedApplication.name}}
+                </div>
+
+                <div class="ads-display-table-cell ads-app-name-minimized-icon-container ads-left-nav-main-item-icon-box ads-vertical-align hoverable"
+                     ng-show="controller.minimized"
+                        >
+                    <img src="images/leftNav/eumWebAppsWithDropDown_gray.svg" class="ads-left-nav-main-item-icon-unselected"
+                         style="width: 30px; height: 30px;"
+                            />
+                    <img src="images/leftNav/eumWebAppsWithDropDown_white.svg" class="ads-left-nav-main-item-icon-selected"
+                         style="width: 30px; height: 30px;"
+                            />
+                </div>
+
+            </div>
+        </div>
+
+        <!-- drop down triangle -->
+        <div class="hoverable ads-apps-drop-down-triangle-container"
+             ng-show="!controller.minimized"
+                >
+            <img src="images/leftNav/triangleDown_gray.svg"
+                 class="adsAppDropDownTriangleImage ads-triangle-image-up-down-dimensions ads-display-toggle-item-normal"/>
+            <img src="images/leftNav/triangleDown_white.svg"
+                 class="adsAppDropDownTriangleImage ads-triangle-image-up-down-dimensions ads-display-toggle-item-hover"/>
+        </div>
+
+    </div>
+
+    <!-- Drop down listing other apps -->
+    <ul class="ads-fly-out-container ads-left-nav-panel-width" style="overflow: auto; min-width: 0px; ">
+
+        <li class="ads-menu-item" ng-click="controller.onClickViewAllAppsInAllApplicationsDropDown()">
+            {{::getString("ms_viewAllWebApplications")}}
+        </li>
+
+        <li style="margin-top: 4px; margin-bottom: 8px">
+            <div class="ads-list-divider"/>
+        </li>
+
+        <!-- search box -->
+        <div class="ads-menu-item-padding"
+        >
+            <div ad-search-box ng-model="appSearchString" />
+        </div>
+
+        <li class="ads-menu-item" ng-repeat="application in controller.applications | filter : { name : appSearchString } track by $index"
+            ng-click="controller.onClickApplicationInAllApplicationsDropDown(application)">
+            {{application.name}}
+        </li>
+
+    </ul>
+
+    <div style="padding-top: 4px" /><!-- spacer -->
+
+    <!-- horizontal line -->
+    <div class="ads-left-nav-horizontal-line" />
+
+    <div style="padding-top: 4px" /><!-- spacer -->
+
+
+    <!-- ============================== Application Dashboard ============================= -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickApplicationName()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_APP_NAME'}"
+             tooltip="{{controller.minimized ?  controller.selectedApplication.name + ' Dashboard' : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+                >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/dashboard_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/dashboard_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                    >
+                {{::getString("ms_eumWebAppDashboard")}}
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                    >
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-show="!controller.minimized && controller.featureService.isSyntheticVisible()">
+
+        <div style="padding-top: 4px" /><!-- spacer -->
+
+        <!-- horizontal line -->
+        <div class="ads-left-nav-horizontal-line-OFF" />
+
+        <div style="padding-top: 4px" /><!-- spacer -->
+
+        <!-- =========================================== REAL USERS ========================================== -->
+
+        <div class="ads-left-nav2-section-title-row">
+            REAL USERS
+        </div>
+
+    </div>
+
+    <div ng-if="controller.isRealUserMode">
+
+        <!-- ============================== Sessions ============================= -->
+
+        <div class="ads-display-table" style="width: 100%;" ng-if="controller.featureService.isSessionsVisible() && controller.featureService.isWebEUMProEnabled()">
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-click="controller.onClickSessions()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SESSIONS'}"
+                 tooltip="{{controller.minimized ?  getString('ms_eumWebSessionsNavLabel') : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                    >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/sessions_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/sessions_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                        >
+                    {{::getString("ms_eumWebSessionsNavLabel")}}
+                </div>
+
+                <!-- Arrow -->
+                <div class="ads-display-table-cell"
+                     ng-show="!controller.minimized"
+                        >
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============================== Pages & Ajax Requests ============================= -->
+
+        <div class="ads-display-table" style="width: 100%;">
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-click="controller.onClickPagesAjaxRequests()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_PAGES_AJAX_REQUESTS'}"
+                 tooltip="{{controller.minimized ?  getString('ms_pagesAndAjaxRequestsNavLabel') : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                    >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/pages_ajax_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/pages_ajax_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                        >
+                    {{::getString("ms_pagesAndAjaxRequestsNavLabel")}}
+                </div>
+
+                <!-- Arrow -->
+                <div class="ads-display-table-cell"
+                     ng-show="!controller.minimized"
+                        >
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============================== Web Analyze ============================= -->
+
+        <div class="ads-display-table" style="width: 100%;" ng-if="controller.featureService.isWebEUMProEnabled()">
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-click="controller.onClickWebAnalyze()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_WEB_ANALYZE'}"
+                 tooltip="{{controller.minimized ?  getString('ms_eumWebAnalyzeNavLabel') : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                    >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/user_analytics_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/user_analytics_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                        >
+                    {{::getString("ms_eumWebAnalyzeNavLabel")}}
+                </div>
+
+                <!-- Arrow -->
+                <div class="ads-display-table-cell"
+                     ng-show="!controller.minimized"
+                        >
+                </div>
+
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <!-- =========================================== SYNTHETIC ========================================== -->
+
+    <div ng-if="!controller.isRealUserMode">
+
+
+        <!-- ============================== Schedules ============================= -->
+
+        <div class="ads-display-table" style="width: 100%;">
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-click="controller.onClickSyntheticSchedules()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SESSIONS'}"
+                 tooltip="{{controller.minimized ?  'Schedules' : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                    >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/appServers_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/appServers_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                        >
+                    Schedules
+                </div>
+
+                <!-- Arrow -->
+                <div class="ads-display-table-cell"
+                     ng-show="!controller.minimized"
+                        >
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================== Synthetic ============================= -->
+
+    <div ng-if="controller.featureService.isSyntheticVisible()">
+        <!--- spacer and horizontal line -->
+        <div class="ads-left-nav-horizontal-line-seprarator-OFF" />
+
+        <div class="ads-left-nav2-section-title-row"
+             ng-show="!controller.minimized"
+            >
+        SYNTHETIC
+    </div>
+
+        <div class="ads-display-table" style="width: 100%;">
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-click="controller.onClickSyntheticSchedules()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_JOBS_LIST'}"
+                 tooltip="{{controller.minimized ?  getString('ms_SYNTHETIC_JOBS_TAB') : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/synthetic_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/synthetic_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                    >
+                    <!--{{::getString("ms_SYNTHETIC_TAB_NAME")}}-->
+                    {{::getString("ms_SYNTHETIC_JOBS_TAB")}}
+                </div>
+
+            </div>
+
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-if="controller.featureService.isEUMSyntheticProEnabled()"
+                 ng-click="controller.onClickSyntheticJobSnapshots()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_JOB_SNAPSHOTS'}"
+                 tooltip="{{controller.minimized ?  getString('ms_SYNTHETIC_SESSIONS') : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/synthetic_sessions_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/synthetic_sessions_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                    >
+                    {{::getString("ms_SYNTHETIC_SESSIONS")}}
+                </div>
+
+            </div>
+
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-if="controller.featureService.isEUMSyntheticProEnabled()"
+                 ng-click="controller.onClickSyntheticPages()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SYNTHETIC_PAGES'}"
+                 tooltip="{{controller.minimized ?  getString('ms_SYNTHETIC_PAGES') : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/pages_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/pages_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                    >
+                    {{::getString("ms_SYNTHETIC_PAGES")}}
+                </div>
+
+            </div>
+
+            <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+                 ng-click="controller.onClickSyntheticOnDemand()"
+                 ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_SYNTHETIC_ON_DEMAND'}"
+                 tooltip="{{controller.minimized ?  getString('ms_SYNTHETIC_ON_DEMAND') : null}}"
+                 tooltip-placement="right"
+                 tooltip-append-to-body="true"
+                >
+
+                <!-- icon -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                    <img src="images/leftNav/onDemand_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                    <img src="images/leftNav/onDemand_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+                </div>
+
+                <!-- Label -->
+                <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                     ng-show="!controller.minimized"
+                    >
+                    {{::getString("ms_SYNTHETIC_ON_DEMAND")}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================== RUM And Synth Items ========================================== -->
+
+    <!--- spacer and horizontal line -->
+    <div class="ads-left-nav-horizontal-line-seprarator" />
+
+    <!-- ------------------------------ Health Rule Violations ----------------------------- -->
+
+    <div class="ads-display-table" style="width: 100%;">
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickHealthRuleViolations()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_HEALTH_RULE_VIOLATIONS'}"
+             tooltip="{{controller.minimized ?  getString('ms_policyViolations') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+            >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/health_rule_violation_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/health_rule_violation_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_policyViolations")}}
+            </div>
+
+            <!-- Arrow -->
+            <div class="ads-display-table-cell"
+                 ng-show="!controller.minimized"
+                >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ------------------------------ Events ----------------------------- -->
+
+    <div class="ads-display-table" style="width: 100%;"> <!-- todo-amorgan-eum2 not sure on events -->
+        <div class="ads-display-table-row ads-left-nav-main-item hoverable"
+             ng-click="controller.onClickEvents()"
+             ng-class="{'ads-left-nav-item-selected' : controller.selectedLeftNavItem == 'NAV_ITEM_EVENTS'}"
+             tooltip="{{controller.minimized ?  getString('ms_events') : null}}"
+             tooltip-placement="right"
+             tooltip-append-to-body="true"
+            >
+
+            <!-- icon -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-icon-box">
+                <img src="images/leftNav/events_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/events_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <!-- Label -->
+            <div class="ads-display-table-cell ads-left-nav-main-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_events")}}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =========================================== Minor Items at Bottom ========================================== -->
+
+    <!--- spacer and horizontal line -->
+    <div class="ads-left-nav-horizontal-line-seprarator" />
+
+    <!-- ------------------------------ Alert & Respond ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/AlertRespondEntry.html'"></div>
+
+    <!-- ------------------------------ Metric Browser ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/MetricBrowserEntry.html'"></div>
+
+    <!-- ------------------------------ Config ------------------------------ -->
+    <div ng-include="'app/view/leftMenuBar/leftNavEntry/ConfigEntry.html'"></div>
+
+    <!-- ------------------------------ Link to APM ------------------------------ -->
+    <div class="ads-display-table ads-left-nav-minor-item hoverable" style="width: 100%;"
+         ng-click="controller.onViewInAPM()"
+         tooltip="{{controller.minimized ?  getString('ms_viewInAPM') : null}}"
+         tooltip-placement="right"
+         tooltip-append-to-body="true"
+         ng-show="controller.showLinkToAPM"
+        >
+        <div class="ads-display-table-row"
+            >
+
+            <div class="ads-display-table-cell ads-left-nav-minor-item-icon-box"
+                 ng-show="controller.minimized"
+                >
+                <img src="images/leftNav/apm_gray.svg" class="ads-left-nav-main-item-icon-unselected"/>
+                <img src="images/leftNav/apm_white.svg" class="ads-left-nav-main-item-icon-selected"/>
+            </div>
+
+            <div class="ads-display-table-cell ads-left-nav-minor-item-label"
+                 ng-show="!controller.minimized"
+                >
+                {{::getString("ms_viewInAPM")}}
+            </div>
+        </div>
+    </div>
+
+</div>

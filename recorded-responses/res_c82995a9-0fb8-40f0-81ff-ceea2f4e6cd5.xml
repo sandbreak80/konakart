@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="-499 373 24 24" enable-background="new -499 373 24 24" xml:space="preserve">
+<g id="Layer_2" display="none">
+	<g id="Layer_1_1_" display="inline">
+		<circle fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" cx="-486.98953" cy="384.93344" r="5"/>
+		<path fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" d="M-481.00586,395.97272h-12
+			c-1.10001,0-2-0.89999-2-2V375.9715c0-1.09998,0.89999-2,2-2h12c1.10001,0,2,0.90002,2,2v18.00122
+			C-479.00586,395.07272-479.90585,395.97272-481.00586,395.97272z"/>
+		<path fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" d="M-479.49023,394.48773h-15.03125
+			c-1.10001,0-2-0.89999-2-2v-15.03125c0-1.10001,0.89999-2,2-2h15.03125c1.10001,0,2,0.89999,2,2v15.03125
+			C-477.49023,393.58774-478.39023,394.48773-479.49023,394.48773z"/>
+		<path fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" d="M-498.00647,390.97211v-12
+			c0-1.09998,0.89999-2,2-2h18.00122c1.10001,0,2,0.90002,2,2v12c0,1.10001-0.89999,2-2,2h-18.00122
+			C-497.10648,392.97211-498.00647,392.07211-498.00647,390.97211z"/>
+	</g>
+	<g id="lines" display="inline">
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-483.47916" y1="372.97211" x2="-483.47916" y2="397"/>
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-487.02084" y1="372.97211" x2="-487.02084" y2="397"/>
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-490.52084" y1="372.97211" x2="-490.52084" y2="397"/>
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-498.99451" y1="381.44699" x2="-474.99451" y2="381.44699"/>
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-498.99451" y1="384.98865" x2="-474.99451" y2="384.98865"/>
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-498.99451" y1="388.48865" x2="-474.99451" y2="388.48865"/>
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-499.00586" y1="372.97211" x2="-475.00586" y2="396.97211"/>
+		
+			<line fill="none" stroke="#DBDBDB" stroke-width="0.1" stroke-miterlimit="10" x1="-475.00586" y1="372.97211" x2="-499.00586" y2="396.97211"/>
+	</g>
+</g>
+<g>
+	<path fill="#6F6F6F" d="M-477.94958,393.00806c1.04852,0,1.94958-0.896,1.94958-1.96545v-12.07861
+		c0-1.04852-0.75006-1.96399-1.94958-1.96399H-481v1.95966h2.37012c0.34058,0,0.62836,0.28778,0.62836,0.62836v10.83344
+		c0,0.34058-0.28778,0.62836-0.62836,0.62836H-481V393"/>
+	<path fill="#6F6F6F" d="M-493,393v-1.9502h-2.36383c-0.34058,0-0.62836-0.28778-0.62836-0.62836v-10.83344
+		c0-0.34058,0.28778-0.62836,0.62836-0.62836H-493V377h-3.01245c-1.11139,0-1.96393,0.89453-1.96393,1.96399v12.07861
+		c0,1.02747,0.91541,1.96545,1.96393,1.96545"/>
+</g>
+<polygon fill="#6F6F6F" points="-488.49094,387.19034 -491.15466,384.52661 -492.48029,385.85223 -488.50345,389.82907 
+	-481,382.32562 -482.32562,381 "/>
+</svg>

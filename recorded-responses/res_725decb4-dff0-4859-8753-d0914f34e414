@@ -1,0 +1,3749 @@
+<GWTResponse>
+  <result class="com.konakartadmin.client.app.GWT_AdminMessageSet">
+    <language>en_GB</language>
+    <totalMsgs>1869</totalMsgs>
+    <timestamp>1468613169188</timestamp>
+    <msgIds>
+      <String>msg.license.expired</String>
+      <String>question.delete.miscItemType</String>
+      <String>button.copy</String>
+      <String>help.maintainReturns</String>
+      <String>label.productSku</String>
+      <String>label.numberOfPayments</String>
+      <String>obj.orders</String>
+      <String>label.action</String>
+      <String>question.delete.coupon</String>
+      <String>help.templateConfig</String>
+      <String>ls.miscitemsPerPage.title</String>
+      <String>label.model</String>
+      <String>listBox.objType.category</String>
+      <String>panel.customerCommunications</String>
+      <String>rt.indent</String>
+      <String>question.delete.shipper</String>
+      <String>date.month.short.Oct</String>
+      <String>msg.productOptionValuesDel</String>
+      <String>OFF</String>
+      <String>label.use.cust.lang</String>
+      <String>validation.textGT</String>
+      <String>listBox.allProducts</String>
+      <String>label.attr.template</String>
+      <String>msg.refreshCaches</String>
+      <String>panel.geoZones</String>
+      <String>label.allAddresses</String>
+      <String>label.categoryCommonData</String>
+      <String>error.database.connection.failed</String>
+      <String>help.catalogPrices</String>
+      <String>msg.invalidTemplate</String>
+      <String>label.numberOfCustomers</String>
+      <String>label.minutes</String>
+      <String>dialog.catalog.price.confirmation</String>
+      <String>question.copy.product</String>
+      <String>listBox.days</String>
+      <String>help.ordersDelivered</String>
+      <String>button.rules</String>
+      <String>msg.noProductSelected</String>
+      <String>msg.noCatalogPriceRules</String>
+      <String>obj.taxAreaMapping</String>
+      <String>help.executeReports</String>
+      <String>msg.manageListOfExcluded</String>
+      <String>label.problem</String>
+      <String>label.reviews</String>
+      <String>msg.settings</String>
+      <String>label.module</String>
+      <String>panel.refunds</String>
+      <String>error.storeIdEmpty</String>
+      <String>rt.large</String>
+      <String>validation.regex</String>
+      <String>label.orderRefunds</String>
+      <String>label.contentTypeDesc.desc</String>
+      <String>label.content</String>
+      <String>dialog.select.manufacturer</String>
+      <String>kk_panel_customerForReview_2.custom1</String>
+      <String>question.delete.filter</String>
+      <String>kk_panel_customerForReview_2.custom2</String>
+      <String>error.configurationkey.not.set</String>
+      <String>kk_panel_customerForReview_2.custom3</String>
+      <String>msg.disableCustSearchDLs</String>
+      <String>label.content.custom3</String>
+      <String>question.delete.custgroup</String>
+      <String>label.content.custom2</String>
+      <String>label.content.custom1</String>
+      <String>panel.resetDatabase</String>
+      <String>label.tierPrice.cust1</String>
+      <String>dialog.select.gift.certs.promotion</String>
+      <String>label.content.custom4</String>
+      <String>panel.status</String>
+      <String>help.ShippingModulesConfg</String>
+      <String>help.stockOrderConfig</String>
+      <String>value.newsletter.subscribed</String>
+      <String>help.selectAddProductsFor</String>
+      <String>validation.valueBetween</String>
+      <String>rt.green</String>
+      <String>error.usernameOrPasswordBad</String>
+      <String>label.indexAttachment</String>
+      <String>msg.copyFile</String>
+      <String>label.bccExtraAddresses</String>
+      <String>rt.xLarge</String>
+      <String>listBox.giftCertificate</String>
+      <String>label.content.status</String>
+      <String>panel.payment</String>
+      <String>label.percent</String>
+      <String>label.telephone1</String>
+      <String>label.prod.cust10</String>
+      <String>validation.taxArea</String>
+      <String>label.fax</String>
+      <String>msg.moveToRelatedItems</String>
+      <String>help.solrSearchControl</String>
+      <String>msg.cloning</String>
+      <String>label.status</String>
+      <String>msg.productOptionValueDel</String>
+      <String>date.month.long.March</String>
+      <String>obj.promotions</String>
+      <String>label.onlyDisabledUsers</String>
+      <String>help.shippingPackingConfig</String>
+      <String>help.pdfConfig</String>
+      <String>ls.returnsPerPage.title</String>
+      <String>button.show</String>
+      <String>label.percent.off</String>
+      <String>panel.viewLogs</String>
+      <String>panel.manufacturers</String>
+      <String>listBox.allGroups</String>
+      <String>label.content.objectId</String>
+      <String>help.multistoreConfig</String>
+      <String>label.lastBillingDate</String>
+      <String>msg.removeExcludeListIncludeSome</String>
+      <String>value.newsletter.unsubscribed</String>
+      <String>ls.customersPerPage.title</String>
+      <String>error.retrieving.report</String>
+      <String>panel.customAHeader</String>
+      <String>listbox.DATE_TYPE</String>
+      <String>label.bookings.cust2</String>
+      <String>label.bookings.cust1</String>
+      <String>listbox.MATCH</String>
+      <String>label.bookings.cust3</String>
+      <String>listBox.physicalProduct</String>
+      <String>label.active</String>
+      <String>panel.content</String>
+      <String>rt.normal</String>
+      <String>label.content.clickUrl</String>
+      <String>label.exclude</String>
+      <String>label.read</String>
+      <String>label.emailVerified</String>
+      <String>error.importFilesPathUndefined</String>
+      <String>label.taxCode</String>
+      <String>help.contentTypes</String>
+      <String>label.priceExcTax1</String>
+      <String>label.promotionType</String>
+      <String>panel.custom1Header</String>
+      <String>panel.custom10Header</String>
+      <String>label.priceExcTax3</String>
+      <String>help.customPanelConfig</String>
+      <String>label.priceExcTax2</String>
+      <String>rt.superscript</String>
+      <String>label.orderId</String>
+      <String>button.custom2</String>
+      <String>question.uploadTemplateBadExtension</String>
+      <String>button.custom1</String>
+      <String>listBox.objType.none</String>
+      <String>button.custom4</String>
+      <String>button.custom3</String>
+      <String>question.select.inc.products.bundle</String>
+      <String>label.format</String>
+      <String>ls.custtagsPerPage.title</String>
+      <String>question.delete.customerTag</String>
+      <String>help.promotionMaxUsage</String>
+      <String>button.custom5</String>
+      <String>obj.prodAttrTemplate</String>
+      <String>help.reportsConfig</String>
+      <String>button.returns</String>
+      <String>label.newPassword</String>
+      <String>help.couponCustom1</String>
+      <String>help.couponCustom2</String>
+      <String>help.couponCustom3</String>
+      <String>help.couponCustom5</String>
+      <String>help.couponCustom4</String>
+      <String>button.refresh</String>
+      <String>label.bookable.product.details</String>
+      <String>label.price</String>
+      <String>date.day.short.Thu</String>
+      <String>label.returnReason</String>
+      <String>label.imageFileName</String>
+      <String>rt.insertImage</String>
+      <String>WARNING</String>
+      <String>label.ipn.cust1Dec</String>
+      <String>kk_panel_customerForReview.custom5</String>
+      <String>kk_panel_customerForReview.custom4</String>
+      <String>kk_panel_customerForReview.custom3</String>
+      <String>kk_panel_customerForReview.custom2</String>
+      <String>kk_panel_customerForReview.custom1</String>
+      <String>question.select.exc.products.promotion</String>
+      <String>label.remove</String>
+      <String>label.transactionId</String>
+      <String>validation.number</String>
+      <String>msg.editMode</String>
+      <String>question.price.rule.remove</String>
+      <String>error.unexpectedErrorServerForDetails</String>
+      <String>question.confirmCustGroupEmails</String>
+      <String>contains</String>
+      <String>label.storeLocal</String>
+      <String>help.copyAll</String>
+      <String>label.msgCatKey</String>
+      <String>label.expression.cust3</String>
+      <String>label.uploadImage</String>
+      <String>label.couponCustom5</String>
+      <String>label.couponCustom3</String>
+      <String>label.couponCustom4</String>
+      <String>obj.tagGroup</String>
+      <String>label.expression.cust1</String>
+      <String>label.couponCustom1</String>
+      <String>label.expression.cust2</String>
+      <String>label.couponCustom2</String>
+      <String>label.geoZoneDescription</String>
+      <String>label.preview</String>
+      <String>label.filter.custom2</String>
+      <String>label.filter.custom1</String>
+      <String>label.txnId</String>
+      <String>value.gender.female</String>
+      <String>button.reviews</String>
+      <String>obj.products</String>
+      <String>date.day.long.Saturday</String>
+      <String>button.select</String>
+      <String>error.order.status.exists.insert</String>
+      <String>label.invisibleCat</String>
+      <String>panel.download</String>
+      <String>error.passwordInvalid</String>
+      <String>label.custom.attrs</String>
+      <String>help.country</String>
+      <String>label.redo</String>
+      <String>label.rewardPoints</String>
+      <String>panel.editProduct</String>
+      <String>label.zoneSearch</String>
+      <String>panel.catalogPricesForCatalog</String>
+      <String>label.catalogDescription</String>
+      <String>label.orderNum</String>
+      <String>panel.insertStore</String>
+      <String>label.productName</String>
+      <String>validation.numberGEQ</String>
+      <String>question.select.inc.custgroup.promotion</String>
+      <String>msg.setLanguage</String>
+      <String>help.prodAttrTemplates</String>
+      <String>question.confirmSolrAdd</String>
+      <String>obj.expression</String>
+      <String>label.undo</String>
+      <String>label.selectBundle</String>
+      <String>label.returnByApi</String>
+      <String>obj.countries</String>
+      <String>panel.expressions</String>
+      <String>label.prod.cust8</String>
+      <String>label.audit.summary</String>
+      <String>label.custom.template.attrs</String>
+      <String>label.prod.cust9</String>
+      <String>help.customerTags</String>
+      <String>label.custTag.cust3</String>
+      <String>label.custTag.cust2</String>
+      <String>label.productDescription</String>
+      <String>label.custTag.cust1</String>
+      <String>label.prod.cust1</String>
+      <String>label.prod.cust2</String>
+      <String>label.prod.cust3</String>
+      <String>button.search</String>
+      <String>label.prod.cust4</String>
+      <String>label.prod.cust5</String>
+      <String>label.prod.cust6</String>
+      <String>label.prod.cust7</String>
+      <String>msg.publishedProducts</String>
+      <String>label.country.custom1</String>
+      <String>label.language</String>
+      <String>kk_panel_viewLogs.custom1</String>
+      <String>label.taxAreaName</String>
+      <String>panel.editOrder</String>
+      <String>ls.refundsPerPage.title</String>
+      <String>dl.deletedChoice.deleted</String>
+      <String>panel.languages</String>
+      <String>panel.importerConfig</String>
+      <String>ls.productsPerPage.title</String>
+      <String>validation.numberLEQ</String>
+      <String>dialog.select.product.notification</String>
+      <String>panel.customers</String>
+      <String>label.refundStatus</String>
+      <String>panel.protocol</String>
+      <String>label.subject</String>
+      <String>label.custTag.cust4</String>
+      <String>label.custTag.cust5</String>
+      <String>error.storeExists</String>
+      <String>label.city</String>
+      <String>obj.coupons</String>
+      <String>label.facet</String>
+      <String>obj.prodAttrDesc</String>
+      <String>panel.customEHeader</String>
+      <String>label.description</String>
+      <String>label.depth</String>
+      <String>kk_panel_returns.custom3</String>
+      <String>msg.usedByNoProducts</String>
+      <String>panel.viewBatchLogs</String>
+      <String>panel.reviewsForCust</String>
+      <String>listbox.AGE_TYPE</String>
+      <String>rt.xSmall</String>
+      <String>msg.enterNewFilename</String>
+      <String>msg.promotionActiveAll</String>
+      <String>value.emailVerified.disabled</String>
+      <String>label.category</String>
+      <String>panel.custom10</String>
+      <String>msg.selectAProduct</String>
+      <String>rt.small</String>
+      <String>label.endDate</String>
+      <String>label.content.dateTo</String>
+      <String>date.month.long.April</String>
+      <String>button.view</String>
+      <String>panel.logging</String>
+      <String>listBox.all</String>
+      <String>label.gatewayResult</String>
+      <String>label.imageBaseUrl</String>
+      <String>msg.sendNewsletter.reg</String>
+      <String>question.price.rule.add</String>
+      <String>button.selectAddr</String>
+      <String>listbox.selectATemplate</String>
+      <String>panel.fileUpload</String>
+      <String>label.copyRelated</String>
+      <String>listBox.bookableProduct</String>
+      <String>label.decPoint</String>
+      <String>question.delete.role</String>
+      <String>help.waitingForPayment</String>
+      <String>label.tierPrices</String>
+      <String>label.velocityTemplate</String>
+      <String>label.couponCode</String>
+      <String>dl.deletedChoice.both</String>
+      <String>label.waitingForPayment</String>
+      <String>msg.prodQLog</String>
+      <String>label.upload</String>
+      <String>validation.valueLEQ</String>
+      <String>label.directory</String>
+      <String>panel.shippers</String>
+      <String>panel.taxAreaMapping</String>
+      <String>button.delete</String>
+      <String>panel.editCustomer</String>
+      <String>label.dateOfBirth</String>
+      <String>question.delete.taxClass</String>
+      <String>question.select.inc.products.promotion</String>
+      <String>label.personal</String>
+      <String>label.email</String>
+      <String>label.cssFileName</String>
+      <String>label.editReview</String>
+      <String>msg.concurrentThreads</String>
+      <String>label.templateStore</String>
+      <String>msg.creatingNewStore</String>
+      <String>listBox.freeShippingBundle</String>
+      <String>date.day.long.Sunday</String>
+      <String>label.contentName</String>
+      <String>label.categoryName</String>
+      <String>question.delete.promotion</String>
+      <String>help.maximumValuesConfig</String>
+      <String>label.never</String>
+      <String>obj.orderStatuses</String>
+      <String>panel.storeConfiguration</String>
+      <String>label.refund.cust3</String>
+      <String>label.catalogName</String>
+      <String>label.enableSpecial</String>
+      <String>label.refund.cust1</String>
+      <String>label.refund.cust2</String>
+      <String>button.editorToggle</String>
+      <String>label.superuser</String>
+      <String>label.promotionId</String>
+      <String>listbox.noAddressFormat</String>
+      <String>question.delete.return</String>
+      <String>msg.price.rule.exclude</String>
+      <String>msg.enterFullFilenameOfReport</String>
+      <String>msg.sendCustGroupEmail</String>
+      <String>button.reload</String>
+      <String>label.username</String>
+      <String>label.table</String>
+      <String>label.suburb</String>
+      <String>panel.createProduct</String>
+      <String>msg.loadingOrderDetails</String>
+      <String>label.moduleName</String>
+      <String>label.price3</String>
+      <String>SEVERE</String>
+      <String>label.price0</String>
+      <String>label.price2</String>
+      <String>label.price1</String>
+      <String>listBox.upSellProducts</String>
+      <String>listBox.noGroups</String>
+      <String>obj.custTags</String>
+      <String>label.jobName</String>
+      <String>label.filePath</String>
+      <String>msg.license.ok</String>
+      <String>msg.thereHasBeenAProblem</String>
+      <String>label.address</String>
+      <String>label.custEmail</String>
+      <String>AdminAppHelp</String>
+      <String>msg.disableRunningReports</String>
+      <String>button.export</String>
+      <String>label.prod.cust2Dec</String>
+      <String>label.addr.cust3.short</String>
+      <String>msg.noExpressionsSelected</String>
+      <String>label.edit.rule.for</String>
+      <String>button.login</String>
+      <String>label.standard</String>
+      <String>button.viewPdf</String>
+      <String>question.delete.tagGroup</String>
+      <String>msg.refreshedCaches</String>
+      <String>panel.importer</String>
+      <String>validation.textLT</String>
+      <String>panel.sessions</String>
+      <String>listBox.allOrders</String>
+      <String>panel.viewImporterLogs</String>
+      <String>obj.geoZones</String>
+      <String>label.uploadTemplate</String>
+      <String>msg.sessionExpiredMsg</String>
+      <String>label.repeatNewPassword</String>
+      <String>label.image</String>
+      <String>question.delete.orderStatus</String>
+      <String>error.passwordNumericChar</String>
+      <String>question.clone.storeId</String>
+      <String>dialog.localSettings</String>
+      <String>msg.manageListOfIncluded</String>
+      <String>label.symbolLeft.short</String>
+      <String>label.addr.email</String>
+      <String>label.includeAll</String>
+      <String>dialog.warning</String>
+      <String>panel.promotions</String>
+      <String>help.roleToPanels</String>
+      <String>dialog.select.exp.promotion</String>
+      <String>msg.validDate</String>
+      <String>msg.validSku</String>
+      <String>kk_panel_stores.custom1</String>
+      <String>label.dayOfMonth</String>
+      <String>label.bookingsMade</String>
+      <String>msg.orderExportedTo</String>
+      <String>button.refunds</String>
+      <String>msg.clickToViewOrders</String>
+      <String>label.panelName</String>
+      <String>obj.address</String>
+      <String>help.maintainTags</String>
+      <String>date.day.short.Wed</String>
+      <String>panel.syncProducts</String>
+      <String>panel.bookingsForOrder</String>
+      <String>label.status.id</String>
+      <String>error.upload</String>
+      <String>question.add.points</String>
+      <String>label.text</String>
+      <String>panel.locationsTaxes</String>
+      <String>label.customerId</String>
+      <String>label.usePercentDiscount</String>
+      <String>panel.insertCustomer</String>
+      <String>label.tags</String>
+      <String>error.retrievingTaxClass</String>
+      <String>all.taxAreas</String>
+      <String>listbox.none</String>
+      <String>msg.template.selected</String>
+      <String>msg.signOut</String>
+      <String>rt.foreground</String>
+      <String>panel.stores</String>
+      <String>label.selectImage</String>
+      <String>label.textMode</String>
+      <String>help.selectTypeOfMerchandising</String>
+      <String>label.methodName</String>
+      <String>panel.pdfConfig</String>
+      <String>label.jobStatus</String>
+      <String>panel.licenseReminder</String>
+      <String>label.edit</String>
+      <String>label.taxArea</String>
+      <String>msg.prmNotInstalled</String>
+      <String>date.day.short.Tue</String>
+      <String>listBox.bundle</String>
+      <String>label.templateText</String>
+      <String>label.prices</String>
+      <String>label.setLanguage</String>
+      <String>obj.promotion</String>
+      <String>dialog.solr.confirmation</String>
+      <String>dialog.select.categories.promotion</String>
+      <String>label.prodAttrTemplate</String>
+      <String>panel.custom5Header</String>
+      <String>label.prod.cust3.short</String>
+      <String>help.maintainTaxRates</String>
+      <String>label.lang.name</String>
+      <String>label.content.updatedBy</String>
+      <String>label.jobStatus.Waiting</String>
+      <String>help.storeConfiguration</String>
+      <String>panel.license</String>
+      <String>question.confirmProdNotEmails</String>
+      <String>label.retnCode</String>
+      <String>kk_panel_customerOrders.custom4</String>
+      <String>kk_panel_customerOrders.custom2</String>
+      <String>kk_panel_customerOrders.custom3</String>
+      <String>panel.audit</String>
+      <String>msg.category.prods.top</String>
+      <String>msg.customerAttrsNotVisible</String>
+      <String>kk_panel_customerOrders.custom1</String>
+      <String>label.disabled</String>
+      <String>msg.exceptFor</String>
+      <String>help.maintainTaxAreaMapping</String>
+      <String>label.length</String>
+      <String>label.content.updatedByName</String>
+      <String>help.productQuantity</String>
+      <String>button.new</String>
+      <String>listbox.noPaymentSchedule</String>
+      <String>label.captureId</String>
+      <String>question.delete.taxRate</String>
+      <String>help.promotionActive</String>
+      <String>label.manufacturerAddresses</String>
+      <String>kk_panel_editOrderPanel.custom2</String>
+      <String>kk_panel_editOrderPanel.custom1</String>
+      <String>error.rssFeed</String>
+      <String>rt.hr</String>
+      <String>panel.taxAreas</String>
+      <String>label.creditId</String>
+      <String>button.edit</String>
+      <String>rt.medium</String>
+      <String>panel.orderStatuses</String>
+      <String>label.visible</String>
+      <String>label.productType</String>
+      <String>panel.localisations</String>
+      <String>dialog.product.not.available</String>
+      <String>label.zoneInvisible</String>
+      <String>label.canOrder</String>
+      <String>error.storeIdUnknown</String>
+      <String>label.import.username</String>
+      <String>obj.addresses</String>
+      <String>label.country</String>
+      <String>listbox.NOT_EQUAL</String>
+      <String>listBox.noExpressions</String>
+      <String>ls.promsPerPage.title</String>
+      <String>help.maintainCurrencies</String>
+      <String>rt.subscript</String>
+      <String>label.categoryImage</String>
+      <String>label.custPostcode</String>
+      <String>error.invalidSession</String>
+      <String>label.content.dateFrom</String>
+      <String>label.enabled</String>
+      <String>date.day.long.Wednesday</String>
+      <String>msg.testTemplate</String>
+      <String>listBox.allManufacturers</String>
+      <String>msg.noItemsFound</String>
+      <String>DEBUG</String>
+      <String>msg.enterFullFilename</String>
+      <String>msg.publishProductsFailed</String>
+      <String>label.contentType</String>
+      <String>panel.orderTotalModules</String>
+      <String>validation.textGEQ</String>
+      <String>label.telephone1.short</String>
+      <String>question.resetPassword</String>
+      <String>label.sortOrder</String>
+      <String>obj.currencies</String>
+      <String>label.dbErrorMsg</String>
+      <String>panel.shipping</String>
+      <String>label.delete</String>
+      <String>obj.messages</String>
+      <String>label.availableApiCalls</String>
+      <String>label.searchProdDesc</String>
+      <String>button.bookings</String>
+      <String>label.get</String>
+      <String>label.syncStore</String>
+      <String>help.OtherModulesConfig</String>
+      <String>label.storeUrl</String>
+      <String>label.locale</String>
+      <String>label.priceAdjustment</String>
+      <String>question.delete.taxAreaMapping</String>
+      <String>button.help.addToProm</String>
+      <String>help.maintainLocationsTaxes</String>
+      <String>panel.productQuantity</String>
+      <String>help.maintainCountries</String>
+      <String>listbox.selectTaxClass</String>
+      <String>listBox.months</String>
+      <String>question.delete.subscription</String>
+      <String>panel.roleToPanels</String>
+      <String>panel.customerTags</String>
+      <String>listBox.newProducts</String>
+      <String>dialog.select.manufact.promotion</String>
+      <String>label.password</String>
+      <String>panel.reviews</String>
+      <String>dialog.select.products.promotion</String>
+      <String>label.imageName</String>
+      <String>obj.zones</String>
+      <String>msg.insertMode</String>
+      <String>error.default.address</String>
+      <String>dl.custChoice.enabled.admins</String>
+      <String>validation.numericId</String>
+      <String>label.prod.opt.variable.qty</String>
+      <String>panel.prodAttrs</String>
+      <String>panel.dataFeeds</String>
+      <String>button.mapping</String>
+      <String>question.delete.address</String>
+      <String>label.rate</String>
+      <String>button.products</String>
+      <String>panel.custom8Header</String>
+      <String>dialog.select.attr.template</String>
+      <String>rt.strikeThrough</String>
+      <String>label.afterOrderStatus</String>
+      <String>msg.prodDLog</String>
+      <String>label.audit.disable</String>
+      <String>help.sendToCustomer</String>
+      <String>validation.positiveNumericId</String>
+      <String>label.prod.opt.val.code</String>
+      <String>label.deleteInclude</String>
+      <String>button.shipments</String>
+      <String>label.storeRemote</String>
+      <String>label.state</String>
+      <String>msg.unknownCauseDetails</String>
+      <String>rt.ol</String>
+      <String>panel.custom2Header</String>
+      <String>button.ok</String>
+      <String>label.prod.opt.val.custom2</String>
+      <String>label.prod.opt.val.custom1</String>
+      <String>label.subscriptionCode</String>
+      <String>msg.about</String>
+      <String>listBox.minutes</String>
+      <String>help.about</String>
+      <String>panel.reportsConfig</String>
+      <String>label.addr.telephone</String>
+      <String>question.remove.points</String>
+      <String>error.passwordSpecialChar</String>
+      <String>dialog.ok</String>
+      <String>dialog.selectPromsForCoupon</String>
+      <String>panel.catalogPrices</String>
+      <String>error.returns</String>
+      <String>cause</String>
+      <String>button.miscItems</String>
+      <String>help.clickToBrowse</String>
+      <String>msg.excludeSome</String>
+      <String>label.subscribed</String>
+      <String>date.day.long.Friday</String>
+      <String>ls.paygtwycbsPerPage.title</String>
+      <String>panel.couponsFromProm</String>
+      <String>label.customers</String>
+      <String>label.user</String>
+      <String>date.month.long.October</String>
+      <String>label.change.order.status</String>
+      <String>kk_panel_promotions.custom1</String>
+      <String>label.geoZone</String>
+      <String>kk_panel_promotions.custom2</String>
+      <String>obj.customers</String>
+      <String>label.unsubscribed</String>
+      <String>label.ord.cust6</String>
+      <String>obj.filters</String>
+      <String>label.prod.opt.customer.text</String>
+      <String>label.ord.cust7</String>
+      <String>label.ord.cust8</String>
+      <String>question.select.inc.prod.template</String>
+      <String>label.ord.cust9</String>
+      <String>button.orders</String>
+      <String>label.ord.cust2</String>
+      <String>label.cat.cust2</String>
+      <String>rt.white</String>
+      <String>label.contentId</String>
+      <String>label.ord.cust3</String>
+      <String>button.newTimeSlot</String>
+      <String>label.cat.cust1</String>
+      <String>label.ord.cust4</String>
+      <String>panel.countries</String>
+      <String>label.ord.cust5</String>
+      <String>label.cat.cust3</String>
+      <String>error.passwordEmpty</String>
+      <String>panel.coupons</String>
+      <String>label.logons</String>
+      <String>label.ord.cust1</String>
+      <String>date.day.short.Sat</String>
+      <String>rt.ul</String>
+      <String>panel.mailingLists</String>
+      <String>label.prod.opt.standard</String>
+      <String>kk_panel_returnsFromOrders.custom3</String>
+      <String>label.ipn.cust2Dec</String>
+      <String>date.day.short.Fri</String>
+      <String>help.maintainTagGroups</String>
+      <String>label.orderQty</String>
+      <String>button.del.var</String>
+      <String>obj.booking</String>
+      <String>label.manufacturerId</String>
+      <String>listBox.objType.product</String>
+      <String>label.prodAttrDesc.cust4</String>
+      <String>label.prodAttrDesc.cust5</String>
+      <String>label.prodAttrDesc.cust2</String>
+      <String>label.prodAttrDesc.cust3</String>
+      <String>button.selectProduct</String>
+      <String>label.prodAttrDesc.cust1</String>
+      <String>help.maintainAddressFormats</String>
+      <String>error.passwordUpperCase</String>
+      <String>msg.usedByOtherProducts</String>
+      <String>question.select.inc.categories.promotion</String>
+      <String>label.productAddresses</String>
+      <String>listBox.weeks</String>
+      <String>label.contentTypeId</String>
+      <String>label.content.updatedById</String>
+      <String>help.storesMaintenance</String>
+      <String>label.default</String>
+      <String>listbox.noProducts</String>
+      <String>panel.addressForProd</String>
+      <String>msg.sendProdNotificationEmail</String>
+      <String>msg.category.prods</String>
+      <String>panel.custom6Header</String>
+      <String>help.pendingOrders</String>
+      <String>obj.customerTag</String>
+      <String>date.month.short.Dec</String>
+      <String>label.refresh.search.engine</String>
+      <String>msg.selectDate</String>
+      <String>button.privileges</String>
+      <String>label.timeBetweenPayments</String>
+      <String>validation.zone</String>
+      <String>msg.includeOnlySome</String>
+      <String>label.allTypes</String>
+      <String>msg.passwordChanged</String>
+      <String>help.promotionEndDate</String>
+      <String>panel.stockOrder</String>
+      <String>help.selectTags</String>
+      <String>rt.removeFormat</String>
+      <String>listBox.selectProdType</String>
+      <String>validation.positiveOrderId</String>
+      <String>kk_panel_reports.custom1</String>
+      <String>label.batchLogs</String>
+      <String>price</String>
+      <String>listBox.freeShipping</String>
+      <String>label.beforeOrderStatus</String>
+      <String>date.month.short.Nov</String>
+      <String>dialog.update.products</String>
+      <String>help.audit</String>
+      <String>help.maintainProductOptions</String>
+      <String>panel.logoFileUpload</String>
+      <String>label.prod.desc.cust2</String>
+      <String>label.prod.desc.cust1</String>
+      <String>obj.custGroups</String>
+      <String>kk_panel_products.custom1</String>
+      <String>kk_panel_products.custom2</String>
+      <String>label.addr.cust5.short</String>
+      <String>kk_panel_products.custom3</String>
+      <String>label.roletp.cust5</String>
+      <String>button.coupons</String>
+      <String>panel.products</String>
+      <String>listbox.FALSE</String>
+      <String>obj.miscItems</String>
+      <String>panel.productListing</String>
+      <String>label.zone</String>
+      <String>help.maxUsagePromotion</String>
+      <String>label.name</String>
+      <String>label.summary</String>
+      <String>all.countries</String>
+      <String>button.run</String>
+      <String>error.noTemplateAttrsDefined</String>
+      <String>help.viewImporterLogs</String>
+      <String>error.logFileDirectoryUndefined</String>
+      <String>label.maxDownloadDays</String>
+      <String>label.prod.desc.cust3</String>
+      <String>label.prod.desc.cust4</String>
+      <String>label.prod.desc.cust5</String>
+      <String>label.prod.desc.cust6</String>
+      <String>question.insert.refund3</String>
+      <String>button.upload</String>
+      <String>question.insert.refund1</String>
+      <String>label.refund.cust2Dec</String>
+      <String>question.insert.refund2</String>
+      <String>question.delete.prodToStores</String>
+      <String>label.productId</String>
+      <String>validation.valueGEQ</String>
+      <String>listBox.outOfSyncProducts</String>
+      <String>label.sendEmails</String>
+      <String>dialog.save.refund</String>
+      <String>both</String>
+      <String>listBox.selectPromotion</String>
+      <String>label.assignedRoles</String>
+      <String>date.month.short.Sep</String>
+      <String>date.time.format</String>
+      <String>panel.locking</String>
+      <String>listBox.hours</String>
+      <String>panel.subZones</String>
+      <String>listbox.noZonesConfigured</String>
+      <String>label.key</String>
+      <String>label.decPlaces</String>
+      <String>validation.taxRateZone</String>
+      <String>question.select.inc.customers.promotion</String>
+      <String>label.cumulative</String>
+      <String>help.velocityTemplates</String>
+      <String>label.roletp.cust2</String>
+      <String>dl.underMaintChoice.underMaint</String>
+      <String>label.refund.cust1Dec</String>
+      <String>label.roletp.cust1</String>
+      <String>label.roletp.cust4</String>
+      <String>label.roletp.cust3</String>
+      <String>listbox.noZone</String>
+      <String>all.zones</String>
+      <String>help.imagesConfig</String>
+      <String>help.productAvailableDate</String>
+      <String>msg.disableEmail</String>
+      <String>rt.bold</String>
+      <String>help.ipn</String>
+      <String>label.selectFile</String>
+      <String>label.jobStatus.Executing</String>
+      <String>button.no</String>
+      <String>label.store</String>
+      <String>rt.background</String>
+      <String>panel.invoice</String>
+      <String>dialog.select.taggroup.category</String>
+      <String>label.ccDetails</String>
+      <String>help.maintainProducts</String>
+      <String>msg.disablePwReset</String>
+      <String>label.adminAppLanguage</String>
+      <String>label.itemValue</String>
+      <String>button.create.prices</String>
+      <String>label.streetAddress</String>
+      <String>help.license</String>
+      <String>label.prod.cust2Int</String>
+      <String>help.cumulative</String>
+      <String>label.onlyExpected</String>
+      <String>msg.licenseReminder</String>
+      <String>label.oldPassword</String>
+      <String>label.discount</String>
+      <String>label.invisibleRejected</String>
+      <String>obj.content</String>
+      <String>panel.custom</String>
+      <String>label.notSet</String>
+      <String>label.fileName</String>
+      <String>msg.category.noProds.noCats</String>
+      <String>for</String>
+      <String>help.customerDetailsConfig</String>
+      <String>label.imagebasePath</String>
+      <String>msg.deleteSessions</String>
+      <String>help.maintainOrders</String>
+      <String>help.maintainTaxClasses</String>
+      <String>label.manufacturerId.short</String>
+      <String>label.prod.cust1Dec</String>
+      <String>label.size</String>
+      <String>panel.modules</String>
+      <String>msg.storeAlreadyPresent</String>
+      <String>false</String>
+      <String>error.order.status.exists.update</String>
+      <String>msg.category.noProds.cats</String>
+      <String>rt.black</String>
+      <String>msg.license.invalid</String>
+      <String>national</String>
+      <String>rt.font</String>
+      <String>label.message</String>
+      <String>msg.help</String>
+      <String>button.importer.custom3</String>
+      <String>button.importer.custom2</String>
+      <String>button.importer.custom1</String>
+      <String>label.yes</String>
+      <String>help.userDefinedConfigs</String>
+      <String>msg.price.rule.include</String>
+      <String>label.useCatalogQuantities</String>
+      <String>error.reportsDefnPathUndefined</String>
+      <String>help.importerConfig</String>
+      <String>question.delete.content</String>
+      <String>label.extRef1</String>
+      <String>label.paymentSched.cust1</String>
+      <String>label.extRef2</String>
+      <String>label.paymentSched.cust3</String>
+      <String>label.paymentSched.cust2</String>
+      <String>label.paymentSched.cust5</String>
+      <String>button.saveToFile</String>
+      <String>label.paymentSched.cust4</String>
+      <String>error.noFilesSelected</String>
+      <String>label.contentType.custom1</String>
+      <String>label.reviewId</String>
+      <String>label.insert</String>
+      <String>label.contentType.custom2</String>
+      <String>help.storeConfig</String>
+      <String>panel.customerGroups</String>
+      <String>date.day.short.Sun</String>
+      <String>help.PaymentModulesConfig</String>
+      <String>value.gender.male</String>
+      <String>listBox.allProductTypes</String>
+      <String>label.productComparison</String>
+      <String>msg.removeIncListExcludeSome</String>
+      <String>label.dbConnectionString</String>
+      <String>rt.italic</String>
+      <String>help.customerCommunications</String>
+      <String>label.storeName</String>
+      <String>label.url</String>
+      <String>help.couponName</String>
+      <String>help.digitalDownloadConfig</String>
+      <String>label.optionName</String>
+      <String>msg.resetDatabase</String>
+      <String>help.help</String>
+      <String>label.useCatalogPrices</String>
+      <String>help.custom</String>
+      <String>label.subscription.cust1</String>
+      <String>panel.promRules</String>
+      <String>label.subscription.cust4</String>
+      <String>label.subscription.cust5</String>
+      <String>label.subscription.cust2</String>
+      <String>label.subscription.cust3</String>
+      <String>error.subscriptionIdNotNumeric</String>
+      <String>listbox.TRUE</String>
+      <String>question.select.exc.manufact.promotion</String>
+      <String>label.prod.opt.type</String>
+      <String>panel.digitalDownloadConfig</String>
+      <String>question.mark</String>
+      <String>dialog.select.customers.promotion</String>
+      <String>question.select.inc.exp.promotion</String>
+      <String>msg.unknownCause</String>
+      <String>panel.miscItemTypes</String>
+      <String>help.symbLeft</String>
+      <String>question.delete.booking</String>
+      <String>label.merchandising</String>
+      <String>question.resetDatabase</String>
+      <String>button.deleteOptionValue</String>
+      <String>label.taxAreaDescription</String>
+      <String>help.shipments</String>
+      <String>button.clear</String>
+      <String>ls.msgsPerPage.title</String>
+      <String>panel.uploadFormElement</String>
+      <String>panel.paymentSchedule</String>
+      <String>listBox.allUsers</String>
+      <String>label.shipper.cust1</String>
+      <String>error.sync.products</String>
+      <String>obj.tagGroups</String>
+      <String>label.ccCVV</String>
+      <String>listBox.virtualProduct</String>
+      <String>label.shipper.cust2</String>
+      <String>panel.minimumValues</String>
+      <String>label.shipper.cust3</String>
+      <String>label.false</String>
+      <String>dl.deletedChoice.notdeleted</String>
+      <String>button.changePassword</String>
+      <String>label.isoCode.3letter</String>
+      <String>label.txTypeShort</String>
+      <String>question.price.rule.cancel</String>
+      <String>label.ordersDelivered</String>
+      <String>error.noProdAttrsDefined</String>
+      <String>value.type.app</String>
+      <String>label.miscItem.cust1</String>
+      <String>label.taxClassName</String>
+      <String>label.miscItem.cust3</String>
+      <String>label.miscItem.cust2</String>
+      <String>label.end.hr.min</String>
+      <String>help.minimumValuesConfig</String>
+      <String>label.dateExpected</String>
+      <String>question.remove.from.catalog</String>
+      <String>msg.contentDoesNotExist</String>
+      <String>label.symbolLeft</String>
+      <String>button.moreDetail</String>
+      <String>obj.language</String>
+      <String>ls.countriesPerPage.title</String>
+      <String>msg.usedByProducts</String>
+      <String>dl.custChoice.disabled.custs</String>
+      <String>panel.prodMiscItems</String>
+      <String>listBox.accessories</String>
+      <String>label.setFunction</String>
+      <String>label.assignedPanels</String>
+      <String>listBox.unknown</String>
+      <String>help.logging</String>
+      <String>label.customerName</String>
+      <String>AdminApp</String>
+      <String>help.maintainStores</String>
+      <String>msg.allCustomerEmail</String>
+      <String>question.delete.review</String>
+      <String>help.maintainOrderStatuses</String>
+      <String>msg.welcomeBack</String>
+      <String>label.ipn.cust1</String>
+      <String>label.geoZoneName</String>
+      <String>label.ipn.cust3</String>
+      <String>label.calcWeight</String>
+      <String>label.ipn.cust2</String>
+      <String>panel.maximumValues</String>
+      <String>date.month.short.Mar</String>
+      <String>label.ipn.cust4</String>
+      <String>obj.tags</String>
+      <String>label.bp.cust4</String>
+      <String>label.bp.cust3</String>
+      <String>label.bp.cust2</String>
+      <String>label.prod.opt.custom1</String>
+      <String>help.resetDatabase</String>
+      <String>label.bp.cust1</String>
+      <String>label.prod.opt.custom2</String>
+      <String>help.solrSearchConfig</String>
+      <String>label.bp.cust5</String>
+      <String>label.content.expressionName</String>
+      <String>button.resetPwd</String>
+      <String>label.prodId</String>
+      <String>label.maxProducts</String>
+      <String>msg.savingData</String>
+      <String>rt.outdent</String>
+      <String>label.amount</String>
+      <String>label.selectAll</String>
+      <String>listbox.EQUAL</String>
+      <String>label.fixedPrice</String>
+      <String>question.send.group.email.message</String>
+      <String>date.month.short.May</String>
+      <String>msg.sessionExpiredCaption</String>
+      <String>help.custom10</String>
+      <String>label.prod.opt.code</String>
+      <String>label.lastName</String>
+      <String>label.nextBillingDate</String>
+      <String>help.syncProducts</String>
+      <String>help.couponCode</String>
+      <String>question.delete.taxArea</String>
+      <String>button.addPoints</String>
+      <String>dl.enabledChoice.enabled</String>
+      <String>panel.filters</String>
+      <String>obj.contentTypes</String>
+      <String>panel.orderTotals</String>
+      <String>obj.taxArea</String>
+      <String>error.passwordsDifferent</String>
+      <String>label.addQuantity</String>
+      <String>label.expiryDate</String>
+      <String>msg.ProdManyAssocManufactRemove</String>
+      <String>label.userId</String>
+      <String>button.addToProm</String>
+      <String>help.ordersBeingProcessed</String>
+      <String>label.prod.cust1.short</String>
+      <String>panel.taxAreaToZoneMapping</String>
+      <String>label.setAsDefault</String>
+      <String>listBox.csvNoHeader</String>
+      <String>label.prod.cust1Int</String>
+      <String>msg.excludeNewListOf</String>
+      <String>obj.orderStatus</String>
+      <String>help.miscItemTypes</String>
+      <String>help.expressions</String>
+      <String>label.products</String>
+      <String>msg.noCustomersGroupSelected</String>
+      <String>help.paymentReceived</String>
+      <String>label.constraint</String>
+      <String>button.copyAll</String>
+      <String>label.allActions</String>
+      <String>rt.size</String>
+      <String>help.maintainZones</String>
+      <String>help.maintainPromotions</String>
+      <String>Application</String>
+      <String>label.languageName</String>
+      <String>panel.cloneStore</String>
+      <String>panel.customerDetails</String>
+      <String>label.orderTotal</String>
+      <String>label.template</String>
+      <String>help.dataFeeds</String>
+      <String>listbox.noTaxArea</String>
+      <String>label.numberOfManufacturers</String>
+      <String>msg.editFile</String>
+      <String>ls.contentsPerPage.title</String>
+      <String>kk_panel_customerForOrder_2.custom2</String>
+      <String>kk_panel_customerForOrder_2.custom1</String>
+      <String>kk_panel_customerForOrder_2.custom3</String>
+      <String>panel.packingSlip</String>
+      <String>dl.underMaintChoice.notUnderMaint</String>
+      <String>dialog.email.confirmation</String>
+      <String>button.create</String>
+      <String>listbox.noStores</String>
+      <String>button.packingSlip</String>
+      <String>date.month.long.November</String>
+      <String>rt.xxLarge</String>
+      <String>question.select.taggroups.for.tag</String>
+      <String>label.categoryDescription</String>
+      <String>label.zoneCustom1</String>
+      <String>label.zoneCustom2</String>
+      <String>label.zoneCustom3</String>
+      <String>panel.editContent</String>
+      <String>help.subscriptions</String>
+      <String>label.day</String>
+      <String>panel.currencies</String>
+      <String>label.isoCode.2letter</String>
+      <String>label.comments</String>
+      <String>label.rule</String>
+      <String>label.gender</String>
+      <String>label.image2</String>
+      <String>label.image1</String>
+      <String>label.image4</String>
+      <String>help.maintainShippers</String>
+      <String>label.image3</String>
+      <String>help.paymentDeclined</String>
+      <String>label.storeCustom1</String>
+      <String>panel.templateConfiguration</String>
+      <String>msg.changePassword</String>
+      <String>label.storeCustom3</String>
+      <String>label.dateLastModified</String>
+      <String>label.storeCustom2</String>
+      <String>label.storeCustom5</String>
+      <String>label.storeCustom4</String>
+      <String>help.generalStats</String>
+      <String>help.preview</String>
+      <String>application.title</String>
+      <String>error.passwordLowerCase</String>
+      <String>button.insert</String>
+      <String>question.delete.productAttrDesc</String>
+      <String>msg.enterFullLocalFilename</String>
+      <String>label.pendingOrders</String>
+      <String>label.visibility</String>
+      <String>msg.problemLicensingNoPanel</String>
+      <String>panel.tagGroups</String>
+      <String>question.delete.paymentSchedule</String>
+      <String>dialog.resetPassword</String>
+      <String>label.communicationText</String>
+      <String>button.removeFromCat</String>
+      <String>label.from</String>
+      <String>date.month.long.January</String>
+      <String>label.sendEmail</String>
+      <String>panel.zones</String>
+      <String>question.select.inc.gift.certs.promotion</String>
+      <String>label.prod.cust2.short</String>
+      <String>label.quantities</String>
+      <String>label.only.registered.customers</String>
+      <String>label.manu.cust4</String>
+      <String>label.manu.cust5</String>
+      <String>label.manu.cust2</String>
+      <String>label.manu.cust3</String>
+      <String>label.manu.cust1</String>
+      <String>panel.productOptions</String>
+      <String>label.true</String>
+      <String>panel.deleteSessions</String>
+      <String>label.street</String>
+      <String>help.promotionStartDate</String>
+      <String>date.day.short.Mon</String>
+      <String>label.custgroup.cust4</String>
+      <String>label.custgroup.cust3</String>
+      <String>panel.address</String>
+      <String>label.custgroup.cust5</String>
+      <String>validation.valueDecimal</String>
+      <String>listbox.STRING_TYPE</String>
+      <String>label.custgroup.cust2</String>
+      <String>label.custgroup.cust1</String>
+      <String>error.passwordTooLong</String>
+      <String>panel.marketing</String>
+      <String>label.addr.cust4.short</String>
+      <String>msg.sendNewsletter1</String>
+      <String>dialog.select.custgroup.promotion</String>
+      <String>help.password</String>
+      <String>help.maxUsePromotionsByCustomers</String>
+      <String>rt.justifyRight</String>
+      <String>validation.taxRateTaxClass</String>
+      <String>label.refundNote</String>
+      <String>label.htmlMode</String>
+      <String>question.delete.template</String>
+      <String>label.taxId</String>
+      <String>panel.tags</String>
+      <String>panel.orders</String>
+      <String>panel.velocityTemplates</String>
+      <String>panel.productAvailableDate</String>
+      <String>label.contentDesc.custom1</String>
+      <String>label.contentDesc.custom2</String>
+      <String>msg.enterpriseOnly</String>
+      <String>label.value</String>
+      <String>label.start.hr.min</String>
+      <String>label.contentDesc.custom3</String>
+      <String>label.manufacturer</String>
+      <String>label.contentDesc.custom4</String>
+      <String>error.usernameEmpty</String>
+      <String>panel.taxClasses</String>
+      <String>value.type.default</String>
+      <String>help.configFilesEdit</String>
+      <String>obj.coupon</String>
+      <String>label.shipQty</String>
+      <String>panel.templateFileUpload</String>
+      <String>question.select.inc.manufact.promotion</String>
+      <String>help.viewBatchLogs</String>
+      <String>label.images</String>
+      <String>label.subscriptionId</String>
+      <String>kk_panel_editProduct.custom1</String>
+      <String>listBox.crossSellProducts</String>
+      <String>msg.noProdNotificationCustomers</String>
+      <String>label.dateAvailable</String>
+      <String>help.maintainCustomers</String>
+      <String>label.ccExpires</String>
+      <String>msg.sendNewsletter.reg1</String>
+      <String>kk_panel_configFiles.custom1</String>
+      <String>label.true.false</String>
+      <String>button.publish</String>
+      <String>date.month.long.May</String>
+      <String>all.taxClasses</String>
+      <String>msg.productDoesNotExistForCat</String>
+      <String>label.timesUsed</String>
+      <String>help.rss</String>
+      <String>question.uploadTemplate</String>
+      <String>label.manufacturers</String>
+      <String>question.confirmEmails</String>
+      <String>ls.subscriptionsPerPage.title</String>
+      <String>question.delete.message</String>
+      <String>label.invisible</String>
+      <String>msg.price.rule.fixed</String>
+      <String>msg.price.rule.adjust</String>
+      <String>panel.contentTypes</String>
+      <String>label.searchType</String>
+      <String>label.productNotifications</String>
+      <String>panel.taxRates</String>
+      <String>label.validation</String>
+      <String>dl.custChoice.disabled.admins</String>
+      <String>rt.red</String>
+      <String>label.content.expression</String>
+      <String>msg.validateCatalogPrices</String>
+      <String>question.copy.all.products</String>
+      <String>label.outputFormat</String>
+      <String>label.insertRole</String>
+      <String>msg.maxUsePromotionByCustomers</String>
+      <String>label.records</String>
+      <String>label.availableRoles</String>
+      <String>panel.customPanelConfig</String>
+      <String>button.giftCerts</String>
+      <String>label.addr.cust2.short</String>
+      <String>label.total</String>
+      <String>label.special</String>
+      <String>listbox.noTaxClass</String>
+      <String>label.productUrl</String>
+      <String>listBox.xml</String>
+      <String>label.helpMailingListOutput</String>
+      <String>label.trialAmount</String>
+      <String>label.taxEntityCode</String>
+      <String>listBox.customRelation3</String>
+      <String>value.state.disabled</String>
+      <String>label.andAbove</String>
+      <String>listBox.customRelation2</String>
+      <String>listBox.customRelation5</String>
+      <String>label.dateOfPurchase</String>
+      <String>listBox.customRelation4</String>
+      <String>listBox.customRelation1</String>
+      <String>date.day.long.Tuesday</String>
+      <String>panel.customerOrders</String>
+      <String>label.taxExemptionCode</String>
+      <String>rt.underline</String>
+      <String>label.ord.cust10</String>
+      <String>msg.enterSku</String>
+      <String>msg.publishingProducts</String>
+      <String>label.log</String>
+      <String>question.delete.file</String>
+      <String>button.close</String>
+      <String>help.customerGroups</String>
+      <String>listbox.INT_TYPE</String>
+      <String>label.points</String>
+      <String>label.export.username</String>
+      <String>label.expressions</String>
+      <String>panel.welcome</String>
+      <String>label.adminEmail</String>
+      <String>button.product</String>
+      <String>label.creditTxId</String>
+      <String>msg.productDoesNotExist</String>
+      <String>label.top.level.categories</String>
+      <String>dialog.select.taggroups.for.tag</String>
+      <String>language.dir</String>
+      <String>dialog.select.address</String>
+      <String>obj.role</String>
+      <String>help.rma</String>
+      <String>label.displayOnly</String>
+      <String>listBox.unspecified</String>
+      <String>kk_panel_communications.custom2</String>
+      <String>button.api.calls</String>
+      <String>label.lang.url</String>
+      <String>kk_panel_communications.custom1</String>
+      <String>label.availablePanels</String>
+      <String>help.maintainMiscItemTypes</String>
+      <String>listbox.AND</String>
+      <String>help.mailingLists</String>
+      <String>panel.shipments</String>
+      <String>listbox.BOOLEAN_TYPE</String>
+      <String>error.unrecognised.setfunction</String>
+      <String>ls.shipmentsPerPage.title</String>
+      <String>help.SSLConfig</String>
+      <String>help.deleteExpiredSessions</String>
+      <String>error.passwordUsedRecently</String>
+      <String>ls.exprsPerPage.title</String>
+      <String>dialog.select.products.bundle</String>
+      <String>label.currentQuantity</String>
+      <String>panel.custom4Header</String>
+      <String>panel.custom7Header</String>
+      <String>label.weight</String>
+      <String>help.rewardPointConfig</String>
+      <String>msg.loadingData</String>
+      <String>label.custId</String>
+      <String>button.newTierPrice</String>
+      <String>error.setTemplate</String>
+      <String>button.tagGroups</String>
+      <String>help.ISO3</String>
+      <String>label.company</String>
+      <String>panel.solrConfiguration</String>
+      <String>help.upload.prod.attr.image</String>
+      <String>button.cancel</String>
+      <String>button.lessDetail</String>
+      <String>msg.resettingDatabase</String>
+      <String>listbox.OR</String>
+      <String>value.gender.other</String>
+      <String>label.colon</String>
+      <String>label.content.searchKey</String>
+      <String>label.priceId.short</String>
+      <String>label.helpMailingList</String>
+      <String>label.problemFound</String>
+      <String>kk_panel_customers_2.custom1</String>
+      <String>kk_panel_customers_2.custom2</String>
+      <String>kk_panel_customers_2.custom3</String>
+      <String>button.newOption</String>
+      <String>label.defaultAddr</String>
+      <String>msg.rssNoNews</String>
+      <String>value.visibility.enabled</String>
+      <String>label.licenseOwner</String>
+      <String>help.refunds</String>
+      <String>help.latestNews</String>
+      <String>date.day.long.Monday</String>
+      <String>ls.couponsPerPage.title</String>
+      <String>help.SymbRight</String>
+      <String>label.trackingNum</String>
+      <String>label.expired.short</String>
+      <String>panel.customDHeader</String>
+      <String>msg.emailSent</String>
+      <String>obj.review</String>
+      <String>label.currentNewImagePath</String>
+      <String>question.delete.contentType</String>
+      <String>msg.exportedOrderSuccessfully</String>
+      <String>help.refreshConfigCache</String>
+      <String>obj.catalogs</String>
+      <String>date.month.long.February</String>
+      <String>label.orderTrackingNum</String>
+      <String>label.prodAttrTmpl.cust2</String>
+      <String>label.prodAttrTmpl.cust3</String>
+      <String>label.object</String>
+      <String>label.paymentReceived</String>
+      <String>label.prodAttrTmpl.cust1</String>
+      <String>listBox.noCatalog</String>
+      <String>msg.license.notDefined</String>
+      <String>obj.message</String>
+      <String>button.email</String>
+      <String>panel.addressForStore</String>
+      <String>label.isoCode.numeric</String>
+      <String>label.dbDriver</String>
+      <String>panel.sitemapConfiguration</String>
+      <String>help.filters</String>
+      <String>label.contentTypeDesc.name</String>
+      <String>label.onlyAdminUsers</String>
+      <String>listbox.noCountry</String>
+      <String>button.customer</String>
+      <String>panel.preview</String>
+      <String>label.outOfStock</String>
+      <String>label.allReviews</String>
+      <String>question.delete.zone</String>
+      <String>question.delete.order</String>
+      <String>label.priority</String>
+      <String>label.onlySpecials</String>
+      <String>value.visibility.disabled</String>
+      <String>button.attributes</String>
+      <String>label.del</String>
+      <String>dl.custChoice.enabled.custs</String>
+      <String>obj.bookings</String>
+      <String>label.maxNumBookings</String>
+      <String>msg.addCustomersOrderSince</String>
+      <String>question.delete.expression</String>
+      <String>label.numberOfProducts</String>
+      <String>msg.enterFullFilenameOfTemplate</String>
+      <String>panel.ipnHistory</String>
+      <String>label.streetAddress1</String>
+      <String>panel.miscItems</String>
+      <String>date.day.long.Thursday</String>
+      <String>label.page</String>
+      <String>label.productCatalog</String>
+      <String>label.changePassword</String>
+      <String>label.contentDesc.content</String>
+      <String>question.delete.customer</String>
+      <String>panel.editFiles</String>
+      <String>label.dateTemplate</String>
+      <String>question.delete</String>
+      <String>listBox.csvWithHeader</String>
+      <String>msg.warning</String>
+      <String>help.maintainCatalog</String>
+      <String>label.sendCustGroupEmail</String>
+      <String>label.customerAddresses</String>
+      <String>panel.about</String>
+      <String>panel.auditConfig</String>
+      <String>dl.enabledChoice.both</String>
+      <String>label.ccOwner</String>
+      <String>panel.custom9Header</String>
+      <String>error.orderIdNotNumeric</String>
+      <String>msg.catalogPricesConfirm</String>
+      <String>button.add.var</String>
+      <String>msg.problemWithOutputConfig</String>
+      <String>panel.reviewsForProd</String>
+      <String>msg.noneSpecified</String>
+      <String>panel.customCHeader</String>
+      <String>panel.addressForCust</String>
+      <String>help.promotionType</String>
+      <String>question.delete.product</String>
+      <String>msg.publishProducts</String>
+      <String>msg.noNewsletterCustomers</String>
+      <String>msg.cannotSendEmail</String>
+      <String>validation.taxRateBetween</String>
+      <String>help.sitemapConfig</String>
+      <String>listbox.GREATER_EQUAL</String>
+      <String>label.stores</String>
+      <String>ls.custattrsPerPage.title</String>
+      <String>label.product</String>
+      <String>label.customergroups</String>
+      <String>label.role.cust4</String>
+      <String>label.role.cust3</String>
+      <String>label.role.cust2</String>
+      <String>dl.custChoice.all.custs</String>
+      <String>label.role.cust1</String>
+      <String>help.viewMailingLists</String>
+      <String>button.yes</String>
+      <String>panel.configFiles</String>
+      <String>label.role.cust5</String>
+      <String>question.delete.tag</String>
+      <String>label.numberOfTrialPayments</String>
+      <String>label.localFileName</String>
+      <String>msg.usedByOneProduct</String>
+      <String>label.by</String>
+      <String>label.price3L</String>
+      <String>label.content.expressionId</String>
+      <String>button.panels</String>
+      <String>obj.country</String>
+      <String>msg.tailFile</String>
+      <String>panel.returns</String>
+      <String>panel.editStore</String>
+      <String>help.konakartReporting</String>
+      <String>label.deleteExclude</String>
+      <String>panel.userDefinedConfiguration</String>
+      <String>label.cust.cust1</String>
+      <String>label.cust.cust3</String>
+      <String>label.cust.cust2</String>
+      <String>label.clearDate</String>
+      <String>msg.addRemoveAllSolrProducts</String>
+      <String>label.shipper</String>
+      <String>msg.sendExpressionEmail</String>
+      <String>label.cust.cust4</String>
+      <String>label.cust.cust5</String>
+      <String>question.send.group.email</String>
+      <String>label.thousandsSep</String>
+      <String>label.code</String>
+      <String>rt.blue</String>
+      <String>dl.enabledChoice.disabled</String>
+      <String>label.prod.opt.customer.price</String>
+      <String>obj.addressFormats</String>
+      <String>label.lastLogon</String>
+      <String>help.storeStats</String>
+      <String>label.notifications</String>
+      <String>label.shipmentNotes</String>
+      <String>question.select.exc.custgroup.promotion</String>
+      <String>help.thousandsSeparator</String>
+      <String>help.OrderTotalModulesConfig</String>
+      <String>obj.addressFormat</String>
+      <String>label.trackingURL</String>
+      <String>msg.duplicateSku</String>
+      <String>obj.prodAttrDescs</String>
+      <String>question.delete.store</String>
+      <String>validation.selectEntryFromList</String>
+      <String>help.catalogs</String>
+      <String>label.medium</String>
+      <String>dialog.select.templates</String>
+      <String>panel.shippingPacking</String>
+      <String>msg.templates.selected</String>
+      <String>label.export.password</String>
+      <String>label.imagePath</String>
+      <String>validation.country</String>
+      <String>label.hours</String>
+      <String>label.shipment.cust3</String>
+      <String>label.shipment.cust1</String>
+      <String>help.returns</String>
+      <String>label.shipment.cust2</String>
+      <String>rt.yellow</String>
+      <String>error.userHasNoRoles</String>
+      <String>msg.category.prods.childen</String>
+      <String>msg.product.prices.created</String>
+      <String>label.ccType</String>
+      <String>help.maintainLocalisations</String>
+      <String>msg.unsavedChanges</String>
+      <String>label.newsletterSignedUp</String>
+      <String>dl.custChoice.all.users</String>
+      <String>question.select.inc.prod.attr.desc</String>
+      <String>panel.messages</String>
+      <String>msg.productOptionNoValuesDel</String>
+      <String>label.jobLogfileName</String>
+      <String>label.inStock</String>
+      <String>error.passwordsSame</String>
+      <String>listbox.noAttrTemplate</String>
+      <String>error.file.exists</String>
+      <String>msg.invalidSetFunction</String>
+      <String>label.imageFileDir</String>
+      <String>label.price0L</String>
+      <String>label.maxUsage</String>
+      <String>question.delete.currency</String>
+      <String>date.PM</String>
+      <String>listBox.disabled</String>
+      <String>label.pricesLastCreated</String>
+      <String>label.editPrivileges</String>
+      <String>all.contentTypes</String>
+      <String>msg.addCustomersNoOrderSince</String>
+      <String>obj.taxClasses</String>
+      <String>button.help.new</String>
+      <String>msg.viewFile</String>
+      <String>label.languageLocale</String>
+      <String>panel.refreshCache</String>
+      <String>button.move</String>
+      <String>label.rev_cust1</String>
+      <String>label.rev_cust2</String>
+      <String>label.price1L</String>
+      <String>label.rev_cust3</String>
+      <String>label.summaryAddressFormat</String>
+      <String>question.delete.language</String>
+      <String>label.postcode</String>
+      <String>label.telephone.short</String>
+      <String>label.underMaintenance</String>
+      <String>colon</String>
+      <String>help.maintainMessages</String>
+      <String>label.deleted</String>
+      <String>ls.filtersPerPage.title</String>
+      <String>date.month.long.December</String>
+      <String>help.maintainLanguages</String>
+      <String>button.exportForShipping</String>
+      <String>label.emailAddress</String>
+      <String>help.userToRoles</String>
+      <String>label.paymentSchedule</String>
+      <String>label.price2L</String>
+      <String>date.AM</String>
+      <String>label.miscItemType</String>
+      <String>label.categoryLangData</String>
+      <String>label.addr.telephone1</String>
+      <String>button.reset</String>
+      <String>listBox.noManufacturer</String>
+      <String>msg.allCustomerEmail.reg</String>
+      <String>label.requiresCoupon</String>
+      <String>error.emptyFileForUpload</String>
+      <String>label.storeDescription</String>
+      <String>msg.invalidSku</String>
+      <String>label.logoFileName</String>
+      <String>msg.refund.ko</String>
+      <String>label.editable.order</String>
+      <String>label.orderReturns</String>
+      <String>button.addr</String>
+      <String>of</String>
+      <String>help.viewLogs</String>
+      <String>button.hide</String>
+      <String>panel.customFHeader</String>
+      <String>obj.shippers</String>
+      <String>label.content.objectType</String>
+      <String>label.storeHome</String>
+      <String>obj.catalog</String>
+      <String>button.send</String>
+      <String>msg.promotionNoExpressions</String>
+      <String>label.import.password</String>
+      <String>label.categories</String>
+      <String>obj.expressions</String>
+      <String>panel.prodAttrTemplates</String>
+      <String>label.custName</String>
+      <String>dl.underMaintChoice.both</String>
+      <String>listBox.years</String>
+      <String>msg.noDetails</String>
+      <String>help.publishProducts</String>
+      <String>label.newsletter</String>
+      <String>msg.promotionActiveFor</String>
+      <String>listBox.onlySpecials</String>
+      <String>label.addressId</String>
+      <String>question.confirmGenericEmails</String>
+      <String>label.datePurchased</String>
+      <String>dl.custChoice.enabled.users</String>
+      <String>label.column</String>
+      <String>obj.audits</String>
+      <String>help.paymentSchedule</String>
+      <String>msg.attrDescUsedByProducts</String>
+      <String>ERROR</String>
+      <String>panel.categories</String>
+      <String>obj.taxClass</String>
+      <String>msg.problemWithImageConfig</String>
+      <String>label.rating</String>
+      <String>kk_panel_customerForOrder.custom3</String>
+      <String>kk_panel_customerForOrder.custom2</String>
+      <String>help.requiresCoupon</String>
+      <String>kk_panel_customerForOrder.custom5</String>
+      <String>msg.notInstalled</String>
+      <String>kk_panel_customerForOrder.custom4</String>
+      <String>true</String>
+      <String>help.decimalPlaces</String>
+      <String>listbox.DECIMAL_TYPE</String>
+      <String>panel.ipnHistoryFromOrders</String>
+      <String>msg.userHasNoRoles</String>
+      <String>msg.invalidDate</String>
+      <String>label.root</String>
+      <String>ls.zonesPerPage.title</String>
+      <String>kk_panel_customerForOrder.custom1</String>
+      <String>listbox.allCategories</String>
+      <String>obj.taxRates</String>
+      <String>label.searchSKU</String>
+      <String>button.newOptionValue</String>
+      <String>dl.custChoice.all.admins</String>
+      <String>msg.refund.ok</String>
+      <String>panel.adminApp</String>
+      <String>label.licenseKey</String>
+      <String>label.summaryFormat</String>
+      <String>question.delete.productAttrTemplate</String>
+      <String>msg.removeFromList</String>
+      <String>label.taxClass</String>
+      <String>question.select.exc.categories.promotion</String>
+      <String>msg.activateForAll</String>
+      <String>label.adminPaymentClass</String>
+      <String>date.month.short.Jan</String>
+      <String>obj.tag</String>
+      <String>label.width</String>
+      <String>help.maintainMarketing</String>
+      <String>listbox.noTemplates</String>
+      <String>obj.file</String>
+      <String>validation.notNullOrEmpty</String>
+      <String>value.state.enabled</String>
+      <String>panel.cache</String>
+      <String>label.general.details</String>
+      <String>button.ipn</String>
+      <String>label.jobGroup</String>
+      <String>button.remove.all.rules</String>
+      <String>panel.paymentModules</String>
+      <String>label.miscItemId</String>
+      <String>help.reviews</String>
+      <String>help.importer</String>
+      <String>listBox.enabled</String>
+      <String>obj.subZones</String>
+      <String>button.clone</String>
+      <String>panel.enterpriseOnly</String>
+      <String>label.sessionId</String>
+      <String>label.calcPrice</String>
+      <String>msg.uploadSuccessful</String>
+      <String>label.add.rule.for</String>
+      <String>panel.solrControl</String>
+      <String>rt.xxSmall</String>
+      <String>error.deleting.currency</String>
+      <String>help.auditConfig</String>
+      <String>ls.ordersPerPage.title</String>
+      <String>msg.codeForOptValueDoesNotExist</String>
+      <String>help.maintainCoupons</String>
+      <String>button.invoice</String>
+      <String>rt.justifyCenter</String>
+      <String>question.delete.country</String>
+      <String>button.print</String>
+      <String>ls.taggroupsPerPage.title</String>
+      <String>label.review</String>
+      <String>panel.bookingsForProduct</String>
+      <String>obj.paymentSchedules</String>
+      <String>msg.deletedSessions</String>
+      <String>label.include</String>
+      <String>label.stockReorderLevel</String>
+      <String>panel.prodsFromManu</String>
+      <String>question.price.rule.remove.all</String>
+      <String>msg.enterprise.only.caption</String>
+      <String>panel.custom3Header</String>
+      <String>panel.rewardPointConfiguration</String>
+      <String>msg.category.prods.childen.top</String>
+      <String>help.prodAttrs</String>
+      <String>error.shipment</String>
+      <String>listBox.noShipper</String>
+      <String>obj.languages</String>
+      <String>panel.variablesFromExp</String>
+      <String>label.customergroup</String>
+      <String>panel.catalogs</String>
+      <String>error.customerExists</String>
+      <String>button.variables</String>
+      <String>listBox.onlySpecialsAndExpected</String>
+      <String>kk_panel_customers.custom4</String>
+      <String>kk_panel_customers.custom5</String>
+      <String>label.custom</String>
+      <String>validation.taxRatePriority</String>
+      <String>panel.tools</String>
+      <String>button.remove</String>
+      <String>panel.login</String>
+      <String>label.to</String>
+      <String>label.maxInts</String>
+      <String>panel.jobs</String>
+      <String>kk_panel_customers.custom1</String>
+      <String>panel.customGHeader</String>
+      <String>kk_panel_customers.custom3</String>
+      <String>kk_panel_customers.custom2</String>
+      <String>help.address</String>
+      <String>obj.miscItemTypes</String>
+      <String>listbox.noCustomerTag</String>
+      <String>button.tags</String>
+      <String>label.dbUsername</String>
+      <String>help.emailConfig</String>
+      <String>international</String>
+      <String>label.companyName</String>
+      <String>listBox.seconds</String>
+      <String>panel.userToRoles</String>
+      <String>listbox.LESS_THAN</String>
+      <String>rt.justifyLeft</String>
+      <String>msg.miscItemsDeletionWarning1</String>
+      <String>help.maintainManufacturers</String>
+      <String>msg.deletingSessions</String>
+      <String>ls.contentTypesPerPage.title</String>
+      <String>label.ordersBeingProcessed</String>
+      <String>obj.prodAttrTemplates</String>
+      <String>panel.images</String>
+      <String>msg.miscItemsDeletionWarningN</String>
+      <String>label.digDownload</String>
+      <String>label.addr.cust1.short</String>
+      <String>button.save</String>
+      <String>panel.reports</String>
+      <String>label.maxNumDownloads</String>
+      <String>help.adminAppConfig</String>
+      <String>label.priceExcTax</String>
+      <String>error.dbConnectionFailedDetail</String>
+      <String>msg.noCustomerTags</String>
+      <String>label.sku</String>
+      <String>ls.reviewsPerPage.title</String>
+      <String>panel.reportFileUpload</String>
+      <String>button.add.group</String>
+      <String>label.small</String>
+      <String>dash</String>
+      <String>label.productUUID</String>
+      <String>help.content</String>
+      <String>help.maintainMiscItems</String>
+      <String>help.customC</String>
+      <String>help.decimalPoint</String>
+      <String>help.customB</String>
+      <String>date.month.long.August</String>
+      <String>help.customE</String>
+      <String>msg.sendNewsletter</String>
+      <String>help.customD</String>
+      <String>panel.publishProducts</String>
+      <String>label.returnQty</String>
+      <String>help.customA</String>
+      <String>question.delete.refund</String>
+      <String>help.noneDefined</String>
+      <String>question.delete.addressFormat</String>
+      <String>validation.numberBetween</String>
+      <String>button.back</String>
+      <String>help.customG</String>
+      <String>help.customF</String>
+      <String>question.delete.report</String>
+      <String>label.contentTypeDesc.custom1</String>
+      <String>label.assignedApiCalls</String>
+      <String>label.contentTypeDesc.custom2</String>
+      <String>label.specialPrice</String>
+      <String>label.cat.searchKey</String>
+      <String>label.notifyCustomer</String>
+      <String>listbox.LESS_EQUAL</String>
+      <String>listBox.objType.custom3</String>
+      <String>panel.emailOptions</String>
+      <String>obj.custGroup</String>
+      <String>help.orderId</String>
+      <String>listBox.objType.custom1</String>
+      <String>listBox.objType.custom2</String>
+      <String>msg.selectACatalog</String>
+      <String>label.add</String>
+      <String>date.month.long.June</String>
+      <String>label.objectId</String>
+      <String>button.install</String>
+      <String>rt.color</String>
+      <String>msg.includeNewListOf</String>
+      <String>date.month.long.September</String>
+      <String>help.currencyName</String>
+      <String>label.languageCode</String>
+      <String>button.help.mapping</String>
+      <String>msg.selectPromsToAssocToCoupon</String>
+      <String>panel.multistoreConfig</String>
+      <String>dl.custChoice.default.cust</String>
+      <String>question.confirmExpressionEmails</String>
+      <String>label.emailFrom</String>
+      <String>obj.subscriptions</String>
+      <String>help.maintainTaxAreas</String>
+      <String>help.maintainCategories</String>
+      <String>label.editRole</String>
+      <String>weight</String>
+      <String>label.select</String>
+      <String>label.ignore.prod.qty.stock</String>
+      <String>msg.problemLicensing</String>
+      <String>panel.custom1</String>
+      <String>panel.custom2</String>
+      <String>listBox.onlyExpected</String>
+      <String>panel.custom9</String>
+      <String>obj.taxAreas</String>
+      <String>label.roles</String>
+      <String>panel.custom7</String>
+      <String>panel.custom8</String>
+      <String>panel.custom5</String>
+      <String>panel.custom6</String>
+      <String>panel.custom3</String>
+      <String>panel.custom4</String>
+      <String>label.refundAmt</String>
+      <String>validation.textBetween</String>
+      <String>label.enterprise</String>
+      <String>label.ccNumber</String>
+      <String>value.type.admin</String>
+      <String>label.quantity</String>
+      <String>button.removePoints</String>
+      <String>help.custom1</String>
+      <String>date.month.long.July</String>
+      <String>label.jobFiredOrNextDue</String>
+      <String>help.custom4</String>
+      <String>help.custom5</String>
+      <String>error.passwordTooShort</String>
+      <String>help.custom2</String>
+      <String>help.custom3</String>
+      <String>help.custom8</String>
+      <String>help.custom9</String>
+      <String>help.custom6</String>
+      <String>label.newStoreId</String>
+      <String>help.custom7</String>
+      <String>label.firstName</String>
+      <String>help.modulesConfig</String>
+      <String>rt.removeLink</String>
+      <String>msg.ProdOneAssocManufactRemove</String>
+      <String>label.isoCode2</String>
+      <String>label.isoCode3</String>
+      <String>help.tools</String>
+      <String>label.attributes</String>
+      <String>label.objectType</String>
+      <String>error.noTemplateDefined</String>
+      <String>panel.bookingsForCustomer</String>
+      <String>kk_panel_orders.custom1</String>
+      <String>kk_panel_orders.custom2</String>
+      <String>kk_panel_orders.custom3</String>
+      <String>date.month.short.Feb</String>
+      <String>kk_panel_orders.custom4</String>
+      <String>help.conversionFactor</String>
+      <String>dl.custChoice.disabled.users</String>
+      <String>question.delete.catalog</String>
+      <String>listBox.selectDay</String>
+      <String>date.format</String>
+      <String>date.month.short.Jun</String>
+      <String>question.select.exc.customers.promotion</String>
+      <String>label.audit.detailed</String>
+      <String>date.month.short.Jul</String>
+      <String>msg.validTemplate</String>
+      <String>panel.customE</String>
+      <String>panel.cssFileUpload</String>
+      <String>msg.ProdNoneAssocManufactRemove</String>
+      <String>panel.customF</String>
+      <String>help.cacheConfig</String>
+      <String>panel.customC</String>
+      <String>panel.customD</String>
+      <String>panel.customG</String>
+      <String>panel.configuration</String>
+      <String>question.confirmSolrRemove</String>
+      <String>panel.customA</String>
+      <String>panel.customB</String>
+      <String>error.noCatalogSelected</String>
+      <String>label.rmaCode</String>
+      <String>panel.rss</String>
+      <String>panel.viewMailingLists</String>
+      <String>label.konakartResultDescription</String>
+      <String>label.no</String>
+      <String>label.symbolRight</String>
+      <String>panel.catMiscItems</String>
+      <String>label.gatewayFullResponse</String>
+      <String>button.add</String>
+      <String>label.telephone</String>
+      <String>rt.createLink</String>
+      <String>label.height</String>
+      <String>listbox.GREATER_THAN</String>
+      <String>validation.textLEQ</String>
+      <String>button.subscriptions</String>
+      <String>label.orderStatus</String>
+      <String>date.month.short.Aug</String>
+      <String>label.orderShipments</String>
+      <String>label.large</String>
+      <String>label.adminAppUsers</String>
+      <String>label.street1</String>
+      <String>kk_panel_importer.custom2</String>
+      <String>panel.prodsFromCat</String>
+      <String>kk_panel_importer.custom1</String>
+      <String>panel.subscriptions</String>
+      <String>listBox.digitalDownload</String>
+      <String>label.txType</String>
+      <String>label.addressFormat</String>
+      <String>validation.taxRateDescription</String>
+      <String>label.startDate</String>
+      <String>label.storeId</String>
+      <String>listbox.MULTI_INT_TYPE</String>
+      <String>ls.tagsPerPage.title</String>
+      <String>label.taxClassDescription</String>
+      <String>label.txAmount</String>
+      <String>label.type</String>
+      <String>help.miscItems</String>
+      <String>obj.stores</String>
+      <String>msg.codeForOptionDoesNotExist</String>
+      <String>label.img</String>
+      <String>help.promotionName</String>
+      <String>panel.customBHeader</String>
+      <String>label.dateAdded</String>
+      <String>default</String>
+      <String>msg.problemExportingOrder</String>
+      <String>kk_panel_importer.custom3</String>
+      <String>question.delete.miscItem</String>
+      <String>label.details</String>
+      <String>question.delete.shipment</String>
+      <String>kk_panel_importer.custom4</String>
+      <String>label.addr.cust4</String>
+      <String>label.addr.cust5</String>
+      <String>label.addr.cust2</String>
+      <String>label.subZone</String>
+      <String>label.addr.cust3</String>
+      <String>label.addr.cust1</String>
+      <String>listBox.dependentProducts</String>
+      <String>panel.addressForManu</String>
+      <String>label.paymentDeclined</String>
+      <String>help.selectTypeMerchandisingProds</String>
+      <String>button.deleteOption</String>
+      <String>msg.displayingFromToOfItems</String>
+      <String>panel.shippingModules</String>
+      <String>help.monitorJobs</String>
+      <String>label.contentDesc.title</String>
+      <String>INFO</String>
+      <String>label.customerTags</String>
+      <String>date.month.short.Apr</String>
+      <String>label.currentDate</String>
+      <String>label.id</String>
+      <String>value.emailVerified.enabled</String>
+      <String>label.priceId</String>
+      <String>msg.noCustomersForGroup</String>
+      <String>label.in</String>
+      <String>panel.otherModules</String>
+      <String>label.jobDescription</String>
+      <String>label.genericEmail</String>
+      <String>panel.addressFormats</String>
+      <String>label.title</String>
+    </msgIds>
+    <msgs>
+      <String>License expired {0} days ago</String>
+      <String>Are you sure you want to delete this Miscellaneous Item Type?</String>
+      <String>Copy</String>
+      <String>Maintain the Returned Products</String>
+      <String>Product SKU</String>
+      <String>Number of Payments</String>
+      <String>orders</String>
+      <String>Action</String>
+      <String>Are you sure you want to delete this Coupon?</String>
+      <String>Configure Velocity Templates</String>
+      <String>Miscellaneous Items Per Page</String>
+      <String>Model</String>
+      <String>Category</String>
+      <String>Customer Emails</String>
+      <String>Indent Right</String>
+      <String>Are you sure you want to delete this Shipper?</String>
+      <String>Oct</String>
+      <String>The product option {0} has {1} option values which will also be deleted.</String>
+      <String>OFF</String>
+      <String>Use Customer Language</String>
+      <String>Text must be greater than {0} characters</String>
+      <String>All Products</String>
+      <String>Attr Templates</String>
+      <String>Click on the Refresh button to notify the KonaKart engine to refresh all of its caches. It may take up to {0} seconds to complete the operation</String>
+      <String>Geo-Zones</String>
+      <String>All Addresses</String>
+      <String>Data common for all languages</String>
+      <String>Database Connection Failed</String>
+      <String>Automatic generation of catalog prices based on rules</String>
+      <String>Invalid Template</String>
+      <String>Number of Customers</String>
+      <String>Minutes</String>
+      <String>Confirmation</String>
+      <String>Are you sure you want to copy this product to {0}? </String>
+      <String>Day(s)</String>
+      <String>This state can be set through the administration tool. It means that the order has been delivered to the customer.</String>
+      <String>Rules</String>
+      <String>No Product Selected</String>
+      <String>Prices cannot be created because no rules have beed saved for the catalog {0}            </String>
+      <String>tax area mapping</String>
+      <String>Execute Reports.</String>
+      <String>Manage list of excluded</String>
+      <String>Has Problem</String>
+      <String>Reviews</String>
+      <String>Settings</String>
+      <String>Module</String>
+      <String>Order Refunds</String>
+      <String>The storeId cannot be left empty</String>
+      <String>Large</String>
+      <String>The text must match the regular expression for this attribute</String>
+      <String>Order Refunds</String>
+      <String>Description</String>
+      <String>Content</String>
+      <String>Select a Manufacturer</String>
+      <String>Set to Access Invisible Customers</String>
+      <String>Are you sure you want to delete this Filter?</String>
+      <String>If set reviews button is hidden</String>
+      <String>configuration key not set</String>
+      <String>If set custom button is hidden</String>
+      <String>If set customer search droplists are disabled</String>
+      <String>Custom3</String>
+      <String>Are you sure you want to delete this Customer Group?</String>
+      <String>Custom2</String>
+      <String>Custom1</String>
+      <String>Reset Database</String>
+      <String>Cust1</String>
+      <String>Select Gift Certificates for Promotion</String>
+      <String>Custom4</String>
+      <String>My Store Status</String>
+      <String>Configure the shipping modules</String>
+      <String>Stock and Order configuration</String>
+      <String>Subscribed</String>
+      <String>Select whether you want to add products for up-selling, cross-selling etc.</String>
+      <String>Value must be between {0} and {1}</String>
+      <String>Green</String>
+      <String>Username or Password do not match</String>
+      <String>Index text of download</String>
+      <String>Copy File</String>
+      <String>BCC Extra Addresses</String>
+      <String>X-Large</String>
+      <String>Gift Certificate</String>
+      <String>Enabled</String>
+      <String>Payment</String>
+      <String>%</String>
+      <String>Other Telephone Number</String>
+      <String>Product Custom10</String>
+      <String>Please enter a valid Tax Area</String>
+      <String>Fax Number</String>
+      <String>Move to list of related items</String>
+      <String>Manage products in the Solr search engine. Can add and remove the product catalog.</String>
+      <String>Cloning store data... (Click OK to continue in the background)</String>
+      <String>Status</String>
+      <String>The product option value {0} will be deleted.</String>
+      <String>March</String>
+      <String>promotions</String>
+      <String>Disabled Users</String>
+      <String>Configure shipping/packaging parameters</String>
+      <String>Configure PDF parameters</String>
+      <String>Returns Per Page</String>
+      <String>Show</String>
+      <String>% off</String>
+      <String>View System Logs</String>
+      <String>Manufacturers</String>
+      <String>All Groups</String>
+      <String>Object Id</String>
+      <String>Configure Multiple Stores</String>
+      <String>Last Billing Date</String>
+      <String>Remove exclude list, and include some</String>
+      <String>Unsubscribed</String>
+      <String>Customers Per Page</String>
+      <String>Problem retrieving the report</String>
+      <String>CustomA Header</String>
+      <String>DATE_TYPE</String>
+      <String>Custom2</String>
+      <String>Custom1</String>
+      <String>MATCH</String>
+      <String>Custom3</String>
+      <String>Physical Product</String>
+      <String>Active</String>
+      <String>Content</String>
+      <String>Normal</String>
+      <String>Click URL</String>
+      <String>Exclude</String>
+      <String>Read</String>
+      <String>Email Verified</String>
+      <String>The configuration parameter &quot;IMPORT_FILES_PATH&quot;&lt;br/&gt;doesn&apos;t appear to be defined in the database.&lt;br/&gt;&lt;br/&gt;You may not be able to select import files for loading.&lt;br/&gt;</String>
+      <String>Tax Code</String>
+      <String>Configure the Content Types</String>
+      <String>Price1 Ex Tax</String>
+      <String>Promotion Type</String>
+      <String>Custom1 Header</String>
+      <String>Custom10 Header</String>
+      <String>Price3 Ex Tax</String>
+      <String>Configure Custom Panels</String>
+      <String>Price2 Ex Tax</String>
+      <String>Toggle Superscript</String>
+      <String>Order Id</String>
+      <String>Custom2</String>
+      <String>The selected template &lt;b&gt; {0} &lt;/b&gt; does not have a &lt;b&gt; .vm &lt;/b&gt; extension. If you continue, it will be uploaded but not be visible in the drop list. Do you wish to proceed ?</String>
+      <String>Custom1</String>
+      <String>--none--</String>
+      <String>Custom4</String>
+      <String>Custom3</String>
+      <String>Select one or more products to include in the bundle. If you select a product with options, all combinations will be included. You should then remove the ones that you don&apos;t want. You can include a product multiple times in order to have quantities greater than one. </String>
+      <String>Format</String>
+      <String>Customer Tags Per Page</String>
+      <String>Are you sure you want to delete this Customer Tag?</String>
+      <String>The promotion can only be used this number of times by a customer. If set to -1 then usage is unlimited.</String>
+      <String>Custom5</String>
+      <String>Custom Attribute Template</String>
+      <String>Configure Reports Parameters.</String>
+      <String>Returns</String>
+      <String>New Password</String>
+      <String>A place to put custom data.</String>
+      <String>A place to put custom data.</String>
+      <String>A place to put custom data.</String>
+      <String>A place to put custom data.</String>
+      <String>A place to put custom data.</String>
+      <String>Refresh</String>
+      <String>Bookable Product Details</String>
+      <String>Price</String>
+      <String>Thu</String>
+      <String>Return Reason</String>
+      <String>Name of image file</String>
+      <String>Insert Image</String>
+      <String>WARNING</String>
+      <String>Custom Decimal 1</String>
+      <String>If set addresses button is hidden</String>
+      <String>If set login button is hidden</String>
+      <String>If set customer search droplists are disabled</String>
+      <String>If set cannot reset password</String>
+      <String>If set email is disabled</String>
+      <String>Select one or more products to exclude from the promotion</String>
+      <String>Remove</String>
+      <String>Transaction Id</String>
+      <String>The text must represent a number</String>
+      <String>Edit Mode</String>
+      <String>Are you sure you want to remove all rules from catalog {0} ?</String>
+      <String>There has been an unexpected error. Look at server log for details.</String>
+      <String>Are you sure that you want to send an email to {0} customers belonging to the &lt;b&gt;{1}&lt;/b&gt; group, using {2} concurrent threads ? &lt;br&gt;&lt;br&gt;The sending process will work in the background and you will receive no further notifications. &lt;br&gt;&lt;br&gt;A log called &lt;b&gt;SendTemplateEmail.log&lt;/b&gt; will be written to your log directory &lt;b&gt;{3}&lt;/b&gt; and can be viewed from the Admin App in the section &lt;b&gt;Tools &gt;&gt; View System Logs&lt;/b&gt;. </String>
+      <String>contains</String>
+      <String>Local Store</String>
+      <String>All products (new and out of sync) will be copied to {0} using the batch program in the com.konakartadmin.bl.AdminProductBatchMgr called synchronizeStoresBatch. A log file will be created in the log directory defined in the Admin App under Configuration &gt;&gt; Logging. The program will run as a background task and progress may be monitored by clicking on the search button to display the products that haven&apos;t been synchronized yet.</String>
+      <String>Msg Cat Key</String>
+      <String>Custom3</String>
+      <String>Upload Image</String>
+      <String>Custom5</String>
+      <String>Custom3</String>
+      <String>Custom4</String>
+      <String>tag group</String>
+      <String>Custom1</String>
+      <String>Custom1</String>
+      <String>Custom2</String>
+      <String>Custom2</String>
+      <String>Geo-Zone Description</String>
+      <String>Preview</String>
+      <String>Custom 2</String>
+      <String>Custom 1</String>
+      <String>Tx Id</String>
+      <String>Female</String>
+      <String>Reviews</String>
+      <String>products</String>
+      <String>Saturday</String>
+      <String>Select</String>
+      <String>An Order Status with id = {0} already exists and so cannot be inserted.</String>
+      <String>Invisible Category</String>
+      <String>Downloads</String>
+      <String>Invalid password</String>
+      <String>Custom Attributes</String>
+      <String>Please enter a valid Country</String>
+      <String>Redo</String>
+      <String>Points</String>
+      <String>Edit Product</String>
+      <String>Zone Search String</String>
+      <String>Generate Catalog Prices for {0}</String>
+      <String>Catalog Description</String>
+      <String>Order #</String>
+      <String>Insert a new Store</String>
+      <String>Product Name</String>
+      <String>Number must be greater than or equal to {0}</String>
+      <String>Select one or more customer groups to include in the promotion</String>
+      <String>Set Language</String>
+      <String>Manage templates used to group custom product attributes</String>
+      <String>Are you sure that you want to add all products in the catalog to the Solr search engine ? &lt;br&gt;&lt;br&gt;If you confirm, the operation which may take a while, will continue on the Solr search engine server and you will not receive any further notification. Look at the Solr logs or use the Solr Admin Application to view details of the transaction.</String>
+      <String>Expression</String>
+      <String>Undo</String>
+      <String>Select</String>
+      <String>Return by API</String>
+      <String>countries</String>
+      <String>Expressions</String>
+      <String>Product Custom8</String>
+      <String>Summary Auditing</String>
+      <String>Template Attributes</String>
+      <String>Product Custom9</String>
+      <String>Maintain customer tags</String>
+      <String>Custom3</String>
+      <String>Custom2</String>
+      <String>Product Description</String>
+      <String>Custom1</String>
+      <String>Product Custom1</String>
+      <String>Product Custom2</String>
+      <String>Product Custom3</String>
+      <String>Search</String>
+      <String>Product Custom4</String>
+      <String>Product Custom5</String>
+      <String>Product Custom6</String>
+      <String>Product Custom7</String>
+      <String>Published Products Successfully</String>
+      <String>Custom1</String>
+      <String>Language</String>
+      <String>Set to hide the View button</String>
+      <String>Tax Area Name</String>
+      <String>Edit Order</String>
+      <String>Refunds Per Page</String>
+      <String>Deleted</String>
+      <String>Languages</String>
+      <String>Importer Configuration</String>
+      <String>Products Per Page</String>
+      <String>Number must be less than or equal to {0}</String>
+      <String>Select a single product for notification eMail</String>
+      <String>Customers</String>
+      <String>Refund Status</String>
+      <String>HTTP / HTTPS</String>
+      <String>Subject</String>
+      <String>Custom4</String>
+      <String>Custom5</String>
+      <String>A store with the specified storeId {0} already exists</String>
+      <String>City</String>
+      <String>coupons</String>
+      <String>Facet</String>
+      <String>Custom Attribute Descriptor</String>
+      <String>CustomE Header</String>
+      <String>Description</String>
+      <String>Depth</String>
+      <String>If set custom returns button is disabled</String>
+      <String>It is not being used by any products and so can be safely deleted.</String>
+      <String>View Batch Logs</String>
+      <String>Reviews for Customer</String>
+      <String>AGE_TYPE</String>
+      <String>X-Small</String>
+      <String>Enter the new filename:</String>
+      <String>Promotion active for all</String>
+      <String>Not Verified</String>
+      <String>Category</String>
+      <String>Custom10</String>
+      <String>Select a product for sending out a notification</String>
+      <String>Small</String>
+      <String>End Date</String>
+      <String>To</String>
+      <String>April</String>
+      <String>View</String>
+      <String>Logging Configuration</String>
+      <String>All</String>
+      <String>Gateway Result</String>
+      <String>Image base URL</String>
+      <String>Send the newsletter to {0} registered customers that have signed up for it.</String>
+      <String>Are you sure you want to add the following rules to the catalog {0} ?</String>
+      <String>Select Addr</String>
+      <String>Select a template</String>
+      <String>File Upload</String>
+      <String>Copy related products (bundled products, up-sell etc.) if they don&apos;t exist in the destination store</String>
+      <String>Bookable Product</String>
+      <String>Decimal Point</String>
+      <String>Are you sure you want to delete this Role?</String>
+      <String>The order is blocked until payment arrives. This state is set automatically when waiting for the response from a payment gateway.</String>
+      <String>Tier Prices</String>
+      <String>Velocity Template</String>
+      <String>Coupon Code</String>
+      <String>Deleted or Not Deleted</String>
+      <String>Waiting for payment</String>
+      <String>New Quantity = {1} for SKU = {0} </String>
+      <String>Upload</String>
+      <String>Value must be less than or equal to {0}</String>
+      <String>Directory</String>
+      <String>Shippers</String>
+      <String>Tax Area Mapping</String>
+      <String>Delete</String>
+      <String>Edit Customer</String>
+      <String>Date of Birth</String>
+      <String>Are you sure you want to delete this Tax Class?</String>
+      <String>Select one or more products to include in the promotion</String>
+      <String>Personal</String>
+      <String>Email</String>
+      <String>CSS file name</String>
+      <String>Edit Review</String>
+      <String>Newsletter and Product Notification eMails will be sent using {0} concurrent threads.</String>
+      <String>Template Store</String>
+      <String>Creating new store... (Click OK to continue in the background)</String>
+      <String>Bundle-Free Shipping</String>
+      <String>Sunday</String>
+      <String>Content Name</String>
+      <String>Category Name</String>
+      <String>Are you sure you want to delete this Promotion?</String>
+      <String>Configure maximum values</String>
+      <String>Never</String>
+      <String>order statuses</String>
+      <String>Store Configuration</String>
+      <String>Custom3</String>
+      <String>Catalog Name</String>
+      <String>Enable Special</String>
+      <String>Custom1</String>
+      <String>Custom2</String>
+      <String>Switch Editor</String>
+      <String>Super User</String>
+      <String>Promotion Id</String>
+      <String>No Address Format</String>
+      <String>Are you sure you want to delete this Order Return?</String>
+      <String>Exclude all products from {0} and its sub categories        </String>
+      <String>Enter the full local filename of the report to upload:</String>
+      <String>Send an eMail to {1} customers in the &lt;b&gt;{0}&lt;/b&gt; group</String>
+      <String>Reload</String>
+      <String>Username</String>
+      <String>Table</String>
+      <String>Suburb</String>
+      <String>Create Product</String>
+      <String>Loading Order Details...</String>
+      <String>Module Name</String>
+      <String>P3</String>
+      <String>SEVERE</String>
+      <String>P</String>
+      <String>P2</String>
+      <String>P1</String>
+      <String>Up Sell Products</String>
+      <String>No Group</String>
+      <String>customer tags</String>
+      <String>Name</String>
+      <String>File Path</String>
+      <String>License will expire in {0} days - (on {1})</String>
+      <String>There has been a problem....</String>
+      <String>Address</String>
+      <String>Cust Email</String>
+      <String>Admin App Help</String>
+      <String>Cannot run reports if set</String>
+      <String>Export</String>
+      <String>Product Custom Dec 2</String>
+      <String>Custom3</String>
+      <String>An expression has not been selected</String>
+      <String>Edit rule for {0}</String>
+      <String>Login</String>
+      <String>Standard Version</String>
+      <String>View PDF</String>
+      <String>Are you sure you want to delete this Tag Group?</String>
+      <String>The KonaKart engine has been notified to refresh its caches.&lt;br&gt;&lt;br&gt;Click on the Refresh button to notify the KonaKart engine to refresh all of the cached configuration variables from the values in the database. It may take up to {0} seconds to complete the operation</String>
+      <String>Importer</String>
+      <String>Text must be less than {0} characters</String>
+      <String>Sessions</String>
+      <String>All Orders</String>
+      <String>View Importer Logs</String>
+      <String>geo-zones</String>
+      <String>Upload Template</String>
+      <String>Your session has expired. Click on the Close button to continue with a new session.</String>
+      <String>New Password (repeat)</String>
+      <String>Image</String>
+      <String>Are you sure you want to delete this Order Status?</String>
+      <String>Password must contain a numeric character</String>
+      <String>Please specify a key for your new store (this will be the &quot;storeId&quot;)</String>
+      <String>Define Local Settings</String>
+      <String>Manage list of included</String>
+      <String>Symb Left</String>
+      <String>Email Address</String>
+      <String>Include All</String>
+      <String>Warning</String>
+      <String>Promotions</String>
+      <String>Maintain Roles</String>
+      <String>Select Expressions for Promotion</String>
+      <String>Valid Date</String>
+      <String>Valid SKU</String>
+      <String>Set to allow admin of all stores</String>
+      <String>Day of Month</String>
+      <String>Bookings Made</String>
+      <String>Order Exported To:</String>
+      <String>Refunds</String>
+      <String>Click on the number of items on the right to view those orders</String>
+      <String>Panel Name</String>
+      <String>address</String>
+      <String>Maintain the Tags</String>
+      <String>Wed</String>
+      <String>Synchronize Products</String>
+      <String>Bookings For Order</String>
+      <String>Status Id</String>
+      <String>There has been a problem with the upload</String>
+      <String>Are you sure that you want to add the points to the customer&apos;s account?</String>
+      <String>Text</String>
+      <String>Locations/Taxes</String>
+      <String>Customer Id</String>
+      <String>Use Percentage Discount</String>
+      <String>Insert Customer</String>
+      <String>Tags</String>
+      <String>Problem Retrieving TaxClass</String>
+      <String>All Tax Areas</String>
+      <String>--none--</String>
+      <String>{0} template selected</String>
+      <String>Sign Out</String>
+      <String>Foreground</String>
+      <String>Store Maintenance</String>
+      <String>Select Image</String>
+      <String>Text Mode</String>
+      <String>Select merchandising</String>
+      <String>Method Name</String>
+      <String>PDF Configuration</String>
+      <String>Status</String>
+      <String>License Reminder</String>
+      <String>Edit</String>
+      <String>Tax Area</String>
+      <String>The promotion module has not been installed</String>
+      <String>Tue</String>
+      <String>Bundle</String>
+      <String>Text to merge with template</String>
+      <String>Prices</String>
+      <String>Set Language</String>
+      <String>promotion</String>
+      <String>Confirmation</String>
+      <String>Select Categories for Promotion</String>
+      <String>Template</String>
+      <String>Custom5 Header</String>
+      <String>C3</String>
+      <String>Maintain the Tax Rates</String>
+      <String>Language dependent name</String>
+      <String>Updated By</String>
+      <String>Waiting</String>
+      <String>Configuration parameters for your store</String>
+      <String>Licensing</String>
+      <String>Are you sure that you want to send an email to {0} customers that have asked to be notified about the product &lt;b&gt;{1}&lt;/b&gt;, using {2} concurrent threads? &lt;br&gt;&lt;br&gt;The sending process will work in the background and you will receive no further notifications. &lt;br&gt;&lt;br&gt;A log called &lt;b&gt;SendTemplateEmail.log&lt;/b&gt; will be written to your log directory &lt;b&gt;{3}&lt;/b&gt; and can be viewed from the Admin App in the section &lt;b&gt;Tools &gt;&gt; View System Logs&lt;/b&gt;.</String>
+      <String>Ret Code</String>
+      <String>If set Export button not shown</String>
+      <String>If set invoice button not shown</String>
+      <String>If set Export For Shipping button not shown</String>
+      <String>Audit Data</String>
+      <String>contains {0} products. The products will be deleted since this is a top level category</String>
+      <String>The Customer attributes are not visible through the application.</String>
+      <String>If set packing list button not shown</String>
+      <String>Disabled</String>
+      <String> except for</String>
+      <String>Maintain the Mapping of Tax Areas / Geo Zones</String>
+      <String>Length</String>
+      <String>Updated By Name</String>
+      <String>Power User panel to insert product quantities</String>
+      <String>New</String>
+      <String>No Payment Schedule</String>
+      <String>Capture Id</String>
+      <String>Are you sure you want to delete this Tax Rate?</String>
+      <String>The promotion can be activated or stopped by setting or clearing this check box. In order to be active, the box must be checked and the current date must lie between the start and end dates.</String>
+      <String>Manufacturer Addresses</String>
+      <String>Set to allow read and edit of custom fields, order number, tracking number</String>
+      <String>Set to allow read and edit of credit card details</String>
+      <String>The news feed is not valid XML</String>
+      <String>Insert Horizontal Rule</String>
+      <String>Tax Areas / Geo Zones</String>
+      <String>Credit Id</String>
+      <String>Edit</String>
+      <String>Medium</String>
+      <String>Order Statuses</String>
+      <String>Visible</String>
+      <String>Product Type</String>
+      <String>Localizations</String>
+      <String>Product Not Available </String>
+      <String>Invisible</String>
+      <String>Can order when not in stock</String>
+      <String>Unknown storeId</String>
+      <String>Import Username</String>
+      <String>addresses</String>
+      <String>Country</String>
+      <String>&lt;&gt;</String>
+      <String>No Expression</String>
+      <String>Promotions Per Page</String>
+      <String>Maintain the Currencies</String>
+      <String>Toggle Subscript</String>
+      <String>Category Image</String>
+      <String>Cust Postcode</String>
+      <String>Your session is invalid. Please login.</String>
+      <String>From</String>
+      <String>Enabled</String>
+      <String>Wednesday</String>
+      <String>Send an eMail to {0} in order to test the template file {1}.</String>
+      <String>All Manufacturers</String>
+      <String>No items found</String>
+      <String>DEBUG</String>
+      <String>Enter the full local filename of the file to upload:</String>
+      <String>Failed to Publish Products - check the container and publish products logs for more details</String>
+      <String>Content Type</String>
+      <String>Order Total Modules</String>
+      <String>Text must be greater than or equal to {0} characters</String>
+      <String>Phone 1</String>
+      <String>Are you sure you want to reset the password of {0}?</String>
+      <String>Sort Order</String>
+      <String>currencies</String>
+      <String>DB Error Msg</String>
+      <String>Shipping</String>
+      <String>Delete</String>
+      <String>messages</String>
+      <String>Available API Calls</String>
+      <String>Search Desc.</String>
+      <String>Bookings</String>
+      <String>Get</String>
+      <String>Store to Sync With</String>
+      <String>Configure the other modules</String>
+      <String>Store URL</String>
+      <String>Locale</String>
+      <String>Price Adjustment</String>
+      <String>Are you sure you want to delete this Tax Area Mapping?</String>
+      <String>A coupon may be associated with more than one promotion.  Click here to manage the promotions associated with this coupon.</String>
+      <String>Maintain the Locations/Taxes</String>
+      <String>Update Product Quantities</String>
+      <String>Maintain the Countries</String>
+      <String>Select a Tax Class</String>
+      <String>Month(s)</String>
+      <String>Are you sure you want to delete this Billing Subscription ?</String>
+      <String>Maintain Roles</String>
+      <String>Customer Tags</String>
+      <String>New Products</String>
+      <String>Select Manufacturers for Promotion</String>
+      <String>Password</String>
+      <String>Product Reviews</String>
+      <String>Select Products for Promotion</String>
+      <String>Image Name</String>
+      <String>zones</String>
+      <String>Insert Mode</String>
+      <String>The default customer address cannot be deleted. Assign another address as the default and try again.</String>
+      <String>Enabled Administrators</String>
+      <String>Enter a numeric Id</String>
+      <String>Variable Quantity</String>
+      <String>Custom Attributes</String>
+      <String>Data Feeds</String>
+      <String>Mapping</String>
+      <String>Are you sure you want to delete this Address?</String>
+      <String>Rate</String>
+      <String>Products</String>
+      <String>Custom8 Header</String>
+      <String>Select Custom Attributes for Template</String>
+      <String>Toggle Strikethrough</String>
+      <String>Orders</String>
+      <String>New Available Date = {1} for SKU = {0} </String>
+      <String>Disable Auditing</String>
+      <String>Send eMail to Customer</String>
+      <String>Must be a positive numeric Id</String>
+      <String>Value Code</String>
+      <String>Delete and Include</String>
+      <String>Shipments</String>
+      <String>Remote Store</String>
+      <String>State</String>
+      <String>The cause of the problem is not clear. Look at the details.</String>
+      <String>Insert Ordered List</String>
+      <String>Custom2 Header</String>
+      <String>OK</String>
+      <String>Value Custom2</String>
+      <String>Value Custom1</String>
+      <String>Subscription Code</String>
+      <String>About</String>
+      <String>Minute(s)</String>
+      <String>&lt;p /&gt;This is the administration application for KonaKart.&lt;p /&gt; It allows you to maintain and configure your online store.&lt;p /&gt; KonaKart Engine Version = {0} (built {1})&lt;p/&gt;Run Time Info:&lt;p/&gt;Mode = {2}, StoreId = {3}&lt;p /&gt;Customers Shared = {4}, Products Shared = {5}, Categories Shared = {6}&lt;p /&gt;KonaKart Admin Client Version = {7}</String>
+      <String>Reports Configuration</String>
+      <String>Primary Telephone Number</String>
+      <String>Are you sure that you want to remove the points from the customer&apos;s account?</String>
+      <String>Password must contain a special character (not a..z, A..Z or 0..9)</String>
+      <String>Success</String>
+      <String>Select Promotions for Coupon</String>
+      <String>Generate Catalog Prices</String>
+      <String>At least one product must be returned</String>
+      <String>Cause</String>
+      <String>Misc Items</String>
+      <String>Click to browse for a file</String>
+      <String>Exclude some</String>
+      <String>Subscribed</String>
+      <String>Friday</String>
+      <String>Gateway Callbacks Per Page</String>
+      <String>Coupons For Promotions</String>
+      <String>Customers</String>
+      <String>User</String>
+      <String>October</String>
+      <String>Change state of order</String>
+      <String>If set coupons button not shown</String>
+      <String>Geo-Zone</String>
+      <String>If set gift certificates button not shown</String>
+      <String>customers</String>
+      <String>Unsubscribed</String>
+      <String>Custom6</String>
+      <String>filters</String>
+      <String>Customer Text</String>
+      <String>Custom7</String>
+      <String>Custom8</String>
+      <String>Select one or more templates to add to the product. You must click the Save button on the product panel to save your selection.</String>
+      <String>Custom9</String>
+      <String>Orders</String>
+      <String>Custom2</String>
+      <String>Custom2</String>
+      <String>White</String>
+      <String>Content Id</String>
+      <String>Custom3</String>
+      <String>New Time Slot</String>
+      <String>Custom1</String>
+      <String>Custom4</String>
+      <String>Countries</String>
+      <String>Custom5</String>
+      <String>Custom3</String>
+      <String>The password cannot be left empty</String>
+      <String>Coupons</String>
+      <String>Logons</String>
+      <String>Custom1</String>
+      <String>Sat</String>
+      <String>Insert Unordered List</String>
+      <String>Mailing Lists</String>
+      <String>Standard</String>
+      <String>If set custom returns button is disabled</String>
+      <String>Custom Decimal 2</String>
+      <String>Fri</String>
+      <String>Maintain the Tag Groups</String>
+      <String>Order Qty</String>
+      <String>Del</String>
+      <String>booking</String>
+      <String>Manufacturer Id</String>
+      <String>Product</String>
+      <String>Custom4</String>
+      <String>Custom5</String>
+      <String>Custom2</String>
+      <String>Custom3</String>
+      <String>Select Product</String>
+      <String>Custom1</String>
+      <String>Maintain the Address Formats</String>
+      <String>Password must contain an upper case character</String>
+      <String>It is currently being used by {0} other products.</String>
+      <String>Select one or more categories to include in the promotion</String>
+      <String>Product Addresses</String>
+      <String>Week(s)</String>
+      <String>Content Type Id</String>
+      <String>Updated By Id</String>
+      <String>Manage Multiple Stores</String>
+      <String>Use default</String>
+      <String>No Product</String>
+      <String>Addresses for Product</String>
+      <String>Send the product notification for &lt;b&gt;{0}&lt;/b&gt; to {1} customers that have signed up for it.</String>
+      <String>contains {0} products. Check the box to delete the products. Otherwise they will be moved to the parent category</String>
+      <String>Custom6 Header</String>
+      <String>It is the state that the order receives when it is first created and saved in the database. If the order may go ahead without payment (i.e. Cash on Delivery) then through the administration tool the state can be changed to PROCESSING.</String>
+      <String>Customer Tag</String>
+      <String>Dec</String>
+      <String>Refresh the Solr Search Engine</String>
+      <String>Select date</String>
+      <String>Privileges</String>
+      <String>Time between payments</String>
+      <String>Please enter a valid Zone</String>
+      <String>Include some</String>
+      <String>All Types</String>
+      <String>Password Changed Successfully</String>
+      <String>The promotion will not be active after this date. Not used if a valid date isn&apos;t selected.</String>
+      <String>Stock and Orders</String>
+      <String>Select the relevant tags within a tag group that you want to associate to this product. Only the tag groups associated to the categories of this product, are displayed.</String>
+      <String>Remove Formatting</String>
+      <String>Select a Product Type</String>
+      <String>Must be a positive numeric Order Id</String>
+      <String>If set reports cannot be run</String>
+      <String>Batch Job Logs</String>
+      <String>price</String>
+      <String>Physical Prod-Free Shipping</String>
+      <String></String>
+      <String>Nov</String>
+      <String>Update Products</String>
+      <String>View Audit Data</String>
+      <String>Maintain the Product Options</String>
+      <String>Logo file upload</String>
+      <String>Custom2</String>
+      <String>Custom1</String>
+      <String>customer groups</String>
+      <String>If set reviews button not shown</String>
+      <String>If set addreses button not shown</String>
+      <String>Custom5</String>
+      <String>If set remove from cat button not shown</String>
+      <String>Cust5</String>
+      <String>Coupons</String>
+      <String>Products</String>
+      <String>FALSE</String>
+      <String>miscellaneous items</String>
+      <String>Product Listing</String>
+      <String>Zone</String>
+      <String>The maximum number of times that the promotion can be used. Enter -1 for unlimited use.</String>
+      <String>Name</String>
+      <String>Summary</String>
+      <String>All Countries</String>
+      <String>Run</String>
+      <String>The templates for this product have not been assigned any attributes.</String>
+      <String>View importer log files</String>
+      <String>Log file directory name is undefined</String>
+      <String>Max Download Days</String>
+      <String>Custom3</String>
+      <String>Custom4</String>
+      <String>Custom5</String>
+      <String>Custom6</String>
+      <String>The payment information for this order does not contain a value for the Admin Payment Class.&lt;br&gt;&lt;br&gt;A real time refund through the payment gateway is not possible.</String>
+      <String>Upload</String>
+      <String>The credit transaction identifier does not have a valid value.&lt;br&gt;&lt;br&gt;A real time refund through the payment gateway is not possible.</String>
+      <String>Custom Decimal 2</String>
+      <String>Do you want to perform a real time refund through the payment gateway ?</String>
+      <String>Are you sure you want to remove all of the stores from this product? After clicking yes, it will no longer be viewable in the admin application.</String>
+      <String>Product Id</String>
+      <String>Value must be greater than or equal to {0}</String>
+      <String>Out of Sync Products</String>
+      <String>Send eMails</String>
+      <String>Save Order Refund</String>
+      <String>both</String>
+      <String>Select a Promotion</String>
+      <String>Assigned Roles</String>
+      <String>Sep</String>
+      <String>dd/MM/yyyy HH:mm</String>
+      <String>Locking</String>
+      <String>Hour(s)</String>
+      <String>Sub-Zones</String>
+      <String>No zones configured</String>
+      <String>Key</String>
+      <String>Decimal Places</String>
+      <String>Please enter a valid Zone</String>
+      <String>Select one or more customers to include in the promotion</String>
+      <String>Cumulative</String>
+      <String>Maintain the Velocity Templates</String>
+      <String>Cust2</String>
+      <String>Under Maintenance</String>
+      <String>Custom Decimal 1</String>
+      <String>Cust1</String>
+      <String>Cust4</String>
+      <String>Cust3</String>
+      <String>No Zone</String>
+      <String>All Zones</String>
+      <String>Configure images</String>
+      <String>Power User panel to insert product available dates</String>
+      <String>Cannot send an eMail to customer if set</String>
+      <String>Toggle Bold</String>
+      <String>The payment notifications received from the payment gateways</String>
+      <String>Select File</String>
+      <String>Executing</String>
+      <String>No</String>
+      <String>Store</String>
+      <String>Background</String>
+      <String>Invoice - Order Id</String>
+      <String>Select Tag Groups to associate to this Category</String>
+      <String>Credit Card Details</String>
+      <String>Maintain the Products</String>
+      <String>Cannot reset customer password if set</String>
+      <String>Display Language for the Admin App</String>
+      <String>Item Value</String>
+      <String>Create Prices</String>
+      <String>Street Address</String>
+      <String>Maintain the License Key</String>
+      <String>Product Custom Int 2</String>
+      <String>If this check box is set, then this promotion will be cumulative with other promotions of the same type.</String>
+      <String>Only Expected</String>
+      <String>&lt;p /&gt;Your License Expires in {0} days&lt;p /&gt;Please contact &lt;a href=&quot;mailto:sales@konakart.com?Subject=KonaKart%20 License%20Key%20Request&quot;&gt;sales@konakart.com&lt;/a&gt; to renew your license&lt;p/&gt;</String>
+      <String>Old Password</String>
+      <String>Discount</String>
+      <String>Invisible Rejected</String>
+      <String>content items</String>
+      <String>Custom</String>
+      <String>Not Set</String>
+      <String>File Name</String>
+      <String>has no associated products and no child categories and so can be safely deleted</String>
+      <String>for</String>
+      <String>Configure customer details attributes</String>
+      <String>Image base Path</String>
+      <String>Click on the Delete button to delete the expired sessions...</String>
+      <String>Maintain the Orders</String>
+      <String>Maintain the Tax Classes</String>
+      <String>Manu Id</String>
+      <String>Product Custom Dec 1</String>
+      <String>Size</String>
+      <String>Modules</String>
+      <String>A store with this storeId already exists</String>
+      <String>false</String>
+      <String>An Order Status with id = {0} already exists and so cannot be updated.</String>
+      <String>has no associated products but has {0} child categories. Check the box, to delete the child categories</String>
+      <String>Black</String>
+      <String>Invalid License Key</String>
+      <String>national</String>
+      <String>Font</String>
+      <String>Message</String>
+      <String>Help</String>
+      <String>Import3</String>
+      <String>Import2</String>
+      <String>Import</String>
+      <String>Yes</String>
+      <String>User Defined Configs</String>
+      <String>Include all products from {0} and its sub categories       </String>
+      <String>Use Catalog Quantities</String>
+      <String>The configuration parameter &quot;REPORTS_DEFN_PATH&quot;&lt;br/&gt;doesn&apos;t appear to be defined in the database.&lt;br/&gt;&lt;br/&gt;You may not be able to upload reports successfully.&lt;br/&gt;</String>
+      <String>Importer Configuration</String>
+      <String>Are you sure you want to delete this Content?</String>
+      <String>External Reference 1</String>
+      <String>Custom1</String>
+      <String>External Reference 2</String>
+      <String>Custom3</String>
+      <String>Custom2</String>
+      <String>Custom5</String>
+      <String>Save To File</String>
+      <String>Custom4</String>
+      <String>No Files Selected</String>
+      <String>Custom1</String>
+      <String>Review Id</String>
+      <String>Insert</String>
+      <String>Custom2</String>
+      <String>Configuration parameters for your store</String>
+      <String>Customer Groups</String>
+      <String>Sun</String>
+      <String>Configure the payment modules</String>
+      <String>Male</String>
+      <String>All Prod Types</String>
+      <String>Product Comparison Data</String>
+      <String>Remove include list, and exclude some</String>
+      <String>DB Connection String</String>
+      <String>Toggle Italic</String>
+      <String>Newsletters and Product Notifications</String>
+      <String>Store Name</String>
+      <String>URL</String>
+      <String>The name of the coupon which can be used to search for it.</String>
+      <String>Configuration parameters for Digital Downloads</String>
+      <String>Option Name</String>
+      <String>Click on the Delete button to empty your database of Products, Categories, Orders and other important data items (see the Help for more details).&lt;br /&gt;&lt;br /&gt;&lt;b&gt;PROCEED WITH CAUTION&lt;/b&gt; - do not Click on Delete unless you are sure you want to reset your database...</String>
+      <String>Help</String>
+      <String>Use Catalog Prices</String>
+      <String>Custom</String>
+      <String>Custom1</String>
+      <String>Promotion Rules</String>
+      <String>Custom4</String>
+      <String>Custom5</String>
+      <String>Custom2</String>
+      <String>Custom3</String>
+      <String>Cannot convert the subscriptionId into an integer</String>
+      <String>TRUE</String>
+      <String>Select one or more manufacturers to exclude from the promotion</String>
+      <String>Option Type</String>
+      <String>Digital Downloads</String>
+      <String>?</String>
+      <String>Select Customers for Promotion</String>
+      <String>Select one or more expressions to include in the promotion</String>
+      <String>The cause of the exception is not known</String>
+      <String>Miscellaneous Item Types</String>
+      <String>Symbol on the Left</String>
+      <String>Are you sure you want to delete this Booking?</String>
+      <String>Merchandising</String>
+      <String>Are you sure you want to Reset the Database?</String>
+      <String>Delete Option Value</String>
+      <String>Tax Area Description</String>
+      <String>Maintain the shipments</String>
+      <String>Clear</String>
+      <String>Messages Per Page</String>
+      <String>uploadFormElement</String>
+      <String>Payment Schedule Details</String>
+      <String>All Users</String>
+      <String>Custom1</String>
+      <String>Product Synchronization is only available when running in multi-store shared products and shared categories mode</String>
+      <String>tag groups</String>
+      <String>CVV</String>
+      <String>Virtual Product</String>
+      <String>Custom2</String>
+      <String>Minimum Values</String>
+      <String>Custom3</String>
+      <String>False</String>
+      <String>Not Deleted</String>
+      <String>Change Password</String>
+      <String>3-Letter ISO</String>
+      <String>Tx Type</String>
+      <String>Are you sure you want to discard any changes made locally since the last save, for the catalog {0} ?</String>
+      <String>Orders Delivered</String>
+      <String>There are no product attributes defined.</String>
+      <String>Customer</String>
+      <String>Custom 1</String>
+      <String>TaxClass Name</String>
+      <String>Custom 3</String>
+      <String>Custom 2</String>
+      <String>End (hour:min)</String>
+      <String>Configure minimum values</String>
+      <String>Date Expected</String>
+      <String>Are you sure that you want to remove all price and quantity information&lt;br&gt;for this product from the catalog {0} ?</String>
+      <String>Content does not exist</String>
+      <String>Symbol Left</String>
+      <String>More Detail</String>
+      <String>language</String>
+      <String>Countries Per Page</String>
+      <String>It is currently being used by {0} product(s).</String>
+      <String>Disabled Customers</String>
+      <String>Miscellaneous Items For Product</String>
+      <String>Accessories</String>
+      <String>Set Function</String>
+      <String>Assigned Panels</String>
+      <String>Unknown</String>
+      <String>Maintain the Logging</String>
+      <String>Customer Name</String>
+      <String>Admin App</String>
+      <String>Maintain Multiple Stores</String>
+      <String>Send the eMail to all {0} customers.</String>
+      <String>Are you sure you want to delete this Review?</String>
+      <String>Maintain the Order Statuses</String>
+      <String>Welcome back</String>
+      <String>Custom1</String>
+      <String>Geo-Zone Name</String>
+      <String>Custom3</String>
+      <String>Calc</String>
+      <String>Custom2</String>
+      <String>Maximum Values</String>
+      <String>Mar</String>
+      <String>Custom4</String>
+      <String>tags</String>
+      <String>Custom4</String>
+      <String>Custom3</String>
+      <String>Custom2</String>
+      <String>Option Custom1</String>
+      <String>Reset the Database</String>
+      <String>Custom1</String>
+      <String>Option Custom2</String>
+      <String>Configure Solr search engine</String>
+      <String>Custom5</String>
+      <String>Expression Name</String>
+      <String>Reset Password</String>
+      <String>Prod Id</String>
+      <String>Max Products</String>
+      <String>Saving Data...  Please Wait...</String>
+      <String>Indent Left</String>
+      <String>Amount</String>
+      <String>Select All</String>
+      <String>=</String>
+      <String>Fixed Price</String>
+      <String>If your template supports this option, you can add comments to the eMail</String>
+      <String>May</String>
+      <String>Session Expired</String>
+      <String>Custom10</String>
+      <String>Option Code</String>
+      <String>Last Name</String>
+      <String>Next Billing Date</String>
+      <String>Synchronize products between stores</String>
+      <String>The coupon code that will be used by the customer.</String>
+      <String>Are you sure you want to delete this Tax Area?</String>
+      <String>Add Points</String>
+      <String>Enabled</String>
+      <String>Filters</String>
+      <String>content types</String>
+      <String>Order Totals</String>
+      <String>tax area</String>
+      <String>The two passwords are different</String>
+      <String>Add Quantity</String>
+      <String>Expiry Date</String>
+      <String>There are {0} products associated with the manufacturer {1}.  Click the checkbox to remove these products as well as the manufacturer.</String>
+      <String>User Id</String>
+      <String>Manage Promotions</String>
+      <String>This state can be set through the administration tool. It means that the order has been accepted and is being processed.</String>
+      <String>C1</String>
+      <String>Tax Area / Geo Zone to Zone Mapping</String>
+      <String>Set As Default</String>
+      <String>CSV with no header row</String>
+      <String>Product Custom Int 1</String>
+      <String>Exclude a new list of</String>
+      <String>order status</String>
+      <String>Configure Miscellaneous Item Types</String>
+      <String>Create and maintain expressions</String>
+      <String>Products</String>
+      <String>A customer group has not been selected</String>
+      <String>Payment has been received for the order. Through the administration tool, the state of the order may now be set to PROCESSING.</String>
+      <String>Constraint</String>
+      <String>Copy All</String>
+      <String>All</String>
+      <String>Size</String>
+      <String>Maintain the Zones</String>
+      <String>Maintain the Promotions</String>
+      <String>Application</String>
+      <String>Language Name</String>
+      <String>Clone Store</String>
+      <String>Customer Details</String>
+      <String>Order Total</String>
+      <String>Template for eMail Communication</String>
+      <String>Data Feeds</String>
+      <String>No Tax Area</String>
+      <String>Number of Manufacturers</String>
+      <String>Edit File:</String>
+      <String>Content Items Per Page</String>
+      <String>If set reviews button is hidden</String>
+      <String>Set to Access Invisible Customers</String>
+      <String>If set custom button is hidden</String>
+      <String>Packing Slip - Order Id</String>
+      <String>Not Under Maintenance</String>
+      <String>Confirmation</String>
+      <String>Create</String>
+      <String>No Stores</String>
+      <String>Packing Slip</String>
+      <String>November</String>
+      <String>XX-Large</String>
+      <String>Select the Tag Groups for the Tag called &lt;b&gt; {0} &lt;/b&gt;</String>
+      <String>Category Description</String>
+      <String>Custom1</String>
+      <String>Custom2</String>
+      <String>Custom3</String>
+      <String>Edit Content</String>
+      <String>Recurring Billing Subscriptions</String>
+      <String>Day</String>
+      <String>Currencies</String>
+      <String>2-Letter ISO</String>
+      <String>Comments</String>
+      <String>Rule</String>
+      <String>Gender</String>
+      <String>Image 2</String>
+      <String>Image 1</String>
+      <String>Image 4</String>
+      <String>Maintain the Shippers</String>
+      <String>Image 3</String>
+      <String>This state is set when payment has been declined from a payment gateway.</String>
+      <String>Custom1</String>
+      <String>Templates Configuration</String>
+      <String>Change Password</String>
+      <String>Custom3</String>
+      <String>Date Last Modified</String>
+      <String>Custom2</String>
+      <String>Custom5</String>
+      <String>Custom4</String>
+      <String>Some general statistics for your store</String>
+      <String>Preview the HTML</String>
+      <String>KonaKart Admin Application</String>
+      <String>Password must contain a lower case character</String>
+      <String>Insert</String>
+      <String>Are you sure you want to delete this Custom Attribute Descriptor?</String>
+      <String>Enter the full local filename of the file to upload</String>
+      <String>Pending Orders</String>
+      <String>Visibility</String>
+      <String>No Licensing Panel has been defined&lt;br&gt;&lt;br&gt;This Panel is required for entering a License Key&lt;br&gt;&lt;br&gt;Ask your Systems Administrator for Help</String>
+      <String>Tag Groups</String>
+      <String>Are you sure you want to delete this Payment Schedule? It is being used by {0} product(s).</String>
+      <String>Reset Password</String>
+      <String>Template Text</String>
+      <String>Remove From Cat</String>
+      <String>From</String>
+      <String>January</String>
+      <String>Send eMail</String>
+      <String>Zones</String>
+      <String>Select one or more gift certificates to attach to the promotion</String>
+      <String>C2</String>
+      <String>Quantities</String>
+      <String>Only Registered Customers</String>
+      <String>Custom4</String>
+      <String>Custom5</String>
+      <String>Custom2</String>
+      <String>Custom3</String>
+      <String>Custom1</String>
+      <String>Product Options</String>
+      <String>True</String>
+      <String>Delete Expired Sessions</String>
+      <String>Street</String>
+      <String>The promotion will not be active until this date has been reached. Not used if a valid date isn&apos;t selected.</String>
+      <String>Mon</String>
+      <String>Custom4</String>
+      <String>Custom3</String>
+      <String>Addresses</String>
+      <String>Custom5</String>
+      <String>Value must be a decimal number</String>
+      <String>STRING_TYPE</String>
+      <String>Custom2</String>
+      <String>Custom1</String>
+      <String>Password is too long</String>
+      <String>Marketing</String>
+      <String>Custom4</String>
+      <String>Send the newsletter to 1 customer that has signed up for it.</String>
+      <String>Select Customer Groups for Promotion</String>
+      <String>Passwords should be at least {0} characters in length.</String>
+      <String>The maximum number of times that the promotion can be used by each customer. Enter -1 for unlimited use.</String>
+      <String>Right Justify</String>
+      <String>Please enter a valid Tax Class</String>
+      <String>Refund Note</String>
+      <String>HTML Mode</String>
+      <String>Are you sure you want to delete this Template?</String>
+      <String>Tax Identifier</String>
+      <String>Tags</String>
+      <String>Orders</String>
+      <String>Velocity Templates</String>
+      <String>Update Prod Available Date</String>
+      <String>Custom1</String>
+      <String>Custom2</String>
+      <String>&lt;br /&gt;&lt;br /&gt;This feature is only available in the Enterprise version of KonaKart&lt;br /&gt;&lt;br /&gt;Please contact &lt;a href=&quot;mailto:sales@konakart.com?Subject=KonaKart%20 Enterprise%20Edition&quot;&gt;sales@konakart.com&lt;/a&gt; for information about the Enterprise version.&lt;br /&gt;&lt;br /&gt;</String>
+      <String>Value</String>
+      <String>Start (hour:min)</String>
+      <String>Custom3</String>
+      <String>Manufacturer</String>
+      <String>Custom4</String>
+      <String>The username cannot be left empty</String>
+      <String>Tax Classes</String>
+      <String>Default Customer</String>
+      <String>Edit KonaKart Configuration Files</String>
+      <String>coupon</String>
+      <String>Ship Qty</String>
+      <String>Template File Upload</String>
+      <String>Select one or more manufacturers to include in the promotion</String>
+      <String>View batch job log files</String>
+      <String>Images</String>
+      <String>Subscription Id</String>
+      <String>Set to allow assignment of products to stores</String>
+      <String>Cross Sell Products</String>
+      <String>There are no customers who have requested to receive notifications for &lt;b&gt;{0}&lt;/b&gt;</String>
+      <String>Available Date</String>
+      <String>Maintain the Customers</String>
+      <String>Expires (MMYY)</String>
+      <String>Send the newsletter to 1 registered customer that has signed up for it.</String>
+      <String>Set to allow upload of configuration files</String>
+      <String>true or false</String>
+      <String>Publish</String>
+      <String>May</String>
+      <String>All Tax Classes</String>
+      <String>This product does not have prices / quantities for catalog {0}.&lt;br&gt;&lt;br&gt;In order to add this data for catalog {0} you must:&lt;br&gt;1) Select &lt;b&gt;No Catalog&lt;/b&gt; from the drop list&lt;br&gt;2) Click the Edit button&lt;br&gt;3) Modify the prices / quantities&lt;br&gt;4) Select the catalog &lt;b&gt;{0}&lt;/b&gt; from the drop list&lt;br&gt;5) Click the save button</String>
+      <String>Times Used</String>
+      <String>Latest KonaKart News</String>
+      <String>The selected template &lt;b&gt; {0} &lt;/b&gt; will be uploaded and made available in the drop list. Do you wish to proceed ?</String>
+      <String>Manufacturers</String>
+      <String>Are you sure that you want to send an email to {0} customers that have asked to receive a newsletter, using {1} concurrent threads ? &lt;br&gt;&lt;br&gt;The sending process will work in the background and you will receive no further notifications. &lt;br&gt;&lt;br&gt;A log called &lt;b&gt;SendTemplateEmail.log&lt;/b&gt; will be written to your log directory &lt;b&gt;{2}&lt;/b&gt; and can be viewed from the Admin App in the section &lt;b&gt;Tools &gt;&gt; View System Logs&lt;/b&gt;.</String>
+      <String>Subscriptions Per Page</String>
+      <String>Are you sure you want to delete this Message?</String>
+      <String>Invisible</String>
+      <String>Set a fixed price of {0} for products from {1} and its sub categories         </String>
+      <String>Set a price adjustment of {0}{1}% for products from {2} and its sub categories       </String>
+      <String>Content Types</String>
+      <String>Type of search</String>
+      <String>Product Notifications</String>
+      <String>Tax Rates</String>
+      <String>Validation</String>
+      <String>Disabled Administrators</String>
+      <String>Red</String>
+      <String>Expression</String>
+      <String>Enter only Fixed Price or Price Adjustment. Not both.</String>
+      <String>Are you sure you want to copy all products to {0}? </String>
+      <String>Output Format</String>
+      <String>New Role</String>
+      <String>The max number of times that the customers can use the promotion:</String>
+      <String>Records</String>
+      <String>Available Roles</String>
+      <String>Custom Panel Config</String>
+      <String>Gift Certificates</String>
+      <String>Custom2</String>
+      <String>Total</String>
+      <String>Special</String>
+      <String>No Tax Class</String>
+      <String>Product URL</String>
+      <String>XML</String>
+      <String>Select the Output format for your mailing list</String>
+      <String>Trial Amount</String>
+      <String>Tax Entity Code</String>
+      <String>Custom Relationship 3</String>
+      <String>Disabled</String>
+      <String>and above</String>
+      <String>Custom Relationship 2</String>
+      <String>Custom Relationship 5</String>
+      <String>Date of Purchase</String>
+      <String>Custom Relationship 4</String>
+      <String>Custom Relationship 1</String>
+      <String>Tuesday</String>
+      <String>Customer Orders</String>
+      <String>Tax Exemption Code</String>
+      <String>Toggle Underline</String>
+      <String>Custom10</String>
+      <String>Enter an SKU</String>
+      <String>Publishing Products</String>
+      <String>Log</String>
+      <String>Are you sure you want to delete this File?</String>
+      <String>Close</String>
+      <String>Maintain customer groups</String>
+      <String>INT_TYPE</String>
+      <String>Points</String>
+      <String>Export Username</String>
+      <String>Expressions</String>
+      <String>Welcome to the KonaKart Admin Application</String>
+      <String>Admin Email Address</String>
+      <String>Product</String>
+      <String>Credit Tx Id</String>
+      <String>This product may have been deleted. It no longer exists.</String>
+      <String>all top level categories</String>
+      <String>Select Tag Groups for Tag</String>
+      <String>en</String>
+      <String>Select one or more Addresses</String>
+      <String>role</String>
+      <String>The Return Merchandise Authorization (RMA) code for the returned product(s)</String>
+      <String>Display Only</String>
+      <String>Not Specified</String>
+      <String>If set, a file upload button is not displayed</String>
+      <String>Show API Calls</String>
+      <String>Language dependent URL</String>
+      <String>If set, template names can be entered in a text box</String>
+      <String>Available Panels</String>
+      <String>Maintain Miscellaneous Item Types</String>
+      <String>AND</String>
+      <String>Create Mailing Lists</String>
+      <String>Shipments</String>
+      <String>BOOLEAN_TYPE</String>
+      <String>Unrecognised set function:</String>
+      <String>Shipments Per Page</String>
+      <String>Configuration of ports and activation of SSL</String>
+      <String>Delete Expired Sessions from the session table in the database.</String>
+      <String>Password cannot be the same as one that was used recently</String>
+      <String>Expressions Per Page</String>
+      <String>Select Products for Bundle</String>
+      <String>Current Quantity</String>
+      <String>Custom4 Header</String>
+      <String>Custom7 Header</String>
+      <String>Weight</String>
+      <String>Configure Reward Points</String>
+      <String>Loading Data... Please Wait...</String>
+      <String>Cust Id</String>
+      <String>New Tier Price</String>
+      <String>You must set the address template in the Admin App</String>
+      <String>Tag Groups</String>
+      <String>3 letter ISO Currency Code</String>
+      <String>Company</String>
+      <String>Solr Search Engine</String>
+      <String>Upload images for {0} - {1}</String>
+      <String>Cancel</String>
+      <String>Less Detail</String>
+      <String>Resetting Database...</String>
+      <String>OR</String>
+      <String>Other</String>
+      <String>:</String>
+      <String>Search Key</String>
+      <String>PId</String>
+      <String>Select the Customers to include in your mailing list</String>
+      <String>Problem Found</String>
+      <String>Set to Access Invisible Customers</String>
+      <String>If set reviews button is hidden</String>
+      <String>If set custom button is hidden</String>
+      <String>New Option</String>
+      <String>Default Addr</String>
+      <String>No news available</String>
+      <String>Visible</String>
+      <String>License Owner</String>
+      <String>Maintain the refunds</String>
+      <String>Latest KonaKart news</String>
+      <String>Monday</String>
+      <String>Coupons Per Page</String>
+      <String>Symbol on the Right</String>
+      <String>Tracking # </String>
+      <String>Ex</String>
+      <String>CustomD Header</String>
+      <String>An email is being sent to {0} using the template {1}</String>
+      <String>review</String>
+      <String>Current / New Image Path</String>
+      <String>Are you sure you want to delete this Content Type?</String>
+      <String>Order Exported Successfully</String>
+      <String>Refresh the configuration variable cache from the values in the database.</String>
+      <String>catalogs</String>
+      <String>February</String>
+      <String>Tracking Number</String>
+      <String>Custom2</String>
+      <String>Custom3</String>
+      <String>Object</String>
+      <String>Payment Received</String>
+      <String>Custom1</String>
+      <String>No Catalog</String>
+      <String>No License Defined</String>
+      <String>message</String>
+      <String>Email</String>
+      <String>Addresses for Store</String>
+      <String>Numeric ISO</String>
+      <String>DB Driver</String>
+      <String>Sitemap Configuration</String>
+      <String>Create and maintain filters</String>
+      <String>Name</String>
+      <String>Admin Users</String>
+      <String>No Country</String>
+      <String>Customer</String>
+      <String>Preview</String>
+      <String>Out of Stock</String>
+      <String>All Reviews</String>
+      <String>Are you sure you want to delete this Zone?</String>
+      <String>Are you sure you want to delete this Order?</String>
+      <String>Priority</String>
+      <String>Only Specials</String>
+      <String>Invisible</String>
+      <String>Attributes</String>
+      <String>Del</String>
+      <String>Enabled Customers</String>
+      <String>bookings</String>
+      <String>Max Number Bookings</String>
+      <String>Add all customers who have made an order since</String>
+      <String>Are you sure you want to delete this Expression?</String>
+      <String>Number of Products</String>
+      <String>Enter the full local filename of the template to upload:</String>
+      <String>Payment Transactions</String>
+      <String>Street Address 1</String>
+      <String>Miscellaneous Items</String>
+      <String>Thursday</String>
+      <String>Page</String>
+      <String>Product Catalog</String>
+      <String>Change Password</String>
+      <String>Content</String>
+      <String>Are you sure you want to delete this Customer?</String>
+      <String>Edit Config Files</String>
+      <String>Date Template</String>
+      <String>Are you sure you want to delete this</String>
+      <String>CSV with header row</String>
+      <String>Warning</String>
+      <String>Maintain your Catalog</String>
+      <String>Send an eMail</String>
+      <String>Customer Addresses</String>
+      <String>About the KonaKart Admin Application</String>
+      <String>Security and Auditing</String>
+      <String>Enabled or Disabled</String>
+      <String>Card Owner</String>
+      <String>Custom9 Header</String>
+      <String>Cannot convert the orderId into an integer</String>
+      <String>Prices will be created for the catalog {0} using the following rules. Any existing prices will be removed.         </String>
+      <String>New</String>
+      <String>Problem with Output Format Configuration</String>
+      <String>Reviews for Product</String>
+      <String>none specified</String>
+      <String>CustomC Header</String>
+      <String>Addresses for Customer</String>
+      <String>The type of promotion must be selected from the available types in this list.</String>
+      <String>Are you sure you want to delete this Product and any reviews it may have?</String>
+      <String>Click on the Publish button to start a background job to publish your products to Google...</String>
+      <String>There are no customers who have requested to receive the newsletter</String>
+      <String>The email cannot be sent because the customer with eMail address {0} cannot be found in the database.</String>
+      <String>Tax Rate must be between 0% and 100%</String>
+      <String>Configure parameters for sitemap generation</String>
+      <String>&gt;=</String>
+      <String>Stores</String>
+      <String>Custom Attributes Per Page</String>
+      <String>Product</String>
+      <String>Customer Groups</String>
+      <String>Custom4</String>
+      <String>Custom3</String>
+      <String>Custom2</String>
+      <String>All Customers</String>
+      <String>Custom1</String>
+      <String>View Mailing Lists</String>
+      <String>Yes</String>
+      <String>Configuration Files</String>
+      <String>Custom5</String>
+      <String>Are you sure you want to delete this Tag?</String>
+      <String>Number of Trial Payments</String>
+      <String>Local Filename</String>
+      <String>It is only being used by this product and so can be safely deleted.</String>
+      <String>by</String>
+      <String>Price3</String>
+      <String>Expression Id</String>
+      <String>Show Panels</String>
+      <String>country</String>
+      <String>Tail File:</String>
+      <String>Returned Products</String>
+      <String>Edit Store</String>
+      <String>KonaKart Reporting</String>
+      <String>Delete and Exclude</String>
+      <String>User Defined Configuration</String>
+      <String>Customer Custom1</String>
+      <String>Customer Custom3</String>
+      <String>Customer Custom2</String>
+      <String>Clear Date</String>
+      <String>Clicking the &lt;b&gt;Add&lt;/b&gt; button will add all products in the catalog to the Solr search engine. Products already present will be updated.&lt;br&gt;&lt;br&gt;Clicking the &lt;b&gt;Remove&lt;/b&gt; button will remove all indexed products from the Solr search engine.&lt;br&gt;&lt;br&gt;In both cases the operation may take a while and will continue asynchronously on the Solr server.</String>
+      <String>Shipper</String>
+      <String>Send an eMail to all customers that evaluate to &quot;true&quot; for the expression &lt;b&gt;{0}&lt;/b&gt;.</String>
+      <String>Customer Custom4</String>
+      <String>Customer Custom5</String>
+      <String>Since the customer &lt;b&gt; {0} &lt;/b&gt; has been moved to the customer group : &lt;b&gt; {1} &lt;/b&gt;, would you like to send an email based on the template &lt;b&gt; {2} &lt;/b&gt; ?</String>
+      <String>1000s Separator</String>
+      <String>Code</String>
+      <String>Blue</String>
+      <String>Disabled</String>
+      <String>Customer Price</String>
+      <String>address formats</String>
+      <String>Last Logon</String>
+      <String>Some general statistics for your store</String>
+      <String>notifications</String>
+      <String>Notes</String>
+      <String>Select one or more customer groups to exclude from the promotion</String>
+      <String>Thousands Separator Character</String>
+      <String>Configure the order total modules</String>
+      <String>address format</String>
+      <String>Tracking URL</String>
+      <String>Duplicate SKU detected</String>
+      <String>custom attributes</String>
+      <String>Are you sure you want to set this store to deleted?</String>
+      <String>You must select an entry from the list</String>
+      <String>Maintenance of Catalog Definitions</String>
+      <String>Medium</String>
+      <String>Select Custom Attribute Templates</String>
+      <String>Shipping / Packing</String>
+      <String>{0} templates selected</String>
+      <String>Export Password</String>
+      <String>Image Path</String>
+      <String>Please enter a valid Country</String>
+      <String>Hours</String>
+      <String>Custom3</String>
+      <String>Custom1</String>
+      <String>Maintain the returns</String>
+      <String>Custom2</String>
+      <String>Yellow</String>
+      <String>The user has no roles</String>
+      <String>contains {0} products and has {1} child categories. Check the box to delete the products and child categories otherwise they will be moved to the parent category</String>
+      <String>Prices have been created for {0} products for the catalog {1}</String>
+      <String>Card Type</String>
+      <String>Maintain the Localizations</String>
+      <String>There are unsaved changes that need to be confirmed or cancelled before proceeding.</String>
+      <String>Only Newsletter Subscribers</String>
+      <String>All Users</String>
+      <String>Select one or more custom attributes to add to the template</String>
+      <String>Messages</String>
+      <String>The product option {0} has no option values and so can safely be deleted.</String>
+      <String>Logfile Name</String>
+      <String>In Stock</String>
+      <String>The new password is the same as the current password</String>
+      <String>No Template</String>
+      <String>File already exists</String>
+      <String>Invalid set function : {0}</String>
+      <String>Image file Directory</String>
+      <String>Price</String>
+      <String>Max Usage</String>
+      <String>Are you sure you want to delete this Currency?</String>
+      <String>PM</String>
+      <String>Disabled</String>
+      <String>Prices Last Created</String>
+      <String>Edit Privileges</String>
+      <String>All Content Types</String>
+      <String>Add all customers who haven&apos;t made an order since</String>
+      <String>tax classes</String>
+      <String>Click &apos;New&apos; to begin entering a new record, then define the record, then click &apos;Save&apos; to save it</String>
+      <String>View File:</String>
+      <String>Locale</String>
+      <String>Refresh Caches</String>
+      <String>Move</String>
+      <String>Custom1</String>
+      <String>Custom2</String>
+      <String>Price1</String>
+      <String>Custom3</String>
+      <String>Summary Address Format</String>
+      <String>Are you sure you want to delete this Language?</String>
+      <String>Post Code</String>
+      <String>Phone</String>
+      <String>Maintenance</String>
+      <String>:</String>
+      <String>Maintain application messages</String>
+      <String>Deleted</String>
+      <String>Filters Per Page</String>
+      <String>December</String>
+      <String>Maintain the Languages</String>
+      <String>Export For Shipping</String>
+      <String>Email Address</String>
+      <String>Assign roles to a user</String>
+      <String>Payment Schedule</String>
+      <String>Price2</String>
+      <String>AM</String>
+      <String>Item Type</String>
+      <String>Language dependent data</String>
+      <String>Other Telephone Number</String>
+      <String>Reset</String>
+      <String>No Manufacturer</String>
+      <String>Send the eMail to all {0} registered customers.</String>
+      <String>Requires Coupon</String>
+      <String>Empty file specified for upload</String>
+      <String>Store Description</String>
+      <String>Invalid SKU</String>
+      <String>Logo file name</String>
+      <String>The payment gateway refund transaction was not successful.&lt;br&gt;&lt;br&gt;Click the Payment Info button to see details. </String>
+      <String>Order Details</String>
+      <String>Order Returns</String>
+      <String>Addresses</String>
+      <String>of</String>
+      <String>View system log files</String>
+      <String>Hide</String>
+      <String>CustomF Header</String>
+      <String>Shippers</String>
+      <String>Object Type</String>
+      <String>Store Home</String>
+      <String>Catalog</String>
+      <String>Send</String>
+      <String>Promotion not linked to any Expressions</String>
+      <String>Import Password</String>
+      <String>Categories</String>
+      <String>Expressions</String>
+      <String>Attribute Templates</String>
+      <String>Cust Name</String>
+      <String>Under or Not Under Maintenance</String>
+      <String>Year(s)</String>
+      <String>The details are not available</String>
+      <String>Publish Products to external systems (for example to Google Base).</String>
+      <String>Newsletter</String>
+      <String>Promotion active for</String>
+      <String>Specials Only</String>
+      <String>Address Id</String>
+      <String>Are you sure that you want to send an email to all {0} customers, using {1} concurrent threads ? &lt;br&gt;&lt;br&gt;The sending process will work in the background and you will receive no further notifications. &lt;br&gt;&lt;br&gt;A log called &lt;b&gt;SendTemplateEmail.log&lt;/b&gt; will be written to your log directory &lt;b&gt;{2}&lt;/b&gt; and can be viewed from the Admin App in the section &lt;b&gt;Tools &gt;&gt; View System Logs&lt;/b&gt;.</String>
+      <String>Date Purchased</String>
+      <String>Enabled Users</String>
+      <String>Column</String>
+      <String>audit objects</String>
+      <String>Payment schedule for recurring billing</String>
+      <String>This Custom Attribute Descriptor is currently being used by {0} product(s).&lt;br&gt;&lt;br&gt;Do you want these products to be updated with the latest custom attribute metadata? </String>
+      <String>ERROR</String>
+      <String>Categories</String>
+      <String>tax class</String>
+      <String>Problem with Image Configuration</String>
+      <String>Rating</String>
+      <String>If set customer search droplists are disabled</String>
+      <String>If set cannot reset password</String>
+      <String>If this check box is set, then this promotion will only be active when a valid coupon code is set by the user.</String>
+      <String>If set addresses button is hidden</String>
+      <String>Not Installed</String>
+      <String>If set login button is hidden</String>
+      <String>true</String>
+      <String>Number of Decimal Places</String>
+      <String>DECIMAL_TYPE</String>
+      <String>Payment Status For Order</String>
+      <String>This user has no roles assigned</String>
+      <String>Invalid Date</String>
+      <String>root</String>
+      <String>Zones Per Page</String>
+      <String>If set email is disabled</String>
+      <String>All Categories</String>
+      <String>tax rates</String>
+      <String>SKU</String>
+      <String>New Option Value</String>
+      <String>All Administrators</String>
+      <String>The payment gateway refund transaction was successful.&lt;br&gt;&lt;br&gt;Click the Payment Info button to see details.</String>
+      <String>Admin App Configuration</String>
+      <String>License Key</String>
+      <String>Summary Format</String>
+      <String>Are you sure you want to delete this Custom Attribute Template?</String>
+      <String>Remove from list</String>
+      <String>Tax Class</String>
+      <String>Select one or more categories to exclude from the promotion</String>
+      <String>Activate for all</String>
+      <String>Admin Payment Class</String>
+      <String>Jan</String>
+      <String>tag</String>
+      <String>Width</String>
+      <String>Maintain marketing data</String>
+      <String>No velocity Templates</String>
+      <String>file</String>
+      <String>The parameter cannot be empty or set to null</String>
+      <String>Enabled</String>
+      <String>Cache</String>
+      <String>General Details</String>
+      <String>Payment Info</String>
+      <String>Group</String>
+      <String>Remove All Rules</String>
+      <String>Payment Modules</String>
+      <String>Item Id</String>
+      <String>Product Reviews</String>
+      <String>Importer</String>
+      <String>Enabled</String>
+      <String>sub-zones</String>
+      <String>Clone</String>
+      <String>Enterprise Only</String>
+      <String>sessionId</String>
+      <String>Calc</String>
+      <String>Upload seems to have been successful</String>
+      <String>Add rule for {0}</String>
+      <String>Manage Search Engine </String>
+      <String>XX-Small</String>
+      <String>Problem deleting a currency</String>
+      <String>Enable / Disable Auditing</String>
+      <String>Orders Per Page</String>
+      <String>The product option value - {0} - does not have a code. You must edit the option value and give it a unique code that will be used to create the image name. </String>
+      <String>Maintain the Coupons</String>
+      <String>Invoice</String>
+      <String>Center</String>
+      <String>Are you sure you want to delete this Country?</String>
+      <String>Print</String>
+      <String>Tag Groups Per Page</String>
+      <String>Review</String>
+      <String>Bookings For Product</String>
+      <String>Payment Schedules</String>
+      <String>Sessions deleted.  &lt;b&gt;{0}&lt;/b&gt; active session(s) remaining</String>
+      <String>Include</String>
+      <String>Stock Reorder Level</String>
+      <String>Products for Manufacturer</String>
+      <String>Are you sure you want to remove all rules from catalog {0} and to save the changes ? This action cannot be reversed.</String>
+      <String>Enterprise Extensions Only</String>
+      <String>Custom3 Header</String>
+      <String>Reward Points</String>
+      <String>contains {0} products and has {1} child categories. Check the box to delete the products and child categories otherwise they will be moved to the parent category. The products belonging directly to this category will be deleted since this is a top level category</String>
+      <String>Manage custom product attributes</String>
+      <String>At least one product must be shipped</String>
+      <String>No Shipper</String>
+      <String>languages</String>
+      <String>Variables For Expression</String>
+      <String>Customer Group</String>
+      <String>Catalogs</String>
+      <String>A customer with this email already exists</String>
+      <String>Variables</String>
+      <String>Specials And Expected Only</String>
+      <String>If set login button is hidden</String>
+      <String>If set addresses button is hidden</String>
+      <String>Custom</String>
+      <String>Tax Rates at the same priority are added, others are compounded</String>
+      <String>Tools</String>
+      <String>Remove</String>
+      <String>Login</String>
+      <String>To</String>
+      <String>Max Number of Ints</String>
+      <String>Scheduler</String>
+      <String>If set email is disabled</String>
+      <String>CustomG Header</String>
+      <String>If set customer search droplists are disabled</String>
+      <String>If set cannot reset password</String>
+      <String>Address Maintenance</String>
+      <String>miscellaneous item types</String>
+      <String>Select a tag</String>
+      <String>Tags</String>
+      <String>DB Username</String>
+      <String>Email configuration</String>
+      <String>international</String>
+      <String>Company Name</String>
+      <String>Second(s)</String>
+      <String>Assign Roles</String>
+      <String>&lt;</String>
+      <String>Left Justify</String>
+      <String>Warning: One Miscellaneous Item of this type will also be deleted</String>
+      <String>Maintain the Manufacturers</String>
+      <String>Deleting Sessions...</String>
+      <String>Content Types Per Page</String>
+      <String>Orders being processed</String>
+      <String>custom attr templates</String>
+      <String>Images</String>
+      <String>Warning: {0} Miscellaneous Items of this type will also be deleted</String>
+      <String>Downloads</String>
+      <String>Custom1</String>
+      <String>Save</String>
+      <String>Reports</String>
+      <String>Max Number Downloads</String>
+      <String>Configuration parameters for the Admin App</String>
+      <String>Price Ex Tax</String>
+      <String>The database connection failed for the KonaKart Administration Application. The connection was attempted with the details below. Please check the parameters and make necessary modifications to the konakartadmin.properties file which should be in the WEB-INF/classes directory of your servlet engine. The servlet engine may need to be restarted for changes to take affect.</String>
+      <String>An expression cannot be created because no customer tags exist. You must first insert one or more customer tags.</String>
+      <String>SKU</String>
+      <String>Reviews Per Page</String>
+      <String>Report File Upload</String>
+      <String>Grp</String>
+      <String>Small</String>
+      <String>-</String>
+      <String>Product UUID</String>
+      <String>Edit Content </String>
+      <String>Maintain Miscellaneous Items</String>
+      <String>Custom Panel C - replace with your own help text</String>
+      <String>Decimal Point Character</String>
+      <String>Custom Panel B - replace with your own help text</String>
+      <String>August</String>
+      <String>Custom Panel E - replace with your own help text</String>
+      <String>Send the newsletter to {0} customers that have signed up for it.</String>
+      <String>Custom Panel D - replace with your own help text</String>
+      <String>Publish Products</String>
+      <String>Ret Qty</String>
+      <String>Custom Panel A - replace with your own help text</String>
+      <String>Are you sure you want to delete this Order Refund?</String>
+      <String>No help defined</String>
+      <String>Are you sure you want to delete this Address Format?</String>
+      <String>Number must be between {0} and {1}</String>
+      <String>Back</String>
+      <String>Custom Panel G - replace with your own help text</String>
+      <String>Custom Panel F - replace with your own help text</String>
+      <String>Are you sure you want to delete this Report?</String>
+      <String>Custom1</String>
+      <String>Assigned API Calls</String>
+      <String>Custom2</String>
+      <String>Special Price</String>
+      <String>Search Key</String>
+      <String>Notify Customer</String>
+      <String>&lt;=</String>
+      <String>Custom 3</String>
+      <String>Email Options</String>
+      <String>customer group</String>
+      <String>Enter an Order Id</String>
+      <String>Custom 1</String>
+      <String>Custom 2</String>
+      <String>You must select a catalog from the drop list above this panel</String>
+      <String>Add</String>
+      <String>June</String>
+      <String>Object Id</String>
+      <String>Install</String>
+      <String>Color</String>
+      <String>Include a new list of</String>
+      <String>September</String>
+      <String>Currency Name</String>
+      <String>Language Code</String>
+      <String>Open a new window to map the selected tax area to zones</String>
+      <String>Select one or more promotions to associate to the coupon :</String>
+      <String>Multi-Store Configuration</String>
+      <String>Default Customer</String>
+      <String>Are you sure that you want to send an email to all customers that return &quot;true&quot; for the expression &lt;b&gt;{0}&lt;/b&gt;, using {1} concurrent threads ? &lt;br&gt;&lt;br&gt;The sending process will work in the background and you will receive no further notifications. &lt;br&gt;&lt;br&gt;A log called &lt;b&gt;SendTemplateEmail.log&lt;/b&gt; will be written to your log directory &lt;b&gt;{2}&lt;/b&gt; and can be viewed from the Admin App in the section &lt;b&gt;Tools &gt;&gt; View System Logs&lt;/b&gt;.</String>
+      <String>Email from</String>
+      <String>subscriptions</String>
+      <String>Maintain the Tax Areas / Geo Zones</String>
+      <String>Maintain the Categories</String>
+      <String>Edit Role</String>
+      <String>weight</String>
+      <String>Select</String>
+      <String>Ignore Qty for Variations</String>
+      <String>Licensing Problem</String>
+      <String>Custom1</String>
+      <String>Custom2</String>
+      <String>Expected Only</String>
+      <String>Custom9</String>
+      <String>tax areas</String>
+      <String>Roles</String>
+      <String>Custom7</String>
+      <String>Custom8</String>
+      <String>Custom5</String>
+      <String>Custom6</String>
+      <String>Custom3</String>
+      <String>Custom4</String>
+      <String>Refund Amount</String>
+      <String>Text must be between {0} and {1} characters</String>
+      <String>Enterprise Version</String>
+      <String>Number</String>
+      <String>Admin User</String>
+      <String>Quantity</String>
+      <String>Remove Points</String>
+      <String>Custom1</String>
+      <String>July</String>
+      <String>Next Due / Started</String>
+      <String>Custom4</String>
+      <String>Custom5</String>
+      <String>Password is not long enough</String>
+      <String>Custom2</String>
+      <String>Custom3</String>
+      <String>Custom8</String>
+      <String>Custom9</String>
+      <String>Custom6</String>
+      <String>New StoreId</String>
+      <String>Custom7</String>
+      <String>First Name</String>
+      <String>Configure the Modules</String>
+      <String>Remove Link</String>
+      <String>There is 1 product associated with the manufacturer {0}.  Click the checkbox to remove this product as well as the manufacturer.</String>
+      <String>ISO-2</String>
+      <String>ISO-3</String>
+      <String>Useful Tools to maintain KonaKart</String>
+      <String>Attributes</String>
+      <String>Object Type</String>
+      <String>This product has not been assigned a custom attribute template.</String>
+      <String>Bookings For Customer</String>
+      <String>If set packing list button not shown</String>
+      <String>If set invoice button not shown</String>
+      <String>If set Export For Shipping button not shown</String>
+      <String>Feb</String>
+      <String>If set Export button not shown</String>
+      <String>Conversion Factor from Default Currency</String>
+      <String>Disabled Users</String>
+      <String>Are you sure you want to delete this Catalog?</String>
+      <String>Select a Day</String>
+      <String>dd/MM/yyyy</String>
+      <String>Jun</String>
+      <String>Select one or more customers to exclude from the promotion</String>
+      <String>Detailed Auditing</String>
+      <String>Jul</String>
+      <String>Valid Template</String>
+      <String>Custom Panel E</String>
+      <String>CSS file upload</String>
+      <String>There are no products associated with the manufacturer {0}.  It may be safely deleted.</String>
+      <String>Custom Panel F</String>
+      <String>Cache Configuration</String>
+      <String>Custom Panel C</String>
+      <String>Custom Panel D</String>
+      <String>Custom Panel G</String>
+      <String>Configuration</String>
+      <String>Are you sure that you want to remove all indexed products from the Solr search engine ? &lt;br&gt;&lt;br&gt;If you confirm, the operation which may take a while, will continue on the Solr search engine server and you will not receive any further notification. Look at the Solr logs or use the Solr Admin Application to view details of the transaction.</String>
+      <String>Custom Panel A</String>
+      <String>Custom Panel B</String>
+      <String>Select a catalog from the catalog drop list above. If there is no drop list, ensure that you have created at least one catalog. </String>
+      <String>RMA Code</String>
+      <String>Latest News</String>
+      <String>View Mailing Lists</String>
+      <String>KonaKart Result Description</String>
+      <String>No</String>
+      <String>Symbol Right</String>
+      <String>Miscellaneous Items For Category</String>
+      <String>Gateway Full Response</String>
+      <String>Add</String>
+      <String>Primary Telephone Number</String>
+      <String>Create Link</String>
+      <String>Height</String>
+      <String>&gt;</String>
+      <String>Text must be less than or equal to {0} characters</String>
+      <String>Subscriptions</String>
+      <String>Order Status</String>
+      <String>Aug</String>
+      <String>Order Shipments</String>
+      <String>Large</String>
+      <String>Admin App Users</String>
+      <String>Street 1</String>
+      <String>If set Custom2 button is not shown</String>
+      <String>Products for Categories</String>
+      <String>If set Custom1 button is not shown</String>
+      <String>Subscriptions</String>
+      <String>Digital Download</String>
+      <String>Transaction Type</String>
+      <String>Address Format</String>
+      <String>TaxRate Description</String>
+      <String>Start Date</String>
+      <String>Store Id</String>
+      <String>MULTI_INT_TYPE</String>
+      <String>Tags Per Page</String>
+      <String>TaxClass Description</String>
+      <String>Transaction Amount</String>
+      <String>Type</String>
+      <String>Configure Miscellaneous Items</String>
+      <String>stores</String>
+      <String>The product option - {0} - does not have a code. You must edit the option and give it a unique code that will be used to create the image name. </String>
+      <String>Img</String>
+      <String>The name of the promotion which can be used to search for it.</String>
+      <String>CustomB Header</String>
+      <String>Date Added</String>
+      <String>default</String>
+      <String>Problem Exporting Order</String>
+      <String>If set Custom3 button is not shown</String>
+      <String>Are you sure you want to delete this Miscellaneous Item?</String>
+      <String>Details</String>
+      <String>Are you sure you want to delete this Shipment?</String>
+      <String>If set Upload button is not shown</String>
+      <String>Address Custom4</String>
+      <String>Address Custom5</String>
+      <String>Address Custom2</String>
+      <String>Sub-Zone</String>
+      <String>Address Custom3</String>
+      <String>Address Custom1</String>
+      <String>Dependent Products</String>
+      <String>Addresses for Manufacturer</String>
+      <String>Payment Declined</String>
+      <String>Select the type of merchandising required from the drop list, and then search for products to associate to this one.</String>
+      <String>Delete Option</String>
+      <String>Displaying {0} to {1} (of {2} {3})</String>
+      <String>Shipping Modules</String>
+      <String>Monitor the KonaKart Batch Jobs</String>
+      <String>Title</String>
+      <String>INFO</String>
+      <String>Tags</String>
+      <String>Apr</String>
+      <String>Current Date</String>
+      <String>Id</String>
+      <String>Verified</String>
+      <String>Price Id</String>
+      <String>There are no customers in the group: &lt;b&gt;{0}&lt;/b&gt;</String>
+      <String>in</String>
+      <String>Other Modules</String>
+      <String>Description</String>
+      <String>Email to all customers</String>
+      <String>Address Formats</String>
+      <String>Title</String>
+    </msgs>
+  </result>
+</GWTResponse>
