@@ -1,0 +1,401 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Performance Testing Report</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="leftnavigation">
+<div class="divHeader">NeoLoad Test Report</div>
+<div class="menu_wrapper">
+<div class="item">
+<a href="./summary.html">Summary</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.resultssummary">Results summary</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.statisticssummary">Statistics Summary</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.hotspots">Hot spots</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.errors">Errors</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.alerts">Alerts</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.summary.all">General statistics</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.summary.transactions">Transaction statistics</a>
+</div>
+<div class="item">
+<a href="./servers.html">Servers</a>
+</div>
+<div class="item">
+<a href="./populations.html">Populations</a>
+</div>
+<div class="item">
+<a href="./virtual-users.html">User Paths</a>
+</div>
+<div class="item">
+<a href="./transactions.html">Transactions</a>
+</div>
+<div class="item">
+<a href="./pages.html">Pages</a>
+</div>
+<div class="item">
+<a href="./medias.html">Media Contents</a>
+</div>
+<div class="item">
+<a href="./pushmessages.html">Push messages</a>
+</div>
+<div class="item">
+<a href="./monitors.html">Monitors</a>
+</div>
+<div class="item">
+<a href="./scenario_Build.html">Scenario</a>
+</div>
+<div class="title">Main graphs</div>
+<div class="item">
+<a href="./Main graphs_pages.average.html">Average page response time</a>
+</div>
+<div class="item">
+<a href="./Main graphs_requests.average.html">Average request response time</a>
+</div>
+<div class="item">
+<a href="./Main graphs_transactions.average.html">Average response time (Transactions)</a>
+</div>
+<div class="item">
+<a href="./Main graphs_hits.html">Requests per second</a>
+</div>
+<div class="item">
+<a href="./Main graphs_errors.html">Errors</a>
+</div>
+<div class="item">
+<a href="./Main graphs_throughput.html">Throughput</a>
+</div>
+<div class="item">
+<a href="./Main graphs_pages.average.vu.html">Response time against load</a>
+</div>
+<div class="item">
+<a href="./Main graphs_percentile.html">Distribution of Transaction Durations</a>
+</div>
+</div>
+<div style="float: right;">
+<img style="margin-top: 10px; margin-bottom: 0px; margin-right: 4px" src="./images/logo_neotys.png"></div>
+</div>
+<div id="content">
+<div class="divHeader">Transactions</div>
+<div style="width: 100%; height: 20px;" id="report.shared">
+<div style="float:left" class="h1" id="statistics_summary_title">Shared Containers</div>
+</div>
+<div class="wrapper shared" align="center">
+<div align="center">
+<table class="hierarchical_shared_statistics_content_one_row_template">
+<tr>
+<th width="10%"></th><th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="8%">Perc 50</th><th width="8%">Perc 95</th><th width="8%">Perc 99</th><th width="8%">Std Dev</th><th width="8%">Avg-90%</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td colspan="13" class="line2">Empty list</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="user-tableheader" style="width: 100%; height: 20px;" id="Browse">
+<div style="float:left" class="h1" id="statistics_summary_title">Browse</div>
+<a href="#Check Order Status" class="navigation next" title="Check Order Status"></a>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="hierarchical_statistics_content_one_row_B">
+<tr>
+<th width="10%"></th><th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="8%">Perc 50</th><th width="8%">Perc 95</th><th width="8%">Perc 99</th><th width="8%">Std Dev</th><th width="8%">Avg-90%</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped virtualuser" style="margin-left: 00px">Browse</div>
+</td><td class="line2right bordered">302.6</td><td class="line2right bordered">437.9</td><td class="line2right bordered">580.2</td><td class="line2right bordered">15</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Init</div>
+</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0.001</td><td class="line1right bordered">15</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered">-</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Actions</div>
+</td><td class="line2right bordered">19.2</td><td class="line2right bordered">42.4</td><td class="line2right bordered">69.1</td><td class="line2right bordered">148</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">homepage</div>
+</td><td class="line1right bordered">2.3</td><td class="line1right bordered">8.16</td><td class="line1right bordered">16.6</td><td class="line1right bordered">160</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">8.06</td><td class="line1right bordered">12</td><td class="line1right bordered">15.4</td><td class="line1right bordered">2.39</td><td class="line1right bordered">8.04</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">search</div>
+</td><td class="line2right bordered">0.207</td><td class="line2right bordered">1.42</td><td class="line2right bordered">3.97</td><td class="line2right bordered">159</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">1.25</td><td class="line2right bordered">2.98</td><td class="line2right bordered">3.75</td><td class="line2right bordered">0.753</td><td class="line2right bordered">1.35</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">games</div>
+</td><td class="line1right bordered">0.885</td><td class="line1right bordered">6.95</td><td class="line1right bordered">13.7</td><td class="line1right bordered">156</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">6.65</td><td class="line1right bordered">11.5</td><td class="line1right bordered">13.3</td><td class="line1right bordered">2.35</td><td class="line1right bordered">6.86</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">open product</div>
+</td><td class="line2right bordered">1.64</td><td class="line2right bordered">6.38</td><td class="line2right bordered">13.5</td><td class="line2right bordered">154</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">6.03</td><td class="line2right bordered">10.1</td><td class="line2right bordered">13.2</td><td class="line2right bordered">2.32</td><td class="line2right bordered">6.25</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">add to cart</div>
+</td><td class="line1right bordered">1.08</td><td class="line1right bordered">5.03</td><td class="line1right bordered">11.5</td><td class="line1right bordered">154</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">5.03</td><td class="line1right bordered">8.19</td><td class="line1right bordered">10.46</td><td class="line1right bordered">2</td><td class="line1right bordered">4.96</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">view cart</div>
+</td><td class="line2right bordered">1.21</td><td class="line2right bordered">7.95</td><td class="line2right bordered">18.2</td><td class="line2right bordered">151</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">7.52</td><td class="line2right bordered">14.6</td><td class="line2right bordered">17.5</td><td class="line2right bordered">3.22</td><td class="line2right bordered">7.74</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">checkout</div>
+</td><td class="line1right bordered">0.415</td><td class="line1right bordered">2.46</td><td class="line1right bordered">8.07</td><td class="line1right bordered">150</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">2.21</td><td class="line1right bordered">4.69</td><td class="line1right bordered">7.28</td><td class="line1right bordered">1.3</td><td class="line1right bordered">2.34</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">register</div>
+</td><td class="line2right bordered">0.121</td><td class="line2right bordered">0.807</td><td class="line2right bordered">20.7</td><td class="line2right bordered">150</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0.493</td><td class="line2right bordered">1.8</td><td class="line2right bordered">4.36</td><td class="line2right bordered">1.73</td><td class="line2right bordered">0.607</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">back home</div>
+</td><td class="line1right bordered">0.514</td><td class="line1right bordered">2.83</td><td class="line1right bordered">7.49</td><td class="line1right bordered">148</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">2.71</td><td class="line1right bordered">5.21</td><td class="line1right bordered">7.4</td><td class="line1right bordered">1.22</td><td class="line1right bordered">2.73</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">End</div>
+</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">15</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+</table>
+</div>
+</div>
+<div class="user-tableheader" style="width: 100%; height: 20px;" id="Check Order Status">
+<div style="float:left" class="h1" id="statistics_summary_title">Check Order Status</div>
+<a href="#Browse" class="navigation previous" title="Browse"></a><a href="#New Buyer" class="navigation next" title="New Buyer"></a>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="hierarchical_statistics_content_one_row_B">
+<tr>
+<th width="10%"></th><th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="8%">Perc 50</th><th width="8%">Perc 95</th><th width="8%">Perc 99</th><th width="8%">Std Dev</th><th width="8%">Avg-90%</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped virtualuser" style="margin-left: 00px">Check Order Status</div>
+</td><td class="line2right bordered">287.4</td><td class="line2right bordered">343.6</td><td class="line2right bordered">374.7</td><td class="line2right bordered">3</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Init</div>
+</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">3</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered">-</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Actions</div>
+</td><td class="line2right bordered">21.5</td><td class="line2right bordered">41.1</td><td class="line2right bordered">61.1</td><td class="line2right bordered">23</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">homepage</div>
+</td><td class="line1right bordered">2.93</td><td class="line1right bordered">8.54</td><td class="line1right bordered">13.5</td><td class="line1right bordered">26</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">7.89</td><td class="line1right bordered">13.1</td><td class="line1right bordered">13.5</td><td class="line1right bordered">2.93</td><td class="line1right bordered">8.37</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">my account</div>
+</td><td class="line2right bordered">0.098</td><td class="line2right bordered">0.351</td><td class="line2right bordered">0.905</td><td class="line2right bordered">26</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0.282</td><td class="line2right bordered">0.698</td><td class="line2right bordered">0.905</td><td class="line2right bordered">0.187</td><td class="line2right bordered">0.323</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">login user</div>
+</td><td class="line1right bordered">11.5</td><td class="line1right bordered">21.9</td><td class="line1right bordered">34.2</td><td class="line1right bordered">25</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">21</td><td class="line1right bordered">31.5</td><td class="line1right bordered">34.2</td><td class="line1right bordered">5.94</td><td class="line1right bordered">21.4</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">view all orders</div>
+</td><td class="line2right bordered">1.88</td><td class="line2right bordered">6.51</td><td class="line2right bordered">11.3</td><td class="line2right bordered">25</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">5.88</td><td class="line2right bordered">10.69</td><td class="line2right bordered">11.3</td><td class="line2right bordered">2.24</td><td class="line2right bordered">6.32</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">logout</div>
+</td><td class="line1right bordered">0.694</td><td class="line1right bordered">2.94</td><td class="line1right bordered">5.48</td><td class="line1right bordered">25</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">2.71</td><td class="line1right bordered">5.4</td><td class="line1right bordered">5.48</td><td class="line1right bordered">1.38</td><td class="line1right bordered">2.81</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">End</div>
+</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">3</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+</table>
+</div>
+</div>
+<div class="user-tableheader" style="width: 100%; height: 20px;" id="New Buyer">
+<div style="float:left" class="h1" id="statistics_summary_title">New Buyer</div>
+<a href="#Check Order Status" class="navigation previous" title="Check Order Status"></a>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="hierarchical_statistics_content_one_row_B">
+<tr>
+<th width="10%"></th><th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="8%">Perc 50</th><th width="8%">Perc 95</th><th width="8%">Perc 99</th><th width="8%">Std Dev</th><th width="8%">Avg-90%</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped virtualuser" style="margin-left: 00px">New Buyer</div>
+</td><td class="line2right bordered">319</td><td class="line2right bordered">447.8</td><td class="line2right bordered">578.4</td><td class="line2right bordered">12</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Init</div>
+</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0.001</td><td class="line1right bordered">12</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered">-</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Actions</div>
+</td><td class="line2right bordered">47.8</td><td class="line2right bordered">120.8</td><td class="line2right bordered">165.1</td><td class="line2right bordered">39</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered"> - </td><td class="line2right bordered">-</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">homepage</div>
+</td><td class="line1right bordered">3.52</td><td class="line1right bordered">8.3</td><td class="line1right bordered">14.5</td><td class="line1right bordered">50</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">8.04</td><td class="line1right bordered">12.9</td><td class="line1right bordered">14.5</td><td class="line1right bordered">2.48</td><td class="line1right bordered">8.15</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">search</div>
+</td><td class="line2right bordered">0.326</td><td class="line2right bordered">1.78</td><td class="line2right bordered">6.44</td><td class="line2right bordered">49</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">1.45</td><td class="line2right bordered">3.54</td><td class="line2right bordered">6.45</td><td class="line2right bordered">1.13</td><td class="line2right bordered">1.63</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">select phone - view</div>
+</td><td class="line1right bordered">1.19</td><td class="line1right bordered">4.97</td><td class="line1right bordered">9.41</td><td class="line1right bordered">49</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">4.61</td><td class="line1right bordered">8.51</td><td class="line1right bordered">9.42</td><td class="line1right bordered">1.93</td><td class="line1right bordered">4.87</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">add to cart</div>
+</td><td class="line2right bordered">1.15</td><td class="line2right bordered">4.78</td><td class="line2right bordered">10.79</td><td class="line2right bordered">49</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">4.88</td><td class="line2right bordered">8.19</td><td class="line2right bordered">10.79</td><td class="line2right bordered">1.93</td><td class="line2right bordered">4.65</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">view cart</div>
+</td><td class="line1right bordered">0.111</td><td class="line1right bordered">0.506</td><td class="line1right bordered">2.58</td><td class="line1right bordered">49</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0.303</td><td class="line1right bordered">1.61</td><td class="line1right bordered">2.58</td><td class="line1right bordered">0.507</td><td class="line1right bordered">0.425</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">new customer</div>
+</td><td class="line2right bordered">0.183</td><td class="line2right bordered">0.834</td><td class="line2right bordered">6.78</td><td class="line2right bordered">49</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0.498</td><td class="line2right bordered">2.39</td><td class="line2right bordered">6.78</td><td class="line2right bordered">1.04</td><td class="line2right bordered">0.653</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">new customer - form</div>
+</td><td class="line1right bordered">14.7</td><td class="line1right bordered">37.2</td><td class="line1right bordered">56.9</td><td class="line1right bordered">44</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">36.3</td><td class="line1right bordered">55.3</td><td class="line1right bordered">56.9</td><td class="line1right bordered">10.24</td><td class="line1right bordered">36.8</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">confirm order</div>
+</td><td class="line2right bordered">17.7</td><td class="line2right bordered">50.4</td><td class="line2right bordered">77.1</td><td class="line2right bordered">40</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">50.4</td><td class="line2right bordered">67.7</td><td class="line2right bordered">77</td><td class="line2right bordered">13.9</td><td class="line2right bordered">49.9</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">continue</div>
+</td><td class="line1right bordered">2.39</td><td class="line1right bordered">8.46</td><td class="line1right bordered">13.8</td><td class="line1right bordered">40</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">8.49</td><td class="line1right bordered">11.4</td><td class="line1right bordered">13.8</td><td class="line1right bordered">2.28</td><td class="line1right bordered">8.39</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line2left bordered">
+<div class="tablelabel typped container" style="margin-left: 20px">logout</div>
+</td><td class="line2right bordered">0.996</td><td class="line2right bordered">2.88</td><td class="line2right bordered">5.9</td><td class="line2right bordered">39</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">2.57</td><td class="line2right bordered">5.79</td><td class="line2right bordered">5.9</td><td class="line2right bordered">1.33</td><td class="line2right bordered">2.77</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td class="line1left bordered">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">End</div>
+</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">12</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered"> - </td><td class="line1right bordered">-</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
