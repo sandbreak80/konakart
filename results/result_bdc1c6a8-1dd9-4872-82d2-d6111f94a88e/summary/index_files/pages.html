@@ -1,0 +1,789 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Performance Testing Report</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body class="http_pages_template">
+<div id="leftnavigation">
+<div class="divHeader">NeoLoad Test Report</div>
+<div class="menu_wrapper">
+<div class="item">
+<a href="./summary.html">Summary</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.resultssummary">Results summary</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.statisticssummary">Statistics Summary</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.hotspots">Hot spots</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.errors">Errors</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.alerts">Alerts</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.summary.all">General statistics</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.summary.transactions">Transaction statistics</a>
+</div>
+<div class="item">
+<a href="./servers.html">Servers</a>
+</div>
+<div class="item">
+<a href="./populations.html">Populations</a>
+</div>
+<div class="item">
+<a href="./virtual-users.html">User Paths</a>
+</div>
+<div class="item">
+<a href="./transactions.html">Transactions</a>
+</div>
+<div class="item">
+<a href="./pages.html">Pages</a>
+</div>
+<div class="item">
+<a href="./medias.html">Media Contents</a>
+</div>
+<div class="item">
+<a href="./pushmessages.html">Push messages</a>
+</div>
+<div class="item">
+<a href="./monitors.html">Monitors</a>
+</div>
+<div class="item">
+<a href="./scenario_Build.html">Scenario</a>
+</div>
+<div class="title">Main graphs</div>
+<div class="item">
+<a href="./Main graphs_pages.average.html">Average page response time</a>
+</div>
+<div class="item">
+<a href="./Main graphs_requests.average.html">Average request response time</a>
+</div>
+<div class="item">
+<a href="./Main graphs_transactions.average.html">Average response time (Transactions)</a>
+</div>
+<div class="item">
+<a href="./Main graphs_hits.html">Requests per second</a>
+</div>
+<div class="item">
+<a href="./Main graphs_errors.html">Errors</a>
+</div>
+<div class="item">
+<a href="./Main graphs_throughput.html">Throughput</a>
+</div>
+<div class="item">
+<a href="./Main graphs_pages.average.vu.html">Response time against load</a>
+</div>
+<div class="item">
+<a href="./Main graphs_percentile.html">Distribution of Transaction Durations</a>
+</div>
+</div>
+<div style="float: right;">
+<img style="margin-top: 10px; margin-bottom: 0px; margin-right: 4px" src="./images/logo_neotys.png"></div>
+</div>
+<div id="content">
+<div class="divHeader">Pages</div>
+<div style="width: 100%; height: 20px;" id="report.shared">
+<div style="float:left" class="h1" id="statistics_summary_title">Shared Containers</div>
+</div>
+<div class="wrapper shared" align="center">
+<div align="center">
+<table class="hierarchical_shared_statistics_content_template">
+<tr>
+<th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td colspan="7" class="line2">Empty list</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="user-tableheader" style="width: 100%; height: 20px;" id="Browse">
+<div style="float:left" class="h1" id="statistics_summary_title">Browse</div>
+<a href="#Check Order Status" class="navigation next" title="Check Order Status"></a>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="hierarchical_statistics_content_template">
+<tr>
+<th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped virtualuser" style="margin-left: 00px">Browse</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">6.76</td><td class="line2right bordered">9.06</td><td class="line2right bordered">11.5</td><td class="line2right bordered">15</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Actions</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">1.03</td><td class="line1right bordered">1.13</td><td class="line1right bordered">1.33</td><td class="line1right bordered">105</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">homepage</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.486</td><td class="line2right bordered">0.504</td><td class="line2right bordered">0.641</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.022</td><td class="line1right bordered">0.028</td><td class="line1right bordered">0.162</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/Welcome.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.463</td><td class="line2right bordered">0.476</td><td class="line2right bordered">0.503</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">search</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.018</td><td class="line1right bordered">0.021</td><td class="line1right bordered">0.026</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/QuickSearch.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.018</td><td class="line2right bordered">0.021</td><td class="line2right bordered">0.026</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">games</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.249</td><td class="line1right bordered">0.255</td><td class="line1right bordered">0.273</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/SelectCat.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.249</td><td class="line2right bordered">0.255</td><td class="line2right bordered">0.273</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">open product</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.115</td><td class="line1right bordered">0.132</td><td class="line1right bordered">0.166</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/images/green-circle.png</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0.001</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/SelectProd.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.042</td><td class="line1right bordered">0.055</td><td class="line1right bordered">0.091</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/...-021B-4C97-B46C-A4491AD3D620_1_small.jpg</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.071</td><td class="line2right bordered">0.075</td><td class="line2right bordered">0.08</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/static/sh.5db545155503ce07aedcd166.html</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0.002</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">add to cart</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.008</td><td class="line2right bordered">0.01</td><td class="line2right bordered">0.03</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/AddToCartOrWishListFromPost.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.008</td><td class="line1right bordered">0.01</td><td class="line1right bordered">0.03</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">view cart</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.021</td><td class="line2right bordered">0.091</td><td class="line2right bordered">0.16</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/ShowCartItems.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.021</td><td class="line1right bordered">0.091</td><td class="line1right bordered">0.16</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">checkout</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.02</td><td class="line2right bordered">0.023</td><td class="line2right bordered">0.038</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/images/loader.gif</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0.001</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/EditCartSubmit.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.019</td><td class="line2right bordered">0.023</td><td class="line2right bordered">0.038</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">register</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.057</td><td class="line1right bordered">0.059</td><td class="line1right bordered">0.062</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/CustomerRegistration.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.057</td><td class="line2right bordered">0.059</td><td class="line2right bordered">0.062</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">back home</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.031</td><td class="line1right bordered">0.033</td><td class="line1right bordered">0.047</td><td class="line1right bordered">120</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/Welcom.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.031</td><td class="line2right bordered">0.033</td><td class="line2right bordered">0.047</td><td class="line2right bordered">120</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+</table>
+</div>
+</div>
+<div class="user-tableheader" style="width: 100%; height: 20px;" id="Check Order Status">
+<div style="float:left" class="h1" id="statistics_summary_title">Check Order Status</div>
+<a href="#Browse" class="navigation previous" title="Browse"></a><a href="#New Buyer" class="navigation next" title="New Buyer"></a>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="hierarchical_statistics_content_template">
+<tr>
+<th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped virtualuser" style="margin-left: 00px">Check Order Status</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">4.28</td><td class="line2right bordered">7.5</td><td class="line2right bordered">9.53</td><td class="line2right bordered">3</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Actions</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.598</td><td class="line1right bordered">0.867</td><td class="line1right bordered">0.984</td><td class="line1right bordered">23</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">homepage</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.49</td><td class="line2right bordered">0.502</td><td class="line2right bordered">0.517</td><td class="line2right bordered">26</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.023</td><td class="line1right bordered">0.024</td><td class="line1right bordered">0.026</td><td class="line1right bordered">26</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/Welcome.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.467</td><td class="line2right bordered">0.478</td><td class="line2right bordered">0.492</td><td class="line2right bordered">26</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">my account</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.014</td><td class="line1right bordered">0.015</td><td class="line1right bordered">0.018</td><td class="line1right bordered">26</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/LogIn.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.014</td><td class="line2right bordered">0.015</td><td class="line2right bordered">0.018</td><td class="line2right bordered">26</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">login user</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.042</td><td class="line1right bordered">0.207</td><td class="line1right bordered">0.294</td><td class="line1right bordered">26</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/LoginSubmit.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.042</td><td class="line2right bordered">0.207</td><td class="line2right bordered">0.294</td><td class="line2right bordered">26</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">view all orders</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.019</td><td class="line1right bordered">0.117</td><td class="line1right bordered">0.169</td><td class="line1right bordered">26</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/ShowAllOrders.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.019</td><td class="line2right bordered">0.117</td><td class="line2right bordered">0.169</td><td class="line2right bordered">26</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">logout</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.019</td><td class="line1right bordered">0.022</td><td class="line1right bordered">0.034</td><td class="line1right bordered">26</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/LogOut.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.019</td><td class="line2right bordered">0.022</td><td class="line2right bordered">0.034</td><td class="line2right bordered">26</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+</table>
+</div>
+</div>
+<div class="user-tableheader" style="width: 100%; height: 20px;" id="New Buyer">
+<div style="float:left" class="h1" id="statistics_summary_title">New Buyer</div>
+<a href="#Check Order Status" class="navigation previous" title="Check Order Status"></a>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="hierarchical_statistics_content_template">
+<tr>
+<th width="10%">Min</th><th width="10%">Avg</th><th width="10%">Max</th><th width="10%">Count</th><th width="10%">Err</th><th width="10%">% of Err</th><th width="10%">SLA Profile</th>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped virtualuser" style="margin-left: 00px">New Buyer</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">8.81</td><td class="line2right bordered">11.5</td><td class="line2right bordered">14.6</td><td class="line2right bordered">12</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container-blue" style="margin-left: 10px">Actions</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">1.31</td><td class="line1right bordered">1.46</td><td class="line1right bordered">1.57</td><td class="line1right bordered">82</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">homepage</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.49</td><td class="line2right bordered">0.503</td><td class="line2right bordered">0.527</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.021</td><td class="line1right bordered">0.024</td><td class="line1right bordered">0.03</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/Welcome.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.468</td><td class="line2right bordered">0.478</td><td class="line2right bordered">0.502</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">search</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.032</td><td class="line1right bordered">0.04</td><td class="line1right bordered">0.05</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/QuickSearch.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.032</td><td class="line2right bordered">0.04</td><td class="line2right bordered">0.05</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped container" style="margin-left: 20px">select phone - view</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.135</td><td class="line1right bordered">0.152</td><td class="line1right bordered">0.185</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/images/green-circle.png</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0.002</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/SelectProd.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.135</td><td class="line1right bordered">0.152</td><td class="line1right bordered">0.185</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">add to cart</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.007</td><td class="line2right bordered">0.01</td><td class="line2right bordered">0.024</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/AddToCartOrWishListFromPost.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.007</td><td class="line1right bordered">0.01</td><td class="line1right bordered">0.024</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">view cart</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.015</td><td class="line2right bordered">0.017</td><td class="line2right bordered">0.021</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/Checkout.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.015</td><td class="line1right bordered">0.017</td><td class="line1right bordered">0.021</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">new customer</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.057</td><td class="line2right bordered">0.059</td><td class="line2right bordered">0.066</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/CustomerRegistration.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.057</td><td class="line1right bordered">0.059</td><td class="line1right bordered">0.066</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">new customer - form</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.232</td><td class="line2right bordered">0.26</td><td class="line2right bordered">0.349</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/images/icons/required-green.png</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0.002</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/ValidateAddress.action</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.007</td><td class="line2right bordered">0.008</td><td class="line2right bordered">0.014</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/CustomerRegistrationSubmit.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.224</td><td class="line1right bordered">0.251</td><td class="line1right bordered">0.34</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">confirm order</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.266</td><td class="line2right bordered">0.308</td><td class="line2right bordered">0.404</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/CheckoutConfirmationSubmit.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.266</td><td class="line1right bordered">0.308</td><td class="line1right bordered">0.404</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">continue</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.027</td><td class="line2right bordered">0.087</td><td class="line2right bordered">0.173</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/CheckoutFinishedSubmit.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.027</td><td class="line1right bordered">0.087</td><td class="line1right bordered">0.173</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line2">
+<div class="tablelabel typped container" style="margin-left: 20px">logout</div>
+</td>
+</tr>
+<tr>
+<td class="line2right bordered">0.017</td><td class="line2right bordered">0.022</td><td class="line2right bordered">0.038</td><td class="line2right bordered">94</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">
+                                -
+                            </td>
+</tr>
+<tr>
+<td colspan="7" class="line1">
+<div class="tablelabel typped httppage" style="margin-left: 30px">/konakart/LogOut.action</div>
+</td>
+</tr>
+<tr>
+<td class="line1right bordered">0.017</td><td class="line1right bordered">0.022</td><td class="line1right bordered">0.038</td><td class="line1right bordered">94</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">
+                                -
+                            </td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
